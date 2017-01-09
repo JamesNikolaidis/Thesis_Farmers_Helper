@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:background="@drawable/layout_shape">
+
+
+
+        <ImageView
+
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ImageView"
+            android:clickable="false"
+            android:src="@drawable/farming1"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:cropToPadding="?attr/isLightTheme"
+            android:layout_alignParentTop="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:id="@+id/TextView"
+            android:textSize="16dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="left|center"
+            android:text="HFssjdfs"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/ImageView" />
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

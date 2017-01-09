@@ -1,0 +1,1852 @@
+<resources>
+    <string name="app_name">Farmers Helper</string>
+    <string name="title">Problem Categories</string>
+
+    <string-array name="ProblemCategories">
+        <item>Weeds List</item>
+        <item>Farming-Culture_List</item>
+    </string-array>
+
+    <string-array name="Bugs_List">
+        <item>Enemies</item>
+        <item>Disease</item>
+        <item>Bugs</item>
+    </string-array>
+
+
+    <string-array name="Enemies">
+        <item>Potato Aphid</item><item>Mealy-Trialeurodes vaporariorum</item><item>Cotton Aphid</item>
+        <item>Whiteflies citrus</item><item>Flea</item><item>Vegetables Aphids</item>
+        <item>Whiteflies tobacco</item><item>Beans and bean Weevil</item><item>Dacos</item>
+        <item>Olive Citrus thrips</item><item>California thrips</item><item>Citrus thrips</item>
+        <item>Vine thrips </item><item>Calocoris</item><item>Cassida</item><item>Cydia apple-peach-plum</item>
+        <item>Brown scab</item><item>Resseliella oleisuga</item><item>Yellow spider mites-Eοtetranychus carpini</item>
+        <item>Thrips tabaci</item><item>Red citrus scab</item><item>Coccus hesperidum</item>
+        <item>Onychiurus spp.</item><item>Meloidogyne spp.</item><item>Potato root-knot nematode-Meloidogyne halpa</item>
+        <item>Cossus cossus</item><item>Olive black scab</item><item>Lygus</item><item> Margaronia unionalis</item>
+        <item>Aphis fabae</item><item>Melolontha melolontha</item><item>Blaniulus guttulatus</item>
+        <item>Ceratitis capitata</item><item>Lepidosaphes beckii</item><item>Chlorops</item><item>Filamentary</item>
+        <item>Hoplocampa</item><item>Otiorrhynchus</item><item>Aceria sheldoni</item><item>Parlatoria </item>
+        <item>Myzus persicae</item><item>Green Worm</item><item>Larvae Bibionidae</item><item>Prays oleae</item>
+        <item>Pink worm-Platyedra gossypiella</item><item>Rhynchites</item><item>Sesamia </item>
+        <item>Agriotes lineatus</item><item>Aculops pelekassi</item><item>Tanymecus</item><item>Tipula</item>
+        <item>Hylemyia</item><item>Hylesinus oleiperda</item>Phleotribus<item>Phthorimaea</item><item>Phyllonorycter</item>
+        <item>Globodera</item><item>Planococcus citri</item><item>Pears Psylla</item><item>Leucaspis</item><item>Scabies San Jose</item>
+        <item>Cynodon dactylon</item><item>Xanthium strumarium</item>
+    </string-array>
+
+
+
+    <string-array name="Desease_List">
+        <item>Verticillium dahliae(Cotton)</item><item>Verticillium dahliae(Walnuts-Olive)</item><item>Alternaria(Herbs)</item>
+        <item>Potatoe-Tomatoe Alternaria</item><item>Alternaria tenuis</item><item>Anthracnose of Cucurbits</item>
+        <item>Anthracnose citrus</item><item>Anthracnose of Cottons</item><item>Bacterial necrosis</item>
+        <item>Bacterial rot of maize strain</item>
+    </string-array>
+
+    <string-array name="Bugs_List_Extend">
+        <item>Burr</item><item>Lollium</item><item>Sorghum halepense</item><item>Convolvulus arvensis</item><item>Bromus </item>
+    </string-array>
+
+   <string-array name="Farming_Culture">
+       <item>Vegetables</item><item>Legumes</item><item>Fruits</item><item>Cereal</item>
+       <item>Olives</item><item>Tree Nuts</item>
+   </string-array>
+    
+    <string-array name="Cereals">
+        <item>Rice</item><item>Wheat</item><item>Oats</item><item>Corn</item><item>Barley</item>
+    </string-array>
+
+    <string-array name="Vegetables">
+        <item>Cucumber</item><item>Artichoke</item><item>Cauliflower</item><item>Spinach</item>
+        <item>Onion</item><item>Cabbage</item><item>Broccoli</item><item>Tomato</item>
+    </string-array>
+
+    <string-array name="Legumes">
+        <item>Beans</item><item>Lentil</item><item>Chickpeas</item><item>Peas</item>
+    </string-array>
+
+    <string-array name="Fruits">
+        <item>Apple</item><item>Strawberry</item><item>Pear</item>
+        <item>Apricot</item><item>Watermelon</item><item>Cherry</item>
+        <item>Lemon</item><item>Mandarin</item><item>Peach</item><item>Fig</item>
+        <item>Orange</item>
+    </string-array>
+    <string-array name="Tree_Nuts">
+        <item>Almond Tree</item><item>Peanut tree</item><item>Hazel nuts</item>
+        <item>Chestnut Tree</item><item>Walnuts</item>
+    </string-array>
+
+<string-array name="olives">
+    <item>Olive</item>
+</string-array>
+    <!-- ********************* Tree_Nuts  Bugs List *******************************-->
+   <string-array name="Almond_Trees_Bugs">
+       <item>Planococcus citri</item><item>Monilia Cenerea</item><item>Pseudomonas syringae</item>
+       <item>Verticillium dahliae</item><item>Powdery mildew</item>
+       <item>Armillaria melea</item><item>Anthonomus</item><item>Green Aphids</item>
+       <item>Leaf eaters caterpillars</item>
+   </string-array>
+    <string-array name="Peanut_Tree_Bugs">
+        <item>Verticillium dahliae</item><item>Phytphthora</item><item>Armillaria melea</item><item>Phelinus rimosus</item>
+        <item>Acrantus vestitus</item>
+    </string-array>
+    <string-array name="Chestnut_Tree_Bugs">
+        <item>Cydia</item><item>Moth-Pammene fasciana</item><item>Balaninus elephas</item><item>Peritelus sphaeroides</item>
+        <item>Agrobacterium tumefaciens</item><item>Anthracnose</item>
+        <item>Powdery mildew</item>
+    </string-array>
+    <string-array name="Walnuts_Tree_Bugs">
+        <item>Anthracnose</item><item>Bacteriosis-Pseudomonas syringae</item>
+        <item>Armillaria melea</item><item>Oberea linearis</item><item>Cydia</item>
+    </string-array>
+    <!-- ********************* Tree_Nuts  Bugs List *******************************-->
+
+
+
+    <!-- ********************* Fruits  Bugs List *******************************-->
+        <string-array name="Apple_Bugs">
+            <item>Apple mosaic virus</item><item>Apple Fusicladium</item><item>Powdery mildew</item>
+            <item>Parasitic molyvdosi</item><item>Phytophthora</item><item>Cydia pomonella</item>
+            <item>Adoxophyes orana</item><item>Panonychus ulmi</item><item>Aphids</item><item>Cossus Linnaeus</item>
+        </string-array>
+
+        <string-array name="Strawberry_Bugs">
+            <item>Chaetosiphon fragaefolii Aphid</item><item>Thrips tabaci</item><item>Tetranychus urticae</item>
+            <item>Lygus hesperuss</item>
+        </string-array>
+
+      <string-array name="Pear_Bugs">
+        <item>Fusicladium pirinum</item><item>Septoria pyricola</item><item>Oidium furinosum</item>
+        <item>Brown rot</item><item>Parasitic molyvdosi</item><item>Erwinia amylovora</item>
+          <item>Cacopsylla pyri</item>
+      </string-array>
+      <string-array name="Apricot_Peach_Cherry_Bugs">
+          <item>Monilia Cenerea</item><item>Taphrina deformans</item><item>Coryneum</item><item>Oidium</item>
+          <item>Verticillium dahliae</item><item>Puccinia pruni-spinosae</item><item>Anthracnose</item>
+          <item>Kylindrosporiosi</item><item>Fusicladium</item>
+      </string-array>
+    <string-array name="Watermelon_bugs">
+        <item>Mildew-Pseudoperonospora cubensis</item><item>Oidium</item><item>Alternaria cucumerina</item>
+        <item>Anthracnose</item><item>Cladosporium cucumarinum</item><item>Rhizoctonia</item><item>Sclerotinia</item>
+        <item>Phytophthora</item><item>watermelon mosaic virus</item><item>Meloidogyne incognita</item>
+        <item>Acalymma trivittatum</item><item>Heliothrips</item><item>Tetranychus</item>
+    </string-array>
+    <string-array name="Lemon_Orange__Mandarine_Bugs">
+        <item>Medfly</item><item>Aphids</item><item>Phyllocnistis citrella</item><item>Thrips</item>
+        <item>Planococcus citri</item><item>Red scale</item><item>Lepidosaphes beckii</item>
+        <item>Icerya</item><item>Citrus red mite</item>
+    </string-array>
+    <string-array name="Fig_Bugs">
+        <item>Medfly</item><item>Ceroplastes rusci</item><item>Αceria fici</item>
+        <item>Phytophthora parasitica</item><item>Lonchaea</item>
+    </string-array>
+    <!-- ********************* Fruits  Bugs List *******************************-->
+
+
+    <!-- ********************* Legumes  Bugs List *******************************-->
+        <string-array name="Beans_Peas_chickBeans_Bugs">
+            <item>Ascochyta</item><item>Botrytis</item><item>Sclerotinia</item><item>Anthracnose</item><item>Uromyces phaseoli</item>
+            <item>Alternaria</item><item>Oidium</item><item>Pythium spp</item><item>Bruchus</item><item>Liriomyza</item>
+            <item>Thrips</item><item>Aphids</item>
+        </string-array>
+        <string-array name="Lentil_Bugs">
+            <item>Bruchus</item><item>Sitona macularius</item><item>Αphis</item><item>Anthracnose</item><item>Αscochyta</item>
+            <item>Botrytis</item><item>Oidium</item><item>Fusarium</item>
+        </string-array>
+
+    <!-- ********************* Legumes  Bugs List *******************************-->
+
+
+
+
+    <!-- ********************* Vegetables  Bugs List *******************************-->
+           <string-array name="Cucumber">
+               <item>Trialeurode</item><item>Thrips</item><item>Aphids</item><item>Phyllonorycter</item><item>Lygus hesperuss</item>
+           </string-array>
+            <string-array name="Artichoke_Bugs">
+                <item>Bremia Lactucae</item><item>Ramularia cynarae</item><item>Oidium</item><item>Aphids</item><item>Pyrameis atalanta</item>
+                <item>Cassida</item>
+            </string-array>
+            <string-array name="Cauliflower__Broccoli_Bugs">
+                <item>Agriotes lineatus</item><item>Aphids</item><item>Trialeurode</item><item>Plasmodiophorabrassicae</item>
+                <item>Sclerotinia sclerotiorum</item><item>Alternaria brassicae</item><item>Mildew-Pseudoperonospora cubensis</item>
+                <item>Oidium</item>
+            </string-array>
+            <string-array name="Spinach_Bugs">
+                <item>Aphids</item><item>Trialeurode</item><item>Thrips</item><item>Tylenchulus semipenetrans</item><item>Pythium ultimum</item>
+                <item>Mildew-Pseudoperonospora cubensis</item><item>Oidium</item><item>Sclerotinia sclerotiorum</item>
+            </string-array>
+            <string-array name="Onion_Bugs">
+                <item>Botrytis cinerea</item><item>Puccinia porri</item><item>Thrips</item> <item>Mildew-Pseudoperonospora cubensis</item>
+                <item>Sclerotinia sclerotiorum</item>
+            </string-array>
+            <string-array name="Tomatoe_Bugs">
+                <item>Tetranychus urticae</item><item>Aphids</item><item>Tuta absoluta</item><item>Thrips</item><item>Trialeurode</item>
+                <item>Oidium</item><item>Alternarium brassicae</item><item>Phytophthora</item><item>Tylenchulus semipenetrans</item>
+             </string-array>
+
+
+
+
+    <!-- ********************* Vegetables  Bugs List *******************************-->
+
+
+    <!-- ********************* Cereals  Bugs List *******************************-->
+            <string-array name="Rice_Bugs">
+                <item>Pyricularia grisea</item><item>Fusarium</item><item>Ephydra attica</item><item>Sesamia</item><item>Paspalum distichum</item>
+            </string-array>
+            <string-array name="Oats_Bugs">
+                <item>Aphids</item><item>Septoria</item><item>Black loose smut</item><item>Helminthosporium solani</item>
+                <item>Lygus pabulinus</item><item>Covered smut</item><item>Thrips</item><item>Agrotis spp</item>
+            </string-array>
+    <!-- ********************* Cereals  Bugs List *******************************-->
+
+    <!-- ********************* Menu String *******************************-->
+
+
+
+    <!--*********************************************************************-->
+    
+
+
+
+
+    <!-- ************   Smart Tips for the Application ********************** -->
+
+    <string-array name="SmartTips">
+                <item>If you hold your click upon a item on the dialog you will see more details about it.</item>
+                <item>There is a chat in the menu to help you communicate.</item>
+                <item>Swipe the screen from right to left to see another product.</item>
+                <item>Click upon the distributer list and see the distributer details , this will help you to find the closest distributer.</item>
+                <item>If you want to check the label of a product , just click the "Label" option on the menu.</item>
+
+    </string-array>
+
+
+    <string name="Lollium">
+        "Characteristic Features\n"
+                           "\n"
+                           "The mature plant is erect, up to 100 cm (39.37 inch) in height with shiny hairless leaves, the stems are hairless and reddish-purple towards the base of the plant, particularly on younger plants.\n" +
+                           "Young Plant\n"
+                           "\n"
+                           "The leaf blades are dark green, hairless, flat, the upper surface evenly ribbed, the lower surface smooth and shiny, 5 -25 cm (1.97 - 9.84 inch) long, 3 - 8 mm (0.118 - 0.314 inch) wide, the youngest leaves are rolled in bud.\n" +
+                           "Stems\n"
+                           "\n"
+                           "Geniculate, reddish-purple coloration at the base of the stems extends upwards as plant matures.\n" +
+                           "Leaves\n"
+                           "\n"
+                           "Auricles are small and narrow, the ligule translucent, 1-2 mm (0.039 - 0.078 inch), shorter than wide, truncate. Leaf sheath is hairless, with fine longitudinal ribs as in leaf blades and reddish-purple at base.\n" +
+                           "Propagation Organs\n"
+                           "Flowers\n"
+                           "\n"
+                           "The inflorescence is a spike up to 30 cm (11.81 inch) in length; spikelets edge on to the rachis. Spikelets of (2 -)10 - 12 florets, laterally flattened, green, (5 -) 10 - 25 mm (0.19 - 0.39 - 0.98 inch) long. Only the terminal spikelet has 2 more or less equal glumes without awns, but terminal awns are occasionally found, probably as a result of hybridization.\n" +
+                           "Flowering Period\n"
+                           "\n"
+                           "May - June in Europe.\n"
+                           "Fruit\n"
+                           "\n"
+                           "Caryopsis.\n"
+                           "Seeds\n"
+                           "\n"
+                           "Seeds are relatively flat, 4 - 6 mm (0.16 - 0.24 inch) long, 1 mm (0.039 inch) wide. Straw colored with seed embryo is often visible through the outer layers. Germination occurs in autumn and spring. Germination is usually in autumn, and both temperature and rainfall patterns may interact to influence emergence patterns, so that a proportion of seeds may survive and continue to emerge after crop sowing.\n" +
+                           "Viability of Seeds\n"
+                           "\n"
+                           "2 - 4 years.\n"
+                           "Propagation\n"
+                           "\n"
+                           "By seeds. It is a prolific seed producer, with as many as 645,000 seeds/m* (539,302 seeds/sq.yd) recorded in wheat. Following dissemination, innate seed dormancy lasts for about 2 months. The seeds are very light in weight and easily transported and scattered by wind.\n" +
+                           "Occurrence\n"
+                           "Habitat\n"
+                           "\n"
+                           "L. rigidum originates from the Mediterranean area and is introduced to Mid and Northern Europe, southern Australia and the USA.\n" +
+                           "Soil\n"
+                           "\n"
+                           "Warm, sandy soils. "
+    </string>
+
+
+
+    <string name="sorghum_halepense">
+
+
+
+Descriptions
+Characteristic Features
+
+Ribbed leaf sheath, conspicuous midrib, large, purplish panicle and extensive rhizome system.
+Young Plant
+
+Unbranched flowering stems, 0.5-3.0 (-4.0) m (1.64 - 9.84 - 13.12 ft) tall, 0.5-2.0 cm (0.19 - 0.78 inch) in diameter, often with basal adventitious prop roots, nodes sometimes with fine hairs.
+Youngest leaf is rolled.
+Stems
+
+Flowering stems are unbranched, 0.5-3.0(-4.0) m (1.64 - 9.84 - 13.12 ft) tall, 0.5-2.0 cm (0.19 - 0.78 inch) in diameter, often with basal adventitious prop roots, nodes sometimes with fine hairs.
+Leaves
+
+Leaf blades, 20-60 cm (7.87 - 23.62 inch) long, 1.0-3.3 cm (0.39 - 1.56 inch) wide, prominent midribs and white, whitish midvein, many nerved and hairless.
+Membranous ligule with hairy fringe, 2-5 mm (0.078 - 0.19 inch) long.
+No distinct auricles.
+Ribbed, hairless leaf sheaths with overlapping margins.
+Propagation Organs
+Flowers
+
+Inflorescence pale green to purplish, hairy, pyramidal, many branched panicle, 15-50 cm (5.9 - 19.68 inch) long.
+Primary branches up to 25 cm (9.84 inch) long, usually without spikelets for 2-5 cm (0.78 - 1.96 inch) from the base.
+Spikelets usually in pairs but towards the top of the inflorescence in threes, one spikelet of each pair or triplet is sessile and perfect with stamens and stigma, others stalked and sterile or only carry stamens. Fertile spikelets are ovoid, hairy, 4.5-5.5 mm (0.17 - 0.21 inch) long.
+Awns if present are 1-2 cm (0.39 - 0.78 inch) long, twisted and abruptly bent.
+Glumes reddish brown to shiny black, glossy and finely lined.
+Flowering Period
+
+S. halepense begins to flower approximately two months after growth commences. The exact flowering time depends on temperature, plant vigor and photoperiod.
+Fruit
+
+The grain remains enclosed by glumes 4-6.6 mm (0.16 - 0.25 inch) long, 2-2.6 mm (0.078 - 0.10 inch) wide. The glumes are reddish brown to shiny black, glossy and finely lined on the surface.
+Viability of Seeds
+
+6 years. Seeds remain viable after passing through the digestive system of animals.
+Propagation
+
+Mature seeds are readily shed and can be carried over short distances by wind or rain water run-off, and can travel over longer distances in canals from where this species may be introduced to new sites with irrigation water. Most seeds do not germinate during the year when they are produced, but germinate readily in the following year. Seedlings arise from seeds in the top 7 cm (2.75 inch) of the soil, but seeds buried as deep as 15 cm (5.9 inch) still can emerge. Vegetative reproduction from potentially vast rhizome systems results in difficult to control infestations of primarily row crops.
+Occurrence
+Habitat
+
+In the eastern Mediterranean, where it is probably native, S. halepense is found in dry open habitats. It is now found in most of the tropical and warm temperate regions of the world but is best adapted to humid summer rainfall areas in the subtropics rather than to areas which are strictly tropical. The lack of cold tolerance has prohibited the spread of S. halepense into areas with cooler climates. The species can be found on arable land, wasteland and roadsides, and along stream or irrigation canal banks.
+Soil
+
+Wide variety of soil types, however fertile porous soils support larger plants than poorly drained clay soils. Soils with a pH of between 5 and 7.5 are ideal for Johnson grass.
+    </string>
+
+
+
+    <string name="Burr">
+
+Descriptions
+Characteristic Features
+
+Panicles normally dense with conspicuous awns, lemma awned (1,2- 1,8 cm, 0.47 - 0.71 inch).
+Young Plant
+
+Much-branched at the base, 20-100 cm (7.87 - 39.37 inch) tall. The youngest leaf is rolled.
+Stems
+
+Smooth, slender, erect stems may be branched from the base.
+Leaves
+
+Leaves 0,3 to 0,5 cm (0.12 - 0.19 inch) wide, flat, covered with fine, soft hair.
+Ligule 1-5 mm (0.039 - 0.19 inch) long, often truncate and fringed.
+No auricles.
+Sheaths tubular (closed) and covered with fine, soft hairs.
+Propagation Organs
+Flowers
+
+Head (5 - 20 cm, 1.97 - 7.87 inch) long, much-branched, rather dense, very drooping, often purplish, recurving flexuous branches, often bears several spikelets (2-3,5 cm, 0.78 - 1.37 inch) long, with somewhat shorter awns.
+Glumes sparsely pilose.
+Lemmas slenderly 5- to 7-nerved, hispid, bearing long beards, lemmas with soft “downy” hairs.
+Flowering Period
+
+April-May.
+Fruit
+
+Achene-like.
+Seeds
+
+Germination occurs in autumn.
+Viability of Seeds
+
+2-4 years.
+Propagation
+
+By seed.
+Occurrence
+Habitat
+
+Waste land, road sides and orchards, rangeland in the North American prairie.
+Soil
+
+B. tectorum prefers fertile, warm, rather dry, sandy to loamy soils.
+Agricultural Importance
+
+Incidence of B. tectorum worldwide in cereal growing areas. Infestation with Downy brome can lead to significant yield losses.
+Control
+Useful non-chemical contribution to Integrated Weed Management
+
+Moldboard plowing in the fall after winter wheat, optimizing crop competitiveness, crop rotation, e.g. a competitive fall-seeded noncereal crop, such as winter rapeseed or canola. The previously practiced burning of infested field provided valuable control but does not comply with anti-pollution and carbon dioxide avoidance considerations.
+
+    </string>
+
+
+    <string name="Convolvulus_arvensis">
+
+Descriptions
+Characteristic Features
+
+Older leaves saggital, infindibulate white to purple flowers.
+Cotyledons
+
+Long-petiolated, square to kidney-shaped, usually with a slight indentation at the apex, midrib and veins visible.
+Stems
+
+Hairless, prostrate or sinistrorse, glabrous to pubescent, 6-angled.
+Leaves
+
+Saggital, lobed at the base, 20 mm (80.78 inch) long petiole, blade glabrous or pubescent, rounded at the apex.
+Propagation Organs
+Flowers
+
+Corolla funnel formed, white or tinged with pink. Flowers either single or in loose cymes of up to 3 flowers.
+Flowering Period
+
+May-October.
+Fruit
+
+Glabrous 4-valved capsule, +/-6 mm ( +/-0.23 inch) long.
+Seeds
+
+Germination occurs all-year-round. Low fruit setting.
+Viability of Seeds
+
+>20 years.
+Propagation
+
+Vegetative, sometimes by seed, 500 seeds/plant.
+Occurrence
+Habitat
+
+Waste ground, disturbed sites, roadsides, railroads.
+Soil
+
+Loose, warm and deep loam soil, lime-loving.
+Additional Crop Information
+
+Also widespread in areas with open vegetation.
+Agricultural Importance
+
+C. arvensis became a major weed in almost all crops. It climbs up the stems of the crops and strongly competes for light and water and interferes with combine harvesting (picking of berry fruits, combining). The plants build very deep roots and many, up to 2 m (78.74 inch) long rhizomes. Single plants can spread widely in the field and infest large areas.
+Reduced tillage practices increase field bindweed infestations. Plants can regrow from rhizome segments.
+Control
+Useful non-chemical contribution to Integrated Weed Management
+
+Ploughing and repeated stubble cultivation suppresses field bindweed.
+
+
+    </string>
+
+<string name="Verticillium_dahliae">
+
+
+Damage
+
+Although referred to as a wilt disease, wilting may not be the main symptom seen or may be absent in the Verticillium disease. Symptoms depend on cultivar resistance and environmental conditions. The severest symptom is an irreversible wilting of the whole plant after several weeks of vegetative growth followed by plant death. Typically, wilting may affect only some shoots or leaves; Verticillium infection may result in defoliation, but sometimes, sectorial chlorosis and necrosis of leaf tissue are the only visible symptoms. Vascular staining may be present, but stunting may be the only effect of the disease. Wilt diseases caused by V. albo-atrum are indistinguishable from those caused by V. dahliae, which is likely to predominate in cotton. It is often necessary to isolate the pathogen before the cause can be verified.
+Lifecycle
+
+Colonies of V. dahliae produce moderately fast-growing white mycelium which turns black from the centre when microsclerotia are formed. Aerial mycelium is often limited. Hyaline, ellipsoidal, one-celled conidia (2.5 - 6 x 1.5 - 3.0 µm) are produced at the tips of narrow, pointed, conidiogenous cells subtended in whorls (2 to 3 per node) on hyaline conidiophores. Conidia produced in succession form moist spore aggregations at their tips. The dark brown to black microsclerotia have irregular shape and size (50 - 200 x 15 - 90 µm). The dark, thick-walled resting mycelium of V. albo-atrum has less longevity than the microsclerotia of V. dahliae, and rapidly loses viability.
+Cause
+
+Wilt diseases caused by Verticillium spp. are monocyclic. V. dahliae may survive for many years in soil as microsclerotia - free or embedded in plant debris; their germination is stimulated by root exudates. The pathogen can be disseminated with cotton seed and as microsclerotia associated with the lint. Hyphae produced from germinating microsclerotia or conidia infect roots at or just behind the tips and progress into the cortex and towards the developing vascular tissues. Once in the xylem vessels, the fungus spreads by mycelial growth and the production of conidia which are transported into the shoot with the transpiration stream. Symptoms (and damage) result from the occlusion of vessels and toxin production. Microsclerotia are formed in senescing diseased tissues.
+Occurrence
+Additional Crop Information
+
+Verticillium species have a worldwide distribution and attacks more than 200 plant species including important field crops such as cotton and numerous solanaceaous vegetables.
+Agricultural Importance
+
+Verticillium wilt is the most important disease in the major cotton-producing regions. Most severe losses occur in the CIS with annual losses of up to 20 % in many farms. Losses in cotton quality - fibres from infected plants are shorter and weaker than from healthy plants - have to be added to production losses.
+Strains of V. dahliae attacking cotton are present in most cotton growing areas. In many regions, cotton wilt is caused predominantly by a pathotype which defoliates susceptible cultivars, but has limited virulence to other host plants. These isolates belong to one vegetative compatibility group. Resistance of some cotton cultivars have been overcome in several areas.
+Cotton wilt disease is favored by moderate to high temperatures, although temperatures > 30 °C are inhibitory. The disease is often more severe in irrigated crops as irrigation reduces soil temperature after irrigation. Salinity of irrigation water may exacerbate cotton wilt. V. albo-atrum is limited by high temperatures and is the main cause in cooler production areas
+</string>
+
+<string name="Alternaria">
+
+Biology
+Damage
+
+Early infections of cotyledons, leaves and bracts produce small, circular brown, gray-brown to tan spots with purple margins varying from 1 to 10 mm in diameter. They often exhibit concentric zonation and have dry, gray centres which often crack and fall out (shot-hole) when mature. The zonation is more clearly defined on the upper surface. Older spots may coalesce producing irregular dead areas. Under humid conditions, abundant sporulation of the pathogen may result in sooty black appearance of lesions. Stem lesions begin as small sunken spots which develop into a canker, the tissue splitting and cracking to cause a break. Also the glandular areas on the receptacle may be attacked resulting result in failure of boll development. Flowers and bolls may be shed; the latter become mummified and the fibre attacked.
+Lifecycle
+
+Mycelium of A. macrospora survives on undecomposed cotton residues. The pathogen spreads with air-borne spores which may be also dispersed by splashing onto healthy tissue. Cylindrical to slightly tapering conidiophores, formed in clusters or solitarily, produce obclavate, obpyriform, sometimes ellipsoidal melanized conidia (90 - 180 x 15 - 22 µm; 20 - 65 x 9 -20 µm for A. alternata) with a narrow beak. The multi-celled, pale brown conidia typically have transverse and longitudinal oblique septae. They are produced singly or rarely in chains of two (catenulate for A. alternata). The production of conidia within leaf spots as well as the infection of healthy tissue is favored by wet weather and temperatures of about 27 °C. Gossypium barbadense (Pima cotton) is highly susceptible, while Upland cotton (G. hirsutum) is tolerant under normal weather conditions. Plants are most susceptible at the seedling stage and late in the season when the crop senescence.
+Cause
+
+Under favorable conditions - in wet seasons - disease severity decreases from lower leaves to upper leaves, unless leaves are affected by premature senescence. Susceptible cultivars can defoliate rapidly under favorable conditions, especially where the peduncle becomes infected. A. macrospora spots may also develop on bolls. Symptom development is favored by any physiological or nutritional stress e.g. heavy fruit load or premature senescence. Failure of stomatal closure associated with high relative humidity, predisposes plants to fungal infection.
+Occurrence
+Additional Crop Information
+
+A. macrospora is largely limited to cotton and some weeds; in contrast, the host range of A. alternata is fairly wide.
+Agricultural Importance
+
+Alternaria leaf spot may be confused with those of bacterial blight which are angular in shape. Alternaria leaf spot has become the most common foliar disease of cotton worldwide. A. macrospora is the major cause of cotton leaf spot; A. alternata, also often observed on cotton, is less virulent.
+</string>
+
+
+<string name="anthracnose_of_cucurbits">
+    Anthracnose is caused by the fungus Colletotrichum orbiculare (syn.Colletotrichum lagenarium).
+    The disease is easily diagnosed with a hand lens or microscope when whisker-like setae (hairs) can be seen in the pink spore masses
+    Host Crops and Plants
+    Anthracnose of cucurbits is widely distributed over the world wherever cucurbits are grown. The disease is common in North Carolina. Anthracnose causes serious losses when susceptible cultivars of cucumber  and watermelon are grown .
+    Most cultivars of honeydew melon are very susceptible and this disease is a limiting factor in melon production in the eastern United States. Cantaloupe, squash, and pumpkin are less susceptible to anthracnose but occasionally the disease causes losses on the fruit.
+    The symptoms of anthracnose vary somewhat on different hosts. On cucumber leaves the spots start as water soaked areas and expand into brown spots which are roughly circular, reaching about 1⁄4 to 1⁄2 inch in diameter .
+    Small, growing leaves may be distorted and severe spotting may cause entire leaves to blight (Figure 4). Lesions on watermelon leaves can also appear circular at first, but later coalesce into more irregular necrotic areas.
+    Leaf petiole and stem lesions are shallow, elongate and tan. Lesions on fruit are roughly circular, sunken and contain pinkish spore masses in moist weather. Spots on watermelon foliage are black, and a foliar blight may develop giving a scorched appearance to the planting. The lesions on stem and fruit are similar to cucumber.
+Disease Transmission:
+The fungus may live two years in the absence of a suitable host. The fungus can be seed-borne and this is often the source of primary inoculum. The spores depend upon water for spread and infection. Spread by wash water on harvested fruit is important when cucumbers or melons are cleaned before packing. Spores may also be spread by cultivating equipment or workers when the foliage is wet. The spotted or striped cucumber beetle can carry the spores from plant to plant within a field or to adjoining fields.
+General Disease Management
+
+1. Spring Cucumbers and Watermelons
+
+Disease-free seed is desirable, consider seed treatments to ensure no pathogens are present. Practice at least a one year, preferably two or three, rotation away from cucurbit crops. Avoid moving machinery or workers in the fields when the foliage is wet. If overhead irrigation is necessary, irrigate in the early morning so the foliage will dry before nightfall. Resistant cultivars of watermelon, pickling and slicing cucumbers are available with desirable horticultural characteristics.
+
+2. Late Summer Cucumbers
+
+A number of North Carolina growers have found that a second crop of cucumbers can be profitable and pickle processing plants want an extended fresh pack season. Diseases such as anthracnose, however, have been much more severe in late summer planted cucumbers. Growers have found that cucumber following cucumber is the most efficient use of land. The interval between crops may be less than a week and does not allow for the previous crop debris to be sufficiently decayed to destroy the anthracnose organism. Late summer cucumbers are exposed to more fungus spores and have increased chances of becoming infected. They are usually planted in late July or early August when the temperature is most favorable for the fungus. In those years when rainfall is above normal, conditions are such that a disease epidemic can develop. While a number of cucumber cultivars are resistant to anthracnose, this resistance is not complete. It is usually high enough for a spring planting to survive the growing season; however, a late summer planting may be destroyed several weeks prematurely.
+
+If an infested field must be planted because a two year rotation is not possible, then the grower should "Flip plow" the field with a modified moldboard plow. However, this approach will only be useful for one year since spores will come back to the surface when the soil is "Flip plowed" again
+
+</string>
+
+
+
+
+<string name="anthracnose_citrus">
+    Disease LifeCyle :
+    Anthracnose is a primary colonizer of injured and senescent tissue. The organism grows on dead wood in the canopy, and it spreads short distances by rain splash, heavy dew, and overhead irrigation. Such movement deposits the spores on susceptible tissues of young leaves or immature fruit. Sexual spores, although less numerous, are significant for long distance dispersal because of their ability to become airborne. Once the spores germinate, they form a resting structure that allows them to remain dormant until an injury occurs or until degreening. The disease is especially troublesome on fruit that are harvested early and degreened for over 24 hours because ethylene stimulates the growth of the fungus.
+Symptoms
+
+Symptoms :
+Leaf - common symptoms are a more or less circular, flat area, light tan in color with a prominent purple margin that at a later phase of infection will show the fruiting bodies of the fungus (tiny dispersed black flecks). Tissues injured by various environmental factors (such as mesophyll collapse or heavy infestations of spider mites) are more susceptible to anthracnose colonization.
+
+Fruit - anthracnose usually only occurs on fruit that have been injured by other agents, such as sunburn, chemical burn, pest damage, bruising, or extended storage periods. The lesions are brown to black spots of 1.5 mm or greater diameter. The decay is usually firm and dry but if deep enough can soften the fruit. If kept under humid conditions, the spore masses are pink to salmon, but if kept dry, the spores appear brown to black. On ethylene degreened fruit, lesions are flat and silver in color with a leathery texture. On degreened fruit, much of the rind is affected. The lesions will eventually become brown to grey black leading to soft rot.
+
+It should be noted that leaves and fruit infected with other diseases (alternaria, citrus canker) may also be colonized by the fruiting bodies of C. gloeosporioides. The fruiting bodies (black flecks) can be seen over the disease of concern
+
+</string>
+
+
+
+    <string name="bacterial_necrosis">
+Cause
+The    disease    is    caused    by    a
+bacterium,  a  soft
+-
+rotting  member  of  the
+erwiniae
+.    The  same  organism  has  been
+recovered
+from  rotting  cholla,  prickly  pear,
+barrel,  and  organ  pipe  cacti.    It  has  been
+isolated from
+naturally infected
+plants from
+Texas and Mexico, in addition to Arizona.
+Symptoms
+The symptoms may appear at one or
+more positions on the trunk or branches of
+sa
+guaros  at  any  time.    The  first  external
+indicators of bacterial necrosis are usually a
+circular   darkening   and   softening   of   the
+plant  tissues.    In  time,  the  infected  area
+typically    enlarges,    becoming    purplish
+-
+black,  and  splits  open.    If  such  an  opening
+occu
+rs,   a   dark   odorous   substance   will
+frequently  leak  from  the  plant.    At  other
+times,   the   soft   areas   dry   and   crack,
+revealing    the    darken,    dry    remains    of
+diseased    tissues.        If    conditions    are
+favorable, the plant can confine the disease
+to   a   “pocket”   by   formi
+ng   a   barrier   of
+protective    tissue    (callus)    around    the
+affected area.  If the tissue does not rapidly
+form  or  if  it  is  breached  in  some  way,  the
+infection  will  spread.    There  is  no  way  to
+predict   how   long   a   plant   might   survive
+following the occurrence of su
+ch symptoms.
+Disease Cycle
+The    bacterium    occurs    in    the
+diseased  plant  tissue  of  living  cacti,  and  in
+the
+exudates
+associated  with  the  infected
+areas.    It  also  may  be  found  in  fallen,
+decaying   saguaros   and   in   adjacent   soil.
+Infection   begins   when   the   path
+ogen   is
+introduced  into  the  cactus  through  wounds
+or  natural  openings.    Presumably,  insects
+and  small
+animals,  which  are  associated
+with  diseased  or  decaying  saguaros,
+serve
+as the principle carrier.  Of these, the night
+flying moth
+Cactobrosis
+fernaldiali
+s
+appears
+to  be  an  important  vector.    The  larvae  of
+this  moth  are  commonly  found
+feeding  in
+the base of saguaro flower buds.  They also
+tunnel  into  the  plant  providing  an  open
+wound.      It   is   along   these   tunnels   that
+infections may take place.
+    </string>
+
+<string name="maize">
+A bacterial disease of maize, bacterial stalk and top rot, was found in the state of Morelos in February 2011, and in the state of Puebla in July 2013, Mexico. In both cases, the incidence of diseased plants was lower than 0.5.
+    The typical symptoms were a soft rot and darkening of the tissues affecting the stalk and the top of the plant, causing breaking of the stalk. The lesions progressed from the top to below nodes, leaf sheaths and blades, and rotten tissues emitted an unpleasant odor.
+    Eleven diseased plants were collected, and bacterial colonies were isolated from fragments detached from the edges of symptomatic tissues after sterilization with a 0.5 solution of NaClO for 30 s, rinsing three times in sterile water.
+    The sterilized fragments were macerated in drops of distilled sterile water for 10 min and the extract was streaked on Kings medium B (agar 15 g, distilled water 1,000 ml, proteose peptone 20 g, K2HPO4 1.5 g, MgSO4 7H2O 1.5 g, glycerol 10 ml).
+    Eight representative strains from Morelos and five from Puebla were selected for identification. All strains were gram-negative, grew at 37°C, showed pectynolitic activity on potato tubers, were positive for indole production, utilized arabinose, galactose, glucose, glycerol, lactose, mannose, melibiose, rafinose, ribose, and sucrose but did not produce acid from arabitol, adonitol, and keto-methyl-glucoside.
+    Pathogenicity tests were conducted with each strain by inoculating with a syringe four 25-day-old maize seedlings with 107 CFU ml–1 bacterial cells in the leaf collar.
+    Plants were incubated in the greenhouse at 30°C during the day and 24°C during the night with a 12-h photoperiod, and relative humidity of 93%. The reference strains Erwinia chrysanthemi pv zeae ATTC29942 and Dickeya zeae CFBP 2052 were used as positive controls in laboratory and greenhouses tests. Sterile water was used as negative control.
+    Two days after inoculation, soft stalk rot symptoms developed that were identical to those observed in the field.
+</string>
+
+
+    <string name="trialeurode">
+Trialeurodes vaporariorum, commonly known as the glasshouse whitefly or greenhouse whitefly, is an insect that inhabits the worlds temperate regions. Like various other whiteflies, it is a primary insect pest of many fruit, vegetable and ornamental crops. It is frequently found in glasshouses (greenhouses), polytunnels, and other protected horticultural environments.
+        Adults are 1–2 mm in length, with yellowish bodies and four wax-coated wings held near parallel to the leaf surface
+    Life cycle :
+Greenhouse whitefly larva.
+Females are capable of mating less than 24 hours after emergence and most frequently lay their eggs on the undersides of leaves.
+        Eggs are pale yellow in colour, before turning grey prior to hatching.
+        Newly hatched larvae, often known as crawlers, are the only mobile immature life-stage. During the first and second larval instars, the appearance is that of a pale yellow/translucent, flat scale which can be difficult to distinguish with the naked eye.
+        During the fourth and final immature life-stage referred to as the "pupa", compound eyes and other body tissues become visible as the larvae thicken and rise from the leaf-surface. However, this stage cannot be defined as a true pupa stage as hemipterans do not exude this stage of development.[1]
+Plant damage
+All life-stages apart from eggs and "pupae" cause crop damage through direct feeding, inserting their stylet into leaf veins and extracting nourishment from the phloem sap. As a by-product of feeding, honeydew is excreted and that alone can be a second, major source of damage. The third and potentially most harmful characteristic is the ability of adults to transmit several plant viruses.
+        The crop hosts principally affected are vegetables such as cucurbits, potatoes and tomatoes, although a range of other crop and non-crop plants including weed species are susceptible, and can therefore harbour the infection
+
+    </string>
+
+        <string name="thrips">
+
+Biology Damage
+
+When infestation begins, some adults position themsleves deep between leaf sheaths and in other places where they can find protection. Later, they spread preferentially on the lower surfaces of young leaves. Both nymphs and adults suck out epidermal cells, and sometimes mesophyll cells. The empty, air-filled cells reflect the light, which leads to the many typical small, metallic-looking marks. Small specks of black frass are usually found in the same places. During hot, dry weather or in the glasshouse, the population density will increase rapidly and damage can be severe. Foliage may be disfigured to such an extent that vegetable crops become unmarketable. Flower petals will become discolored and deformed, so ornamentals are particularly at risk.
+
+In some vegetables, e.g. cabbage, the lesions will lead to cell proliferation and suberisation; the latter can impair machine-processing for preserves. Lasting infestations will cause leaves to curl, turn brown and drop. Shoots may be stunted, especially in young plants, occasionally to the point of a complete suspension of growth. Thrips is a vector of the Tomato spotted wilt virus; moreover, the lesions it causes in plant tissues facilitate infection by Botrytis spp. and Aspergillus spp..
+
+            Lifecycle
+
+Thrips tabaci reproduces entirely parthenogenetically; males are very rare. The female lays about 30-80 whitish eggs into small gashes in plant tissue that it has cut with its ovipositor. The eggs are at first kidney-shaped, but after a short time within the plant tissue they swell, become elliptical, and protrude slightly. There are two nymphal stages that last up to 14 days, after which the larva will enter quiescence in a sheltered place, mostly on the ground. This pre-pupal stage is soon (1-2 days) followed by the pupal one.
+
+All development times are very variable. The whole generation cycle can be completed in 12 days in warm climates. Adult females live only one or two weeks in warm weather, but can survive for many weeks at cool temperatures, which is of importance during winter. Thrips tabaci has no diapause, only a cold quiescence. The overwintering females seek shelter in the soil or in cracks in bark. While mortality during this time is high, the remaining females can rapidly spread and produce new offspring in the spring, as soon as the weather warms up.
+
+The number of generations produced within a year is determined by climatic conditions. In warm temperate areas, there are usually three to five generations per year, but more than twice that many are possible in warmer regions, still more in a heated greenhouses. Onion thrips can be spread rather rapidly by passive wind transport. Active flying is limited to short distances and occurs only in warm weather. Thrips tabaci is assumed to be of Mediterranean origin, but is nowadays found worldwide.
+
+    </string>
+
+
+          <string name="phyllonorycter">
+
+The spotted tentiform leafminer (Phyllonorycter blancardella) is a moth of the Gracillariidae family. It is known from all of Europe, east to Ukraine and central Anatolia. It is also known throughout North America including Nova Scotia, Quebec, Ontario, Wisconsin and California.[1]
+The wingspan is 6–9 mm. Adults emerge in May and again in August in two generations in western Europe.
+The larvae feed on Malus angustifolia, Malus x astracanica, Malus baccata, Malus coronaria, Malus domestica, Malus floribunda, Malus fusca, Malus ringo, Malus x robusta and Malus sylvestris. They mine the leaves of their host plant. The mine has the form of a lower surface tentiform mine. The epidermis is yellow-green and has some folds.
+              Pupation takes place within the mine. The pupa is amber or chestnut brown, and is made within a white cocoon.
+    </string>
+
+
+ <string name="lygus_hesperuss">
+
+Biology Damage
+
+All instars feed by sucking on buds, bolls, young stalks and leaves. More important than the physical damage by their piercing-sucking mouthparts is the toxic saliva they inject during punctures, which causes the plant tissue to perish. Numerous small lesions in form of small blackish-brown spots can be found, appearing first on young infested leaves. As the leaves continue to grow, they tear at these points, and gradually develop the typical symptoms, commonly referred to as "frisolée". In cases of severe infestation, internodes are elongated, and the plants shoot up.
+
+     Lifecycle :
+
+The adult plant bugs overwinter under fallen leaves and other plant debris. In spring they emerge, feed on weeds and lay their eggs with their ovipositor into stalks and buds, which does not damage the tissue. After 8-10 days, the larvae hatch. Their development lasts 2-3 weeks. Lygus bugs are hemimetabolous like all Hemiptera. The 5 instars of nymphs are wingless, the adults, however, can fly very well.
+In early summer, the first generation of adults appears and disperses into adjacent crops. Here, one or two further generations will develop, depending on the prevailing climatic conditions. When the host plant they have recently been feeding on becomes unavailable, Lygus spp. will migrate readily into other crops, causing a rapid population increase there.
+Occurrence
+
+Additional Crop Information :
+Important hosts include cotton, alfalfa, beans, stone fruits, potato, canola, sunflower, strawberry, wheat, lettuce and many others.
+Agricultural Importance
+Lygus bugs are found in most climates, from the subtropical-arid (e.g. Mexico) to cold-temperate regions, like e.g. Alaska. The genus is nearly omnivorous.Lygus populations can build up over time and cause severe economical damage.
+    </string>
+
+
+
+ <string name="bremia_lactucae">
+Biology :
+The fungus has several physiological species and exhibits considerable host specialization (eg. the pathogenic species on artichoke do not affect lettuce and viceversa ).
+Conidial infection : conidia germinate on the epidermis producing hyphae which enter the stomata and colonize the leaf tissues. After a variable incubation period depending on the temperature and the RH, the cottony white spots appear on the abaxial surface ; they are made of conidiophores (or sporangiophores) which are thin branched filaments ending with vesicles (sporangia) that carry the conidia responsible for the spreading of the infection.
+Inoculum persists as mycelium on infected crop debris and other cultivated or spontaneous Compositae. Oospore formation rarely occurs inside the contaminated tissues.
+    </string>
+
+<string name="ramularia_cynarae">
+Biology :
+
+The infection manifests itself by the appearance of spots similar to those of late blight.
+    But the specific fungus infects and anthokefales, ie the whole underground part of the plant.
+    The measures we take are the same as those indicated in the treatment of downy mildew and further the prompt removal of infected plant parts.
+    </string>
+
+
+<string name="oidium">
+Biology :
+Oidium is known as powdery mildew Before any symptoms become clear the leaf starts to develop blister-like patches, and this is followed by the characteristic white powder where the blister was. The leaf looks as if it’s been dusted with powder. In general mildew is found on the upper side of the leaf, but there are exceptions. One type of mildew only grows on the underside of the leaf, so it’s no surprise it often gets overlooked.
+    However, as the disease advances, the leaves can end up being completely covered in this white layer and it can even colonize the buds, with subsequent losses in crop size and quality.
+</string>
+
+<string name="aphids">
+
+Biology  :
+
+Initially, leaves will yellow, and with an increasing number of aphids, they will begin to curl. Ongoing infestation can cause stems to become stunted and twisted, especially in cucurbits. Leaves can be damaged to such an extent that they wilt and fall off. The effects of chlorosis and heavy sap loss through sucking severely reduce plant growth and health. The honeydew that forms a sticky film on the leaves after a time, supports sooty mold growth. This impairs photosynthesis, thereby weakening the plant even further, and may render fruits unmarketable.
+Like most aphids, A. gossypii is an important virus vector: it can transfer about 70 different types, some of which may cause more damage than the aphid itself.
+
+    Lifecycle :
+
+In temperate regions, A. gossypii is partly holocyclic; but in warmer areas, it will always reproduce asexually. It is unusually resistant to summer heat for an aphid. The generation time can be less than seven days under favorable conditions, and it can produce up to 60 generations per year. With offspring production at more than 70 nymphs per female, the population density may increase very rapidly.
+
+    Occurrence:
+Additional Crop Information
+
+Mainly Cucurbitaceae (melon, cucumber, pumpkin) and cotton, but also various vegetables (e.g. okra, eggplant, pepper), and sometimes citrus.
+Agricultural Importance
+
+Aphis gossypii is found worldwide, wherever its host plants are grown. It prefers warm climates; in colder areas, it is often a pest in greenhouses. It feeds by sucking on nearly all of the green parts of its hosts, preferring young shoots and leaves. Damage can be considerable locally. In some areas of Africa, A. gossypii is one of the most important pests of vegetables.
+</string>
+
+
+<string name="pyrameis_atalanta">
+
+Biology  :
+The red admiral (Vanessa atalanta) is a well-known colourful butterfly, found in temperate Europe, Asia and North America. The red admiral has a 45–50 mm (1.8–2.0 in) wing span. The species is resident only in warmer areas, but migrates north in spring, and sometimes again in autumn.
+
+This medium-sized butterfly is identified by its striking dark brown, red, and black wing pattern. More specifically, the dark wings possess orange bands that cross the fore wings and on the outer edge of the hind wings; white spots on the dorsal fore wings near the front margin; reddish bars on dorsal surface of all four wings. The caterpillar feeds on nettles, and the adult drinks from flowering plants like the Buddleia and overripe fruit.
+
+In northern Europe, it is one of the last butterflies to be seen before winter sets in, often feeding on the flowers of ivy on sunny days. The red admiral is also known to hibernate, re-emerging individuals showing prominently darker colourings than first brood subjects. The butterfly also flies on sunny winter days, especially in southern Europe.
+
+In North America, the red admiral generally has two broods from March through October. Most of North America must be recolonized each spring by southern migrants, but this species over-winters in south Texas.
+
+The red admiral is the butterfly featured by Vladimir Nabokov, an amateur lepidopterist, in his novel Pale Fire.
+</string>
+
+
+    <string name="cassida">
+
+Biology  :
+features flourishing The body is oval. It is hairless and acquire along four to five millimeters. The sides of prothorax and sheaths reach the substrate and prothorax with the sheaths form a protective covering for the body with the head (in Fig. 1 the insect now rises to walk). In the bottom side of the prothorax lacking clear slot for receiving antennas, grooving encountered in many other species of the genus. At the head distinguished two narrow and relatively deep grooves starting at the lower edges of the eyes are joined in the middle of the forehead and then run combined upward passing between the two antenna bases.
+        The antennas sprout near one another up between the eyes. Consisting of eleven articles, outwardly fatten a little, recent articles forming little tanned thin bat. The prothorax is large, with shallow spots, the rear corners is apestrongylefmenes. In sheaths distinguished clear speckles rows. Aside disrupted with identical interference pixels in the third and fourth period of these sequences. The sheaths having approximately the same brown color as the prothorax, the first and second space are often darker in the third period is wider and with a glossy silver or gold film along. The legs resemble the legs of a ladybird.
+        The four articles of Hough is near, the first three with width pods stacked one on another. The two lobes of the third article is too large, and nails hardly argue with each other. The first half of Myra is black, the rest like or tibia and tarsus is yellow. Biology Host species are different species of Amaranthaceae and Caryophyllaceae families. In the first family owned and sugar beet (Beta vulgaris).
+        In this plant the Cassida nobilis may cause damage. The presence of the insect can be identified by holes in size pinhead on the sheet, which can then be formed into large holes
+</string>
+
+
+    <string name="agriotes_lineatus">
+
+Biology:
+
+The adult beetles do not cause damage. As reflected by the common name, the larva is the economically important, destructive stage. It normally lives underground, feeding mainly on roots and tubers of numerous different plant species. In potatoes, beets etc. it bores sharp-edged, deep holes of ca. 3 mm (0.12 inch) diameter, especially in dry periods, thereby rendering the product unmarketable. Secondary infection by fungal and bacterial diseases frequently increases the damage further. Germinating seeds attract the larvae by their emission of CO2, and the hypocotyl is often destroyed before emergence, e.g. in beet.
+Most damage occurs on roots; sometimes these are completely bitten off, so that even older plants can easily be pulled out. In their young stages, even woody plants are at risk, e.g. in nursery plantations. Seedlings can also be attacked by gnawing near the soil surface.
+In all cases, the vascular bundle becomes interrupted- and thereby the supply of nutrients and water - causing the plant to develop slowly, wither and eventually to die.
+The larvae often attack several plants each, so the damage (which first becomes visible by yellowing of the central leaves in grasses and cereals) appears in patches.
+
+        Lifecycle:
+
+The genus Agriotes contains several species (some of them very difficult to distinguish) which are broadly similar in their biology. They prefer humid climates and are mainly found in Europe and the former USSR. In North America, other members of the Elateridae are known as wireworms, but introduced Agriotes spp. have been gaining importance for some years. In Europe, A. lineatus and A. obscurus are the predominant species.
+An unique characteristic of the Elateridae is the ability of the adults to catapult themselves up into the air after having fallen on their backs.
+Preferred habitats are grasslands such as meadows, pastures etc., but fallow land, and sometimes fields with clover, cereal or alfalfa can also be occupied. The oviposition sites invariably have moist, heavy soil.
+In late spring or early summer, the females lay about 170-200 eggs a few cm deep into the ground. After 4-6 weeks the larvae hatch.
+Their complete development takes place in the soil, and it lasts 3-6 years. Wireworms are sensitive to desiccation, so they move vertically in the ground according to seasonal weather changes. They are only moderately influenced by temperature though.
+The larvae have two main feeding periods each year during the times when they are nearer to the surface, which is in spring and in late summer or early autumn. If necessary, they can go without food for months.
+They cause most damage during the second and third years of their development.
+They pupate in summer at depths of about 20-70 cm. The adults emerge after some weeks, but they overwinter in their pupal cells and do not come out of the soil until the spring (April/May). While both sexes can fly, the females rarely do, but rather walk around actively, with a range of several meters.
+Under favorable conditions, e.g. in damp meadows, high population densities can occur. When this land is tilled, the wireworms turn to the freshly-sown or -planted crops in the absence of grass roots. Due to the long larval development time, it may take several years until the infestation abates.
+
+        Occurrence:
+Additional Crop Information
+
+Corn and grains, beet, potato, carrot, onion, leek, lettuce, cabbage, broad bean, sunflower, alfalfa and many others.
+Agricultural Importance
+
+Agriotes spp. are considered to be among the major pests in Europe. Damage to grain seedlings so severe as to require replanting has been reported. In root legumes or potatoes, up to half of the harvest can occasionally be lost
+</string>
+
+
+       <string name="plasmodiophorabrassicae">
+
+Biology:
+Plasmodiophora brassicae is the casual agent of club root disease of crucifers. The disease was first reported in the United States of America in 1852. Historical reports of club root date back to the 13th century in Europe. In the late 19th century, a severe epidemic of club root destroyed large propotions of the cabbage crop in St. Petersburg, Russia. In an attempt to gain more information about the disease, the Russian Gardening Society offered a prize to anyone who could identify the cause, and suggest a control for club root of cabbage. Woronin, a Russian scientist successfully identified the cause of club root as a "plasmodiophorous organism" in 1875, and gave it the name Plasmodiophora brassicae.
+
+
+Host Range and Distribution: Plasmodiophora brassicae can be found worldwide in all temperate zones. It infects over 300 species in 64 genera of crucifers and can be found in both cultivated and wild crucifers. Economically important hosts include cabbage, collards, kale, mustard, brussel sprouts, radish, turnip, rutabaga, cauliflower, broccoli, rape, and kohlrabi.
+
+
+Isolation: Cysts are produced within the tissue of clubbed roots. Fresh or frozen club roots that have been infected for at least 5 weeks can be used for isolation of Plasmodiophora brassicae. These should be cleaned, chopped, mixed with water, and blended at high speed in a blender until a smooth pulpy consistency is achieved. Filter the solution through cheesecloth. Centrifuge the filtrate for 7 minutes, or until three distinct layers can be seen. The bottom most layer is debris, the middle white layer is mostly starch, and the top gray fluid contains cysts of P. brassicae. Pour off cysts and repeat centrifuge process to further purify the isolates.
+
+
+Identification: The most characteristic symptom of P. brassicae within a host, is the clubbing of host roots. A wide variety of root pathogens, however, produce similar symptoms, including root knot nematode and gall inducing fungi and bacteria. Presence of P. brassicae within a host is verified through dissection of clubbed roots. Clusters of enlarged host cells containing plasmodium and amoebae can then be observed with proper staining.
+
+
+Symptoms: Symptoms vary slightly from host to host. The first observable above ground symptom is day wilting. Otherwise healthy looking plants wilt on hot dry days, recovering once the sun sets or temperatures cool. As the disease progresses, leaves yellow and die. Diseased plants are obviously stunted compared to uninfected plants and will often be localized in low, wet areas of the field. When dug up, roots exhibit a variety of symptoms. New infections cause small knot like galls on roots, where as more developed infections display long spindle shaped clubs on primary and lateral roots. Some hosts, such as turnips and radishes, do not form clubs when infected. These hosts have black sunken lesions along the root surface.
+</string>
+
+
+
+   <string name="sclerotinia_sclerotiorum">
+
+Biology:
+clerotinia sclerotiorum is a plant pathogenic fungus and can cause a disease called white mold if conditions are correct. S. sclerotiorum can also be known as cottony rot, watery soft rot, stem rot, drop, crown rot and blossom blight. A key characteristic of this pathogen is its ability to produce black resting structures known as sclerotia and white fuzzy growths of mycelium on the plant it infects.
+       These sclerotia give rise to a fruiting body in the spring that produces spores in a sac which is why fungi in this class are called sac fungi (Ascomycetes). This pathogen can occur on many continents and has a wide host range of plants. When S. sclerotiorum is onset in the field by favorable environmental conditions, losses can be great and control measures should be considered.
+
+Hosts and symptoms:
+
+Common hosts of white mold are herbaceous, succulent plants, particularly flowers and vegetables. It can also affect woody ornamentals occasionally, usually on juvenile tissue. White mold can affect their hosts at any stage of growth, including seedlings, mature plants, and harvested products. It can usually be found on tissues with high water content and in close proximity to the soil. One of the first symptoms noticed is an obvious area of white, fluffy mycelial growth. Usually this is preceded by pale to dark brown lesions on the stem at the soil line. The mycelium then cover this necrotic area. Once the xylem is affected, other symptoms occur higher up in the plant.
+       These can include chlorosis, wilting, leaf drop, and death quickly follows. On fruits, the initial dark lesions occur on the tissue that comes in contact with the soil. Next, white fungal mycelium covers the fruit and it decays. This can occur when the fruit is in the field or when in storage.[1]
+
+Sclerotia from sunflower
+
+Importance:
+
+White mold affects a wide range of hosts. It is known to infect 408 plant species. Its diverse host range and ability to infect plants at any stage of growth makes white mold a very serious disease. The fungus can survive on infected tissues, in the soil, and on living plants. It affects young seedlings, mature plants, and fruit in the field or in storage. White mold can spread quickly in the field from plant to plant. It can also spread in a storage facility throughout the harvested crop. Some crops it affects commonly are soybeans, green beans, sunflowers, canola, and peanuts.
+
+       Environment:
+
+The pathogenic fungus Sclerotinia sclerotioum proliferates in moist environments. Under moist field conditions, S. sclerotiorum is capable of completely invading a plant host, colonizing nearly all of the plant’s tissues with mycelium. Optimal temperatures for growth range from 15 to 21 degrees Celsius. Under wet conditions, S. sclerotiorum will produce an abundance of mycelium and sclerotia. The fungus can survive in the soil mainly on the previous years plant debris. Like most fungi, S. sclerotiorum prefers darker, shadier conditions as opposed to direct exposure to sunlight.
+Life cycle
+The lifecycle of Sclerotinia sclerotiorum can be described as monocyclic, as there are no secondary inoculums produced. During late summer/ early fall the fungus will produce a survival structure called a sclerotium either on or inside the tissues of a host plant. The following spring the dormant sclerotia will germinate to produce fruiting bodies called apothecia, which are small, thin stalks ending with a cup-like structure about 5-15mm in diameter (similar in shape to a small mushroom). The cup of the apothecium is lined with asci, in which the ascospores are contained.
+       When the ascospores are released from the asci, they are carried by the wind until they land on a suitable host. The ascospores will then germinate on the host and begin to invade the host’s tissues via mycelium, causing infection. S. sclerotiorum is capable of invading nearly all tissue types including stems, foliage, flowers, fruits, and roots. Eventually white, fluffy mycelium will begin to grow on the surface of the infected tissues. At the end of the growing season, S. sclerotiorum will once again produce sclerotia. The sclerotia will then remain on the surface of the ground or in the soil, on either living or dead plant parts until the next season.
+       The lifecycle will then continue respectively.
+</string>
+
+
+
+
+
+
+   <string name="mildew_pseudoperonospora_cubensis">
+
+Biology:
+Pseudoperonospora cubensis is a species of water mould known for causing downy mildew on cucurbits such as cantaloupe, cucumber, pumpkin, squash and watermelon. This water mould is an important pathogen of all these crops, especially in areas with high humidity and rainfall, such as the eastern United States. In most years the disease is an annual, late-season problem on squash and pumpkin in the eastern and central United States, however, since 2004 it has become one of the most important diseases in cucumber production.[1] Considered a highly destructive foliar disease of cucurbits, successful breeding in the mid-twentieth century provided adequate control of downy mildew in cucumber without the use of fungicides. The resurgence in virulence has caused growers great concern and substantial economic losses, while downy mildew in other cucurbit crops continues to be a yearly hindrance.
+
+Symptoms and signs :
+
+The pathogen causes angular chlorotic lesions on the foliage. These lesions appear angular because they are bound by leaf veins. During humid conditions, inspection of the underside of the leaf reveals gray-brown to purplish-black fungal growth.
+       This downy material is the sporulation of the pathogen. Magnification of the sporulation reveals the acutely and dichotomously branched sporangiophores bearing lemon-shaped sporangia. Eventually, leaves will turn necrotic and curl upwards. The disease is sometimes called wildfire because of how rapidly it progresses, as if the crop were burned by fire.
+
+Symptoms are different from on other cucurbits; leaf spots are typically not angular and turn brown to black in color. Often, an exaggerated upward leaf-curling will occur.
+       Regardless of which cucurbit is involved, only the leaves are infected, not fruit, flowers, stems or roots. Disease of the leaves results in three major effects: 1. reduced yields, 2. a greater proportion of misshapen fruit, especially in cucumber, and 3. sunscalded fruit, due to increased exposure to direct sunlight, especially in watermelon and winter squash.
+Pathogen biology :
+P. cubensis is an obligate parasite or biotroph, meaning that it requires live host tissue in order to survive and reproduce. Because of this characteristic, the pathogen must overwinter in an area that does not experience a hard frost, such as southern Florida, and where wild or cultivated cucurbits are present. The spores are dispersed via wind to neighboring plants and fields and often over long distances. Symptoms appear 4 to 12 days after infection.
+       The pathogen thrives under cool and moist conditions, but can do well under a wide range of conditions. Optimum conditions for sporulation are 59 F (15 C) with 6 to 12 hours of moisture present, often in the form of morning dew.
+       Even when high daytime temperatures are not favorable for the pathogen (>95 F or >35 C), nighttime temperatures may be very suitable. Oospores (thick-walled, resting spores) of P. cubensis are rare and their role in nature is unknown.
+   </string>
+
+   <string name="root_tylenchulus_semipenetrans">
+
+Biology:
+Tylenchulus semipenetrans (Citrus nematode, Citrus root nematode) is a plant pathogenic nematode and the causal agent of slow decline of citrus. T. semipenetrans is found in most citrus production areas and diverse soil textures worldwide. Their feeding strategy is semi-endoparasitic and has a very narrow host range among commonly grown crops. These nematodes are considered as major plant-parasitic nematode because they can cause 10-30percent losses reported on citrus trees. They also parasitize other hosts such as olive, grape, persimmon and lilac.
+       The citrus nematode was first discovered in California in 1913 by J.R. Hodges and was later described and named by Nathan Cobb that year.[2]
+
+
+Morphology :
+
+T. semipenetrans is the only species of Tylenchulidae that are economically important to agriculture. Citrus nematode range from 0.25-0.35 mm long. They have an amalgamated procorpus and metacorpus, distinct isthmus, and a bulb-shaped postcorpus. They are distinct in juveniles. Both the juvenile stages and the adult male stage are vermiform in shape.
+       The male has significantly reduced esophagus and stylet. The posterior end of the female citrus nematode becomes swollen upon feeding. She contains a single ovary and the vulva is subterminal. The female will lay up to 100 eggs deposited in a gelatinous matrix secreted from the nearby excretory pore. The pore is surrounded by small, irregularly shaped lobes; and the excretory duct is directed forward. The rectum and anus are atrophied or absent non-functional.
+
+       Life cycle and reproduction:
+The life cycle of the female citrus nematode is 6–8 weeks long, whereas the male citrus nematode only lives for about 7–10 days. These nematodes reproduce by amphiximis and parthenogenesis. The first-stage juvenile (J1) undergo one molt while still in the egg. The J1 has no stylet. The second-stage juveniles (J2) hatch from the eggs and the sex can be distinguished at this stage. The J2 male is short and fat. Juveniles will undergo two more molts into the J3 and J4 before becoming young adults.
+       The citrus male nematodes are required for reproduction with females when their posterior end is exposed on the root surface. The J2 male has a stylet while the J3 and J4 have a weaker stylet. The J2 female is longer and thinner than males and they do not molt until feeding site is established. The female juveniles begin feeding ectoparasitically on epidermal root cells. It is not until the female citrus nematode becomes a young adult that she becomes the infective stage.
+       The anterior end of the young female penetrates into the cortex of the root and begins feeding on 3-6 nurse cells. This intense feeding by the adult female will cause the posterior end to enlarge outside the root and start producing eggs.
+       After fertilization, the female lays its eggs outside of the root in a gelatinous matrix extruded from excretory pore located near the vulva
+   </string>
+
+
+<string name="pythium_ultimum">
+
+Biology:
+Pythium ultimum is a plant pathogen. It causes the damping-off and root rot diseases of hundreds of diverse plant hosts including corn, soybean, potato, wheat, fir, and many ornamental species.Ultimum belongs to the peronosporalean lineage of oomycetes,[2] along with other important plant pathogens such as Phytophthora spp. and many genera of downy mildews. Py. ultimum is a frequent inhabitant of fields, freshwater ponds, and decomposing vegetation in most areas of the world. Contributing to the widespread distribution and persistence of Py. ultimum is its ability to grow saprotrophically in soil and plant residue.
+    This trait is also exhibited by most Pythium spp. but not by the related Phytophthora spp., which can only colonize living plant hosts.
+
+Pathology and disease management :
+Infections of seeds and roots are initiated by both the mycelia and spores of Py. ultimum. Two spore types are made, depending on the strain.Ultimum is a species complex that includes var. ultimum and var. sporangiiferum.
+    The major distinguishing feature is that sporangia and zoospores (swimming spores) are produced only rarely by Py. ultimum var. ultimum. Both species make oospores, which are thick-walled structures produced by sexual recombination. Both species are self-fertile (homothallic), which means that a single strain can mate with itself. In addition to oospores,  ultimum var. ultimum also makes hyphal swellings which germinate in a manner resembling sporangia to form plant-infecting hyphae.
+    One important ecological difference between the different types of spores is that sporangia and zoospores are short-lived, while the thick-walled oospores can persist for years within soil, surviving even winter freezes. Mycelia and oospores in soil can infect seeds or roots. This leads to wilting, reduced yield, and ultimately plant death. Common signs of a Pythium infection include stunting of the plants, brown coloration of root-tips, and wilting of the plant during the warm part of the day.
+    Management of disease is challenging but focuses on sanitation, fungicides, and biological control. Fungicides include mefenoxam, thiadiazole, etridiazole, propamocarb, dimethomorph, and phosphonates. Biological control agents include the bacteria Bacillus subtilis, Streptomyces griseoviridis, and the fungi Candida oleophila, Gliocladium catenulatum, Trichoderma harziamum, and Trichoderma virens.
+    Effective resistance in the plant host is generally not available. Sanitation is very important since the pathogen can be easily introduced into pasteurized soil or even soil-free potting mixes on dirty tools or pots. Especially in greenhouses, fungus gnats may also help move the pathogen from place to place.
+   </string>
+
+
+
+<string name="botrytis_cinerea">
+
+Biology :
+
+Gray mold is a blight or rot of immature, fleshy or senescent tissues. Lesions develop as tan or brown, water-soaked areas, which may become grayish or dried out. The profuse gray-brown sporulation of the fungus on old diseased tissue is characteristic. Buds and young shoots of grapevine may be infected, turn brown, and dry out. On a few leaves reddish brown, necrotic lesions appear on the vines. Before capfall, the fungus may invade inflorescences, which rot and fall off. From these sites it attacks the pedicel or the rachis. From ripening onward, the grapes are infected, especially through wounds. The mold progressively invades the entire cluster. Infected white grapes turn brown, and black grapes become reddish.
+Lifecycle :
+
+Spore germination is greatly stimulated by low concentrations of simple sugars, such as glucose and fructose, as well as by amino acids. A 0.015-0.02 µm narrow, blunt infection peg may form directly from the tip of the germtube or from the appressorium or from each of the hyphal tips in the infection cushion in contact with the cuticle, which it penetrates directly. The penetration takes place directly through the surface of the organ partly by a mechanical process and partly by a chemical process involving cutin-degradating and pectin-hydrolyzing enzymes. B. cinerea does not usually penetrate through stomata but infection via wounds is common for this species. Epidemics caused by B. fuckeliana occur in cool, wet and humid weather, conditions that favor sporulation and infection. The severity of gray mold is closely related to environmental conditions and is especially dependent on temperature and relative humidity. The infection of grapes by the fungus requires at least 25 h at 15-20°C and saturated relative humidity.
+Cause
+
+Under adverse conditions sclerotia are generally considered to be the most important structure involved in the survival. They recovere from the soil in vineyards and can survive long enough to serve as a source of inoculum for the following season. They consist of a medulla and a dark cortical layer of cells.
+
+B. cinerea probably survives winters in the sclerotial stage. The production, size and shape of sclerotia on natural substrata and in culture are extremely variable. Sclerotia may germinate producing mycelium, conidiophores and conidia or apothecia. B. cinerea may also produce microconidia (phialospores). Microconidia enclosed in a protective coat have apparently only a sexual function as spermatia for the spermatization of sclerotia. They appear after long periods of unfavorable growth conditions. The coat becomes slimy in water and is able to stick to vectors. Apothecia produced from sclerotia range from 3 to 10 mm (up to 25 mm) high and from 1 to 6 mm diameter. Ascospores are uniseriate, one-celled, ovoid or ellipsoid, measuring 11.5-17.5 x 4.5-9.5 µm (av. 13.9 x 7.0 µm) in water. Chlamydospores of B. cinerea are hyaline single cells of extremely variable form and size. They are formed under conditions unfavorable for growth as terminal or intercalary cells by transformation of vegetative mycelium parts and are liberated by hyphae disintegration.
+
+Conidia of B. cinerea are dry and easily dispersed in air currents. They are released by a hygroscopic mechanism and so are more abundant in the air when rapid changes of relative humidity occur during the day. The role of wind-blown and rain-splashed plant debris containing mycelia as dispersal propagules is probably underestimated.
+
+    Occurrence :
+Additional Crop Information
+
+Wide range of major and minor host plants.
+Agricultural Importance
+
+Botrytis bunch rot or gray mould exists in all vineyards in the world. Bunch rot seriously reduces quality and quantity of the crop. In some cultivars and under certain climatic conditions in autumn, infection of grape clusters takes on a particular form known as noble rot.
+Grape cultivars differ in susceptibility based on the compactness of bunches, thickness and anatomy of the berry skin, and their chemical composition. No major resistance genes against the fungus are known, although some intrinsic resistance mechanisms occur, such as the production of stilbenic compounds in grapevine. The strategy of breeding for resistance is also difficult due to the broad genetic plasticity of the fungus
+ </string>
+
+
+
+
+<string name="puccinia_porri">
+
+Biology :
+
+First symptoms formed by the uredinia may occur on leaves, stems, leaf sheaths, spikes, glumes, and awns, but stems and leaf sheaths are the main tissues affected. On stems, the uredinia are elongated and reddish-brown; loose epidermal tissue is conspicuous at the margins of the uredinia. The uredinia coalesce to cover large areas of the host tissue in heavy infection. Since the orange-red urediniospores are dehiscent, they are readily released as masses from the uredinia when touched. The teliospores occur in the same tissue, but becomes shiny-black. The pycnial stage appears on the young leaves of the alternate host Berberis vulgaris initially as light, chlorotic areas on the adaxial leaf surface, then become light orange-brown lesions, consisting of individual small cone-shaped eruptions (the pycnia), often occurring in clusters. The aecia develop on the abaxial surfaces of these leaves. When mature, they appear as bright-orange, closely-packed, raised clusters of individual aecia. The aecia are cylindrical in shape and flare out at their apices, appearing as a grouping of rings within the aecial cluster.
+
+    Lifecycle :
+
+The fungus overwinters as teliospores in colder climates and urediospores on fall planted wheat in warmer climates. The teliospores remain with the straw until spring. The mature teliospore represents the only diploid state of the fungus. The germination of teliospores and subsequent meiosis in the basidium results in the formation of haploid basidiospores. Four basidiospores, two of each opposite mating types, are produced from each basidium. Basidiospores germinate on the surface of the alternate host Berberis vulgaris, penetrate directly through the host epidermis and form a haploid mycelium. The fruiting structure, formed as a result of basidiospore infection, is called a pycnium. The pycnia are normally formed on the adaxial leaf surface, often in clusters. The important features of the pycnia are the formation of flexuous (receptive) hyphae and haploid spermatia, which are exuded in a nectar. The nectar attracts insects, which in addition to splashing rain drops, serve to transport the spermatia to flexuous hyphae of the pycnia of opposite mating types, where fusion occurs. Following union of the opposite mating types, dikaryotization occurs. The spermatial nuclei migrate to the protoaecium, where mitosis occurs, the nuclei reassert into dikaryons and the aecial structure forms. The aecia of P. graminis are elongated, cylindrical structures. The ornamented, dikaryotic aeciospores are produced successively in chains from the aeciosporophores. The aeciospores infect wheat plants, completing the fungal life cycle. The aeciospores are the products of genetic recombination and may differ in their virulence and aggressiveness.
+Cause
+
+The uredinial stage is initiated by germination of a urediniospore in the presence of free water, formation of appressoria and penetration through stomata, development of an intracellular mycelium with intracellular haustoria, and subsequent sporulation of uredinia to form new urediniospores. The dikaryotic urediniospores of P. graminis are orange-red, thick-walled and covered with spines. They are elliptical and about 20 x 30 µm. As infected plants mature, teliospore formation commences, either in the same, or in new (telia), fruiting structures. At this stage, the infections become black, hence the name black rust. The teliospores remain attached. The teliospores are dark brown two-celled and somewhat wedge-shaped. They have thick walls, and measure 40 to 60 µm x 18 to 26 µm. The apical cell is rounded or slightly pointed.
+
+    Occurrence :
+Additional Crop Information
+
+About 410 graminaceous species are known hosts for the P. graminis complex. Triticum aestivum L. and T. turgidum L. as cultivated wheats and triticale are the primary hosts of wheat stem rust. The main alternate herbaceous host for all forms of P. graminis is Berberis vulgaris. Allegheny barberries (B. canadensis) and some species of Mahonia also serve as alternate hosts of P. graminis f. sp. tritici.
+Agricultural Importance
+
+Stem rust is favored by humid conditions and warmer temperatures of 15° to 35°C. When appropriate conditions such as source and timing of inoculum, susceptible hosts and temperature occur, disease losses may become severe. The distribution of the pathogen is affected by prevailing climatic conditions, the movement of global air masses, geographical features, the availability of alternative grassy hosts or the alternate sexual host, and cropping practices. Urediniospores may be transported by wind over long distances, thus the occurrence of stem rust is only limited by the deposition pattern of the spores, suitable weather conditions and the availability of susceptible hosts
+ </string>
+
+
+    <string name="tetranychus_urticae">
+
+Biology :
+T. urticae, like other spider mites, with its mouthparts penetrates plant cells, preferably on the undersides of leaves, and ingests their contents. Each minute 1-2 dozen cells can be destroyed this way. The first visible symptoms are small whitish speckles, mainly around the midrib and larger veins. When these spots merge, the empty cells give areas of the leaf a whitish or silvery-transparent appearance.
+
+With ongoing infestation, damage will not be restricted to the spongy mesophyll but include the palisade parenchyma as well, and the leaf tissue may collapse completely. The function of the stomata is affected and transpiration constrained. The leaf will turn yellow, wilt, and finally be shed; sometimes complete defoliation occurs. Often the whole foliage of attacked plants takes a yellow or brownish cast. The loss of photosynthetically active surface together with reduced transpiration leads to reduced yield, and the plant may be stunted or in severe cases killed. Ornamentals can be rendered unmarketable even by comparatively moderate infestations as they become unsightly due to browning and withering of petals and the copiously produced webbing.
+
+        Lifecycle :
+
+Each female T. urticae mite lays 10-20 eggs per day, 80-120 altogether during its lifetime of up to 4 weeks. They are mostly attached to the silk webbing. The six-legged larvae hatch after 3-15 days. They molt three times within 4-5 days, towards protonymph, then deutonymph and at last adult. These instars all have eight legs. Before each molt there is a short quiescent stage. At favorable conditions (optimum are 30-32C and a relative humidity of lower 50 celciu) the life cycle can be completed in about 1-2 weeks, including a preoviposition period of 1-2 days. Often a change towards hot and dry weather leads to a very rapid increase of population density.
+
+In the glasshouse reproduction can continue all the year round; outdoors 5-10 overlapping generations per season are possible, depending on climatic conditions. For overwintering, mature females diapause in protected places like cracks in bark or under plant litter. In April/May they emerge and begin with oviposition. As the name spider mites suggests, they spin webbing. T. urticae produces so much of it that it may completely cover parts of the plant. It protects the mites to some degree against wind, rain and predators. In addition, attached to strands of silk they can be dispersed by the wind.
+
+        Occurrence :
+Additional Crop Information
+
+T. urticae is extremely polyphagous. It is an economically important pest particularly on bean, cotton, cucumber, hop, peppers, soybean, strawberry, sunflower, tomatoes and vine as well as numerous fruit trees and ornamentals. Besides it is found on aubergine, broad bean, cowpea, groundnut, lettuce, lucerne, melon, okra, papaw, red and black currant, sorghum, sweet potato, tea and many others.
+Agricultural Importance
+
+T. urticae is a species of temperate and subtropical regions throughout the world. It is also a pest in glasshouses beyond its natural geographic range.
+Due to its huge host range T. urticae is considered the economically most important spider mite
+    </string>
+
+
+
+
+      <string name="tuta_absoluta">
+
+Biology :
+It is a small moth, the length of which does not exceed 8 mm. The robust, also called butterfly or chrysalis, is to argyropo gray color, with characteristic black blueberry in the front wings. Bring long filiform antennae characteristic.
+          They are nocturnal butterfly. On day lies between the sheets. Flourishing of Tuta absoluta. Females vigorous spawn throughout their lifetime about 250 eggs rolling 0.35 mm in length and a white-cream-yellowish coloring.
+          Typically the deposition of eggs is 73percent of the inner surface of the flakes and by 67percent stems, sepals, young fruits and tender stems. The hatching of eggs is 4-6 days after being deposited. The larvae, known as caterpillars, are cream colored with dark head. There are four larval stages, a total duration of 10-15 days. If there is food, not diapausing larvae.
+          The nymfosi is on the ground or in the trenches on the leaves or stems. The larval stage lasts about 10 days. Egg of Tuta absoluta. Biological insect cycle lasts 30-40 days. At temperatures around the 27th C can be reduced to 24 days. This insect with strong reproductive ability, especially in warm weather. There may be up to 12 generations per year. It passes the winter in the form of egg or larval or throttle. The climatic threshold beyond which stops the activity of the altitude above 1,000 meters.
+          Studies in Chile have shown that the biological cycle of the insect can last 76.3, 39.8 and 23.8 days at 14, 19.7 and 27.1 C. She comes from South America. The first reference to this area was in 1970. It causes enormous damage to the tomato crop in Argentina, Venezuela, Brazil, Ecuador, Colombia, Uruguay, Paraguay, Peru and Chile. Attacks on leaves and fruit. Infringement strain of Tomato. In Europe it established its presence in many regions, especially in the Mediterranean, where it causes serious damage. First mentioned in Spain in 2006. In 2008, the presence in France observed, Malta and England. In 2009 established in Greece and specifically in Crete, Chania (Platanos) and Heraklion (Tympaki, Antsikari), and the Peloponnese and Preveza, Italy, Switzerland and Russia.
+          In 2007 appears in Algeria, Tunisia and Morocco in 2009 in Iran, Iraq, Saudi Arabia, Bahrain, Kuwait and Libya. The insect propagation speed caused great inconvenience to many countries around the world. Everywhere install traps network to input attendance or not of this very destructive enemy. The European and Mediterranean Organization for Plant Protection, aka EPPO or OEPP, placing it in the quarantine list A1 number 321.To insect is known by the scientific name Tuta absoluta and synonyms Scrobipalpuloides absoluta, Scrobipalpula absoluta, G norimoschemaabsoluta ka i Phthorimaea absoluta. It belongs to Gelechiidae family. The common names of the English language is tomato borer, South American tomato moth, tomato leaf miner, South American tomato pinworm, in gal--eastern mineuse des feuilles de tomate, Spanish polilla del tomate, polilla perforadora, cogollero del tomate, gusano minador del tomate, minador de hojas y tallos de la papa and Portuguese traça-do-tomateiro.
+          In Greek could be called backmoth tomato. Its very destructive, especially for the cultivation of tomatoes in a greenhouse or outdoors. It attacks and feeds on all aerial parts of the plant. Foliar feeding larvae from below the skin tissue, causing abnormal characteristics trenches, which in the end die. Depending trenches - galleries can be made in the stems and the stem. The fruits are affected in the first forming stage or later. The trenches formed in them can then be infected with various pathogens causing rot. In the absence of insect countermeasures and favorable conditions prevail, it can be destroyed by 80% up to 100 percent crop. The Tuta absoluta can infect other species of the family Solanaceae. Reported attacks on Pepper in Eggplant in Potato in the nightshade the cusp (Pepino) (Solanum muricatum), in Datura stramonium common (Diavolochorto, Tatul) (Datura stramonium), Datura ferox, Lycium chilense, Lycopersicon hirsutum, Nicotiana glauca, Solanum lyratum , Solanum elaeagnifolium, Solanum puberulum and the black nightshade (styphnate) (Solanum nigrum).
+          Recently found in Italy and attack the bean.
+    </string>
+
+
+
+
+
+     <string name="phytophthora">
+
+Biology :
+
+Foot rot or gummosis is caused by two Phytophthora spp.. Symptom development often begins near the soil line; dark water-soaked areas are formed in the bark and a sour smell may occur in wet conditions. Water-soluble gum exudes from affected tissues and is particularly noticeable in dry weather. Longitudinal cracking of bark, accompanied by profuse gumming, usually is positive evidence of infection. Soil removal around affected trees reveals bark that is water soaked, slimy, reddish-brown, or black in late stages. Brown necrotic areas can be seen extending to the cambium and wood. Advanced stages of infection will result in yellow, sparse foliage.
+
+At later stages, the dead bark dries, shrinks and cracks and patches may fall off, leaving an open canker. Trees may later collapse and die due to the girdling action of the fungal infection. Infected fruits develop a soft brown rot eventually with a characteristic pungent odor. P. citrophthora thrives under cooler conditions with seasonal rainfall and favor Mediterranean climates. It attacks aerial parts of the trunk and major limbs.
+
+         Lifecycle :
+
+Under suitable environmental conditions, chlamydospores germinate and produce vegetative hyphae or sporangia which initiate asexual reproduction. Sporangia are also formed by mycelial hyphae in the presence of water (flooding), which is essential for this process. Both pathogens produce papillate sporangia. Sporangia of P. citrophthora are extremely variable in shape; ellipsoid, broadly ovoid, globose, limoniform or extremely distorted (27-65 x 45-90 µm). Sporangia of P. nicotianae are predominantly spherical and average 30-40 x 38-50 µm. In water, sporangia are usually borne singly or in very loose sympodia of 2-4 sporangia. Zoospores are produced inside these sporangia, and are liberated via the sporangial papilla which dissolves. The reniform zoospores are highly motile.
+
+They then round up and encyst, casting off their flagellae. After attachment they germinate and infect cortical root tissue. Oospores are produced only by P. nicotianae which is heterothallic. They are spherical, pale yellow when mature, 24 µm in diameter, with a wall 2 µm thick, and contain irregularly shaped subcellular inclusions. The frequency with which oospores are formed under field conditions and their role in survival and disease transmission is unknown.
+Cause
+
+The vegetative mycelium is the dominant phase and produces thick-walled, resistant chlamydospores with subcellular inclusions (mainly fat and oil droplets), delimited from the somatic mycelium by a septum, becoming yellow-brown and refractile with age. Chlamydospores persisting in the soil are the primary inoculum source.
+
+The pathogens are frequently recovered from effluent-holding ponds in nurseries that practice recirculation of irrigation run-off water. P. citrophthora occurs in soil to a depth of more than 1 m. Seasonal fluctuations in inoculum density appear to be related to soil temperature and soil water matrix potential. They can also be transported in irrigation canals such as those supplying citrus groves and may be introduced to clean land on stock infected in the nursery via infected seed. The testas of seed from infected citrus fruit carry the two pathogens.
+
+         Occurrence:
+Additional Crop Information
+
+Species of Citrus are the most important economic hosts of P. citrophthora.
+Agricultural Importance
+
+Gummosis caused by P. nicotianae occurs in all citrus-growing areas, but is more frequent in the humid tropics. Disease incidence is especially high in trees established with the graft union at or below the soil surface, exposing susceptible scion tissue to the two pathogens. Severe losses also can occur in groves subjected to flood irrigation if trees are planted on susceptible rootstocks.
+    </string>
+
+<string name="fusarium">
+
+Morphology and biology :
+Head Blight disease of rice is caused by different species of Fusarium, of which F. oxysporum f. oryzae dominates in the majority of regions, and F. moniliforme dominates in the Primorskii Territory. However F. graminearum is the most harmful for man and animals, producing mycotoxins and causing the disease "intoxicating bread".
+    The fungus causes the formation of spots on the surface of glumes which become white at first, but yellow, salmon, or carmine later. Infected grains are light, shrunken, and brittle; they can have reddish appearance or brown spots. Stem nodes become black, rot and disintegrate. Stems wilt, break, and lodge. Sporodochia, conidial masses and blue-black ascomata may be observed on infected glumes. Perithecia are also formed at nodes of infected stems.
+    Perithecia are superficial, forming clusters, ovoid and 140-250 microns in diameter. Asci are 60-85 x 8-11 microns, clavate. Ascospores are hyaline to light-brown, curved, fusiform, with rounded apices, 3-septate, 19-24 x 3-4 microns. Macroconidia are produced on dolioform conidiogenous cells, forming laterally on hyphae or on short multi-branched solitary conidiophores.
+    Sporodochia can form in older cultures. Macroconidia are falcate, 3-7 septate, 25-50 x 3-4 microns, with a well developed stem cell. Microconidia are absent. Chlamydospores intercalary, single or located in chains or clumps, globose, thick-walled, hyaline to pale brown, 10-12 microns in diameter. Primary inoculum source infests crop residues, where ascospores and conidia are released from, infesting seeds.
+    The fungus survives in rice seeds for more than 13 months.
+
+</string>
+
+    <string name="ephydra_attica">
+
+Morphology and biology.
+The existence of the insect has been reported in the fauna of Greece by Becker (1926) which was located living in stagnant brackish waters. First observed causing damage to rice fields of Chalastra area in 1989 and since then it seems to be a serious problem for the cultivation of rice. According to data of the Institute of Cereals are the insect larvae attack the young rice plants near the base of the resulting destroy.
+        Larvae immediately after developing the hooked onto floating shoots and leaves they pupate. The thriving appear in the first 10 days of June. The chemical control of larvae at the time of their occurrence, when the depth of water is relatively high (15 cm or more), it is effective to spray an insecticide
+</string>
+
+<string name="sesamia">
+
+Morphology and biology.
+The Asiatic pink stem borer, (Sesamia inferens), also known by names such as Gramineous stem borer, Pink borer, Pink rice borer, Pink rice stem borer, Pink stem borer, Pink stem borer, Purple borer, Purple stem borer or Purplish stem borer, is a moth of the Noctuidae family. It is found from Pakistan, India, Sri Lanka, Myanmar to Japan and the Solomon Islands. A polyphagous species, it is a major pest in many worldwide crops.
+
+
+Description :
+
+Wingspan is about 28mm. Hind wings with veins 3 and 4 from arise from the cell. Antennae of male ciliated and simple in female. Body ochreous in color. Fore wings with a red-brown suffusion along median nervure and veins 2 to 5. A sub-marginal dark line present. Cilia paler in color. Hind wings are whitish.
+
+Larva smooth and shiny and lack obvious hairs or markings. Color variable but usually creamy-white with a distinctive pink suffusion. The head and prothoracic shield are brown. The dorsal part of the last abdominal segment bearing the anus is yellowish-brown. Mature larvae are between 30-40 mm long, pink with buff and pink dorsal markings and a brown head. Pupae are up to about 18 mm long, brown to yellowish-brown with a wrinkled frontal region of the head and cremaster with four large and two small spines.
+Ecology
+
+The larvae mostly feed on Gramineae species, including Coix, Echinochloa, Oryza, Panicum, Saccharum, Setaria, Triticum, Zea and Zizania. Many of the food plants are of economic importance.
+Symptoms
+Caterpillars mainly bore into rice stem or base of the panicle. After infection, stem becomes wilt causing deadheart. Panicle attack leads to panicle to be cut leading to state called whitehead. Symptoms are mostly similar to other stem borers and hence closer look required to control the attack
+</string>
+
+
+<string name="paspalum_distichum">
+
+Morphology and biology.
+aspalum distichum is a species of grass. Common names include knotgrass,water finger-grass, couch paspalum, eternity grass, gingergrass, and Thompson grass.
+    Its native range is obscure because it has long been present on most continents, and in most areas it is certainly an introduced species. Its native range probably includes parts of the tropical Americas.
+
+This is a perennial grass forming clumps and spreading via rhizomes and stolons.
+    It grows decumbent or erect to a maximum height near 60 centimeters. The inflorescence is usually divided into two branches lined with spikelets.
+
+Paspalum distichum is a food source for several avian species, including the long-tailed widowbird
+</string>
+
+
+    <string name="septoria">
+
+Morphology and biology.
+Septoria pyricola (Desm.) Desm., the anamorph
+of Mycosphaerella  pyri(Auersw.)  Boerema,  is  a
+widespread pathogen that causes leaf fleck disease
+of pear, also called leaf spot or septoriosis. Leaf fleck, although rarely reported, causes
+superficial  lesions,  reducing  fruit  quality. Flecked or spotted fruits cannot be sold
+as  high  grade  and  are  liable  to  further  infection
+from rot micro-organisms during storage (Sivane
+san,  1990;  Alojet  al 1994).  Ascospores  released
+by fallen leaves provide the primary inoculum for
+infections in early spring. Leaf fleck is favoured by
+relatively  high  temperatures  (infections  start  at
+20C) and rainy weather (Gortet al., 2000). In late
+spring and summer the disease progresses rapidly
+through  continuous  infection  caused  by  pycnidi
+ospores produced on the spotted leaves (Tzavella-
+Klonari  and  Tamoutseli,  1986;  Sivanesan,  1990).
+Although leaf fleck of pear is very common in Mediterranean countries, it was until recently considered to be only of minor importance, and regular
+fungicide applications, intended primarily for the
+control  of  scab  (Venturia  pirina)  were  thought  to
+eliminate Septoria as well
+</string>
+
+
+
+
+    <string name="black_loose_smut">
+Loose smut of barley is caused by Ustilago nuda. It is a disease that can destroy a large proportion of a barley crop. Loose smut replaces grain heads with smut, or masses of spores which infect the open flowers of healthy plants and grow into the seed, without showing any symptoms. Seeds appear healthy and only when they reach maturity the following season is it clear that they were infected. Systemic fungicides are the major control method for loose smut.
+
+Hosts and symptoms :
+
+The major symptom of loose smut is the smutted grain heads, which contain masses of black or brown spores where the grain would normally be. The spores completely replace the grain head so that there is no grain to be harvested on infected plants.
+        It may be possible to identify infected plants in the field before they reach the flowering stage by looking for plants which are taller and more mature than the rest of the field. The fungus causes infected plants to grow slightly taller and mature slightly sooner than the uninfected plants in the field. Since it must infect through the open florets, this gives the fungus a competitive advantage by allowing it to fall down to the healthy plants and insuring that the fungus has a little extra time to produce and disperse spores before the florets of the healthy plants open.
+
+Ustilago nuda infects barley Hordeum vulgare L. but there are many strains of Ustilago which infect many different cereal crops in a similar manner. Ustilago tritici, for example, is loose smut of wheat.
+
+        Disease cycle :
+
+The disease cycle of loose smut begins when teliospores are blown to open flowers and infect the ovary either through the stigma or directly through the ovary wall. There are multiple mating types for Ustilago spp. so infection will only occur if two compatible mating types are present in the same flower.
+
+After landing in an open floret, the teliospores give rise to basidiospores. Without dispersing to any alternate host plant, the basidiospores germinate right where they are. The hyphae of two compatible basidiospores then fuse to establish a dikarytic stage.
+
+After germination inside the ovary, the fungal mycelia invade the developing embryo in the seed. The fungus stays alive in the seed until the next growing season, when it is planted along with the seed. As the developing plant grows, the fungus grows with it. Once its time for the flowers to form, teliospores are produced in place of the flowers and develop where the grain would be.
+
+Plants which are infected with Ustilago spp. actually grow taller and flower earlier than their healthy counterparts. This gives the infected plants an advantage in that the flowers of uninfected plants are more physically and morphologically susceptible to infection. The teliospores in the smutted grain heads disperse to the open flowers of the healthy plants, and the cycle continues.
+
+        Environment:
+
+Loose smut is unique in that it needs to infect the seed in the previous growing season in order to be a pathogen of the plant in the current growing season. This means that regardless of environmental conditions, if an infected seed is planted as long as the growing conditions are good for the plant, they will be good for the fungus. However, if there are environmental stressors on the plant such as drought or extreme heat, the plant will be more susceptible to injury because of the added stress from the fungal infection.
+        If the plant doesnt survive to its reproductive stage, the fungus will not get to reproduce either.
+
+Environment becomes a factor once teliospores have been produced and are ready for dispersal. In order to get to the open flowers of healthy plants, the teliospores must be moved by wind or rain or possibly insects. If dry, calm conditions persist for the entire time the flowers are open, the infection rate will be low. Wind and moderate rain, as well as cool temperatures (16-22 degrees Celsius) are ideal for the dispersal of spores. Conditions in Eastern Europe, Western Siberia, and the Northern Caucasus regions are some of the most conducive to loose smut.
+</string>
+
+       <string name="helminthosporium_solani">
+Silver scurf is a plant disease that is caused by the plant pathogen Helminthosporium solani. This pathogen is a fungus which is specific to infecting only potato tubers. Silver scurf is a blemish disease, meaning the effect it has on tubers is mostly cosmetic and affects fresh market, processing and seed tuber potatoes. There are some reports of it affecting development, meaning growth and tuber yield. This is caused by light brown lesions, which in turn change the permeability of tuber skin and then it causes tuber shrinkage and water loss, which finally causes weight loss.[1] The disease has become economically important because silver scurf affected potatoes for processing and direct consumption have been rejected by the industry.[1] The disease cycle can be divided into two stages: field and storage. It is mainly a seed borne disease and the primary source of inoculum is mainly infected potato seed tubers. Symptoms develop and worsen in storage because the conditions are conducive to sporulation. The ideal conditions for the spread of this disease are high temperatures and high humidity. There are also many cultural practices that favor spread and development.
+           Luckily, there are multiple ways to help control the disease.
+Signs and Symptoms:
+Silver scurf blemishes on a tuber. Photo Credit: A.J. Gevens, UW-Extension
+
+Silver scurf is a plant disease of potato, which is caused by the anamorphic ascomycete fungus, Helminthosporium Solani. Potato tubers are the only known host of Helminthosporium solani. It is a highly specific pathogen which does not have a secondary host or alternate host.
+           A common symptom of this disease is blemishing on the surface of the potato tubers. These blemishes are tan and/or gray due to a loss of pigment, and they are usually irregularly shaped. Also, a post-harvest symptom can be shrinkage and shriveling of the outer tissue of the potato due to water loss.[3] Black spots can also be found on the surface of infected tubers, which are a sign of the disease.
+           These are made up of conidia and conidiophores of the pathogenic fungus.[4] The conidia are characterized by being very darkly melanized and having multiple pseudosepta. Another characteristic of this fungus is the absence of motile spores.
+
+Like with many other fungal plant diseases, a diagnosis can be made by looking for the specific sexual structures of the fungus and observing them for the specific characteristics of silver scurf.[4] Another way that silver scurf can be diagnosed is through molecular techniques, such as PCR and sequencing to identify the presence of the pathogen. The primer pair, HSF19-HSR447, has been generated to be specific for amplifying only a section of Helminthosporium Solani DNA.
+
+Currently, no known host factors have been identified that have been linked to increase susceptibility or development of the disease. It seems as though the environmental conditions are what plays a major role in severity of the disease.
+
+           Disease Cycle:
+
+The disease cycle of silver scurf can be divided in two phases (field and storage). The primary source of inoculum is infected potato seed tubers. This inoculum is then transferred to the daughter tubers through an unknown mechanism, although indirect evidence suggests it happens when they come in direct contact or close proximity to daughter tubers.[1] Conidia produced on the surface of seed tubers are dispersed by rain or irrigation to uninfected tubers. These conidia germinate and infect tubers.
+           The pathogen enters through the periderm or lenticels. After that, the pathogen colonizes the periderm cells in the tuber. Infection may happen when tubers are formed and can continue in the season.[6] In harvest (mostly in summer), silver scurf symptoms are not too apparent. However, the symptoms develop and worsen due relatively humid and warm temperatures in storage, since these conditions are conducive to sporulation.[1] Secondary inoculum is produced by conidia, which can spread in storage by wind of ventilation while the tubers are in storage.
+           When a seed tuber from this storage is planted, this can then carry inoculum to the field.
+           It was believed that overwintering soil-borne inoculum wasn’t important in the disease cycle, but recent studies suggest H.solani may survive in the soil for a short period of time, which can cause more infection.
+
+This is an imperfect fungus and its teleomorph has not been described. Disease symptoms appear on tubers, but not on the haulm (vine) or roots, and are limited to the periderm, composed of phellem, phelloderm and cortical layers that replace the epidermis of the tuber. See next section (Environment) to understand the occurrence and severity of the different stages of the life cycle mentioned here.
+Environment:
+
+There are a number of conditions that favor the spread and development of H. solani. Usually, the temperature range of 15- 32 C combined with high humidity increase conidial germination.[1] In addition to this, there are many cultural practices which affect the conditions that favor disease spread and development. These practices include: the level of H.solani present on the seed, planting and harvesting dates, crop rotations and warehouse management.
+           It has been demonstrated that later harvest dates increase the development of the disease. It has also been demonstrated that the disease was more severe when planting densities were higher.All of these factors combined have an effect of disease spread and development.
+Pathogenesis
+The spores can still infect and cause disease in daughter tubers in the soil for about two years.It is also possible for the pathogen to spread by growing through the roots of a potato plant to the developing tubers and cause infection. H. solani condia are found on the outside of potato tubers, and the hyphae enter the tuber to cause disease. The pathogen can enter the tissue through wounds or natural openings, as well as being able to directly penetrate the periderm with the use of an appressorium and penetration peg.
+           The fungus is contained in the outer layers of the potato and cannot infect very deep into the tuber. The discoloration on the periderm of the potato is formed from the loss of pigmentation caused by extreme dryness of the cell and suberin deposition.[10] Not much is currently known about the molecular aspects of the mechanism for spread and infection of the disease, but there is currently ongoing research on this pathogen to gain a better understanding
+</string>
+
+
+
+
+
+       <string name="lygus_pabulinus">
+
+Biology:
+
+All instars feed by sucking on buds, bolls, young stalks and leaves. More important than the physical damage by their piercing-sucking mouthparts is the toxic saliva they inject during punctures, which causes the plant tissue to perish. Numerous small lesions in form of small blackish-brown spots can be found, appearing first on young infested leaves. As the leaves continue to grow, they tear at these points, and gradually develop the typical symptoms, commonly referred to as "frisolée". In cases of severe infestation, internodes are elongated, and the plants shoot up.
+Lifecycle:
+
+The adult plant bugs overwinter under fallen leaves and other plant debris. In spring they emerge, feed on weeds and lay their eggs with their ovipositor into stalks and buds, which does not damage the tissue. After 8-10 days, the larvae hatch. Their development lasts 2-3 weeks. Lygus bugs are hemimetabolous like all Hemiptera. The 5 instars of nymphs are wingless, the adults, however, can fly very well.
+In early summer, the first generation of adults appears and disperses into adjacent crops. Here, one or two further generations will develop, depending on the prevailing climatic conditions. When the host plant they have recently been feeding on becomes unavailable, Lygus spp. will migrate readily into other crops, causing a rapid population increase there.
+
+           Occurrence:
+Additional Crop Information
+
+Important hosts include cotton, alfalfa, beans, stone fruits, potato, canola, sunflower, strawberry, wheat, lettuce and many others.
+Agricultural Importance
+
+Lygus bugs are found in most climates, from the subtropical-arid (e.g. Mexico) to cold-temperate regions, like e.g. Alaska. The genus is nearly omnivorous.Lygus populations can build up over time and cause severe economical damage
+</string>
+
+
+
+
+       <string name="covered_smut">
+
+Covered smut of barley is caused by the fungus Ustilago hordei. The disease is found worldwide and it is more extensively distributed than either loose smut or false loose smut.
+
+Symptoms:
+
+Infected plants do not demonstrate symptoms until heading. Kernels of infected plants are replaced by masses of dark brown smut spores. Smutted heads are hard and compact. Infected plants may be stunted. Occasionally smut sori may also develop in leaf blades, where they appear as long streaks.
+Disease cycle
+
+Infection is seed-borne within the seed, the fungus penetrating the endosperm while the grain is being formed. Infected seeds give rise to systemically infected plants. The mycelium advances through the host tissue and becomes established behind the growing point.
+
+The spores are not readily blown or washed away by wind or rain. At harvest, spore masses are broken up, scattering spores on grain. Frequently, masses of spores remain intact and appear in harvested grain. The fungus overwinters as teliospores on seed or in soil.
+</string>
+
+
+
+
+       <string name="agrotis_spp">
+
+Biology :
+
+The adult beetles do not cause damage. As reflected by the common name, the larva is the economically important, destructive stage. It normally lives underground, feeding mainly on roots and tubers of numerous different plant species. In potatoes, beets etc. it bores sharp-edged, deep holes of ca. 3 mm (0.12 inch) diameter, especially in dry periods, thereby rendering the product unmarketable. Secondary infection by fungal and bacterial diseases frequently increases the damage further. Germinating seeds attract the larvae by their emission of CO2, and the hypocotyl is often destroyed before emergence, e.g. in beet.
+Most damage occurs on roots; sometimes these are completely bitten off, so that even older plants can easily be pulled out. In their young stages, even woody plants are at risk, e.g. in nursery plantations. Seedlings can also be attacked by gnawing near the soil surface.
+In all cases, the vascular bundle becomes interrupted- and thereby the supply of nutrients and water - causing the plant to develop slowly, wither and eventually to die.
+The larvae often attack several plants each, so the damage (which first becomes visible by yellowing of the central leaves in grasses and cereals) appears in patches.
+
+           Lifecycle:
+
+The genus Agriotes contains several species (some of them very difficult to distinguish) which are broadly similar in their biology. They prefer humid climates and are mainly found in Europe and the former USSR. In North America, other members of the Elateridae are known as wireworms, but introduced Agriotes spp. have been gaining importance for some years. In Europe, A. lineatus and A. obscurus are the predominant species.
+An unique characteristic of the Elateridae is the ability of the adults to catapult themselves up into the air after having fallen on their backs.
+Preferred habitats are grasslands such as meadows, pastures etc., but fallow land, and sometimes fields with clover, cereal or alfalfa can also be occupied. The oviposition sites invariably have moist, heavy soil.
+In late spring or early summer, the females lay about 170-200 eggs a few cm deep into the ground. After 4-6 weeks the larvae hatch.
+Their complete development takes place in the soil, and it lasts 3-6 years. Wireworms are sensitive to desiccation, so they move vertically in the ground according to seasonal weather changes. They are only moderately influenced by temperature though.
+The larvae have two main feeding periods each year during the times when they are nearer to the surface, which is in spring and in late summer or early autumn. If necessary, they can go without food for months.
+They cause most damage during the second and third years of their development.
+They pupate in summer at depths of about 20-70 cm. The adults emerge after some weeks, but they overwinter in their pupal cells and do not come out of the soil until the spring (April/May). While both sexes can fly, the females rarely do, but rather walk around actively, with a range of several meters.
+Under favorable conditions, e.g. in damp meadows, high population densities can occur. When this land is tilled, the wireworms turn to the freshly-sown or -planted crops in the absence of grass roots. Due to the long larval development time, it may take several years until the infestation abates.
+
+           Occurrence:
+Additional Crop Information
+
+Corn and grains, beet, potato, carrot, onion, leek, lettuce, cabbage, broad bean, sunflower, alfalfa and many others.
+Agricultural Importance
+
+Agriotes spp. are considered to be among the major pests in Europe. Damage to grain seedlings so severe as to require replanting has been reported. In root legumes or potatoes, up to half of the harvest can occasionally be lost.
+</string>
+
+
+
+       <string name="apple_mosaic_virus">
+
+Biology :
+ Description and significance
+
+The apple mosaic virus(ApMV) is the cause of apple mosaic disease. The apple mosaic virus is the most widespread apple virus. An apple tree infected with the ApMV will display symptoms of pale to bright cream spots on the leaves. The infected leaves may be depicted throughout the whole tree or only on a single tree limb. The ApMV mostly infects U.S apple tree malus domestica.
+           The apple is the most widely grown fruit crops, therefore an understanding of the pathogen is economically important to commercial apple cultivars. An infected apple tree may have a crop yield reduction of up to 60percent.
+Genome structure
+
+The apple mosaic virus is a single molecule of linear, positive-sense, single-stranded RNA. The complete sequence genome for apple mosaic virus RNA1, RNA 2, RNA 3, and RNA 4 has been sequenced. The characterized ApMV RNA 1 is 3,476 nucleotides long and ApMV RNA 2 is about 2,979 nucleotides long. Both the ApMV RNA 1 and ApMV RNA2 encode a single large open reading frame.
+           The apple mosaic virus RNA 3 complete sequence is about 2,056 nucleotides long. (NCBI: Taxonomy Genome) The ApMV RNA 4 sequence is 891 nucleotides long. A viral genome encodes structural and non-structural proteins.
+           The ApMV 1 and ApMV 2 encodes 1 structural protein, while ApMV RNA 3 encodes 2 structural proteins. There are no lipids present in the apple mosaic virus. (6)
+Cell structure and metabolism
+
+The apple mosaic virions consist of an non-enveloped capsid. The capsid is round, pleomorphic shaped, and exhibits icosahedral symmetry. The isometric capsid has a diameter of 25nm and 29nm. The capsomer arrangement is not obvious.
+Viral Ecology
+
+The apple mosaic virus is a plant virus that mostly commonly infects Malus domestica and Malus ssp. in the United States of America. (6) The ApMV is a pathogen with a diverse natural host-range besides apples. The ApMV naturally infects rose, hazelnut, filbert, horse chestnut, raspberry, birch, and hops. The amino acid squences encoded by RNA 1 and 2 are similar to other ilarviruses, but they are closely related to alfalfa mosaic virus.
+           The ApMV RNA 4 is closely related to alfalfa mosaic virus and tobacco streak virus. The ApMV is serologically related to Prunus necrotic ringspot virus. The virus does not show relationship to Tulare mosaic virus, prune dwarf virus, citrus variegation, citrus leaf rugose, Asparaguse 2, and elm mottle virus.
+Pathology
+
+The virus is spread through root grafting and mechanical inoculation.
+</string>
+
+ <string name="apple_fusicladium">
+
+Biology :
+ the fusicladium is perhaps the most serious disease of fruit trees.
+     This fungus imperfect (the Fusicladium genus), which affects trees such as apple, the pear and mespilia.
+     Characteristic symptom of fouzikladion are aithalodeis spots on young plant organs, such as leaves, stems, flowers and fruit, with abundant dark like black conidia powder, from which comes the name "defacement". Stain these tissues die and grates are created mainly in fruits, or small ulcers on twigs. The rain, dew, fog and moderate temperatures favor the release and germination of ascospores and conidia, making infections and the development of epidemics.
+     Fought with phytosanitary measures and protective fungicides or exhausting.
+</string>
+
+<string name="cydia_pomonella">
+
+Biology:
+
+C. pomonella females lay 50-100 single eggs each, directly on the developing fruits or on adjacent leaves or shoots. When the larvae hatch 5-18 days later, the caterpillar first undergoes a so-called "wandering stage" (2 to 5 days). After a couple of exploratory bites, it penetrates a fruit where a second fruit or a leaf is touching, or at the stalk or stalk-eye. The entry hole is frequently surrounded by a dark reddish ring. Here, the larvae pass through five stages during a period of 3-5 weeks, feeding on the immature seeds and the interior of the fruit.
+The last instar before pupation will come out of the fruit again, wander down the tree, and hide in a crack in the bark or a similar place to complete its development.
+Young apples infested early by the first generation just drop prematurely. Those attacked later will be damaged by nibbling on the surface, tunneling and soiling with frass and will therefore be unmarketable.
+A characteristic sign of infestation by C. pomonella are the entry holes filled with frass.
+
+    Lifecycle:
+
+C. pomonella can have 1-4 generations per year, depending on climate.
+In its hiding place, mostly somewhere on the tree, the codling moth larva builds a rather sturdy cocoon. It either pupates directly or falls into diapause. The immediately-pupating larvae will result in another generation of adults within the same season; the others hibernate.
+Diapausing larvae are able to withstand quite low temperatures. Severe frost will, however, kill many of them. In spring, when temperatures exceed 10°C (50°F), they also pupate inside the cocoon. The adult moths emerge 2-4 weeks later, at about the end of bloom. They are most active around dusk.
+Diapausing larvae are able to withstand rather low temperatures. Severe frost will, however, kill many of them. In spring, when temperatures climb to above 10°C (50°F), they likewise pupate inside the cocoon. 2-4 weeks later the adult moths emerge, at about the end of bloom. They are most active around dusk.
+The codling moth originated in Asia Minor but is nowadays spread all over the world, wherever apples are grown.
+
+    Occurrence:
+Additional Crop Information
+
+Mainly apple, pear, quince, but also peach, plum, apricot and sometimes walnut.
+Agricultural Importance
+
+Cydia pomonella is regarded as the most important pest of apple. Sometimes almost the entire crop will be damaged.
+</string>
+
+
+<string name="adoxophyes_orana">
+
+Biology:
+Adoxophyes orana completes 2-3 generations per year. Adults are present in late May and June for the first generation, in July through September for the second generation, and in October for the third generation. Flight times vary with latitude and climatic conditions.
+
+Females lay eggs in masses of 4-150 individual eggs. Eggs are laid primarily on leaves, but females may utilize fruits and tree trunks in outbreak conditions. First instar larvae hatch in 8-20 days and feed under a silk web on the underside of a leaf. Later instars feed inside rolled leaves or web leaves to fruit and feed on the surface. Larvae complete five instars and pupation occurs in the final larval nest. Second or third instar larvae of the last generation hibernate until spring and complete development by feeding on buds and young leaves.
+
+This species is considered a major pest of fruit crops throughout its range. Most economic loss is caused by damage to apple and pear.
+</string>
+
+<string name="panonychus_ulmi">
+
+Biology :
+
+P. ulmi mites feed by puncturing cells of the leaf parenchyma with their stylets and sucking out their contents. This causes physiological changes in the leaves, and photosynthesis, transpiration and nitrogen accumulation can be severely constrained.
+At first, pale spots appear in tissues around the mite colonies. Later, entire leaves assume a rusty brown („bronze“) color; if infestation then continues, they may drop prematurely. In spring, large congregations of larvae on young shoots can lead to their deformation; infested flower primordia will fail to bear fruit.
+Both fruit quality (e.g. color, sugar content, size) and yield are reduced. High population densities can even result in diminished flowering and fruit load in the following season.
+Mites are found mainly on the undersides of leaves, along the veins. As the name “spider mite” suggests, they spin silken threads that can be seen connecting adjacent plant parts if there is heavy infestation. The threads help to protect the mites from being carried off by the wind.
+
+    Lifecycle:
+
+P. ulmi overwinters in the egg stage. In April/May, when apple buds begin to open, the six-legged larvae start to hatch and immediately move to the leaves, where they start feeding. The other two immature stages (protonymph and deuteronymph) each have eight legs, like the adult mite. There is an inactive period before each molt.
+During the summer, the life cycle of mites can be completed in as little as 2-4 weeks, depending on temperature, so several generations can appear, with the number varying from 3-5 in cool temperate regions to up to eight in warm areas.
+The highest population densities are normally reached in July/August.
+Females live about 2-3 weeks and produce ca. 20-50 eggs each. Summer eggs are laid on leaves and begin to develop immediately. In August/September, the females start laying batches of the diapausing winter eggs on rough bark, e.g. on old wood, in scars, or around buds. These are often numerous enough to be easily visible as red spots.
+
+    Occurrence :
+Additional Crop Information
+
+This spider mite is most important on apple, grapevine, pear, plum, peach, prune and cherry, but it is also found on citrus, coffee, cotton, almond and other crops.
+Agricultural Importance
+
+The European red mite can be found in most fruit-growing regions of the world. Its capacity for rapid population increase means that it can cause considerable damage.
+
+</string>
+
+
+    <string name="cossus_linnaeus">
+
+Biology :
+Cossus cossus, the goat moth, is a moth of the family Cossidae. It is found in Europe.
+
+This is a large heavy moth with a wingspan of 68–96 mm. The wings are greyish brown and marked with fine dark cross lines. The moth flies from April to August depending on the location.
+
+The caterpillars feed in the trunks and branches of a wide variety of trees (see list below), taking three or four years to mature.
+</string>
+
+
+ <string name="powdery_mildew">
+
+Biology :
+
+     Powdery mildew is a fungal disease that affects a wide range of plants. Powdery mildew diseases are caused by many different species of fungi in the order Erysiphales, with Podosphaera xanthii (a.k.a. Sphaerotheca fuliginea) being the most commonly reported cause.Erysiphe cichoracearum was formerly reported to be the primary causal organism throughout most of the world.
+     Powdery mildew is one of the easier plant diseases to identify, as its symptoms are quite distinctive. Infected plants display white powdery spots on the leaves and stems. The lower leaves are the most affected, but the mildew can appear on any above-ground part of the plant. As the disease progresses, the spots get larger and denser as large numbers of asexual spores are formed, and the mildew may spread up and down the length of the plant.
+
+Powdery mildew grows well in environments with high humidity and moderate temperatures. In an agricultural setting, the pathogen can be controlled using chemical methods, genetic resistance, and careful farming methods. It is important to be aware of powdery mildew and its management as the resulting disease can significantly reduce crop yields.Greenhouses provide an ideal moist, temperate environment for the spread of the disease.
+Powdery mildew growing on a leaf (magnified).
+Powdery mildew growing on a leaf in high magnification.
+
+Reproduction
+
+Powdery mildew fungi reproduce both sexually and asexually. Sexual reproduction is via chasmothecia (formerly cleistothecium), a type of ascocarp. Within each ascocarp are several asci. Over time, ascospores mature and are released to initiate new infections.
+     Conditions necessary for spore maturation differ among species.
+
+     Vectors of transmission:
+Wooly aphids (Eriosomatinae) and other sucking insects are often vectors of transmission for powdery mildew, and other infectious diseases. Typically wooly aphids in sub temperate climates precede and are an indicator of various infections, including Powdery mildew. Aphids penetrate plant surfaces where they often reside and provide a host of potential inoculants through physical, digestive or fecal secretions.
+     Aphids are often an indicator of other potential plant problems.
+</string>
+
+
+
+    <string name="chaetosiphon_fragaefolii_aphid">
+
+Biology and Ecology:
+
+In the 1980s there were thought to be four species of Chaetosiphon on strawberry in America: Chaetosiphon minor, Chaetosiphon jacobi, Chaetosiphon thomasi and Chaetosiphon fragaefolii. Of these, Chaetosiphon fragaefolii and Chaetosiphon thomasi were thought to occur sympatrically on strawberry, rose and Potentilla, only distinguishable from each other by the number of submarginal setae. Following a detailed study on variations in karyotype, chaetotaxy and morphology, Blackman et al. (1987)  assigned the name Chaetosiphon thomasi to a rose-feeding species holocyclic on Rosa rugosa in British Columbia, with Chaetosiphon fragaefolii occurring on strawberry and Potentilla.
+        Chaetosiphon minor and Chaetosiphon jacobi are distinct species found on strawberry in western and eastern USA respectively.
+
+
+[Chaetosiphon fragaefolii (strawberry aphid) colony on young leaflets of Fragaria (strawberry) in Clifton, Bedfordshire on 5/6/15 at 13.34 h.]   [Chaetosiphon fragaefolii (strawberry aphid) aptera on Fragaria (strawberry) in Clifton, Bedfordshire on 9/6/15 at 17.18 h.]
+
+Schaefers and Judge (1971)  looked at the effect of temperature, photoperiod and host plant on the production of winged forms by Chaetosiphon fragaefolii. Apterous viviparae reared at a temperature of 23.9 deg C deposited significantly fewer alates than did those developing at 15.6 deg C. A reduced photoperiod during parental development enhanced the production of alate offspring. Parental nutrition also appeared to exert a major influence on the production of alate offspring with more alate offspring produced when the parent aphids were fed on old leaves than when fed on young leaves.
+        Judge and Schaefers (1971)  evaluated the effect of crowding on the production of winged forms by Chaetosiphon fragaefolii. Apterous parents reared at a higher density surprisingly deposited fewer alate offspring than apterae reared in isolation. However, adult apterae crowded for a 4-hr period off the plant yielded higher percentages of alates than aphids isolated off the plant.
+
+[Chaetosiphon fragaefolii (strawberry aphid) nymphs on Fragaria (strawberry) in Clifton, Bedfordshire on 12/6/15 at 9.49 h.]
+
+Bernardi et al. (2012)  studied the biology and developed a fertility life table for Chaetosiphon fragaefolli on leaves of strawberry. Bernardi (2013)  compared the effectiveness of different sampling methods and studied the population dynamics of the species in Brazil during two strawberry crop cycles. Chaetosiphon fragaefolii and Aphis forbesi were the main species associated with strawberry. The plant-hit method (weekly selection of four plants and tapping them over a tray lined with white vinyl acetate paper) and the Möericke water trap showed equal effectiveness to capture wingless and winged insects.
+        The peak population of aphids in the state of Paraná occurred from September to November. Chaetosiphon fragaefolii predominated in all the samples.
+
+Cédola and Greco (2010)  studied the seasonal abundance of the strawberry aphid complex under different agronomic practices in Argentina. Aphid densities were low in strawberry fields in which insecticides and fungicides were used. The aphid, Chaetosiphon fragaefolii was found in addition to Aphis gossypii, Aphis fabae, Myzus persicae and Macrosiphum euphorbiae. No parasites were found associated with Chaetosiphon fragaefolii. The pathogenic fungus, Entomophthora planchoniana was the main mortality factor.
+
+
+Damage and control:
+
+Chaetosiphon fragaefolii is one of the most serious pests affecting strawberry plants. Direct damage is caused by the aphids sucking sap from the plant, which reduces the yield and quality of fruit. This is especially the case when fumagin fungus grows on the honeydew that aphids excrete. In addition the species is the principal vector of 6 viruses. Strawberry mild yellow edge virus (SMYEV) and strawberry crinkle virus (SCV) are two of the most pathogenic viruses affecting strawberry. In Germany strawberry yellow edge and strawberry crinkle were first observed in 1974 (Krczal,1979) ).
+        Since then, only strawberry yellow edge has spread. Biological data collected on the strawberry aphid in laboratory experiments indicates, that the natural spread of the strawberry crinkle virus is affected by the life span of the strawberry aphid.
+        The number of aphids which live long enough to complete the latent period of the virus in the vector may be not sufficient for a fast spread of the disease.
+    </string>
+
+
+
+
+
+
+<string name="septoria_pyricola">
+
+Biology and Ecology:
+Mycosphaerella - Septoria Pyricola is a genus of ascomycota. With more than 10,000 species, it is the largest genus of plant pathogen fungi.
+
+The following introduction about the fungal genus Mycosphaerella is copied (with permission) from the dissertation of Dr. W. Quaedvlieg (named: Re-evaluating Mycosphaerella and allied genera).
+
+Species belonging to the fungal genus Mycosphaerella (1884) (Capnodiales, Dothideomycetes) have evolved as endophytes, saprophytes and symbionts, but mostly Mycosphaerella species are foliicolous plant pathogens which are the cause of significant economical losses in both temperate and tropical crops worldwide. The generic concept of Mycosphaerella is based on the type species of the genus, M. punctiformis, which was introduced 130 years ago in order to describe small loculoascomycetes with few distinct morphological traits. Species belonging to Mycosphaerella were characterised as having pseudothecial ascomata that can be immersed or superficial, embedded in host tissue or erumpent, having ostiolar periphyses, but lacking interascal tissue at maturity.
+    Ascospores are hyaline, but in some cases slightly pigmented and predominantly 1-septate, although taxa with 3-septate asco spores have been recorded. This description appears to be quite distinctive, but is in fact very broad and actually lead to 120 years of confusion in which the generic name Mycosphaerella was being used as a dumping ground for small loculoascomycetes with few distinct morpho logical traits. In the 19th and 20th centuries, thousands of species and infrasprecific taxa were described in the genus Sphaerella, only to have the entire genus and about 1000 additional species redescribed into the genus Mycosphaerella at the end of the 20th century.
+
+The identification of Mycosphaerella species by morphological means is extremely difficult as these taxa produce very small fruiting structures with highly conserved morphologies, tending to grow and sporulate poorly in culture and for over 120 years, identification was based on morphology alone. These identification difficulties are amplified by the fact that up to six different species can inhabit the same lesion as either a primary or secondary pathogen, making even host-specific species difficult to identify.
+    The introduction of affordable sequencing technology during the first decade of the 21st century allowed for much more accurate species delimitation and phylogenetic elucidation, leading to the conclusion that the broad taxonomic description of the genus Mycosphaerella and a lack of clear morphological features led to many Mycosphaerella and mycosphaerella-like species being misidentified.
+    Because the classic taxonomic description of Mycosphaerella is broad and includes so many mycosphaerella-like species, the traditional generic concept of Mycosphaerella will hereafter be referred to as Mycosphaerella sensu lato (s. lat.) in order to avoid confusion.
+
+Currently more than 3 000 species and close to 10 000 names are associated with Mycosphaerella s. lat., but work by Verkley et al. (2004) revealed that the genus Mycosphaerella s. str. (based on M. punctiformis) was in fact limited to species with Ramularia asexual morphs. Research by Braun (1990, 1998) showed that there are only about 500 Ramularia species known from literature, leaving the majority of mycosphaerella-like species that will need to be reclassified into taxonomically correct genera and families. Since the advent of mass sequencing technology, 39 taxonomically correct genera have already been confirmed as belonging to the Mycosphaerellaceae via molecular means:
+
+(Amycosphaerella, Neopseudocercospora, Ramularia, Caryophylloseptoria, Neoseptoria, Ramulispora, Cercospora, Pallidocercospora, Ruptoseptoria, Cercosporella, Paracercospora, Scolecostigmina, Colletogloeum, Paramycosphaerella, Septoria, Cytostagonospora, Passalora*, Sonderhenia, Distocercospora, Periconiella, Sphaerulina, Dothistroma, Phaeophleospora, Stenella, Lecanosticta, Phloeospora, Stromatoseptoria, Microcyclosporella, Polyphialoseptoria, Trochophora, Neodeightoniella, Polythrincium, Xenomycosphaerella, Neomycosphaerella, Pseudocercospora, Zasmidium, Neopenidiella, Pseudocercosporella* and Zymoseptoria)
+
+    The genera Passalora and Pseudocercosporella are known to be paraphyletic and will be treated separately in the near future.
+
+Although at least 25 more genera with postulated Mycosphaerellaceae affinity have yet to be confirmed. The current generic and family concepts of both Mycosphaerella s. str., the Mycosphaerellaceae and the Teratosphaeriaceae have evolved indirectly from the work of Crous (1998), who used culture and asexual morphological characteristics to show that Mycosphaerella s. lat. was in fact polyphyletic, suggesting that it should be subdivided into natural genera as defined by its asexual morphs. In contrast to these findings, the first sequence-based phylogenetic trees published for Mycosphaerella s. lat. (based mainly on ITS nrDNA sequence data), suggested that Mycosphaerella was monophyletic.
+    However, as more sequence data of Mycosphaerella spp. became available (especially of loci such as the 28S nrDNA), the view of Mycosphaerella s. lat. as being monophyletic has gradually shifted and there is now ample evidence that Mycosphaerella in its broadest sense is polyphyletic. Since this discovery was made, the original conserved generic concept of Mycosphaerella s. lat. has been replaced with the concept that the mycosphaerella-like morphology has evolved multiple times and that these taxa in fact cluster in diverse families such as the Cladosporiaceae, Dissoconiaceae, Mycosphaerellaceae and Teratosphaeriaceae.
+
+As such, the name Mycosphaerella should be limited to species with Ramularia sexual forms, but the name Ramularia actually predates the name Mycosphaerella, so the name Ramularia has preference over Mycosphaerella, and will be placed on the list of protected names.
+    </string>
+
+
+
+
+
+<string name="brown_rot">
+
+Biology and Ecology:
+Brown rot fungus (Monolinia fructicola) is a fungal disease that can devastate stone crop fruits such as nectarines, peaches, cherries and plums. The first symptoms of the disease are often seen in spring with dying blossoms that turn to mush and form a grayish fuzzy spore mass on the branch. From there it enters the twig and cankers form. When maturing fruit is infected, the signs begin with a small brown rotted spot and rapid spore growth.
+    The entire fruit may be consumed in a matter of days. How to treat a fruit tree with brown rot fungus is of the utmost importance to the home gardener because the disease can and will occur again without proper precautions. Brown Rot Fungus Treatment For the home gardener, how to treat a fruit tree with brown rot disease is largely a case of prevention. For trees that are already infected, treatment with a brown rot fungicide is the only course of action.
+    Diseased fruit and twigs need to be removed before the brown rot fungicide is applied. Most all purpose fruit tree fungicides are effective in the control of brown rot disease.
+
+Read more at Gardening Know How: How To Treat Trees With Brown Rot
+    </string>
+
+
+
+
+
+<string name="erwinia_amylovora">
+
+Biology and Ecology:
+Erwinia amylovora is a gram negative, facultative anaerobic, rod shaped bacteria.
+    This bacterium is motile by peritrichous flagella at 37C; it is not motile at 28°C. It is negative for the Voges-Proskauer test and positive for gelatin hydrolysis and it releases gas when it undergoes glucose fermentation.
+    Fire blight, a disease that affects and can cause extensive damage to apple and pear trees, is caused Erwinia amylovora. It received its name from the appearance of the infected leaves and branches, which often appears blackened as if scorched by fire.
+    It can destroy apple and pear blossoms, shoots, limbs, and even whole trees. It can also affect other plants in sub-family Pomoideae of the family Rosaceae3. It is native to North America but spread to northern Europe in the 1950s and 1960s. It has continued to spread throughout the eastern Mediterranean since the 1980s and throughout Europe.
+    The bacteria can enter the plant through its blossoms, stomata, or wounds on various parts of the plant and is often carried by rain or insects (3). Some of the common symptoms include the blossom blight, shoot blight, canker blight, trauma blight, and rootstock blight (2). In some cases the bacteria can be seen as a white or golden ooze seeing from the infected plant tissue.
+    Once it infects the tree it spreads rapidly and there is often no way to save the infected tree.
+</string>
+
+
+
+<string name="taphrina_deformans">
+
+Biology and Ecology:
+The pear psylla, Cacopsylla pyri L. (Hemiptera Psyllidae), is known in Europe for its
+
+extended infestations which may cause heavy economical losses to most pear growing
+
+regions. Pear (Pyrus sp. L.) is the second most relevant fruit species of temperate regions: the
+
+first one is apple (Malus domestica L.) and the third one is peach (Prunus persica L.).
+
+The damages that C. pyri may induce to pear trees are classified in two main types: 1) direct
+
+damages, weakening the plant by subtraction of nutrients; when the pest attack is intense,
+
+the plant wastes away with reduced production; 2) indirect damages, due to the production
+
+of a large amount of honeydew on which sooty molds develop (russetting fruits, Fig. 2), and
+
+also to the possible transmission of phytoplasms .
+
+In the first case the most damaging stages are the nymphs of all instars because of the high
+
+amount of honeydew (produced especially in spring and summer) dripping on everything
+
+including fruits. Besides lowering the fruit market value, honeydew favours the growth of
+
+sooty molds caused by saprophytic fungi, in turn causing indirect injury to the plant. Sooty
+
+molds actually induce alterations of photosynthesis, disruption of metabolism, leaf curling
+
+and premature loss, together with lower production. Prolonged attacks and intense
+
+weakening by C. pyri may lead to plant death.</string>
+
+
+<string name="cacopsylla_pyri">
+
+Biology and Ecology:
+Life cycle
+
+Taphrina deformans infects species of the genus Prunus (including P. amygdalus (almond) and P. persica (peach)).It has been observed that this fungus also infects the fruits of some South American trees like Ocotea puberula, Nectandra megapotamica and other Lauraceae species. Infected leaves develop a whitish bloom as the infection progresses.
+    This bloom consists of asci that break through the cuticle of the leaf by way of lysis.One ascus contains eight ascospores that create conidia, which are ejected in early summer and moved by rain and wind. This fungus is believed to survive the winter by staying on the surface of the new host plant, such as on bark or buds.In the spring, new buds are infected by the conidia as the leaves emerge from the buds.
+    The disease does not occur every year, as it requires a minimum of 3mm of rainfall followed by at least 12 days during which the developing conidia remain damp and at temperatures below 19C. The fungus has higher infection rates following cooler, damper winters.
+
+Taphrina deformans hyphae growing in intercellular spaces secrete polysaccharide-degrading enzymes, such as cellulase, causing partial dissolution of the host cell wall. This process also results in changes in the plasma membrane T. deformans also produces the auxin indole-3-acetic acid from L-tryptophan via indole-3-pyruvic acid and indole-3-acetaldehyde. This process is thought to be responsible for the hyperplastic effect of the infection.
+</string>
+
+
+<string name="Kylindrosporiosi">
+
+Biology and Ecology:
+The disease manifested at first at up part of sheet of leaf with the form small, circular, infrared until purple spots .
+    Later the spots become brown and gain clear margin . With liquid and rainy Cairo, pink until white masses spore appear at below part of sheet at Centre of spots.
+    The offended tissues of spots finally die and often separated from their healthy tissues fall and create holes at lamina .
+    The symptom this called holes from Shots  and looks with the attack where due at koryneo
+
+</string>
+
+<string name="coryneum">
+
+Biology and Ecology:
+Coryneum blight, also known as shothole blight,
+is a fungal disease that can cause damage on peach,
+nectarine, apricot, almonds (ornamental as well as nut
+bearing), and to a lesser degree, cherries (tart and sweet).  Coryneum blight is caused by the fungal pathogen Wilsonmyces carpophilus.
+    Changes in fungal taxonomy explain this pathogens name;  in the past it was
+known as Stigmina carpophila or Coryneum beijerinckii.
+The pathogen can infect buds, twigs and branches,
+blossoms, leaves, and fruit .  The disease is
+most damaging in extended cool and moist conditions of
+spring, although this disease can occur and cause damage at anytime during lengthy wet weather.
+    he fungal pathogen overwinters in infected
+buds and cankers on infected twigs and
+branches.  Spores produced from these infected tissues, in the early spring, are dispersed during rain
+events to infect new buds .  Later in the season, other susceptible tissues can become infected when there is suitable moisture on leaves and fruit.The spores,
+called conidia, are pigmented and are extremely durable. They can survive, exposed in a dormant state, on the surface of a bud
+for months, waiting for just the right temperature and
+moisture conditions to germinate and infect its host.
+This pathogen often surprises growers as it is active
+in the early spring at cold temperatures.  The fungal
+pathogen can infect a suitable host if moisture is continuous for 24 hours or longer at 36 F, meaning that infections can occur when host plants are still dormant.
+
+
+</string>
+
+
+<string name="cladosporium_cucumarinum">
+
+Biology and Ecology:
+C. cucumerinum can attack any above-ground part of the plant. On leaves, slightly water-soaked or pale-green spots are the first symptoms. These spots are usually numerous and can appear on and between veins. Similar, elongate spots may develop on stems and petioles. Spots gradually turn grey or white and become roughly circular to angular, often with yellow margins.
+    They are superficially similar to those caused by angular leaf spot (Pseudomonas syringae pv. lachrymans) (Dixon, 1981). Fine veinlets in the spots may remain brown or tan and are distinct against a white background.
+
+In nature, conidiation on leaves tends to be sparse, a similar situation to that seen in some other pathogenic species of Cladosporium that cause leaf spots (for example, C. chlorocephalum). Dead tissue cracks, breaking away until the whole leaf has a ragged appearance. When young plants are infected the stem and leaves rapidly become rotten. In highly humid weather, an olive-coloured mycelial stroma develops over each lesion (Dixon, 1981). Affected leaves close to the tip of the plant may appear stippled, spotted, stunted and crinkled, resembling those infected by mosaic virus (Sherf and MacNab, 1975).
+
+Scab can cause the most severe damage on fruit. Lesions vary in different crops, depending on their susceptibility. Lesions first appear as small, water-soaked areas, about 3-4 mm diam., similar to insect stings. They become darker with age and may create a cavity in the fruit. A gummy brown substance is exuded in drops from the infected area, especially on fleshy fruit. Secondary soft-rotting bacteria may invade the cavities and lead to foul-smelling decay (Zitter, 1966).
+    In moist conditions, cavities are lined with a dark-green, velvety layer of fruiting fungus. Occasionally, adjoining spots unite, forming a lesion 1.5 cm or more diam. On pumpkin fruit, lesions may appear as sunken craters that could be confused with those caused by anthracnose.
+    On resistant fruit, the fungus is blocked from deep invasion by the formation of successive layers of callus and lesions appear as raised blisters or superficial pimples (Sherf and MacNab, 1975; Zitter, 1996).
+
+</string>
+
+
+<string name="Rhizoctonia">
+
+Biology :
+
+Sharp eyespot causes sometimes elliptical, often irregular light brown lesions circumscribed by a thin necrotic, darker margin (name!), on the outer leaf sheaths. This symptom is hard to differentiate from eyespot (strawbreaker, foot rot) caused by Oculimacula spp., but the lesions tend to be more superficial. Affected tissues rot leaving a hole in the sheath. Several lesions (lower than 10 mm in diameter) may occur at the base of the same plant.
+    Severe infections cause seedling blight, but most infected plants survive to maturity.
+
+Lesions on the stem are similar to those on sheaths. They are also similar to eyespot symptoms but are present up to 30 cm above the soil and do not contain the carbon-like structures found with infection by Oculimacula species. Light gray mycelium is often formed beneath lesions on mature stems.
+Severe infection may result in premature ripening. Whiteheads are formed and stems may lodge at the second or third internode. Affected plants do not exhibit twisting and lodging at the first internode that is typical for eyespot.
+Lifecycle:
+
+The fungus does not form asexual spores and the teleomorph Ceratobasidium cereale (Basidiomycota, Ceratobasidiales) is rare in nature. Ceratobasidium forms a hymenium with ellipsoid to oval basidia (7-19 µm) with ovoid basidiospores (6-12 x 3-6 µm).
+    As it is not observed in association with disease symptoms the importance of the perfect stage to the epidemiology of sharp eyespot is unknown.
+Cause
+
+Sclerotia are dark and irregular in shape and lack a distinct rind. They often occur within the stem or between the leaf sheaths. The mycelium is characterized by rectangular branching (T-shaped cells) of binucleate hyphae with dolipore septa. Mycelia from infected debris or from germinating sclerotia are the primary inoculum. Plants may be infected anytime during the growth season.
+    Infection occurs when root or outer leaf sheath tissue is penetrated.
+    The pathogen grows into the stem and sclerotia are formed in this structure or between the lower leaf sheath and stem. Infection is favored by cool, wet soils while subsequent disease development is optimum in cool dry soils.
+
+    Occurrence:
+Additional Crop Information
+
+Sharp eyespot occurs on wheat, barley, and rye; oats are less susceptible. Strains of C. cereale also cause yellow patch in turfgrass.
+Agricultural Importance
+
+As sharp eyespot is generally not considered a serious disease on wheat control is not necessary in most cases. Disease incidence tends to be greater in continuously cropped cereals.
+</string>
+
+
+
+<string name="Sclerotinia">
+
+Sclerotinia sclerotiorum is a plant pathogenic fungus and can cause a disease called white mold if conditions are correct. S. sclerotiorum can also be known as cottony rot, watery soft rot, stem rot, drop, crown rot and blossom blight.
+    A key characteristic of this pathogen is its ability to produce black resting structures known as sclerotia and white fuzzy growths of mycelium on the plant it infects. These sclerotia give rise to a fruiting body in the spring that produces spores in a sac which is why fungi in this class are called sac fungi (Ascomycetes).
+    This pathogen can occur on many continents and has a wide host range of plants. When S. sclerotiorum is onset in the field by favorable environmental conditions, losses can be great and control measures should be considered.
+
+
+Hosts and symptoms :
+
+Common hosts of white mold are herbaceous, succulent plants, particularly flowers and vegetables. It can also affect woody ornamentals occasionally, usually on juvenile tissue. White mold can affect their hosts at any stage of growth, including seedlings, mature plants, and harvested products. It can usually be found on tissues with high water content and in close proximity to the soil. One of the first symptoms noticed is an obvious area of white, fluffy mycelial growth.
+    Usually this is preceded by pale to dark brown lesions on the stem at the soil line. The mycelium then cover this necrotic area. Once the xylem is affected, other symptoms occur higher up in the plant. These can include chlorosis, wilting, leaf drop, and death quickly follows. On fruits, the initial dark lesions occur on the tissue that comes in contact with the soil. Next, white fungal mycelium covers the fruit and it decays. This can occur when the fruit is in the field or when in storage.
+
+Importance :
+
+White mold affects a wide range of hosts. It is known to infect 408 plant species.
+    Its diverse host range and ability to infect plants at any stage of growth makes white mold a very serious disease. The fungus can survive on infected tissues, in the soil, and on living plants. It affects young seedlings, mature plants, and fruit in the field or in storage. White mold can spread quickly in the field from plant to plant. It can also spread in a storage facility throughout the harvested crop. Some crops it affects commonly are soybeans,green beans, sunflowers, canola, and peanuts.
+Environment :
+
+The pathogenic fungus Sclerotinia sclerotioum proliferates in moist environments. Under moist field conditions, S. sclerotiorum is capable of completely invading a plant host, colonizing nearly all of the plant’s tissues with mycelium. Optimal temperatures for growth range from 15 to 21 degrees Celsius. Under wet conditions, S. sclerotiorum will produce an abundance of mycelium and sclerotia. The fungus can survive in the soil mainly on the previous year’s plant debris.
+    Like most fungi, S. sclerotiorum prefers darker, shadier conditions as opposed to direct exposure to sunlight.
+Life cycle:
+The lifecycle of Sclerotinia sclerotiorum can be described as monocyclic, as there are no secondary inoculums produced. During late summer/ early fall the fungus will produce a survival structure called a sclerotium either on or inside the tissues of a host plant. The following spring the dormant sclerotia will germinate to produce fruiting bodies called apothecia, which are small, thin stalks ending with a cup-like structure about 5-15mm in diameter (similar in shape to a small mushroom). The cup of the apothecium is lined with asci, in which the ascospores are contained.
+    When the ascospores are released from the asci, they are carried by the wind until they land on a suitable host. The ascospores will then germinate on the host and begin to invade the host’s tissues via mycelium, causing infection. S. sclerotiorum is capable of invading nearly all tissue types including stems, foliage, flowers, fruits, and roots. Eventually white, fluffy mycelium will begin to grow on the surface of the infected tissues. At the end of the growing season, S. sclerotiorum will once again produce sclerotia. The sclerotia will then remain on the surface of the ground or in the soil, on either living or dead plant parts until the next season.
+    The lifecycle will then continue respectively.
+</string>
+
+
+    <string name="Meloidogyne_incognita">
+Meloidogyne incognita is a nematode (roundworm) in the family Heteroderidae. It is commonly called the southern root-knot nematodeor the cotton root-knot nematode. This parasitic roundworm has worldwide distribution and numerous hosts.
+        It is an important plant parasite classified in parasitology as a root-knot nematode, as it prefers to attack the root of its host plant.
+
+When M. incognita attacks the roots of plants, it sets up a feeding location, where it deforms the normal root cells and establishes giant cells. The roots become gnarled or nodulated, forming galls, hence the term root-knot nematode.
+
+M. incognita has been found to be able to move along shallower temperature gradients (0.001C/cm) than any other known organism, an example of thermotaxis. The response is complicated and thought to allow the nematodes to move toward an appropriate level in soil,while they search for chemical cues that can guide them to specific roots
+</string>
+
+
+<string name="Acalymma_trivittatum">
+Adults :
+of both species feed on leaves of seedling cucurbits in
+the spring, but only the striped beetle will lay eggs on
+cucurbits.  Spotted adult beetles fly to other vegetable
+and grass hosts to lay eggs.  Larvae of striped beetles
+feed on cucurbit roots and can cause major yield loss
+by stunting and killing young plants.  During the summer,
+again adults of both species will feed on cucurbit leaves,
+but adults and larvae of striped beetles will feed on
+rinds of fruits, which can cause aesthetic injury (Fig. 3),
+and if severe, crop loss (Fig. 4).  In addition to direct
+feeding injury, cucumber beetles vector plant diseases,
+such as bacterial wilt, squash mosaic virus, and others
+(Table 1).  Bacterial wilt has not been detected in Utah,
+but squash mosaic virus does occur.  Cultural practices
+to deter cucumber beetles and insecticides are the
+key management tactics that effectively prevent crop
+damage.The bettle is about 1/3 inch (8-9 mm) long; black head, yellow
+prothorax (segment behind head), and wings with
+alternating yellow and black (3) stripes
+</string>
+
+<string name="Heliothrips">
+his species occurs worldwide in the tropics and sub-tropics. Although originally described from Europe, it originated in South America (CSIRO 2009). It was probably introduced into Europe on ornamental plants from tropical America.
+    This thrips can probably be found over much of the world due to its habit of living in greenhouses. Greenhouse thrips are found on wild and cultivated plants.
+
+In the United States, it is found outdoors in central and southern Florida and southern California. It is found in greenhouses throughout the United States. Sometimes it escapes from greenhouses in warm months in states north of Florida.
+Description and Biology:
+
+As it matures into an adult, head and thorax of the the greenhouse thrips darken to black and the abdomen changes from yellowto dark brown. Cool temperatures retard the color changes. The legs remain a light yellow and the antenna has eight segments. The greenhouse thrips is parthenogenic, in that it reproduces without mating, and males are seldom seen.
+    It is a poor flier and tends to remain in the shaded areas on the plant.
+</string>
+
+<string name="Medfly">
+General Information :
+
+The family Tephritidea (fruit flies) includes over 4000 species. C. capitata, commonly called Medfly, is one of the more widely spread species. Originally from Africa, it has spread today to all parts of the world, including Asia, Europe, South America, and Central America.
+
+It can cause significant damage to over 300 species of fruits and vegetables, and is considered to be one of the key agricultural pests in citrus (oranges, clementine, grapefruits, and cumquats), subtropical fruits (mangos, guavas, loquats, and figs), deciduous fruits (peaches, apricots, pears, apples, and plums), grapes and pomegranates.
+Development
+
+Medflies undergo a complete metamorphosis. Females lay their eggs approximately 1 mm beneath the skin of host fruit. After 2 to 3 days (longer if the temperature is lower) the eggs hatch. The larvae carve tunnels, eating their way through the fruit. Larval life may last 6 to 10 days (at 25ºC), and there are three larval stages, or instars.
+
+The larvae pupate in the soil, beneath the surface. The pupal stage lasts from 6 to 15 days at 25C.
+Reproduction :
+
+Adult Medflies reach sexual maturity approximately five days after emerging from the pupal stage. Copulation occurs at any time of the day. A female may lay up to 20 eggs per day, and 800 eggs during her lifetime, though 300 is more typical. The number of eggs laid is largely a function of the female’s lifespan.
+
+Males seek multiple mates (polygyny), whereas females tend to re-mate only if the initial mating was not sufficient.
+Lifespan per Longevity
+
+The maximum lifespan of adult medflies may be six months or even longer, although cool conditions with abundant food and water are necessary for the flies to survive this long. Most live much shorter time, and in most populations at least half are dead in less than 60 days.
+Behavior
+
+These flies are usually sedentary, staying in the same area as long as there is fruit present to serve as food and egg-laying sites. Passively they can be dispersed by the wind for distances of few Km
+</string>
+
+
+
+    <string name="Phyllocnistis_citrella">
+General Information :
+The citrus leafminer (Phyllocnistis citrella) is a moth of the Gracillariidae family.
+        It is also known as CLM in agriculture. It was first found in Florida in 1993, but is now found all over the world, including Argentina, Australia, Brazil, China, Corsica, Costa Rica, Cuba, India, Israel, Malaysia, Mauritius, South Africa, Sri Lanka, Mexico, the Philippines, Spain, and other parts of the United States.
+
+The wingspan is about 5 mm.
+
+The larvae are considered a serious agricultural pest on Citrus species, such as Aegle marmelos, Atalantia, Citrofortunella microcarpa, Citrus limon, Citrus paradisi, Citrus maxima, Fortunella margarita, Murraya paniculata and Poncirus trifoliate. Larvae have also been recorded on Garcinia mangostana, Pongamia pinnata, Alseodaphne semecarpifolia, Loranthus and Jasminum sambac.
+        They mine the leaves of their host plant. The mine consists of a long epidermal corridor with a well-marked central frass line. The mine is mostly lower-surface, but sometimes upper-surface, and rarely on the rind of the developing fruit. Citrus leaf miner larvae are thus protected from many topic insecticide treatments.
+        Pupation takes place in a chamber at the end of the corridor, under an overturned part of the leaf margin.
+</string>
+
+ <string name="Planococcus_citri">
+
+Biology :
+
+Citrus mealybugs live on all aerial parts of the host plant. They reduce its vigour by extracting plant sap, and they produce copious amounts of honeydew, which covers surfaces beneath the feeding sites and enables the growth of sooty mould. Extensive sucking on fruits may damage them directly, e.g. by causing them to tear.
+     In the case of heavy infestation, white, fluffy masses consisting of wax secretions are found sticking to all plant parts. In severe cases, the sap loss seriously affects the health of the plant: leaves become chlorotic and distorted, or even wilt and fall off, and fruits are dropped. Occasionally, growth will be stunted or parts of the plant will die off. The damage is normally most pronounced during the dry season.
+Lifecycle :
+
+Each female of Planococcus citri lays up to 600 eggs into an egg sac, which it deposits anywhere on the plant and then protects with fluffy white tufts of wax filaments. After 1-3 weeks, the first instar larvae hatch. These „crawlers“ are very active and quickly disperse over the plant in search of a suitable feeding site. After passing through two more instars, the female larva will molt towards an adult; the male, however, will form a pupa, from which it emerges a few days later. Unlike scale insects, the mealybug females stay mobile and can therefore spread themselves.
+     The winged males are rarely seen, as they are very short-lived: they fly mainly during the early morning and are attracted to the females by a sex pheromone.
+Depending on the climatic conditions, there can be many generations per year, and all development stages are usually found side-by-side at any time. Like other mealybugs, P. citri is frequently attended to, and transported by ants.
+
+     Occurrence:
+Additional Crop Information
+
+Besides Citrus, a large number of important crops grown in warm climates, including (but not limited to) cocoa, banana, coffee, pineapple, pumpkin, fig, vine etc.
+Agricultural Importance
+
+P. citri is polyphageous and occurs on an enormous range of flowering plants besides Citrus spp. It is found worldwide, and frequently as a pest in greenhouses in temperate climates. While normally causing only moderate damage, mealybugs can sporadically become a dangerous pest when favorable conditions lead to rapid population increase.
+</string>
+
+
+
+   <string name="Red_scale">
+
+Biology :
+Red scale has a thin, circular, leathery covering over the soft, flattened, shield shaped, creamy-yellow insect.
+       The reddish-brown scale cover of the adult female is about 2 mm across.
+       The cover of the male scale is elongated, smaller and paler than that of the female.
+       The adult female gives birth to 100-150 mobile young called crawlers, at the rate of 2-3 per day over a six to eight week period.
+       The crawlers emerge from under their mothers scale cover, and search for a suitable feeding site on leaves, shoots or fruit.
+       The wind can blow crawlers wandering on the tree canopy into neighbouring trees or orchards
+</string>
+
+
+  <string name="Lepidosaphes_beckii">
+
+Biology :
+Lepidosaphes beckii also known as purple scale, mussel scale, citrus mussel scale, orange scale, comma scale and mussel purple scale is a scale insect that is a pest of Citrus trees.
+      The small insects attach themselves to leaves, fruits and small branches and cause injury by sucking the trees sap
+</string>
+<string name="Icerya">
+Icerya purchasi (common name: cottony cushion scale) is a scale insect that feeds on more than 50 families of woody plants,most notably on Citrus and Pittosporum.
+    Originally described in 1879 from specimens collected in New Zealand as pests of kangaroo acacia,it is now found worldwide where citrus crops are grown. The cottony cushion scale originates from Australia.
+
+This scale infests twigs and branches. The mature hermaphrodite is oval in shape, reddish-brown with black hairs, 5 mm long. When mature, the insect remains stationary, attaches itself to the plant by waxy secretions, and produces a white egg sac in grooves, by extrusion, in the body which encases hundreds of red eggs.
+    The egg sac will grow to be two to three times as long as the body. Newly hatched nymphs are the primary dispersal stage, with dispersion known to occur by wind and by crawling. Early stage nymphs feed from the midrib veins of leaves and small twigs, and do the bulk of the damage. At each molt, they leave at the old feeding point the former skin and the waxy secretions in which they had covered themselves and from which their common name is derived.
+    Unlike many other scale insects, they retain legs and a limited mobility in all life stages. Older nymphs migrate to larger twigs and eventually as adults to branches and the trunk. Their life cycle is highly temperature dependent, as the length of time in each stage of life is longer in cold temperatures than high temperatures.
+
+True males are uncommon to rare overall, and in many infestations are not present. Pure females are unknown. Self-fertilization by a hermaphrodite will produce only hermaphrodites. Matings of a male and hermaphrodite will produce both males and hermaphrodites.
+
+In addition to the direct damage from sap sucking, the insects also secrete honeydew, on which sooty mold often grows and causes further damage to the host plant. Some ants will also consume this honeydew.
+</string>
+
+<string name="Citrus_red_mite">
+Citrus red mite (Panonychus citri) damages the leaves and fruit of citrus plants.
+
+Citrus red mite was first recorded in Sydney in 1966 and is established across the Central Coast region of New South Wales.
+
+Citrus red mite is not a serious pest on the Central Coast where high humidity and natural enemies keep population levels low.
+    However, citrus red mite could be very damaging if it were to spread to inland areas where dry conditions would be more favourable for mite development.
+</string>
+
+    <string name="Ceroplastes_rusci">
+
+This scale is deeply encased in pinkish-gray wax, which is divided into three wax plates on each side with additional plates at the anterior and posterior ends. The single large dorsal plate has a central nucleus.
+        Dorsal and lateral plates are separated from each other by dark red lines which are the color of the scales body beneath the wax.
+        The anterolateral and mediolateral plates have some white wax which indicates the stigmatic wax bands.
+    Adult female fig wax scale, Ceroplastes rusci (Linnaeu)
+Biology:
+
+The biology of the fig wax scale has not been studied in Florida but has been described on fig trees in Israel (Bodkin 1927). In general, adult females overwinter on twigs and produce eggs very early in the spring.
+        The eggs hatch to crawlers which move to feed on leaves.
+        After about one month, the crawlers molt to 2nd instar nymphs and migrate to the leaf petioles or to new shoots.
+        Maturity is attained in the summer, and a new generation of crawlers is produced
+</string>
+
+
+<string name="Αceria_fici">
+DESCRIPTION OF THE PEST
+
+The fig mite is a widely distributed, microscopic mite (0.003 to 0.005 inch long) that has two pairs of legs near the anterior end of a wedge-shaped, pale yellow body.
+DAMAGE
+
+The fig mite infests bud scales and young leaves. Feeding causes a faint russetting of the leaves, generally in the interior portion of the canopy and may result in leaf drop and stunting of twigs. More importantly, this mite transmits the fig mosaic virus.
+    The virus is not present in the egg stage of the mite, but once acquired through feeding is retained through molts.
+</string>
+
+<string name="Lonchaea">
+The Lonchaeids are small flies with a black or blackish-blue body, which is often metallic, glossy, and with hyaline (lacking dark spots) wings. The head is hemispherical (shorter than high) and the lunule is well defined. The third antennal segment is usually elongated and the antennae are decumbent. Ocelli are present and the postocellar bristles are divergent.
+    The frons is narrow in males, in females it is broad. One pair of orbital bristles is on the head. The postvertical bristles on the head are parallel or weakly divergent. Distinctive vibrissae on the head are lacking, but vibrissa-like bristles are present along the border of the mouth. A subapical bristle is absent on tibia. The wing venation is complete. The costa has two interruptions- near the humeral crossvein and before the subcostal vein.
+    The subcostal vein varies in size. The anal vein of the wing is shortened. The abdomen is oval and rather flat, The abdomen in females has a long, sclerotized ovipositor. The ovipositor is rather long and triangular.
+
+This family is readily distinguished from the family Periscelididae by the entire subcostal vein, from the Sapromyzidae by the absence of preapical tibial bristles on at least the anterior and posterior tibia, and from Pallopteridae by the presence of a propleural bristle and the exposed frontal lunule.
+Morphological details of the Lonchaeidae
+
+The larva is amphipneustic (has only the anterior and posterior pairs of spiracles) slender tapering at the anterior, and smooth except for ventral creeping welts. The cephalopharyngeal skeleton of the larva consists of two stout untoothed mandibles, a dental sclerite, an elongate hypopharyngeal sclerite, a parastomal bar, and an anvil-shaped tentoropharyngeal sclerite.
+    The anterior spiracles (prothoracic spiracles) each have five to ten papillae which are arranged in a fan shape. The posterior spiracles (on the anal segment) are placed on a raised, sclerotized posterior spiracular tubercle. Each spiracle has three oval, radially arranged slits and four groups of branched spiracular hairs.
+
+The pupa is enclosed within a puparium.
+Biology :
+The larvae are mostly phytophagous, feeding on already damaged plant tissues, although coprophagous, mycophagous, saprophagous, and predatory species are known. Larvae may be found under bark, in tunnels of bark beetles, in decomposing wood and other decomposing plant residue, and in dung. Larvae of some species cause formation of galls on plants (including cereals), while larvae of other species live in juicy fruits (figs, etc.).
+    Flies are found on trunks of trees, logs, cut wood, leaves of shrubs, and in grass. Some species are agricultural pests. The polyphagous and oligophagous species of the family Tephritidae (also called fruit flies) and Lonchaeidae are the main pests of horticulture in the neotropical region. Also in the neotropics, Neosilba perezi (Romero and Ruppel), known as the cassava shoot fly, is a pest of cassava (Manihot esculenta Crantz).
+    Dasiops passifloris McAlpine (Diptera: Lonchaeidae) infests the fruit of the corky-stemmed passion flower Passiflora pallida L. in the Americas. Species in the genus Earomyia are pests of fir and spruce trees, destroying the seeds and cones. The black fig-fly Silba adipata McAlpine is a pest of figs.
+    Lonchaea chorea is synanthropic and may become a nuisance pes
+</string>
+
+
+    <string name="Ascochyta">
+Ascochyta is a genus of ascomycete fungi, containing several species that are pathogenic to plants, particularly cereal crops.
+        The taxonomy of this genus is still incomplete. The genus was first described in 1830 by Marie-Anne Libert, who regarded the spores as minute asci and the cell contents as spherical spores.
+        Numerous revisions to the members of the genus and its description were made for the next several years. Species that are plant pathogenic on cereals include, A. hordei, A. graminea, A. sorghi, A. tritici.
+        Symptoms are usually elliptical spots that are initially chlorotic and later become a necrotic brown.
+        Management includes fungicide applications and sanitation of diseased plant tissue debris.
+</string>
+
+
+
+      <string name="Botrytis">
+Botrytis cinerea is characterized by abundant hyaline conida (asexual spores) borne on grey, branching tree-like conidiophores. The fungus also produces highly resistant sclerotia as survival structures in older cultures. It overwinters as sclerotia or intact mycelia, both of which germinate in spring to produce conidiophores.
+          The conidia, dispersed by wind and by rain-water, cause new infections.
+
+Different Botrytis cinerea strains show considerable genetic variability (polyploidy).
+
+Gliocladium roseum is a fungal parasite of Botrytis cinerea.
+</string>
+
+
+
+
+
+     <string name="Uromyces_phaseoli">
+Uromyces phaseoli, the causal agent of bean rust, suppressed shoot and root growth of three bean cultivars, reducing root weight more than shoot weight.
+         The greatest suppression of root weight was on the cultivar that appeared most susceptible by visual ratings of shoot symptoms. Meloidogyne incognita suppressed shoot and root growth of all test cultivars; root weight reductions differed among cultivars identical in susceptibility to this pathogen in root-gall rating tests.
+         Infection of plants with both pathogens suppressed plant weights significantly more than did infection by either pathogen alone, evidencing an additive effect. U. phaseoli and M. incognita on the same plant influenced the reproduction of one another, presumably through effects on the host.
+         Fungal uredia were reduced in size and sporulation capacity; M. incognita produced fewer root galls, and fewer eggs per egg mass.
+</string>
+
+<string name="Bruchus">
+Description :
+
+The genus Bruchus is well-defined by a number of characters, such as the shape of the pronotum, an arrangement of spines or plates on the tibia of the middle leg of the male, and the unique morphology of the male genitalia.
+    The latter are slender and elongated, and the eighth abdominal sternite in particular is large and sclerotized, with a characteristic boomerang shape. This part of the genitalia has been called the urosternite, but other authors suggest the term ventral plate is more appropriate.
+    The robust ventral plate of Bruchus helps distinguish the genus from other seed-beetles, which tend to have vestigial or lobe-like ventral plates. The ventral plate is useful in identification because each species seems to have a distinctive shape to it, and it does not vary among individuals of one species.
+
+In general, these beetles have black bodies with patterns of white or yellow setae. Some species have red or red-orange legs. The elytra are marked with straight lines.
+Biology :
+
+Bruchus are specialists, feeding and developing almost exclusively on plants of the legume tribe Fabeae (Vicieae), which includes peas, sweet peas, lentils, and vetches.
+    Examples include cow vetch (Vicia cracca), which is attacked by at least nine Bruchus species, common vetch (Vicia sativa), which is host to five recorded species, and meadow vetchling (Lathyrus pratensis) and tuberous pea (Lathyrus tuberosus), which are each attacked by four species. Some Bruchus species are monophagous, living on just one host plant species.
+
+Some species of Lathyrus have an antipredator adaptation that may have evolved in response to Bruchus and other seed-beetles. The fruit pods develop a callus when attacked, by the beetle, and this growth is mediated by bruchins, compounds so far known only from seed-beetles.
+
+These beetles are univoltine, producing one generation per year.[1] The female lays eggs on the fruit pod of its host legume in spring and summer, and the larva enters a seed to develop. The adult emerges, but remains in diapause through fall and winter, waiting until spring to reproduce
+</string>
+
+
+
+
+    <string name="Liriomyza">
+Description :
+ Leafminers have a relatively short life cycle. The time required for a complete life cycle in warm environments such as Florida is often 21 to 28 days, so numerous generations can occur annually in tropical climates. Leibee (1984) determined growth at a constant 25C, and reported that about 19 days were required from egg deposition to emergence of the adult.
+        Development rates increase with temperature up to about 30C temperatures above 30C are usually unfavorable and larvae experience high mortality. Minkenberg (1988) indicated that at 25C the egg stage required 2.7 days for development the three active larval instars required 1.4, 1.4, and 1.8 days, respectively and the time spent in the puparium was 9.3 days.
+        Also, there was an adult preovipostion period that averaged 1.3 days. The temperature threshold for development of the various stages is 6 to 10C except that egg laying requires about 12C.
+
+Egg: Eggs tend to be deposited in the middle of the plant; the adult seems to avoid immature leaves. The female deposits the eggs on the lower surface of the leaf, but they are inserted just below the epidermis. Eggs are oval in shape and small in size, measuring about 1.0 mm long and 0.2 mm wide. Initially they are clear but soon become creamy white in color.
+</string>
+
+
+<string name="Sitona_macularius">
+Description :
+    itona is a large genus of weevils in the family Curculionidae native to the Nearctic and Palaearctic regions. Over 100 species have been described.
+    Sitona is easily distinguished from related genera by flat, recumbent scales on the mandibles, by the absence of an oval scar on the mandibles, by short and broad rostrum with a deep, longitudinal, median groove, and by dense scales on the body.
+
+Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the root nodules[4] and the adults eat the leaves. Several species of Sitona are important agricultural pests of legumes, especially in its native regions and introduced populations in South Africa, Australia and New Zealand
+</string>
+
+
+
+</resources>

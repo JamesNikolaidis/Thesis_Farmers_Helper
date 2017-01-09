@@ -1,0 +1,104 @@
+{
+  "project_info": {
+    "project_number": "605783459774",
+    "firebase_url": "https://farmers-helper-44f7a.firebaseio.com",
+    "project_id": "farmers-helper-44f7a",
+    "storage_bucket": "farmers-helper-44f7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605783459774:android:b56687fdcb2de6f2",
+        "android_client_info": {
+          "package_name": "com.applicationforlife.jamesnikolaidis.farmers_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605783459774-gash3m762qld2mtli79q2sn5kp7i288u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvJZiwnXHmJK6vTehjmSz-Ypl12VUEyuE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605783459774:android:bb51bd874c4c2758",
+        "android_client_info": {
+          "package_name": "com.applicationforlife.jamesnikolaidis.thesis_application_farmers_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605783459774-gash3m762qld2mtli79q2sn5kp7i288u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvJZiwnXHmJK6vTehjmSz-Ypl12VUEyuE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:605783459774:android:c315bca3318bcfbb",
+        "android_client_info": {
+          "package_name": "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "605783459774-gash3m762qld2mtli79q2sn5kp7i288u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvJZiwnXHmJK6vTehjmSz-Ypl12VUEyuE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

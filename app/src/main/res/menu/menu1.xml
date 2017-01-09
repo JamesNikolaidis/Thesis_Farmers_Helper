@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+  >
+        <item android:id="@+id/BiologicalTips"
+            android:showAsAction="always"
+            android:title="Bio Help"
+            android:onClick="MenuClick"
+
+
+            />
+    <item
+        android:id="@+id/miCompose"
+        android:title="Close"
+        android:onClick="MenuClick">
+    </item>
+    <item
+        android:id="@+id/chat"
+        android:title="Chat"
+        android:onClick="MenuClick"
+        >
+    </item>
+    <item
+        android:id="@+id/Pdf"
+        android:title="See Pdf"
+        android:onClick="MenuClick"
+        >
+    </item>
+    <item
+        android:id="@+id/ProductLabel"
+        android:title="Product Label"
+        android:onClick="MenuClick">
+    </item>
+</menu>

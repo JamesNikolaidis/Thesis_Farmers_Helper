@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/first_panel_down_opacity"
+
+   >
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            style="@style/Problem_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_marginBottom="31dp"
+            />
+
+        <Button
+        android:id="@+id/Problem_Select_Button"
+        android:text="Select"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_width="158dp"
+        android:layout_height="34dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#3018A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+            android:onClick="Hey"
+            android:elevation="0dp" />
+    </LinearLayout>
+
+    <LinearLayout
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    android:orientation="vertical"
+    android:id="@+id/Specify_Linear"
+    android:visibility="invisible">
+
+        <TextView
+            style="@style/Problem_TextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:layout_marginBottom="31dp"
+            />
+        <Button
+            android:id="@+id/Specify_Problem_Select_Button"
+            android:text="Select"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:layout_width="158dp"
+            android:layout_height="34dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#3018A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            />
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BeforeFinal_Linear"
+        android:visibility="invisible"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
+        <TextView
+            style="@style/Problem_TextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:text="Solution For"
+            android:layout_marginBottom="31dp"
+            />
+        <Button
+            android:id="@+id/Last_Select_Button"
+            android:text="Select"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:layout_width="158dp"
+            android:layout_height="34dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#3018A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Final_Linear"
+        android:visibility="invisible"
+        android:layout_marginTop="30dp">
+        <Button
+            android:id="@+id/LastPick_Select_Button"
+            android:text="Select"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            android:layout_width="158dp"
+            android:layout_height="34dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#3018A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            />
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:id="@+id/information_image"
+        android:src="@drawable/bugs_icon"
+        android:layout_marginTop="10dp"
+         />
+    <TextView
+        android:text="Sorry there is no information for now . Please try another day.
+        Thank you for your understand."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/information_text_view"
+        android:layout_marginTop="28dp" />
+    <Button
+        android:text="Cancel"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cancel"
+        android:layout_marginBottom="170dp" />
+
+
+</LinearLayout>
+</ScrollView>

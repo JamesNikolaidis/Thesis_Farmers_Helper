@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/payment_layout_shape"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="Please fill the fields below"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textStyle="italic"
+        />
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:src="@drawable/visa"
+                android:id="@+id/imageView" />
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:src="@drawable/paypal"
+                />
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:src="@drawable/mastercard"
+                />
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="left|center"
+               android:text="Name : "
+               android:textSize="20dp"
+               android:textColor="@android:color/black"/>
+           <EditText
+               android:layout_marginLeft="100dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColorHint="@android:color/black"
+               android:textSize="20dp"
+               android:hint="Name"
+               android:id="@+id/NameEditText"
+               android:background="@drawable/toolbar_shape"
+               android:textColor="@android:color/black"/>
+
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:text="Last Name : "
+                android:textSize="20dp"
+                android:textColor="@android:color/black"/>
+            <EditText
+                android:layout_marginLeft="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:hint="Give Last Name "
+                android:id="@+id/LastNameEditText"
+                android:textColorHint="@android:color/black"
+                android:textSize="20dp"
+                android:background="@drawable/toolbar_shape"
+                android:textColor="@android:color/black"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:text="Card Number : "
+                android:textSize="20dp"
+                android:textColor="@android:color/black"/>
+            <EditText
+                android:layout_marginLeft="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:hint="Give Card Number "
+                android:id="@+id/CardPhoneEditText"
+                android:textColorHint="@android:color/black"
+                android:textSize="20dp"
+                android:background="@drawable/toolbar_shape"
+                android:textColor="@android:color/black"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity=""
+                android:id="@+id/PayButton"
+                android:text="Pay"
+                />
+            <Button
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/CloseButton"
+                android:text="Close"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_blue_light"
+        android:layout_height="50dp"
+       >
+
+        <TextView
+            android:text="Product Name : "
+            android:layout_width="185dp"
+            android:layout_height="match_parent"
+            android:id="@+id/productNameText"
+            android:gravity="center"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:text="Name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/productName"
+            android:gravity="center"
+            android:textSize="25dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_blue_light"
+        >
+
+        <TextView
+            android:text="Product Price :"
+            android:layout_width="190dp"
+            android:layout_height="match_parent"
+            android:id="@+id/productPriceText"
+            android:gravity="center"
+            android:textSize="25dp"/>
+        <TextView
+            android:textSize="25dp"
+            android:text="Price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/productPrice"
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/holo_blue_light"
+        android:weightSum="1">
+
+
+        <TextView
+            android:text="Product Manufacter :"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/productManufacterText"
+            android:gravity="center"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:textSize="20dp"
+            android:text="Manufacter"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/productManufacter"
+            android:gravity="center"
+            android:layout_weight="0.95" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Distributer List"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textSize="27dp"
+        android:id="@+id/textView6"
+        android:textColor="@android:color/holo_blue_light"
+        android:layout_marginTop="38dp"
+        android:layout_alignParentStart="true"
+        android:clickable="false"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Distributer"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"
+        android:background="?android:attr/textColorHighlight">
+
+    </Spinner>
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Drug For"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textSize="27dp"
+        android:id="@+id/textView7"
+        android:textColor="@android:color/holo_blue_light"
+        android:layout_marginTop="38dp"
+        android:layout_alignParentStart="true"
+        android:clickable="false"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DrugFor"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"
+        android:background="?android:attr/textColorHighlight">
+
+    </Spinner>
+
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Active Substance"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textSize="27dp"
+        android:id="@+id/textView8"
+        android:textColor="@android:color/holo_blue_light"
+        android:layout_marginTop="38dp"
+        android:layout_alignParentStart="true"
+        android:clickable="false"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ActiveSubstance"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:textAlignment="center"
+        android:background="?android:attr/textColorHighlight">
+
+    </Spinner>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
+
+</ScrollView>

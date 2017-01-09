@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+                >
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:weightSum=".5"
+                    android:layout_height="113dp"
+                    android:id="@+id/ImageView"
+                    android:clickable="false"
+                    android:src="@drawable/farming1"
+                    android:scaleType="fitStart"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="?attr/isLightTheme" />
+
+                <TextView
+                    android:layout_width="210dp"
+                    android:layout_height="128dp"
+                    android:id="@+id/TextView"
+                    android:textSize="16dp"
+                    android:gravity="center"
+                    android:text="HFssjdfs"/>
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="12dp"
+            android:layout_marginTop="4dp"
+            android:background="#33B5E5" />
+</LinearLayout>
