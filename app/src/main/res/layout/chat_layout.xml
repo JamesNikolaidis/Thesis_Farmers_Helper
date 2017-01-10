@@ -1,19 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-
+//Search for Subject layout
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right">
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:hint="Search..."
+            android:id="@+id/Chat_Search_Edit_Text"
+            android:visibility="invisible"/>
+        <ImageView
+            android:layout_marginLeft="70dp"
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:id="@+id/Chat_Search_ImageView"
+            android:clickable="true"
+            android:src="@drawable/search_icon"/>
+    </LinearLayout>
 
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/Chat_List_View">
 
 
 
     </ListView>
 
+   //Insert Message Layout below
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="17dp"
+            android:layout_gravity="center"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Write Message"
+            android:id="@+id/Chat_Name_Edit_Text"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Message"
+            android:textSize="17dp"
+            android:layout_gravity="center"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Write Message"
+            android:id="@+id/Chat_Message_Edit_Text"
+            android:textAlignment="center"/>
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/Chat_Close_Button"
+            android:text="Close Chat"/>
+        <Button
+            android:layout_marginLeft="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/Chat_Send_Message_Button"
+            android:text="Send Message"/>
+
+    </LinearLayout>
+
 
 </LinearLayout>
+
+</ScrollView>

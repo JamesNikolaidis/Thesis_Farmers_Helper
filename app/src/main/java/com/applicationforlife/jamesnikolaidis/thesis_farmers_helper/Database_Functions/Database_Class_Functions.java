@@ -1,7 +1,9 @@
 package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions;
 
 import android.content.Context;
+import android.util.Log;
 
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Chat_Class.Chat_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Company;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Distributer;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
@@ -16,6 +18,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by James Nikolaidis on 11/6/2016.
@@ -31,15 +37,14 @@ public class Database_Class_Functions  {
     private Firebase mRootVar;
     private FirebaseDatabase mDatabase ;
     private FirebaseStorage mStorage;
-    private Firebase mProducts , mStocks , mCompany , mDistributer;
-    private DatabaseReference mDatabaseReference;
+    private Firebase mProducts , mStocks , mCompany , mDistributer,mChat;
     private static ArrayList<Products> mProductsMap;
-    private static String Distributer;
     private static Company mCompanyObject;
     private static Distributer mDistributerObject;
     private static boolean glag = false;
     private static ArrayList<ArrayList<String>> mDistributerList;
-    private static int mycounter = 0;
+    private static int mycounter = 0,mMessageCounter=0;
+    private static Iterator<String> MessageList , MessageKeyList;
 
 
 
@@ -56,11 +61,13 @@ public class Database_Class_Functions  {
             mStocks = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Stocks");
             mProducts=new Firebase("https://farmers-helper-44f7a.firebaseio.com/Products");
             mCompany= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Company");
+            mChat= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat");
             mDistributer= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Distributers");
             mProductsMap =  new ArrayList<>();
             mCompanyObject = new Company();
             mDistributerObject = new Distributer();
             mDistributerList = new ArrayList<>();
+
 
         }
 
@@ -213,5 +220,59 @@ public ArrayList<Products> getProductsData(){
          public void ClearDistArrayList(){
                  mDistributerList=new ArrayList<>();
             }
+
+
+        public void MessagesCount(){
+
+            mChat.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                           // mMessageCounter++;
+
+                    Chat_Class testClass = dataSnapshot.getValue(Chat_Class.class);
+                    Map<String,String> mTestingMap  =  new HashMap<String, String>();
+                    mTestingMap=testClass.mMessageArrayList;
+                    Set<String> set = mTestingMap.keySet();
+
+                    MessageList = mTestingMap.values().iterator();
+                    Iterator<String> key = set.iterator();
+                    do{
+                        Log.e("TESTING",key.next());
+                        Log.e("TESTING",MessageList.next());
+
+                    }while(MessageList.hasNext());
+
+                }
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {}
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
+
+                @Override
+                public void onCancelled(FirebaseError firebaseError) {}
+            });
+
+
+        }
+
+
+        public void InsertMessage(Chat_Class chat_class){
+
+            DatabaseReference mCloneRef = FirebaseDatabase.getInstance().getReference().child("Chat");
+
+
+                Log.e("TESTING", "IS NuLL");
+                Map<String,Object> fire = new HashMap<>();
+                fire.put("Messages",chat_class);
+                mCloneRef.updateChildren(fire);
+
+
+
+        }
+
 
 }
