@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
 
 public class FarmerActivity extends AppCompatActivity {
-
+//one comment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
