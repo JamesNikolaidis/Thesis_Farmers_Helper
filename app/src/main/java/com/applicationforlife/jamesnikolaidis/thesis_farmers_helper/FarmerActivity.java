@@ -16,7 +16,6 @@ public class FarmerActivity extends AppCompatActivity {
         Display display = getWindowManager().getDefaultDisplay();
         Point point = new Point();
         display.getSize(point);
-
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {

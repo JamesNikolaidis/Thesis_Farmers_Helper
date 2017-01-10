@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.Toolbar;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Chat_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.PaymentDialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
 
@@ -146,6 +147,8 @@ public class Second_Screen extends FragmentActivity {
         }else if(item.getItemId()==R.id.ProductLabel) {
             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/farmers-helper-44f7a.appspot.com/o/79999925c_Belt_24WG_50g_Box_Greek_Bonus_Label.pdf?alt=media&token=feecd676-5143-4548-9657-368029312866"));
            startActivity(browserIntent);
+        }else if(item.getItemId()==R.id.chat){
+            Chat_Dialog.DisplayChat(getApplicationContext(),Second_Screen.this);
         }
 
 
