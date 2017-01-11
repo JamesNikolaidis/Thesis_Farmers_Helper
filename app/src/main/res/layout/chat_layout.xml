@@ -9,14 +9,16 @@
     >
 //Search for Subject layout
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="right">
         <EditText
+
             android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:hint="Search..."
+            android:layout_height="50dp"
+            android:hint="Search...(Weeds or Farming)"
             android:id="@+id/Chat_Search_Edit_Text"
             android:visibility="invisible"/>
         <ImageView
@@ -31,7 +33,7 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:id="@+id/Chat_List_View">
 
 

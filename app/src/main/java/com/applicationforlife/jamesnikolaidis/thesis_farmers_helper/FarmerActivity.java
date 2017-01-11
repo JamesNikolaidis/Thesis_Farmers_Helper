@@ -19,11 +19,16 @@ public class FarmerActivity extends AppCompatActivity {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-
                 Intent passenger = new Intent(FarmerActivity.this,StartAcitvity.class);
                 startActivity(passenger);
+
+
+
+
+
+
             }
-        }, 500);
+        }, 5000);
 
     }
 
