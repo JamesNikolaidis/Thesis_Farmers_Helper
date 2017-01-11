@@ -17,6 +17,7 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Fun
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Chat_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.PaymentDialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar_Class.SimplyProgressBar;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,7 +43,8 @@ public class Second_Screen extends FragmentActivity {
     private  int counter;
     private static Database_Class_Functions database_class_functions ;
     private  Handler handler = new Handler();
-    private ProgressDialog  mProgressDialog;
+    private SimplyProgressBar mSimplyProgressBar;
+    private ProgressDialog mProgressDialog;
     private Timer timer;
 
 
@@ -60,9 +62,7 @@ public class Second_Screen extends FragmentActivity {
         database_class_functions=Database_Class_Functions.GetDatabaseInstance(getApplicationContext()); //init
         database_class_functions.GetProduct(Preference.getString("SpecifyProblem","wrong")); //get's the product's list for the specific problem
         database_class_functions.FindAndCollectDistributerDetails(Preference.getString("SpecifyProblem","wrong")); //get's Distributer's list for specific problem
-
-
-
+        mSimplyProgressBar = new SimplyProgressBar();
 
         //Start Thread to  Load the Data From Firebase Database , we need at least 2sec until the list get filled.
             new Thread(new Runnable() {
@@ -75,15 +75,11 @@ public class Second_Screen extends FragmentActivity {
                         @Override
                         public void run() {
 
-                            ActivateProgressDialog(); //activate the Dialog using the method ActivateProgressDialog() from the Bottom
+                            mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this);//activate the Dialog using the method ActivateProgressDialog() from the Bottom
                             SetTimer(10); //Set the Timer that Progress Bar will be on the Screen
 
                         }
                     },0);
-
-
-
-
                     //***********Call the appropiete method for fetching the data*******************//
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -101,7 +97,7 @@ public class Second_Screen extends FragmentActivity {
 
                                     @Override
                                     public void onPageSelected(int position) {
-                                        ActivateProgressDialog();
+                                         mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this);
                                         SetTimer(3);
                                     }
 
@@ -138,6 +134,8 @@ public class Second_Screen extends FragmentActivity {
     }
 
 
+
+    // On menu click listener below
     public void MenuClick(MenuItem item) throws IOException {
         //***********Set menu's clicks methods********************/
         if(item.getItemId()==R.id.miCompose){System.exit(0);} //if users click the "Log Out" option
@@ -151,12 +149,9 @@ public class Second_Screen extends FragmentActivity {
             Chat_Dialog.DisplayChat(getApplicationContext(),Second_Screen.this);
         }
 
-
-
-
     }
 
-
+        //Hide the progress bar after finish below
             public void HideDialogAndZeroTheTimer(){
 
                     handler.postDelayed(new Runnable() {
@@ -172,6 +167,7 @@ public class Second_Screen extends FragmentActivity {
 
             }
 
+        //Timer code below
                 public void SetTimer(final int time){
 
                     timer = new Timer();
@@ -187,25 +183,9 @@ public class Second_Screen extends FragmentActivity {
 
                         }
                     },0,1000);
-
-
-
                 }
+            //End of timer class code
 
-
-
-
-                public void ActivateProgressDialog(){
-
-                    mProgressDialog = new ProgressDialog(getLayoutInflater().getContext());
-                    mProgressDialog.setMessage("Please wait while we fetching the Products from Database...");
-                    mProgressDialog.setMax(100);
-                    mProgressDialog.setCancelable(false);
-                    mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                    mProgressDialog.setProgressDrawable(Second_Screen.this.getResources().getDrawable(R.drawable.progress_bar_style));
-                    mProgressDialog.setProgress(0);
-                    mProgressDialog.show();
-                }
 
 
 

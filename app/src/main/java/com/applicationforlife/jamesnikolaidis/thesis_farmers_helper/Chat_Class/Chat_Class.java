@@ -1,6 +1,6 @@
 package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Chat_Class;
 
-import java.util.Map;
+import java.util.ArrayList;
 
 /**
  * Created by James Nikolaidis on 1/10/2017.
@@ -9,18 +9,21 @@ import java.util.Map;
 public class Chat_Class {
 
 
-    public Map<String,String> mMessageArrayList;
-
-
+    public ArrayList<String> mMessageArrayList;
     public Chat_Class(){
 
+
     }
 
 
 
-    public void setmMessageArrayList(Map<String,String> mMessageArrayList) {
-        this.mMessageArrayList = mMessageArrayList;
-    }
+
+
+
+
+
+
+
 
 
 }

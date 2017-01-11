@@ -39,8 +39,6 @@ public class PaymentDialog {
         mCarNumberTextView = (TextView)dialog.findViewById(R.id.CardPhoneEditText);
         mPayButton = (Button)dialog.findViewById(R.id.PayButton);
         mCloseButton = (Button)dialog.findViewById(R.id.CloseButton);
-
-
         mCloseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -31,15 +31,16 @@ package="com.applicationforlife.jamesnikolaidis.thesis_farmers_helper">
     android:supportsRtl="true"
     android:theme="@style/Theme.AppCompat.NoActionBar">
     <activity android:name="com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.FarmerActivity">
+
+    </activity>
+    <activity android:name="com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.StartAcitvity"/>
+    <activity android:name="com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Second_Screen">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
 
         </intent-filter>/>
-    </activity>
-    <activity android:name="com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.StartAcitvity"/>
-    <activity android:name="com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Second_Screen">
     </activity>
 </application>
 

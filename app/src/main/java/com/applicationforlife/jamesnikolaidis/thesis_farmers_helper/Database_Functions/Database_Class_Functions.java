@@ -13,15 +13,10 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by James Nikolaidis on 11/6/2016.
@@ -41,10 +36,11 @@ public class Database_Class_Functions  {
     private static ArrayList<Products> mProductsMap;
     private static Company mCompanyObject;
     private static Distributer mDistributerObject;
-    private static boolean glag = false;
+    private static boolean glag = false,FirstTime=true;
     private static ArrayList<ArrayList<String>> mDistributerList;
     private static int mycounter = 0,mMessageCounter=0;
-    private static Iterator<String> MessageList , MessageKeyList;
+    private static ArrayList<String> mWeedsMessageList ,mFarmingMessageList,mWeedMessageKeyList,mFarmingMessageKeyList,Messages,MessageKey;
+    private static int MessageMaxCounter=0,MessageMaxCounter1=0,anothercounter=0;
 
 
 
@@ -67,6 +63,7 @@ public class Database_Class_Functions  {
             mCompanyObject = new Company();
             mDistributerObject = new Distributer();
             mDistributerList = new ArrayList<>();
+
 
 
         }
@@ -223,56 +220,343 @@ public ArrayList<Products> getProductsData(){
 
 
         public void MessagesCount(){
+            Firebase Root = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Weeds_Messages");
+            final ArrayList<String> Messages1= new ArrayList<String>();
+            final ArrayList<String> MessageKey1 = new ArrayList<String>();
 
-            mChat.addChildEventListener(new ChildEventListener() {
+            final int[] i = {0};
+            Root.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                           // mMessageCounter++;
+                    Chat_Class chat_class = dataSnapshot.getValue(Chat_Class.class);
+                    int onecounter = 0;
+                    do {
+                        Messages1.add(chat_class.mMessageArrayList.get(onecounter));
+                        onecounter++;
+                        MessageKey1.add(chat_class.mMessageArrayList.get(onecounter));
+                        onecounter++;
+                        i[0]++;
+                    } while (onecounter < chat_class.mMessageArrayList.size());
 
-                    Chat_Class testClass = dataSnapshot.getValue(Chat_Class.class);
-                    Map<String,String> mTestingMap  =  new HashMap<String, String>();
-                    mTestingMap=testClass.mMessageArrayList;
-                    Set<String> set = mTestingMap.keySet();
+                    Log.e("Message","The Number"+String.valueOf(i[0]));
+                }
 
-                    MessageList = mTestingMap.values().iterator();
-                    Iterator<String> key = set.iterator();
-                    do{
-                        Log.e("TESTING",key.next());
-                        Log.e("TESTING",MessageList.next());
-
-                    }while(MessageList.hasNext());
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
                 }
-                @Override
-                public void onChildChanged(DataSnapshot dataSnapshot, String s) {}
 
                 @Override
-                public void onChildRemoved(DataSnapshot dataSnapshot) {}
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
 
                 @Override
-                public void onChildMoved(DataSnapshot dataSnapshot, String s) {}
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
 
                 @Override
-                public void onCancelled(FirebaseError firebaseError) {}
+                public void onCancelled(FirebaseError firebaseError) {
+
+                }
+            });
+            Firebase Root1 = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Farming_Messages/");
+            Root1.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    Log.e("LOGGGGGG","Hey");
+
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(FirebaseError firebaseError) {
+
+                }
             });
 
 
         }
 
 
-        public void InsertMessage(Chat_Class chat_class){
-
-            DatabaseReference mCloneRef = FirebaseDatabase.getInstance().getReference().child("Chat");
 
 
-                Log.e("TESTING", "IS NuLL");
-                Map<String,Object> fire = new HashMap<>();
-                fire.put("Messages",chat_class);
-                mCloneRef.updateChildren(fire);
+        public void InsertMessage(Chat_Class chat_class,String Object){
+
+                if(Object.matches("Weeds")){
+                    Firebase mCloneRef = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Weeds_Messages");
+                    mCloneRef.push().setValue(chat_class);
+
+                }else{
+                    Firebase mCloneRef = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Farming_Messages");
+                    mCloneRef.push().setValue(chat_class);
+
+                }
+
+
 
 
 
         }
+
+
+    public  ArrayList<String> getMessages() {
+        return Messages;
+    }
+
+    public  ArrayList<String> getMessageKey() {
+        return MessageKey;
+    }
+
+
+    public static boolean isFirstTime() {
+        return FirstTime;
+    }
+
+    public static void setFirstTime(boolean firstTime) {
+        FirstTime = firstTime;
+    }
+
+    public void GetChat(){
+    if(FirstTime) {
+        Firebase Root = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Weeds_Messages");
+        Messages = new ArrayList<String>();
+        MessageKey= new ArrayList<String>();
+        final int[] i = {0};
+        Root.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Chat_Class chat_class = dataSnapshot.getValue(Chat_Class.class);
+                int onecounter = 0;
+                do {
+                    Messages.add(chat_class.mMessageArrayList.get(onecounter));
+                    onecounter++;
+                    MessageKey.add(chat_class.mMessageArrayList.get(onecounter));
+                    onecounter++;
+                    i[0]++;
+                } while (onecounter < chat_class.mMessageArrayList.size());
+
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+        Firebase Root1 = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Farming_Messages");
+        Root1.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Chat_Class chat_class = dataSnapshot.getValue(Chat_Class.class);
+                int onecounter = i[0];
+                do {
+                    Messages.add(chat_class.mMessageArrayList.get(i[0]));
+                    onecounter++;
+                    MessageKey.add(chat_class.mMessageArrayList.get(i[0]));
+                    onecounter++;
+                } while (onecounter < chat_class.mMessageArrayList.size());
+                MessageMaxCounter = onecounter;
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
+
+
+    }else{
+            if(MessageMaxCounter1!=MessageMaxCounter){
+            }else{
+
+
+            }
+
+
+
+    }
+
+
+
+
+
+
+    }
+
+
+
+        public void FarmerSearchEngine(String Subject){
+
+                if(Subject.matches("Weeds")){
+                    Firebase Root= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Weeds_Messages");
+                    mWeedMessageKeyList  = new ArrayList<String>();
+                    mWeedsMessageList = new ArrayList<String>();
+                    Root.addChildEventListener(new ChildEventListener() {
+                        @Override
+                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                            Chat_Class chat_class = dataSnapshot.getValue(Chat_Class.class);
+
+                           int i =0;
+
+                            do{
+                                mWeedsMessageList.add(chat_class.mMessageArrayList.get(i));
+                                i++;
+                                mWeedMessageKeyList.add(chat_class.mMessageArrayList.get(i));
+                                i++;
+
+
+                            }while(i<chat_class.mMessageArrayList.size());
+
+                        }
+                        @Override
+                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                        }
+
+                        @Override
+                        public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                        }
+
+                        @Override
+                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                        }
+
+                        @Override
+                        public void onCancelled(FirebaseError firebaseError) {
+
+                        }
+                    });
+
+
+
+                }else {
+                    Firebase mSearchEngine = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Farming_Messages");
+                    mFarmingMessageKeyList = new ArrayList<String>();
+                    mFarmingMessageList = new ArrayList<String>();
+                    mSearchEngine.addChildEventListener(new ChildEventListener() {
+                        @Override
+                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                            Chat_Class mChatClassObject= dataSnapshot.getValue(Chat_Class.class);
+                            int i =0;
+
+                            do{
+                                mFarmingMessageList.add(mChatClassObject.mMessageArrayList.get(i).toString());
+                                i++;
+                                mFarmingMessageKeyList.add(mChatClassObject.mMessageArrayList.get(i).toString());
+                                i++;
+
+
+                            }while(i<mChatClassObject.mMessageArrayList.size());
+
+
+
+                        }
+
+                        @Override
+                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                        }
+
+                        @Override
+                        public void onChildRemoved(DataSnapshot dataSnapshot) {
+                        }
+
+                        @Override
+                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                        }
+
+                        @Override
+                        public void onCancelled(FirebaseError firebaseError) {
+
+                        }
+
+
+                    });
+
+                }
+        }
+
+
+
+
+
+
+    public ArrayList<String> ReturnMessageArray(String Subject) {
+        if (Subject.matches("Weeds")) {
+            return mWeedsMessageList;
+        } else {
+
+
+            return mFarmingMessageList;
+        }
+    }
+
+
+
+
+    public ArrayList<String> ReturnMessageKeyArray(String Subject) {
+        if (Subject.matches("Weeds")) {
+            return mWeedMessageKeyList;
+        } else {
+            return mFarmingMessageKeyList;
+        }
+    }
+
+
+
+
+
+
+
+
 
 
 }
