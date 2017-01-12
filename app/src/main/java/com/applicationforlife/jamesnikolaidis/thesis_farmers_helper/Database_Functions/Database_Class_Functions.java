@@ -41,6 +41,7 @@ public class Database_Class_Functions  {
     private static int mycounter = 0,mMessageCounter=0;
     private static ArrayList<String> mWeedsMessageList ,mFarmingMessageList,mWeedMessageKeyList,mFarmingMessageKeyList,Messages,MessageKey;
     private static int MessageMaxCounter=0,MessageMaxCounter1=0,anothercounter=0;
+    public static boolean comeanother = false;
 
 
 
@@ -63,7 +64,7 @@ public class Database_Class_Functions  {
             mCompanyObject = new Company();
             mDistributerObject = new Distributer();
             mDistributerList = new ArrayList<>();
-
+            MessageMaxCounter1=0;
 
 
         }
@@ -218,55 +219,19 @@ public ArrayList<Products> getProductsData(){
                  mDistributerList=new ArrayList<>();
             }
 
+    public  int getMessageMaxCounter1() {
+        return MessageMaxCounter1;
+    }
 
-        public void MessagesCount(){
-            Firebase Root = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Weeds_Messages");
-            final ArrayList<String> Messages1= new ArrayList<String>();
-            final ArrayList<String> MessageKey1 = new ArrayList<String>();
+    public int MessagesCount(){
 
-            final int[] i = {0};
-            Root.addChildEventListener(new ChildEventListener() {
-                @Override
-                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    Chat_Class chat_class = dataSnapshot.getValue(Chat_Class.class);
-                    int onecounter = 0;
-                    do {
-                        Messages1.add(chat_class.mMessageArrayList.get(onecounter));
-                        onecounter++;
-                        MessageKey1.add(chat_class.mMessageArrayList.get(onecounter));
-                        onecounter++;
-                        i[0]++;
-                    } while (onecounter < chat_class.mMessageArrayList.size());
-
-                    Log.e("Message","The Number"+String.valueOf(i[0]));
-                }
-
-                @Override
-                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-                }
-
-                @Override
-                public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-                }
-
-                @Override
-                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-                }
-
-                @Override
-                public void onCancelled(FirebaseError firebaseError) {
-
-                }
-            });
-            Firebase Root1 = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Farming_Messages/");
+            Firebase Root1 = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Farming_Messages");
             Root1.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                    Log.e("LOGGGGGG","Hey");
-
+                  MessageMaxCounter1++;
+                    Log.e("LOGGGGG","SEE ME");
+                    comeanother = true;
                 }
 
                 @Override
@@ -290,7 +255,7 @@ public ArrayList<Products> getProductsData(){
                 }
             });
 
-
+                    return MessageMaxCounter1;
         }
 
 
@@ -332,12 +297,17 @@ public ArrayList<Products> getProductsData(){
         FirstTime = firstTime;
     }
 
-    public void GetChat(){
-    if(FirstTime) {
+
+
+
+
+    public void ActivateChat()
+    {
+
+        if(comeanother==true){
+        Messages = new ArrayList<>();
+        MessageKey = new ArrayList<>();
         Firebase Root = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Weeds_Messages");
-        Messages = new ArrayList<String>();
-        MessageKey= new ArrayList<String>();
-        final int[] i = {0};
         Root.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
@@ -348,7 +318,7 @@ public ArrayList<Products> getProductsData(){
                     onecounter++;
                     MessageKey.add(chat_class.mMessageArrayList.get(onecounter));
                     onecounter++;
-                    i[0]++;
+
                 } while (onecounter < chat_class.mMessageArrayList.size());
 
 
@@ -379,14 +349,15 @@ public ArrayList<Products> getProductsData(){
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Chat_Class chat_class = dataSnapshot.getValue(Chat_Class.class);
-                int onecounter = i[0];
+                int onecounter = 0;
+                Log.e("LOGGGGGG","Nighwish");
                 do {
-                    Messages.add(chat_class.mMessageArrayList.get(i[0]));
+                    Messages.add(chat_class.mMessageArrayList.get(0));
                     onecounter++;
-                    MessageKey.add(chat_class.mMessageArrayList.get(i[0]));
+                    MessageKey.add(chat_class.mMessageArrayList.get(1));
                     onecounter++;
                 } while (onecounter < chat_class.mMessageArrayList.size());
-                MessageMaxCounter = onecounter;
+
             }
 
             @Override
@@ -410,20 +381,7 @@ public ArrayList<Products> getProductsData(){
             }
         });
 
-
-
-    }else{
-            if(MessageMaxCounter1!=MessageMaxCounter){
-            }else{
-
-
-            }
-
-
-
-    }
-
-
+        }
 
 
 
@@ -442,9 +400,7 @@ public ArrayList<Products> getProductsData(){
                         @Override
                         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                             Chat_Class chat_class = dataSnapshot.getValue(Chat_Class.class);
-
                            int i =0;
-
                             do{
                                 mWeedsMessageList.add(chat_class.mMessageArrayList.get(i));
                                 i++;

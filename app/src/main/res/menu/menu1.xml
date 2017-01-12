@@ -4,31 +4,30 @@
   >
         <item android:id="@+id/BiologicalTips"
             android:showAsAction="always"
+            android:icon="@drawable/bio"
             android:title="Bio Help"
             android:onClick="MenuClick"
-
-
             />
     <item
+        android:showAsAction="always"
         android:id="@+id/miCompose"
         android:title="Close"
+        android:icon="@drawable/exit"
         android:onClick="MenuClick">
     </item>
     <item
         android:id="@+id/chat"
         android:title="Chat"
+        android:showAsAction="always"
+        android:icon="@drawable/chat"
         android:onClick="MenuClick"
         >
     </item>
     <item
-        android:id="@+id/Pdf"
-        android:title="See Pdf"
-        android:onClick="MenuClick"
-        >
-    </item>
-    <item
+        android:showAsAction="always"
         android:id="@+id/ProductLabel"
         android:title="Product Label"
+        android:icon="@drawable/pdf"
         android:onClick="MenuClick">
     </item>
 </menu>

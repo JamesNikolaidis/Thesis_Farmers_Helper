@@ -72,8 +72,23 @@ public class Chat_Dialog {
         mSimplyProgressBar = new SimplyProgressBar();
         database_class_functions = Database_Class_Functions.GetDatabaseInstance(context);
         mMessagesKey=mMessages = new ArrayList<>();
-        RefreshChat();
-        RefreshTime();
+        database_class_functions.MessagesCount();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                database_class_functions.ActivateChat();
+                database_class_functions.comeanother = false;
+                RefreshChat();
+                RefreshTime();
+            }
+        },1000);
+
+
+
+
+
+
 
 //Cancel Button code below
         mCancelButton.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +107,7 @@ public class Chat_Dialog {
                 mCompleteMessage.add(mMessageEditText.getText().toString());
                 mChat_Class.mMessageArrayList = mCompleteMessage;
                 database_class_functions.InsertMessage(mChat_Class,mSearchEditText.getText().toString());
-                mMessageNameEditText.setText("");
+                mMessageNameEditText.setClickable(false);
                 mMessageEditText.setText("");
                 RefreshChat();
 
@@ -114,8 +129,8 @@ public class Chat_Dialog {
             @Override
             public boolean onKey(View view, int i, KeyEvent keyEvent) {
 
-                if(keyEvent.getKeyCode()==KeyEvent.KEYCODE_ENTER && flag==0){
-                    flag=1;
+                if(keyEvent.getKeyCode()==KeyEvent.KEYCODE_ENTER){
+
                     mWaitProgressDialog = mSimplyProgressBar.ActivateProgressDialog1(mWaitProgressDialog,activity);
                     SetTimer(8,dialog.getContext());
                     database_class_functions.FarmerSearchEngine(mSearchEditText.getText().toString());
@@ -172,7 +187,7 @@ public class Chat_Dialog {
                 RefreshChat();
 
             }
-        },0,1000);
+        },0,500);
     }
 
     public static void HideDialogAndZeroTheTimer(){
@@ -193,34 +208,32 @@ public class Chat_Dialog {
 
 
     public static void RefreshChat(){
-        if(database_class_functions.isFirstTime()){
-        database_class_functions.GetChat();
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if(flag1==0){
-                    database_class_functions.MessagesCount();
-                    flag1=1;
-                }
-                mMessages = database_class_functions.getMessages();
-                mMessagesKey = database_class_functions.getMessageKey();
-                ArrayAdapter adapter = new Chat_Adapter(dialog.getContext(),mMessages,mMessagesKey);
-                mMessageListView.setAdapter(adapter);
-            }
-        },2000);
-        }else{
 
-
+        if(database_class_functions.comeanother==false && flag1==0) {
+            flag1++;
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    database_class_functions.GetChat();
+                    mMessages = database_class_functions.getMessages();
+                    mMessagesKey = database_class_functions.getMessageKey();
+                    ArrayAdapter adapter = new Chat_Adapter(dialog.getContext(), mMessages, mMessagesKey);
+                    mMessageListView.setAdapter(adapter);
                 }
-            },2000);
+            }, 2000);
+        }else if(database_class_functions.comeanother==true)
+        {
+            database_class_functions.comeanother = false;
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mMessages = database_class_functions.getMessages();
+                    mMessagesKey = database_class_functions.getMessageKey();
+                    ArrayAdapter adapter = new Chat_Adapter(dialog.getContext(), mMessages, mMessagesKey);
+                    mMessageListView.setAdapter(adapter);
+
+                }
+            }, 2000);
         }
-
-
-
 
 
 
