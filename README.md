@@ -9,8 +9,8 @@
 <h2>Application System Requirmnets</h2>
 <ol>
 <li>At least 30MB of Memory (may exteded)</li>
-<li>Android Operating System 20 at least<li>
-<li>Intenet Enabled<li>
+<li>Android Operating System 20 at least</li>
+<li>Intenet Enabled</li>
 </ol>
 
 <br/>
