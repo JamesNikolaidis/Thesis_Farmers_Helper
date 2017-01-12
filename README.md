@@ -6,11 +6,19 @@
 <br/>
 <br/>
 
-<h2>Application System Requirmnets</h2>
+<h2>Application System Requirements</h2>
 <ol>
 <li>At least 30MB of Memory (may exteded)</li>
 <li>Android Operating System 20 at least</li>
 <li>Intenet Enabled</li>
+</ol>
+<br/>
+<br/>
+<h2>Application Technologies Used</h2>
+<ol>
+<li>Anroid API 20</li>
+<li>Google Fireabase</li>
+<li>Junit</li>
 </ol>
 
 <br/>
