@@ -2,7 +2,7 @@
 <img src="http://i.imgur.com/AYUDeEG.png" alt="commercial photography locations">
 <br/>
 <br/>
-<p>Farmers Helper is a Android Appication to resolve quickly and easy problem in agriculture.Shortly , farmers can find a quick solutin in the rural  in sec  with  max trustiness beacuse all the  information in Application is scientific tested and certified.<p>
+<p>Farmers Helper is a Android Appication to resolve quickly and easy problem in agriculture.Shortly , farmers can find a quick solution in the rural  in sec  with  max trustiness beacuse all the  information in Application is scientific tested and certified.<p>
 <br/>
 <br/>
 
