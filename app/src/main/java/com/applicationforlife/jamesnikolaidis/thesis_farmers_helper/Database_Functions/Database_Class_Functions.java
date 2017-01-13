@@ -38,9 +38,9 @@ public class Database_Class_Functions  {
     private static Distributer mDistributerObject;
     private static boolean glag = false,FirstTime=true;
     private static ArrayList<ArrayList<String>> mDistributerList;
-    private static int mycounter = 0,mMessageCounter=0;
+    private static int mycounter = 0;
     private static ArrayList<String> mWeedsMessageList ,mFarmingMessageList,mWeedMessageKeyList,mFarmingMessageKeyList,Messages,MessageKey;
-    private static int MessageMaxCounter=0,MessageMaxCounter1=0,anothercounter=0;
+    private static int MessageMaxCounter1=0;
     public static boolean comeanother = false;
 
 

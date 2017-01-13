@@ -6,15 +6,27 @@ package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects;
 
 public class Company {
         public String CompanyUrl , Country , Email , Name ;
-//
+
+
         public Company(){}
 
-            public Company(String ...args){
-                this.CompanyUrl = args[0];
-                this.Country = args[1];
-                this.Email = args[2];
-                this.Name = args[3];
+            public Company(String ...args)throws NullPointerException{
 
+            try {
+                if (args != null && args.length == 4) {
+                    this.CompanyUrl = args[0];
+                    this.Country = args[1];
+                    this.Email = args[2];
+                    this.Name = args[3];
+                }
+                if (args.length < 4) {
+                    System.out.printf("Farmers Helper ERROR :You gave less information : %d , Wanted 4", args.length);
+                }
+
+            }catch (NullPointerException nullpointer){
+                //TODO Call again the Propoer and Restart the Method
+                System.out.println("Farmers Helper ERROR :The Company must have Informations like Name etc.");
+             }
 
             }
 

@@ -9,13 +9,26 @@ public class Distributer {
     public String Address,Country,Email,Name,Postal,State;
 //
     public Distributer(){}
-    public Distributer(String ...args){
-        this.Address = args[0];
-        this.Country = args[1];
-        this.Email = args[2];
-        this.Name = args[3];
-        this.Postal =args[4];
-        this.State = args[5];
+
+
+    public Distributer(String ...args)throws NullPointerException{
+
+    try {
+        if (args != null && args.length == 6) {
+            this.Address = args[0];
+            this.Country = args[1];
+            this.Email = args[2];
+            this.Name = args[3];
+            this.Postal = args[4];
+            this.State = args[5];
+        }
+        if (args.length < 6) {
+            System.out.printf("Farmers Helper ERROR :You gave less information : %d , Wanted \n", args.length);
+        }
+    }catch (NullPointerException nullPointerException){
+        System.out.printf("Farmers Helper ERROR :The Distributer must have Informations like Name etc.\n");
+    }
+
     }
 
 

@@ -45,6 +45,15 @@ public class SimplyProgressBar {
     }
 
 
+    public ProgressDialog SimplyProgressDialog(ProgressDialog mGUIProgressDialog,Activity activity){
+
+        mGUIProgressDialog = new ProgressDialog(activity.getLayoutInflater().getContext());
+        mGUIProgressDialog.setCancelable(false);
+        mGUIProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mGUIProgressDialog.setProgressDrawable(activity.getResources().getDrawable(R.drawable.progress_bar_style));
+        mGUIProgressDialog.show();
+        return mGUIProgressDialog;
+    }
 
 
 
