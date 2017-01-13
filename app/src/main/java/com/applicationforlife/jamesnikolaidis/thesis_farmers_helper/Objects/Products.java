@@ -15,6 +15,34 @@ public class Products  {
         }
 
 
+        public Products(String ...args){
+
+
+           try {
+                        if (args != null && args.length >= 6) {
+                            this.ActiveSubstance = args[0];
+                            this.Manufacter = args[1];
+                            this.Name = args[2];
+                            this.Price = args[3];
+                            this.DrugFor = args[4];
+                            this.Problem_Solving = args[5];
+                                if(args.length>6){ System.out.printf("Farmers Helper Warning :You gave more information from wanted : %d ,  Wanted 6 you may loose data..", args.length);}
+
+
+                        }
+                        if (args.length < 6) {
+                          System.out.printf("Farmers Helper ERROR :You gave less information : %d , Wanted 6", args.length);
+                        }
+           }catch(NullPointerException NullPointerException){
+               //TODO Call again the Propoer and Restart the Method
+             System.out.println("Farmers Helper ERROR :The Company must have Informations like Name etc.");
+             }
+
+
+
+        }
+
+
     public String getActiveSubstance() {
         if(!ActiveSubstance.isEmpty() || DrugFor!=null){
         return ActiveSubstance;

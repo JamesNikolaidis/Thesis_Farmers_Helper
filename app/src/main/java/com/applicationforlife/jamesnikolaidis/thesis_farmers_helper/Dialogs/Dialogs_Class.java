@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -18,9 +17,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.CustomAdapter;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Network_Wifi.Network_Wifi_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Photos_Fuctions.Photos_Functions;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Second_Screen;
 
 import java.util.ArrayList;
 
@@ -40,7 +39,7 @@ public class Dialogs_Class extends Dialog {
     private  static ArrayList<Integer> list_of_image_id ;
     public static int LongClickFlag = 0;
     private static  int flag = 0, anotherflag=0;
-
+    private Network_Wifi_Class mNetwork_and_Wifi_Object;
 
 
 
@@ -76,7 +75,7 @@ public class Dialogs_Class extends Dialog {
         share = activity.getSharedPreferences("Data",Activity.MODE_PRIVATE);
         editor = share.edit();
         listView=list;
-
+        mNetwork_and_Wifi_Object = new Network_Wifi_Class(context,activity);
         photos_functions=new Photos_Functions();
         final AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(activity, R.style.AlertDialogCustom));
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -296,30 +295,32 @@ public class Dialogs_Class extends Dialog {
                        switch (BeforeOption2){
 
                            case "Enemies":
+
+                               mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
                                editor.putString("SpecifyProblem",User_Choose[i]);
                                editor.commit();
-                               Intent intent = new Intent(activity,Second_Screen.class);
-                               activity.startActivity(intent);
+                               dialog.cancel();
+                               mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
                                break;
                            case "Disease":
                                editor.putString("SpecifyProblem",User_Choose[i]);
                                editor.commit();
-                               Intent intent1 = new Intent(activity, Second_Screen.class);
-                               activity.startActivity(intent1);
+                               mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
                                break;
                            case "Bugs":
                                editor.putString("SpecifyProblem",User_Choose[i]);
                                editor.commit();
-                               Intent intent2 = new Intent(activity, Second_Screen.class);
-                               activity.startActivity(intent2);
+                               dialog.cancel();
+                               mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
+
                                break;
 
                            case "Vegetables":
                                if(!Before3.isEmpty() && anotherflag==1) {
                                    editor.putString("SpecifyProblem",User_Choose[i]);
                                    editor.commit();
-                                   Intent intent4 = new Intent(activity,Second_Screen.class);
-                                   activity.startActivity(intent4);
+                                   dialog.cancel();
+                                   mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
                                }else{dialog.dismiss();  FarmingListVegetablesBugsOptionActivate(context, User_Choose[i], activity); anotherflag++;}
                                break;
                            case "Legumes":
@@ -328,8 +329,8 @@ public class Dialogs_Class extends Dialog {
                                if(!Before3.isEmpty() && anotherflag==1){
                                     editor.putString("SpecifyProblem",User_Choose[i]);
                                     editor.commit();
-                                    Intent intent4 = new Intent(activity,Second_Screen.class);
-                                    activity.startActivity(intent4);
+                                   dialog.cancel();
+                                   mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
 
 
                                }else{ dialog.dismiss(); FarmingListLegumesBugsOptionActivate(context,User_Choose[i],activity); anotherflag++;}
@@ -339,8 +340,8 @@ public class Dialogs_Class extends Dialog {
                                if(!Before3.isEmpty() && anotherflag==1){
                                    editor.putString("SpecifyProblem",User_Choose[i]);
                                    editor.commit();
-                                   Intent intent4 = new Intent(activity,Second_Screen.class);
-                                   activity.startActivity(intent4);
+                                   dialog.cancel();
+                                   mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
                                }else{ dialog.dismiss();FarmingListFruitsBugsOptionActivate(context,User_Choose[i],activity); anotherflag++;}
                                break;
 
@@ -349,8 +350,8 @@ public class Dialogs_Class extends Dialog {
                                if(!Before3.isEmpty() && anotherflag==1){
                                    editor.putString("SpecifyProblem",User_Choose[i]);
                                    editor.commit();
-                                   Intent intent4 = new Intent(activity,Second_Screen.class);
-                                   activity.startActivity(intent4);
+                                   dialog.cancel();
+                                   mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
 
 
                                }else{ dialog.dismiss();FarmingListNutsBugsOptionActivate(context,User_Choose[i],activity); anotherflag++;}
@@ -361,8 +362,8 @@ public class Dialogs_Class extends Dialog {
                                if(!Before3.isEmpty() && anotherflag==1){
                                    editor.putString("SpecifyProblem",User_Choose[i]);
                                    editor.commit();
-                                   Intent intent4 = new Intent(activity,Second_Screen.class);
-                                   activity.startActivity(intent4);
+                                   dialog.cancel();
+                                   mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
 
 
 
