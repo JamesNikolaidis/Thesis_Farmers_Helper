@@ -7,9 +7,6 @@
 
    >
 
-
-
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,14 +18,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
+            android:textSize="17dp"
+            android:textColor="@android:color/white"
             android:layout_marginBottom="31dp"
             />
 
         <Button
         android:id="@+id/Problem_Select_Button"
         android:text="Select"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
+        android:textColor="#8c7373"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="17sp"
         android:layout_width="158dp"
         android:layout_height="34dp"
         android:background="@drawable/buttonshape"
@@ -36,8 +36,8 @@
         android:shadowDx="0"
         android:shadowDy="0"
         android:shadowRadius="5"
-            android:onClick="Hey"
-            android:elevation="0dp" />
+        android:onClick="CreateFirstDialog"
+        android:elevation="0dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -54,13 +54,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView1"
+            android:textSize="17dp"
+            android:textColor="@android:color/white"
             android:layout_marginBottom="31dp"
             />
         <Button
             android:id="@+id/Specify_Problem_Select_Button"
             android:text="Select"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textColor="#8c7373"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="17sp"
             android:layout_width="158dp"
             android:layout_height="34dp"
             android:background="@drawable/buttonshape"
@@ -84,13 +87,16 @@
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
             android:text="Solution For"
+            android:textSize="17dp"
+            android:textColor="@android:color/white"
             android:layout_marginBottom="31dp"
             />
         <Button
             android:id="@+id/Last_Select_Button"
             android:text="Select"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
+            android:textColor="#8c7373"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="17sp"
             android:layout_width="158dp"
             android:layout_height="34dp"
             android:background="@drawable/buttonshape"

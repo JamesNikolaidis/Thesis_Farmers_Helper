@@ -15,10 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ScrollView;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.Chat_Adapter;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Chat_Class.Chat_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Network_Wifi.Network_Wifi_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar_Class.SimplyProgressBar;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
 
@@ -40,12 +42,16 @@ public class Chat_Dialog {
             private static Handler mHandler;
             private static Timer mTimer;
             private static int mSecondCounter=0;
-            private static ProgressDialog mWaitProgressDialog;
+            private static ProgressDialog mWaitProgressDialog,mWaitProgressDialog2;
             private static SimplyProgressBar mSimplyProgressBar;
             private static ArrayList<String> mMessages,mMessagesKey ;
             private static Activity mApplicationActivity;
             private static Context ApplicationContext;
+            private static Network_Wifi_Class mNetwork_and_Wifi_Class;
             private static AlertDialog dialog;
+            private static ImageView mChangeThemeIcon;
+            private static ScrollView mScrollView;
+            private static int PhotoChanger = 0;
 
             private static int flag =0,flag1=0;
 
@@ -53,7 +59,7 @@ public class Chat_Dialog {
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(activity, R.style.AlertDialogCustom));
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-         dialog = builder.create();
+        dialog = builder.create();
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.show();
         dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE|WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
@@ -65,24 +71,65 @@ public class Chat_Dialog {
         mSearchEditText = (EditText) dialog.findViewById(R.id.Chat_Search_Edit_Text);
         mSearchImageView = (ImageView) dialog.findViewById(R.id.Chat_Search_ImageView);
         mMessageNameEditText = (EditText)dialog.findViewById(R.id.Chat_Name_Edit_Text);
+        mChangeThemeIcon = (ImageView)dialog.findViewById(R.id.ChangeThemeicon);
+        mScrollView = (ScrollView)dialog.findViewById(R.id.scrollView6);
         mChat_Class=new Chat_Class();
         mApplicationActivity=activity;
         mHandler = new Handler();
+        mNetwork_and_Wifi_Class  =new Network_Wifi_Class(context,activity);
         ApplicationContext = dialog.getContext();
         mSimplyProgressBar = new SimplyProgressBar();
         database_class_functions = Database_Class_Functions.GetDatabaseInstance(context);
         mMessagesKey=mMessages = new ArrayList<>();
-        database_class_functions.MessagesCount();
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
 
-                database_class_functions.ActivateChat();
-                database_class_functions.comeanother = false;
-                RefreshChat();
-                RefreshTime();
-            }
-        },1000);
+
+        if(mNetwork_and_Wifi_Class.CheckInternetConnectivity(context)==true){
+            mWaitProgressDialog = mSimplyProgressBar.ActivateProgressDialog1(mWaitProgressDialog,activity);
+            database_class_functions.MessagesCount();
+            SetTimer(3,dialog.getContext());
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    database_class_functions.ActivateChat();
+                    database_class_functions.comeanother = false;
+                    RefreshChat();
+                    RefreshTime();
+                }
+            },1000);
+
+
+        }else{
+            mNetwork_and_Wifi_Class.ActivateInterner();
+            mWaitProgressDialog2 = mSimplyProgressBar.SimplyProgressDialog(mWaitProgressDialog2,activity,"Connection lost, Please Wait...");
+
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mWaitProgressDialog2.cancel();
+
+                        database_class_functions.MessagesCount();
+
+                        mHandler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                database_class_functions.ActivateChat();
+                                database_class_functions.comeanother = false;
+                                RefreshChat();
+                                RefreshTime();
+                            }
+                        },3000);
+
+
+                    }
+                },4000);
+
+
+
+
+        }
+
 
 
 
@@ -119,7 +166,10 @@ public class Chat_Dialog {
         mSearchImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    mSearchEditText.setVisibility(View.VISIBLE);
+                    if(mSearchEditText.getVisibility()==View.VISIBLE){
+                        mSearchEditText.setVisibility(View.INVISIBLE);
+                    }else{mSearchEditText.setVisibility(View.VISIBLE);}
+
 
             }
         });
@@ -153,6 +203,26 @@ public class Chat_Dialog {
                 return false;
             }
         });
+
+
+        mChangeThemeIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(PhotoChanger==0) {
+                    mChangeThemeIcon.setImageDrawable(activity.getDrawable(R.drawable.ca1));
+                    mScrollView.setBackground(activity.getDrawable(R.drawable.chat_back));
+                    PhotoChanger++;
+                }else{
+                    mChangeThemeIcon.setImageDrawable(activity.getDrawable(R.drawable.chat_back));
+                    mScrollView.setBackground(activity.getDrawable(R.drawable.ca1));
+                    PhotoChanger=0;
+                }
+            }
+        });
+
+
+
 
     }
 
@@ -206,10 +276,11 @@ public class Chat_Dialog {
     }
 
 
+    // Refresh chat , to get the new messages
 
     public static void RefreshChat(){
 
-        if(database_class_functions.comeanother==false && flag1==0) {
+        if(database_class_functions.comeanother==false && flag1==0 && mNetwork_and_Wifi_Class.CheckInternetConnectivity(ApplicationContext) ) {
             flag1++;
             mHandler.postDelayed(new Runnable() {
                 @Override
@@ -220,7 +291,7 @@ public class Chat_Dialog {
                     mMessageListView.setAdapter(adapter);
                 }
             }, 2000);
-        }else if(database_class_functions.comeanother==true)
+        }else if(database_class_functions.comeanother==true && mNetwork_and_Wifi_Class.CheckInternetConnectivity(ApplicationContext))
         {
             database_class_functions.comeanother = false;
             mHandler.postDelayed(new Runnable() {
@@ -233,13 +304,24 @@ public class Chat_Dialog {
 
                 }
             }, 2000);
+        }else if(database_class_functions.comeanother==false && mNetwork_and_Wifi_Class.CheckInternetConnectivity(ApplicationContext)==false){
+            mNetwork_and_Wifi_Class.ActivateInterner();
+            mWaitProgressDialog2 = mSimplyProgressBar.SimplyProgressDialog(mWaitProgressDialog2,mApplicationActivity,"Connection lost, Please Wait...");
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mWaitProgressDialog2.cancel();
+                    RefreshChat();
+
+
+                }
+            },4000);
+
         }
 
 
 
-
-
-    }
+    } // end of Refresh Chat Code here...
 
 
 

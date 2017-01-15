@@ -12,4 +12,11 @@
         <item name="android:windowExitAnimation">@anim/exit_information_dialog</item>
     </style>
 
+
+
+    <style name="Tip_Animation">
+        <item name="android:windowEnterAnimation">@anim/tip_animation</item>
+        <item name="android:windowExitAnimation">@anim/tip_exit_animation</item>
+    </style>
+
 </resources>

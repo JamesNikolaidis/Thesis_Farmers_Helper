@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Close_Program_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Dialogs_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Spinners.Spinners;
@@ -52,6 +54,7 @@ public class StartAcitvity  extends AppCompatActivity {
         dialogs_class_object.DeclareButtons((Button)findViewById(R.id.Specify_Problem_Select_Button),(Button)findViewById(R.id.Last_Select_Button),(Button)findViewById(R.id.LastPick_Select_Button),Problem_Select_Button);
         dialogs_class_object.DeclareLayouts((LinearLayout)findViewById(R.id.Specify_Linear),(LinearLayout)findViewById(R.id.BeforeFinal_Linear),(LinearLayout)findViewById(R.id.Final_Linear));
         editor.putBoolean("Clicked",true);
+        editor.putBoolean("Clicked1",false);
         editor.commit();
 
 
@@ -63,7 +66,7 @@ public class StartAcitvity  extends AppCompatActivity {
 
     }
 
-    public void Hey(View view) {
+    public void CreateFirstDialog(View view) {
 
         intarray.add(activity.getResources().getIdentifier("weeds","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
         intarray.add(activity.getResources().getIdentifier("farming1","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
@@ -80,6 +83,14 @@ public class StartAcitvity  extends AppCompatActivity {
 
 
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
+            close_program_dialog.CloseProgramDialog(StartAcitvity.this,getApplicationContext());
+        }
+        return false;
+    }
 
 
 }

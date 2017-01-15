@@ -20,6 +20,7 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.Cus
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Network_Wifi.Network_Wifi_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Photos_Fuctions.Photos_Functions;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Timers.Timers_Class;
 
 import java.util.ArrayList;
 
@@ -40,7 +41,9 @@ public class Dialogs_Class extends Dialog {
     public static int LongClickFlag = 0;
     private static  int flag = 0, anotherflag=0;
     private Network_Wifi_Class mNetwork_and_Wifi_Object;
-
+    private Timers_Class mTimerClass;
+    private Tip_Dialog mTipDialogClass;
+    private AlertDialog mTipAlertDialog ;
 
 
     public Dialogs_Class(Context context) {
@@ -48,8 +51,6 @@ public class Dialogs_Class extends Dialog {
         LayoutArray = new ArrayList<>();
         ButtonArray = new ArrayList<>();
         list_of_image_id = new ArrayList<Integer>();
-
-
 
 
     }
@@ -77,6 +78,8 @@ public class Dialogs_Class extends Dialog {
         listView=list;
         mNetwork_and_Wifi_Object = new Network_Wifi_Class(context,activity);
         photos_functions=new Photos_Functions();
+        mTimerClass = new Timers_Class();
+        mTipDialogClass = new Tip_Dialog();
         final AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(activity, R.style.AlertDialogCustom));
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         ListAdapter adapter = new CustomAdapter(context,array,ImagesId);
@@ -92,10 +95,12 @@ public class Dialogs_Class extends Dialog {
         BackButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               anotherflag=0;
+        anotherflag=0;
 
-               if(share.getBoolean("Clicked",false)==false && share.getBoolean("Clicked1",false)==true){
+               if(share.getBoolean("Clicked",false)==true && share.getBoolean("Clicked1",false)==false){
+                   dialog.dismiss();
 
+               }else if(share.getBoolean("Clicked",false)==false && share.getBoolean("Clicked1",false)==true){
                    dialog.dismiss();
                    list_of_image_id.clear();
                    list_of_image_id.add(activity.getResources().getIdentifier("weeds","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
@@ -105,7 +110,7 @@ public class Dialogs_Class extends Dialog {
                    BeforeOption2="";
                    editor.putBoolean("Clicked",true);
                    editor.commit();
-                   editor.putBoolean("Clicked1",true);
+                   editor.putBoolean("Clicked1",false);
                    editor.commit();
 
 
@@ -244,15 +249,7 @@ public class Dialogs_Class extends Dialog {
                    }
 
 
-
-
-
-
-
                }
-
-
-
 
 
 
@@ -295,7 +292,6 @@ public class Dialogs_Class extends Dialog {
                        switch (BeforeOption2){
 
                            case "Enemies":
-
                                mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
                                editor.putString("SpecifyProblem",User_Choose[i]);
                                editor.commit();
@@ -312,7 +308,6 @@ public class Dialogs_Class extends Dialog {
                                editor.commit();
                                dialog.cancel();
                                mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
-
                                break;
 
                            case "Vegetables":
@@ -321,19 +316,24 @@ public class Dialogs_Class extends Dialog {
                                    editor.commit();
                                    dialog.cancel();
                                    mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
-                               }else{dialog.dismiss();  FarmingListVegetablesBugsOptionActivate(context, User_Choose[i], activity); anotherflag++;}
+                               }else{
+                                    dialog.dismiss();
+                                    FarmingListVegetablesBugsOptionActivate(context, User_Choose[i], activity);
+                                    anotherflag++;
+                                   }
                                break;
                            case "Legumes":
-
-
                                if(!Before3.isEmpty() && anotherflag==1){
                                     editor.putString("SpecifyProblem",User_Choose[i]);
                                     editor.commit();
-                                   dialog.cancel();
+                                    dialog.cancel();
                                    mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
 
 
-                               }else{ dialog.dismiss(); FarmingListLegumesBugsOptionActivate(context,User_Choose[i],activity); anotherflag++;}
+                               }else{ dialog.dismiss();
+                                   FarmingListLegumesBugsOptionActivate(context,User_Choose[i],activity);
+                                   anotherflag++;
+                               }
                                break;
 
                            case "Fruits":
@@ -342,7 +342,10 @@ public class Dialogs_Class extends Dialog {
                                    editor.commit();
                                    dialog.cancel();
                                    mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
-                               }else{ dialog.dismiss();FarmingListFruitsBugsOptionActivate(context,User_Choose[i],activity); anotherflag++;}
+                               }else{ dialog.dismiss();
+                                   FarmingListFruitsBugsOptionActivate(context,User_Choose[i],activity);
+                                   anotherflag++;
+                               }
                                break;
 
                            case "Tree Nuts":
@@ -354,7 +357,10 @@ public class Dialogs_Class extends Dialog {
                                    mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
 
 
-                               }else{ dialog.dismiss();FarmingListNutsBugsOptionActivate(context,User_Choose[i],activity); anotherflag++;}
+                               }else{ dialog.dismiss();
+                                   FarmingListNutsBugsOptionActivate(context,User_Choose[i],activity);
+                                   anotherflag++;
+                               }
                                break;
 
                            case "Cereal":
@@ -367,7 +373,10 @@ public class Dialogs_Class extends Dialog {
 
 
 
-                               }else{dialog.dismiss(); FarmingListCerealBugsOptionActivate(context,User_Choose[i],activity);anotherflag++;}
+                               }else{dialog.dismiss();
+                                   FarmingListCerealBugsOptionActivate(context,User_Choose[i],activity);
+                                   anotherflag++;
+                               }
                                break;
 
                        }
@@ -384,6 +393,7 @@ public class Dialogs_Class extends Dialog {
                            BugsListOptionActivate(context, User_Choose[i],activity);
                            editor.putBoolean("Clicked1",false);
                            editor.commit();
+
                        }
                        else if(BeforeOption1.matches("Farming-Culture_List"))
                        {
@@ -392,6 +402,7 @@ public class Dialogs_Class extends Dialog {
                            FarmingListOptionActivate(context,User_Choose[i],activity);
                            editor.putBoolean("Clicked1",false);
                            editor.commit();
+
                        }
 
 
@@ -470,7 +481,6 @@ public class Dialogs_Class extends Dialog {
                LongClickFlag=1;
                final AlertDialog.Builder builder1 = new AlertDialog.Builder(new ContextThemeWrapper(activity, R.style.AlertDialogCustom));
                final AlertDialog dialog1 = builder1.create();
-               final AlertDialog dialog = builder1.create();
                dialog1.getWindow().getAttributes().windowAnimations = R.style.InformationDialog;
                dialog1.show();
                dialog1.setContentView(R.layout.problem_information);
@@ -1911,16 +1921,12 @@ public class Dialogs_Class extends Dialog {
                }
 
 
-
-
-
-
                return false;
        }
 
 
 
-});
+        });
 
     }
 
@@ -1943,9 +1949,13 @@ public class Dialogs_Class extends Dialog {
                      ButtonArray.get(0).setOnClickListener(new View.OnClickListener() {
                          @Override
                          public void onClick(View view) {
-                             editor.putBoolean("Clicked1",true);
-                             editor.commit();
-                             CreateDialogForProblem(context," Specify Problem.",imageid,listView,ButtonArray.get(0),activity.getResources().getStringArray(R.array.Bugs_List),activity);
+                             imageid.clear();
+                             imageid.add(activity.getResources().getIdentifier("bugs_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                             imageid.add(activity.getResources().getIdentifier("disease_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                             imageid.add(activity.getResources().getIdentifier("enemies_pahid_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                              editor.putBoolean("Clicked1",true);
+                              editor.commit();
+                              CreateDialogForProblem(context," Specify Problem.",imageid,listView,ButtonArray.get(0),activity.getResources().getStringArray(R.array.Bugs_List),activity);
                          }
                      });
                      BeforeOption1=BeforeOption;
@@ -1958,29 +1968,21 @@ public class Dialogs_Class extends Dialog {
                      ButtonArray.get(0).setOnClickListener(new View.OnClickListener() {
                          @Override
                          public void onClick(View view) {
-                              editor.putBoolean("Clicked1",true);
+                             imageid.clear();
+                             imageid.add(activity.getResources().getIdentifier("vegetables_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                             imageid.add(activity.getResources().getIdentifier("legumes_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                             imageid.add(activity.getResources().getIdentifier("fruits_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                             imageid.add(activity.getResources().getIdentifier("cereal_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                             imageid.add(activity.getResources().getIdentifier("olives_amin_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                             imageid.add(activity.getResources().getIdentifier("cereal_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                             imageid.add(activity.getResources().getIdentifier("nuts","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                             editor.putBoolean("Clicked1",true);
                              editor.commit();
                              CreateDialogForProblem(context," Specify Problem.",imageid,listView,ButtonArray.get(0),activity.getResources().getStringArray(R.array.Farming_Culture),activity);
                          }
                      });
                      BeforeOption1=BeforeOption;
                      break;
-                 case "Products":
-
-
-                     break;
-
-                 default:
-                     break;
-
-
-
-
-
-
-
-
-
              }
 
 
@@ -1998,6 +2000,10 @@ public class Dialogs_Class extends Dialog {
                     ButtonArray.get(0).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
+                            imageid.clear();
+                            imageid.add(activity.getResources().getIdentifier("bugs_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                            imageid.add(activity.getResources().getIdentifier("disease_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                            imageid.add(activity.getResources().getIdentifier("enemies_pahid_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                             CreateDialogForProblem(context," Specify Problem.",imageid,listView,ButtonArray.get(0),activity.getResources().getStringArray(R.array.Bugs_List),activity);
                             editor.putBoolean("Clicked1",true);
                             editor.commit();
@@ -2010,35 +2016,24 @@ public class Dialogs_Class extends Dialog {
                     CreateDialogForProblem(context," Specify Problem.",imageid,listView,ButtonArray.get(0),activity.getResources().getStringArray(R.array.Farming_Culture),activity);
                     editor.putBoolean("Clicked1",true);
                     editor.commit();
-
-
-
-
-
-
-
                     ButtonArray.get(0).setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
-                            CreateDialogForProblem(context," Specify Problem.",imageid,listView,ButtonArray.get(0),activity.getResources().getStringArray(R.array.Farming_Culture),activity);
+                            imageid.clear();
+                            imageid.add(activity.getResources().getIdentifier("vegetables_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                            imageid.add(activity.getResources().getIdentifier("legumes_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                            imageid.add(activity.getResources().getIdentifier("fruits_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                            imageid.add(activity.getResources().getIdentifier("cereal_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                            imageid.add(activity.getResources().getIdentifier("olives_amin_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                            imageid.add(activity.getResources().getIdentifier("cereal_main_photo","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                            imageid.add(activity.getResources().getIdentifier("nuts","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                           CreateDialogForProblem(context," Specify Problem.",imageid,listView,ButtonArray.get(0),activity.getResources().getStringArray(R.array.Farming_Culture),activity);
                             editor.putBoolean("Clicked1",true);
-                            editor.commit();
+                          editor.commit();
                         }
                     });
                     BeforeOption1=BeforeOption;
                     break;
-                case "Products":
-
-
-                    break;
-                default:
-                    break;
-
-
-
-
-
             }
 
         }//END OF IF
@@ -2060,20 +2055,24 @@ public class Dialogs_Class extends Dialog {
                 for(int counter=0; counter!=activity.getResources().getStringArray(R.array.Enemies).length; counter++){
                     imageid.add(activity.getResources().getIdentifier("bugs_icon","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 }
-
-
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView,ButtonArray.get(1),activity.getResources().getStringArray(R.array.Enemies),activity);
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        imageid.clear();
+                        for(int counter=0; counter!=activity.getResources().getStringArray(R.array.Enemies).length; counter++){
+                            imageid.add(activity.getResources().getIdentifier("bugs_icon","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        }
                         CreateDialogForProblem(context,"Solutuion For.",imageid,listView,ButtonArray.get(1),activity.getResources().getStringArray(R.array.Enemies),activity);
+                        mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                        mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                     }
                 });
              BeforeOption2 =BeforeOption;
                 break;
             case "Disease":
-
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 imageid.clear();
                 imageid.add(activity.getResources().getIdentifier("vertic","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
@@ -2087,17 +2086,30 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("bacterial_necrosis","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("bacterial_rot_of_maize_strain","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView,ButtonArray.get(1),activity.getResources().getStringArray(R.array.Desease_List),activity);
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        imageid.clear();
+                        imageid.add(activity.getResources().getIdentifier("vertic","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("vertic","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("alteraria","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("alteraria","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("alternaria_tenus","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("anthracnose_of_cucurbits","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("anthracnose_citrus","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("anthracnose_of_cottons","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("bacterial_necrosis","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("bacterial_rot_of_maize_strain","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                         CreateDialogForProblem(context,"Solutuion For.",imageid,listView,ButtonArray.get(1),activity.getResources().getStringArray(R.array.Desease_List),activity);
+                        mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                        mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                     }
                 });
                 BeforeOption2 =BeforeOption;
                 break;
             default:
-
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 imageid.clear();
                 imageid.add(activity.getResources().getIdentifier("burr_bug","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
@@ -2106,26 +2118,20 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("convolvulus_arv","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("burr_bug","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView,ButtonArray.get(1),activity.getResources().getStringArray(R.array.Bugs_List_Extend),activity);
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
                         CreateDialogForProblem(context,"Solutuion For.",imageid,listView,ButtonArray.get(1),activity.getResources().getStringArray(R.array.Bugs_List_Extend),activity);
+                        mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                        mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                     }
                 });
                 BeforeOption2 =BeforeOption;
                 break;
 
-
-
-
-
         }
-
-
-
-
-
 
 
     }
@@ -2150,6 +2156,15 @@ public class Dialogs_Class extends Dialog {
                 ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        imageid.clear();
+                        imageid.add(activity.getResources().getIdentifier("cucumber","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("artichoke","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("cauliflower","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("spinach","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("onion","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("cabbage","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("broccoli","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("tomato","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                         CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Vegetables), activity);
                     }
                 });
@@ -2161,13 +2176,16 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("lentils","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("chickpeas","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("peas","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Legumes), activity);
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        imageid.clear();
+                        imageid.add(activity.getResources().getIdentifier("beans","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("lentils","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("chickpeas","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("peas","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                         CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Legumes), activity);
                     }
                 });
@@ -2191,7 +2209,18 @@ public class Dialogs_Class extends Dialog {
                 ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        imageid.clear();
+                        imageid.add(activity.getResources().getIdentifier("apple","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("strawberry","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("pear","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("apriums","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("watermelon","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("cherry","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("lemon","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("mandarin","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("peach","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("fig","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("orange","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                         CreateDialogForProblem(context,"Solutuion For.",imageid,listView,ButtonArray.get(2), activity.getResources().getStringArray(R.array.Fruits), activity);
                     }
                 });
@@ -2209,7 +2238,12 @@ public class Dialogs_Class extends Dialog {
                 ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        imageid.clear();
+                        imageid.add(activity.getResources().getIdentifier("rice","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("wheat","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("oats","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("corn","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("barley","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                         CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cereals), activity);
                     }
                 });
@@ -2223,7 +2257,8 @@ public class Dialogs_Class extends Dialog {
                 ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        imageid.clear();
+                        imageid.add(activity.getResources().getIdentifier("olives","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                         CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.olives), activity);
                     }
                 });
@@ -2242,7 +2277,12 @@ public class Dialogs_Class extends Dialog {
                 ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        imageid.clear();
+                        imageid.add(activity.getResources().getIdentifier("almond","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("peanut","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("hazel_nuts","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("chestnuts","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        imageid.add(activity.getResources().getIdentifier("walnuts","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                         CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Tree_Nuts), activity);
                     }
                 });
@@ -2260,6 +2300,7 @@ public class Dialogs_Class extends Dialog {
 
     public void FarmingListVegetablesBugsOptionActivate(final Context context,String BeforeOption, final Activity activity) {
         final ArrayList<Integer> imageid = new ArrayList<>();
+
         switch (BeforeOption) {
             case "Cucumber":
                 imageid.clear();
@@ -2269,13 +2310,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("phyllonorycter_blancardella","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("lygus_pabulinus","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cucumber), activity);
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cucumber), activity);
-                    }
-                });
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2288,14 +2325,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("pyrameis_atalanta","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("cassida","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Artichoke_Bugs), activity);
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Artichoke_Bugs), activity);
-                    }
-                });
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2311,13 +2343,8 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("oidium","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cauliflower__Broccoli_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView,ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cauliflower__Broccoli_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2333,13 +2360,8 @@ public class Dialogs_Class extends Dialog {
                         imageid.add(activity.getResources().getIdentifier("sclerotiniasclerotiorum","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Spinach_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Spinach_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2350,17 +2372,10 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("thrips","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("pseudoperonospora_cubensis","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("sclerotiniasclerotiorum","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-
-
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Onion_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Onion_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2376,13 +2391,8 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("oidium","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cauliflower__Broccoli_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cauliflower__Broccoli_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2399,13 +2409,8 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("oidium","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cauliflower__Broccoli_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cauliflower__Broccoli_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2422,13 +2427,8 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("citrus_root_nematode","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context,"Solutuion For.",imageid, listView,ButtonArray.get(2), activity.getResources().getStringArray(R.array.Tomatoe_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Tomatoe_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2463,15 +2463,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("liriomyza_trifolii04","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("thrips","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("aphis","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Beans_Peas_chickBeans_Bugs), activity);
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Beans_Peas_chickBeans_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2486,14 +2480,8 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("oidium","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("vascular_wilt_of_lentil","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Lentil_Bugs), activity);
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Lentil_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2511,16 +2499,11 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("liriomyza_trifolii04","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("thrips","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("aphis","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-
+                CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Beans_Peas_chickBeans_Bugs), activity);
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Beans_Peas_chickBeans_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView,ButtonArray.get(2), activity.getResources().getStringArray(R.array.Beans_Peas_chickBeans_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2540,13 +2523,8 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("aphis","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Beans_Peas_chickBeans_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context,"Solutuion For.",imageid,listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Beans_Peas_chickBeans_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 =BeforeOption;
                 break;
@@ -2562,6 +2540,7 @@ public class Dialogs_Class extends Dialog {
     public void FarmingListFruitsBugsOptionActivate(final Context context,String BeforeOption, final Activity activity) {
 
         final ArrayList<Integer> imageid = new ArrayList<>();
+
         switch (BeforeOption) {
             case "Apple":
                 imageid.clear();
@@ -2576,14 +2555,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("aphis", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("cossus_linnaeus", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apple_Bugs), activity);
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apple_Bugs), activity);
-                    }
-                });
                 Before3 = BeforeOption;
                 break;
             case "Strawberry":
@@ -2593,14 +2567,8 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("tetranychus_urticae", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("lygus_hesperus", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Strawberry_Bugs), activity);
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Strawberry_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -2613,16 +2581,10 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("parasitic", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("erwinia_amylovora", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("cacopsylla_pyri", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
+                CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Pear_Bugs), activity);
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
-                CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                    }
-                });
                 Before3 = BeforeOption;
                 break;
             case "Apricot":
@@ -2636,17 +2598,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("anthracnose_of_cucurbits", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("kylindrosporiosi", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("fusicladium_pirinum", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-
-
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -2664,20 +2618,12 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("phytophthora", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("apple_mosaic_virus", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("melodoigyne", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                        imageid.add(activity.getResources().getIdentifier("acalymma_trivittatum", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                imageid.add(activity.getResources().getIdentifier("acalymma_trivittatum", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("heliothrips", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("tetranychus_urticae", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-
-
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Watermelon_bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Watermelon_bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -2695,17 +2641,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("anthracnose_of_cucurbits", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("kylindrosporiosi", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("fusicladium_pirinum", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-
-
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -2722,17 +2660,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("lepidosaphes_beckii", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("icerya", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("citrus_red_mite", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-
-
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Lemon_Orange__Mandarine_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Lemon_Orange__Mandarine_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -2748,17 +2678,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("lepidosaphes_beckii", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("icerya", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("citrus_red_mite", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-
-
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Lemon_Orange__Mandarine_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Lemon_Orange__Mandarine_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -2774,24 +2696,12 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("anthracnose_of_cucurbits", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("kylindrosporiosi", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("fusicladium_pirinum", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-
-
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
-
-
-
-
             case "Fig":
                 imageid.clear();
                 imageid.add(activity.getResources().getIdentifier("medfly", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
@@ -2799,23 +2709,12 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("aceria_fici", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("phytophthora", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("lonchaea", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-
-
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Fig_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Fig_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
-
-
-
 
             case "Orange":
                 imageid.clear();
@@ -2828,31 +2727,15 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("lepidosaphes_beckii", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("icerya", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("citrus_red_mite", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-
-
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Lemon_Orange__Mandarine_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Lemon_Orange__Mandarine_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
 
 
-
-
         }
-
-
-
-
-
-
 
 
     }
@@ -2877,13 +2760,8 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("aphis", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("cossus_linnaeus", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apple_Bugs), activity);
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apple_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -2897,27 +2775,14 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("covered_smut", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("thrips", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("agrotis_spp", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Apricot_Peach_Cherry_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
 
         }
-
-
-
-
-
-
-
 
     }
 
@@ -2944,13 +2809,8 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("green_phids", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("leaf_eaters_caterpillars", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Almond_Trees_Bugs), activity);
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Almond_Trees_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -2962,15 +2822,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("phelinus_rimosus", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("acrantus_vestitus", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("covered_smut", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Peanut_Tree_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Peanut_Tree_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -2985,15 +2839,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("agrobacterium_tumefaciens", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("anthracnose_citrus", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("powdery_mildew", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Chestnut_Tree_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Chestnut_Tree_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -3006,15 +2854,9 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("musa_armillaria", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("oberea_linearis", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("cydia_chest", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Walnuts_Tree_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Walnuts_Tree_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
@@ -3026,39 +2868,16 @@ public class Dialogs_Class extends Dialog {
                 imageid.add(activity.getResources().getIdentifier("musa_armillaria", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("oberea_linearis", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                 imageid.add(activity.getResources().getIdentifier("cydia_chest", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
-                LayoutArray.get(1).setVisibility(View.VISIBLE);
                 CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Walnuts_Tree_Bugs), activity);
-                ButtonArray.get(1).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        CreateDialogForProblem(context, "Solutuion For.", imageid, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Walnuts_Tree_Bugs), activity);
-                    }
-                });
+                mTipAlertDialog= mTipDialogClass.ActivateTipDialog(activity,context);
+                mTimerClass.Count_And_Disable_Tip_Dialog(mTipAlertDialog);
                 flag=1;
                 Before3 = BeforeOption;
                 break;
 
         }
 
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
+     }
 
 
 }

@@ -51,17 +51,14 @@ public class Network_Wifi_Class {
                      @Override
                      public void onClick(DialogInterface dialogInterface, int i) {
                          mWifiManager.setWifiEnabled(true);
-                         alertDialog=simplyProgressBar.SimplyProgressDialog(alertDialog,mApplicationActivity);
-
-
-
+                         alertDialog=simplyProgressBar.SimplyProgressDialog(alertDialog,mApplicationActivity,"Please Wait....");
                          handler.postDelayed(new Runnable() {
                              @Override
                              public void run() {
                                  alertDialog.cancel();
                                  mApplicationActivity.startActivity(new Intent(mApplicationActivity,Second_Screen.class));
                              }
-                         },3000);
+                         },4000);
 
                      }
                  })
@@ -74,13 +71,17 @@ public class Network_Wifi_Class {
                   }).setMessage("Your Wifi connection is disabled , we will start it immediately").create();
 
                    if(!mWifiManager.isWifiEnabled()){ builder.show();}
-                    else{option=true;}
-
-
+                    else{
+                               mApplicationActivity.startActivity(new Intent(mApplicationActivity,Second_Screen.class));
+                           }
 
 
              }
 
+
+    public void ActivateInterner(){
+        mWifiManager.setWifiEnabled(true);
+    }
 
 
 
