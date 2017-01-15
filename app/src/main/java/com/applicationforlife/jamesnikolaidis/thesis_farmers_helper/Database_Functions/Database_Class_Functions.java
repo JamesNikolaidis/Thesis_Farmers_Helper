@@ -350,7 +350,7 @@ public ArrayList<Products> getProductsData(){
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Chat_Class chat_class = dataSnapshot.getValue(Chat_Class.class);
                 int onecounter = 0;
-                Log.e("LOGGGGGG","Nighwish");
+
                 do {
                     Messages.add(chat_class.mMessageArrayList.get(0));
                     onecounter++;

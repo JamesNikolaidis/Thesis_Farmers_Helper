@@ -9,12 +9,14 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toolbar;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Chat_Dialog;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Close_Program_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.PaymentDialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar_Class.SimplyProgressBar;
@@ -90,7 +92,7 @@ public class Second_Screen extends FragmentActivity {
     public void MenuClick(MenuItem item) throws IOException {
         //***********Set menu's clicks methods********************/
         if (item.getItemId() == R.id.miCompose) {
-            System.exit(0);
+            Second_Screen.this.finishAffinity();
         } //if users click the "Log Out" option
         else if (item.getItemId() == R.id.BiologicalTips) {
             PaymentDialog paymentDialog = new PaymentDialog();
@@ -196,6 +198,16 @@ public class Second_Screen extends FragmentActivity {
 
         }
 
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
+            close_program_dialog.GoToMainPanelDialog(Second_Screen.this,getApplicationContext());
+        }
+        return false;
+    }
 
 
 

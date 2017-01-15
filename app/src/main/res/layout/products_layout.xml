@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
    >
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -14,51 +15,65 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_gravity="center"
-        android:background="@android:color/holo_blue_light"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
        >
 
         <TextView
-            android:text="Product Name : "
+            android:text="Product Name "
             android:layout_width="185dp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
             android:layout_height="match_parent"
             android:id="@+id/productNameText"
             android:gravity="center"
-            android:textSize="25dp"/>
+            android:textColor="@android:color/white"
+            android:textSize="23dp"/>
 
         <TextView
+            android:layout_marginTop="5dp"
             android:text="Name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="40dp"
             android:id="@+id/productName"
+            android:background="@drawable/tip_shape"
             android:gravity="center"
-            android:textSize="25dp"/>
+            android:textColor="@android:color/white"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="20dp"/>
     </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginTop="20dp"
-        android:background="@android:color/holo_blue_light"
+
         >
 
         <TextView
-            android:text="Product Price :"
+            android:text="Product Price "
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
             android:layout_width="190dp"
             android:layout_height="match_parent"
             android:id="@+id/productPriceText"
             android:gravity="center"
-            android:textSize="25dp"/>
+            android:fontFamily="sans-serif-medium"
+            android:textSize="23dp"/>
         <TextView
-            android:textSize="25dp"
+            android:layout_marginTop="5dp"
+            android:textSize="20dp"
             android:text="Price"
-            android:layout_width="match_parent"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/productPrice"
+            android:background="@drawable/tip_shape"
             android:gravity="center"/>
 
 
@@ -67,29 +82,36 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginTop="20dp"
-        android:background="@android:color/holo_blue_light"
+
         android:weightSum="1">
 
 
         <TextView
-            android:text="Product Manufacter :"
+            android:text="Product Manufacter"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/productManufacterText"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@android:color/white"
             android:gravity="center"
-            android:textSize="22dp"/>
+            android:textSize="23dp"/>
 
         <TextView
+            android:layout_marginTop="5dp"
             android:textSize="20dp"
+            android:layout_gravity="center"
             android:text="Manufacter"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/productManufacter"
             android:gravity="center"
-            android:layout_weight="0.95" />
+            android:textColor="@android:color/white"
+            android:background="@drawable/tip_shape"
+            />
     </LinearLayout>
 
 
@@ -102,7 +124,7 @@
         android:padding="10dp"
         android:textSize="27dp"
         android:id="@+id/textView6"
-        android:textColor="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
         android:layout_marginTop="38dp"
         android:layout_alignParentStart="true"
         android:clickable="false"
@@ -117,6 +139,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:textAlignment="center"
+        android:textColor="@android:color/white"
         android:background="?android:attr/textColorHighlight">
 
     </Spinner>
@@ -132,7 +155,7 @@
         android:padding="10dp"
         android:textSize="27dp"
         android:id="@+id/textView7"
-        android:textColor="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
         android:layout_marginTop="38dp"
         android:layout_alignParentStart="true"
         android:clickable="false"
@@ -163,7 +186,7 @@
         android:padding="10dp"
         android:textSize="27dp"
         android:id="@+id/textView8"
-        android:textColor="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
         android:layout_marginTop="38dp"
         android:layout_alignParentStart="true"
         android:clickable="false"

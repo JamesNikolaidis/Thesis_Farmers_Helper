@@ -28,10 +28,10 @@
 
 
     <style name="AlertDialogCustom" >
-
         <item name="android:dividerHeight">4dp</item>
 
     </style>
+
 
 
 </resources>
