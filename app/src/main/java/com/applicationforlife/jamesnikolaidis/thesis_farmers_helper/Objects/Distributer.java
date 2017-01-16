@@ -13,7 +13,7 @@ public class Distributer {
 
     public Distributer(String ...args)throws NullPointerException{
 
-    try {
+
         if (args != null && args.length == 6) {
             this.Address = args[0];
             this.Country = args[1];
@@ -22,12 +22,7 @@ public class Distributer {
             this.Postal = args[4];
             this.State = args[5];
         }
-        if (args.length < 6) {
-            System.out.printf("Farmers Helper ERROR :You gave less information : %d , Wanted \n", args.length);
-        }
-    }catch (NullPointerException nullPointerException){
-        System.out.printf("Farmers Helper ERROR :The Distributer must have Informations like Name etc.\n");
-    }
+
 
     }
 

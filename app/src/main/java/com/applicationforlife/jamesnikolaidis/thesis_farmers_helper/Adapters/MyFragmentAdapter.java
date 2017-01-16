@@ -1,4 +1,4 @@
-package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper;
+package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -37,7 +37,6 @@ public class MyFragmentAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-
 
             return ProductFragment.newInstance(position,context,database_class_functions);
 
