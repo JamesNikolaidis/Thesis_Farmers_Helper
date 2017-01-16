@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:id="@+id/scrollView6"
     android:background="@drawable/ca1"
-    android:fillViewport="true">
+    android:fillViewport="false"
+    android:isScrollContainer="false">
 <LinearLayout
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -68,7 +69,7 @@
         android:id="@+id/Chat_List_View"
         android:stackFromBottom="true"
         android:transcriptMode="alwaysScroll"
-        ></ListView>
+        android:nestedScrollingEnabled="true"></ListView>
 
     <LinearLayout
         android:layout_marginTop="3dp"

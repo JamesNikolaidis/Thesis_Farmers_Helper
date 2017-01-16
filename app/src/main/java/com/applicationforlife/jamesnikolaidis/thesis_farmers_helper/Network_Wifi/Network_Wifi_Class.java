@@ -83,7 +83,9 @@ public class Network_Wifi_Class {
         mWifiManager.setWifiEnabled(true);
     }
 
-
+    public void ChechMobileDataAndEnableIt(){
+        mApplicationActivity.enforceCallingOrSelfPermission(android.Manifest.permission.MODIFY_PHONE_STATE, null);
+    }
 
 
 

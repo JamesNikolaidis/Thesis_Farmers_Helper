@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -9,7 +10,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
+    android:nestedScrollingEnabled="true">
 
 
 
@@ -130,9 +131,9 @@
         android:clickable="false"
         />
 
-    <Spinner
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
         android:id="@+id/Distributer"
         android:layout_marginTop="12dp"
         android:layout_below="@+id/textView6"
@@ -140,9 +141,19 @@
         android:layout_alignParentEnd="true"
         android:textAlignment="center"
         android:textColor="@android:color/white"
-        android:background="?android:attr/textColorHighlight">
+        android:background="?android:attr/textColorHighlight"
+        android:nestedScrollingEnabled="true"
 
-    </Spinner>
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:verticalScrollbarPosition="defaultPosition"
+        android:fadeScrollbars="false"
+
+         android:scrollbarSize="10dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:divider="@drawable/divider_shape"
+        android:headerDividersEnabled="true">
+
+    </ListView>
 
 
 
@@ -161,7 +172,7 @@
         android:clickable="false"
         />
 
-    <Spinner
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/DrugFor"
@@ -170,9 +181,10 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:textAlignment="center"
-        android:background="?android:attr/textColorHighlight">
+        android:background="?android:attr/textColorHighlight"
+        android:nestedScrollingEnabled="true">
 
-    </Spinner>
+    </ListView>
 
 
 
@@ -192,34 +204,20 @@
         android:clickable="false"
         />
 
-    <Spinner
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="150dp"
         android:id="@+id/ActiveSubstance"
         android:layout_marginTop="12dp"
         android:layout_below="@+id/textView6"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:textAlignment="center"
-        android:background="?android:attr/textColorHighlight">
+        android:background="?android:attr/textColorHighlight"
+        android:nestedScrollingEnabled="true"
+        android:divider="@drawable/divider_shape">
 
-    </Spinner>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </ListView>
 
 
 

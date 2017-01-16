@@ -9,10 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Dialog_On_Long_Click_Listener;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
 
@@ -28,10 +29,11 @@ public class ProductFragment extends Fragment {
     private static Products mProduct;
     private  int position;
     private TextView mProductName , mProductPrice , mProductManufacter ;
-    private Spinner mActiveSubanseSpinner , mDrugForSpainner ,mDistributerSpinner;
+    private ListView mActiveSubanseListView , mDrugForListView ,mDistributerListView;
     private static String DrugFor1 ;
     private static Database_Class_Functions database_class_functions;
     private static Context con;
+    private static Dialog_On_Long_Click_Listener listener;
 
 
 
@@ -54,9 +56,10 @@ public class ProductFragment extends Fragment {
         mProductName = (TextView)view.findViewById(R.id.productName);
         mProductPrice=(TextView)view.findViewById(R.id.productPrice);
         mProductManufacter = (TextView)view.findViewById(R.id.productManufacter);
-        mActiveSubanseSpinner = (Spinner)view.findViewById(R.id.ActiveSubstance);
-        mDrugForSpainner = (Spinner)view.findViewById(R.id.DrugFor);
-        mDistributerSpinner = (Spinner)view.findViewById(R.id.Distributer);
+        mActiveSubanseListView = (ListView)view.findViewById(R.id.ActiveSubstance);
+        mDrugForListView = (ListView)view.findViewById(R.id.DrugFor);
+        mDistributerListView = (ListView)view.findViewById(R.id.Distributer);
+        listener = new Dialog_On_Long_Click_Listener();
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -70,18 +73,18 @@ public class ProductFragment extends Fragment {
                  list = database_class_functions.PassDistributersData().get((int)getArguments().getSerializable(ID));
 
                  ArrayAdapter adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1,list);
-                 mDistributerSpinner.setAdapter(adapter);
+                mDistributerListView.setAdapter(adapter);
+                mDistributerListView.setScrollBarSize(20);
 
                  ArrayAdapter adapter1 = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1,new String[]{mProduct.getDrugFor()});
-                  mDrugForSpainner.setAdapter(adapter1);
+                  mDrugForListView.setAdapter(adapter1);
                  ArrayAdapter adapter2 = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1,new String[]{mProduct.getActiveSubstance()});
-                 mActiveSubanseSpinner.setAdapter(adapter2);
+                 mActiveSubanseListView.setAdapter(adapter2);
 
                // database_class_functions.ClearDistArrayList();
             }
         }, 3000);
-
-
+            listener.SetListViewOnClickListener(getActivity(),con,mDistributerListView);
 
         return view;
     }

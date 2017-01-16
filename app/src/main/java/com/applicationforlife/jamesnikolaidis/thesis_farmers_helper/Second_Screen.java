@@ -14,10 +14,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toolbar;
 
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.MyFragmentAdapter;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Chat_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Close_Program_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.PaymentDialog;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Dialog_On_Long_Click_Listener;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Network_Wifi.Network_Wifi_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar_Class.SimplyProgressBar;
 
@@ -48,8 +51,10 @@ public class Second_Screen extends FragmentActivity {
     private static Database_Class_Functions database_class_functions;
     private Handler handler = new Handler();
     private SimplyProgressBar mSimplyProgressBar;
-    private ProgressDialog mProgressDialog;
-    private Timer timer,timer1;
+    private ProgressDialog mProgressDialog,mProgressDialog2;
+    private Timer timer;
+    private Network_Wifi_Class mNetwork_and_Wifi_Class;
+    private static Dialog_On_Long_Click_Listener listener;
 
     private int flag = 0;
 
@@ -69,9 +74,13 @@ public class Second_Screen extends FragmentActivity {
         database_class_functions.GetProduct(Preference.getString("SpecifyProblem", "wrong")); //get's the product's list for the specific problem
         database_class_functions.FindAndCollectDistributerDetails(Preference.getString("SpecifyProblem", "wrong")); //get's Distributer's list for specific problem
         mSimplyProgressBar = new SimplyProgressBar();
-
+        listener = new Dialog_On_Long_Click_Listener();
+        mNetwork_and_Wifi_Class = new Network_Wifi_Class(getApplicationContext(),Second_Screen.this);
         //Start Thread to  Load the Data From Firebase Database , we need at least 2sec until the list get filled.
+        if(mNetwork_and_Wifi_Class.CheckInternetConnectivity(getApplicationContext())==true){
+
         ActivateProductThread();
+        }else{Reconnect_and_Load_Data(); }
         //******************Initialize the Activity's Toolbar ****************************//
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         toolbar.setTitle("Products");
@@ -92,7 +101,8 @@ public class Second_Screen extends FragmentActivity {
     public void MenuClick(MenuItem item) throws IOException {
         //***********Set menu's clicks methods********************/
         if (item.getItemId() == R.id.miCompose) {
-            Second_Screen.this.finishAffinity();
+            Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
+            close_program_dialog.CloseProgramDialog(Second_Screen.this,getApplicationContext());
         } //if users click the "Log Out" option
         else if (item.getItemId() == R.id.BiologicalTips) {
             PaymentDialog paymentDialog = new PaymentDialog();
@@ -146,6 +156,9 @@ public class Second_Screen extends FragmentActivity {
         public void ActivateProductThread() {
          //   mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog, Second_Screen.this);
             //Start Thread to  Load the Data From Firebase Database , we need at least 2sec until the list get filled.
+
+
+        if(mNetwork_and_Wifi_Class.CheckInternetConnectivity(getApplicationContext())){
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -195,6 +208,8 @@ public class Second_Screen extends FragmentActivity {
                 }
             }).start();
 
+        }else{Reconnect_and_Load_Data();}
+
 
         }
 
@@ -209,6 +224,21 @@ public class Second_Screen extends FragmentActivity {
         return false;
     }
 
+
+
+
+    public void Reconnect_and_Load_Data(){
+        mProgressDialog2 = mSimplyProgressBar.SimplyProgressDialog(mProgressDialog2,Second_Screen.this,"Internet Connection Lost. Please Wait");
+        mNetwork_and_Wifi_Class.ActivateInterner();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ActivateProductThread();
+                mProgressDialog2.cancel();
+
+            }
+        },5500);
+    }
 
 
 

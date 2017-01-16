@@ -101,7 +101,7 @@ public class Chat_Dialog {
 
         }else{
             mNetwork_and_Wifi_Class.ActivateInterner();
-            mWaitProgressDialog2 = mSimplyProgressBar.SimplyProgressDialog(mWaitProgressDialog2,activity,"Connection lost, Please Wait...");
+            mWaitProgressDialog2 = mSimplyProgressBar.SimplyProgressDialog(mWaitProgressDialog2,activity,"Connection lost, Please Wait...If this Message appear is short time ,please activate your mobile data.");
 
                 mHandler.postDelayed(new Runnable() {
                     @Override

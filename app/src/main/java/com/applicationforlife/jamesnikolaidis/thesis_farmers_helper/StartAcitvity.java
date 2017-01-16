@@ -35,7 +35,7 @@ public class StartAcitvity  extends AppCompatActivity {
         private SharedPreferences.Editor editor;
         private  static ArrayList<Integer> intarray ;
          private Products products;
-       private  static ArrayList<Products> list;
+        private  static ArrayList<Products> list;
         private Database_Class_Functions database_class_functions;
 
 
@@ -47,8 +47,6 @@ public class StartAcitvity  extends AppCompatActivity {
         intarray = new ArrayList<Integer>();
         share = activity.getSharedPreferences("Data",Activity.MODE_PRIVATE);
         editor = share.edit();
-
-
         Problem_Select_Button = (Button)findViewById(R.id.Problem_Select_Button);
         dialogs_class_object = new Dialogs_Class(getApplicationContext());
         dialogs_class_object.DeclareButtons((Button)findViewById(R.id.Specify_Problem_Select_Button),(Button)findViewById(R.id.Last_Select_Button),(Button)findViewById(R.id.LastPick_Select_Button),Problem_Select_Button);

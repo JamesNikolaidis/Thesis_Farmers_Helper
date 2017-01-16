@@ -35,7 +35,7 @@ public class Database_Class_Functions  {
     private Firebase mProducts , mStocks , mCompany , mDistributer,mChat;
     private static ArrayList<Products> mProductsMap;
     private static Company mCompanyObject;
-    private static Distributer mDistributerObject;
+    private Distributer mDistributerObject;
     private static boolean glag = false,FirstTime=true;
     private static ArrayList<ArrayList<String>> mDistributerList;
     private static int mycounter = 0;
@@ -65,6 +65,7 @@ public class Database_Class_Functions  {
             mDistributerObject = new Distributer();
             mDistributerList = new ArrayList<>();
             MessageMaxCounter1=0;
+            mDistributerObject = new Distributer();
 
 
         }
@@ -509,10 +510,45 @@ public ArrayList<Products> getProductsData(){
 
 
 
+    public void GetDistributerData(String DistributerEmail){
+        mDistributerObject = new Distributer();
+        Query mFindDistributerDetails = mDistributer.limitToFirst(1).orderByChild("Email").equalTo(DistributerEmail);
+            mFindDistributerDetails.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                    mDistributerObject = dataSnapshot.getValue(Distributer.class);
+
+                }
+
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(FirebaseError firebaseError) {
+
+                }
+            });
 
 
+    }
 
 
+    public Distributer ReturnDistributerProfil(){
+        return mDistributerObject;
+    }
 
 
 }
