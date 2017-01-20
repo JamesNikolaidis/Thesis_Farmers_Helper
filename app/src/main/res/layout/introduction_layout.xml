@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/first_panel_down_opacity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/eng_flag"
+            android:id="@+id/EnglishFlag"
+            android:onClick="onEnglandFlagClick"
+
+            />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:id="@+id/Greek_flag"
+            android:src="@drawable/greek_flag"
+            android:onClick="onEnglandFlagClick"
+            />
+
+            </LinearLayout>
+
+
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/Welcome_MassageGreek"
+        android:textColor="@android:color/white"
+        android:id="@+id/IntroductionText"
+        android:fontFamily="sans-serif-medium"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:layout_marginLeft="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/YesButton"
+            android:onClick="UserDialogChoice"
+            android:text="@string/Yes_ButtonGr"/>
+        <Button
+            android:layout_marginLeft="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/NoButton"
+            android:onClick="UserDialogChoice"
+            android:text="@string/No_ButtonGr"/>
+    </LinearLayout>
+
+
+
+    <Button
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:id="@+id/ReadME"
+        android:onClick="ReadMeButton"
+        android:text="@string/ReadmeGr"/>
+
+
+
+
+</LinearLayout>

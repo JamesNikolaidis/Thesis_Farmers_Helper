@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Timers.New_MessageTimer;
 
 import java.util.ArrayList;
 
@@ -21,14 +22,19 @@ public class Chat_Adapter extends ArrayAdapter<String> {
     private static ArrayList<String> mMessage,mMessageKey;
     private static ArrayList<String> mm;
     public static int mCounter=0;
+    public static int mMessageSituation = 0;
+    public New_MessageTimer mNewMessageTimer;
+
 
 
 
     Context context;
-    public Chat_Adapter(Context context, ArrayList<String> message,ArrayList<String> key) throws  NullPointerException {
+    public Chat_Adapter(Context context, ArrayList<String> message,ArrayList<String> key,int Situation) throws  NullPointerException {
         super(context, R.layout.chat_adapter_layout,message);
                 this.mMessage = message;
                 this.mMessageKey =key;
+                mNewMessageTimer = new New_MessageTimer();
+                this.mMessageSituation=Situation;
 
 
     }
@@ -42,9 +48,15 @@ public class Chat_Adapter extends ArrayAdapter<String> {
         TextView mMessengerNameTextView = (TextView) theView.findViewById(R.id.MessengerName);
         TextView mMessageTextView = (TextView) theView.findViewById(R.id.Message);
 
+        if(mMessageSituation==0){
         mMessengerNameTextView.setText(mMessage.get(position));
         mMessageTextView.setText(mMessageKey.get(position));
-
+        }else {
+            mMessengerNameTextView.setText(mMessage.get(position));
+            mMessageTextView.setText(mMessageKey.get(position));
+           // mNew_MessageView.setVisibility(View.VISIBLE);
+           // mNewMessageTimer.Activate_New_Message_Timer(mNew_MessageView);
+        }
 
 
 

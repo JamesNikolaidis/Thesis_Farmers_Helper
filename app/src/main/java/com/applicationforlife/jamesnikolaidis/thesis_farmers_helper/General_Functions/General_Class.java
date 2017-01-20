@@ -51,6 +51,4 @@ public  class General_Class implements AdapterView.OnItemClickListener , View.On
 
 
 
-
-
 }

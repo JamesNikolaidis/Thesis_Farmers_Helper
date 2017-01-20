@@ -41,6 +41,7 @@ public class Database_Class_Functions  {
     private static int mycounter = 0;
     private static ArrayList<String> mWeedsMessageList ,mFarmingMessageList,mWeedMessageKeyList,mFarmingMessageKeyList,Messages,MessageKey;
     private static int MessageMaxCounter1=0;
+    private static ArrayList<String> mNewMessages , mNewMesagesKey;
     public static boolean comeanother = false;
 
 
@@ -231,7 +232,6 @@ public ArrayList<Products> getProductsData(){
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                   MessageMaxCounter1++;
-                    Log.e("LOGGGGG","SEE ME");
                     comeanother = true;
                 }
 
@@ -275,9 +275,6 @@ public ArrayList<Products> getProductsData(){
                 }
 
 
-
-
-
         }
 
 
@@ -306,6 +303,7 @@ public ArrayList<Products> getProductsData(){
     {
 
         if(comeanother==true){
+            Log.e("INFORMATION","IS Another TRUE");
         Messages = new ArrayList<>();
         MessageKey = new ArrayList<>();
         Firebase Root = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Weeds_Messages");

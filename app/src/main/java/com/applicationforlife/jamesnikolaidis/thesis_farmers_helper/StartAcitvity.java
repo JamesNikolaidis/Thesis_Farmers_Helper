@@ -49,7 +49,7 @@ public class StartAcitvity  extends AppCompatActivity {
         editor = share.edit();
         Problem_Select_Button = (Button)findViewById(R.id.Problem_Select_Button);
         dialogs_class_object = new Dialogs_Class(getApplicationContext());
-        dialogs_class_object.DeclareButtons((Button)findViewById(R.id.Specify_Problem_Select_Button),(Button)findViewById(R.id.Last_Select_Button),(Button)findViewById(R.id.LastPick_Select_Button),Problem_Select_Button);
+        dialogs_class_object.DeclareButtons(Problem_Select_Button,(Button)findViewById(R.id.Specify_Problem_Select_Button),(Button)findViewById(R.id.Last_Select_Button),(Button)findViewById(R.id.LastPick_Select_Button));
         dialogs_class_object.DeclareLayouts((LinearLayout)findViewById(R.id.Specify_Linear),(LinearLayout)findViewById(R.id.BeforeFinal_Linear),(LinearLayout)findViewById(R.id.Final_Linear));
         editor.putBoolean("Clicked",true);
         editor.putBoolean("Clicked1",false);
@@ -58,6 +58,7 @@ public class StartAcitvity  extends AppCompatActivity {
 
         intarray.add(activity.getResources().getIdentifier("weeds","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
         intarray.add(activity.getResources().getIdentifier("farming1","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+
         dialogs_class_object.CreateDialogForProblem(getApplicationContext(),"Select Problem Category",intarray,(ListView)findViewById(R.id.ListView),Problem_Select_Button,activity.getResources().getStringArray(R.array.ProblemCategories),activity);
 
 
@@ -85,7 +86,7 @@ public class StartAcitvity  extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
-            close_program_dialog.CloseProgramDialog(StartAcitvity.this,getApplicationContext());
+            close_program_dialog.CloseProgramDialog(StartAcitvity.this,getApplicationContext(),share.getInt("Language",5));
         }
         return false;
     }

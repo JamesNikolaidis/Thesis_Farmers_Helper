@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Farmers Helper</string>
-    <string name="title">Problem Categories</string>
 
     <string-array name="ProblemCategories">
         <item>Weeds List</item>
@@ -1846,7 +1845,98 @@ Description :
 
 Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the root nodules[4] and the adults eat the leaves. Several species of Sitona are important agricultural pests of legumes, especially in its native regions and introduced populations in South Africa, Australia and New Zealand
 </string>
+    <string name="title">Problem Categories</string>
 
 
+    <string name="Welcome_MassageEng">Welcome to our Application if you want to search directly the bugs for the Farming you want
+    ,please click "Yes" else you will go to our main page.
+        Thank you for using our App.
+    </string>
+    <string name="Welcome_MassageGreek">Καλώς ήλθατε στην εφαρμογή μας, αν θέλετε να ψάξετε αμέσως τα προβλήματα μιας συγκεκριμένης
+    καλλιέργειας παρακαλώ πατήστε το κουμπί "Ναι" αλλιώς θα εμφανιστείτε στο κύριο menu.
+        Σας ευχαριστούμε που χρησιμοποιήσατε την εφαρμογή μας.
+    </string>
+    <string name="Yes_ButtonEng">Yes</string><string name="NoButtonEng">No</string>
+    <string name="Yes_ButtonGr">Ναι</string><string name="No_ButtonGr">Όχι</string>
+    <string name="ReadmeEng">First Steps</string><string name="ReadmeGr">Οδηγίες Χρήσης</string>
+    <string-array name="ChooseSpecialFarmingOptionsEng">
+        <item>Cucumber</item>
+        <item>Corn</item>
+        <item>Rice</item>
+        <item>Wheat</item>
+        <item>Beans</item>
+        <item>Lentil</item>
+        <item>Olive Tree</item>
+        <item>Burr</item>
+    </string-array>
+    <string-array name="ChooseSpecialFarmingOptionsGr">
+        <item>Αγγουρι</item>
+        <item>Καλαμπόκι</item>
+        <item>Ρύζι</item>
+        <item>Σιτάρι</item>
+        <item>Φασόλια</item>
+        <item>Φακή</item>
+        <item>Ελιά</item>
+        <item>Burr</item>
+    </string-array>
+    <string name="PleaseSelectEng">Please Select you Farming choice for List Below.</string>
+    <string name="PleaseSelectGr">Παρακαλω επιλέξτε ένα στοιχείο από την λίστα</string>
+    <string name="DrugForTextViewEng">Drug For</string><string name="DrugForTextViewGr">Λύση για το Πρόβλημα</string>
+    <string name="ProductNameTextViewEng">Product Name</string><string name="ProductNameTextViewGr">Όνομα Προιόντος</string>
+    <string name="ProductPriceTextViewEng">Product Price</string><string name="ProductPriceTextViewGr">Τιμή Προιόντος</string>
+    <string name="ProductManufacterTextViewEng">Product Manufacter</string><string name="ProductManufacterTextViewGr">Κατασκευαστής</string>
+    <string name="DistributerListViewEng">Distributer List</string><string name="DistributerListViewGr">Λίστα Διανομέων</string>
+    <string name="ActiveSubstanceListViewEng">Active Substance</string><string name="ActiveSubstanceListViewGr">Δραστικές Ουσίες</string>
+    <string name="WaitToLoadDatabaseDataDialogEng">Please wait while we fetching the Products from Database...</string>
+    <string name="WaitToLoadDatabaseDataDialogGr">Παρακάλουμε περιμέντε μέχρι να φέρουμε τα προιόντα από την βάση δεδομένων</string>
+
+    <string name="ReadMeEngDialog">
+       First of all thank you very much for choose our application to advice you  for your problems.\n
+        The First Page(The page which is behind of this Dialog)is the first page of the application , where you can\n
+        choose if you want to select directly the farming and see all the solutions for all possible problems(ex enemies,diseases,bugs).\n
+        If you want this you must click the Yes button on the layout. Else click on the No button and directly you will go on the\n
+        second page , where it will have more options for you to choose.\n
+
+        Continue , in the second page you will see some dialogs which help you to find your problem.\n
+        Note : If you dont know some problem please long click on the problem to see more details about it.\n
+
+        Last when you go to the Products page , it will appear the products which are in  the database right now . To see all\n
+        the product please swing the screen on the left side on the first time and after the first time , right or left.\n\n
+
+
+        Again Thank you for your support to our work.\n\n
+
+         Farmers Helper Develop Team.
+    </string>
+
+
+ <string name="ReadMeGrDialog">
+        Πρώτα απ όλα να σας ευχαριστήσω πολύ για να επιλέξει την εφαρμογή μας για να σας προσφέρει συμβουλές για τα προβλήματά σας.  \n
+        Η πρώτη σελίδα (η σελίδα που βρίσκεται πίσω από αυτό το Dialog) είναι η πρώτη σελίδα της εφαρμογής,\n όπου μπορείτε να  επιλέξετε αν θέλετε να επιλέξετε άμεσα την γεωργία και δείτε όλες τις λύσεις για όλα τα πιθανά προβλήματα (πρώην εχθρούς, ασθένειες, έντομα).     
+        Αν θέλετε αυτό πρέπει να κάνετε κλικ στο κουμπί "Ναι".\n
+        Αλλιώς κάντε κλικ στο κουμπί "Όχι" και άμεσα θα σας πάει στην δεύτερη σελίδα, όπου θα εχει περισσότερες επιλογές για να διαλέξετε.\n
+        Στην συνέχεια, στη δεύτερη σελίδα, θα δείτε μερικά παράθυρα διαλόγου που θα σας βοηθήσουν να βρείτε το πρόβλημά σας.\n       
+        Σημείωση: Εάν δεν γνωρίζετε κάποιο πρόβλημα παρακαλούμε μακρά κλικ στο πρόβλημα για να δείτε περισσότερες λεπτομέρειες σχετικά με αυτό.\n 
+        Τέλος όταν θα πάτε στη σελίδα των προϊόντων, θα εμφανιστούν τα προϊόντα που βρίσκονται στη βάση δεδομένων μέχρι αυτήν την στιγμή.\n
+        Για να δείτε όλα  τα προϊόντα παρακαλούμε να ταλαντεύεται την οθόνη στην αριστερή πλευρά για πρώτη φορά και μετά την πρώτη φορά, δεξιά ή αριστερά.\n      
+        Και πάλι σας ευχαριστούμε  για την υποστήριξή σας στο έργο μας.\n\n
+
+
+        Από την ομάδα Προγραμματισμού του Farmers Helper .
+    </string>
+    <string name="ExitYesMessageEng">Yes</string><string name="ExitYesMessageGr">Ναι</string>
+    <string name="ExitNoMessageEng">No</string><string name="ExitNoMessageGr">Όχι</string>
+    <string name="ExitMessageEng">Sure do you want to leave?</string><string name="ExitMessageGr">Σίγουρα θέλετε να αποχωρήσετε?</string>
 
 </resources>
+
+
+
+
+
+
+
+
+
+
+

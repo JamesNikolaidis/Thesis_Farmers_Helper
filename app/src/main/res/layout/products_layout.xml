@@ -22,25 +22,53 @@
        >
 
         <TextView
-            android:text="Product Name "
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:textSize="27dp"
+            android:id="@+id/DrugForTextViewDes"
+            android:textColor="@android:color/black"
+            android:layout_alignParentStart="true"
+            android:clickable="false"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/DrugFor"
+
+            android:layout_marginTop="12dp"
+            android:textColor="@android:color/black"
+            android:fontFamily="sans-serif-medium"
+            android:layout_below="@+id/textView6"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:background="@drawable/tip_shape"
+            />
+
+
+
+        <TextView
+            android:layout_marginTop="10dp"
             android:layout_width="185dp"
             android:layout_gravity="center"
             android:fontFamily="sans-serif-medium"
             android:layout_height="match_parent"
             android:id="@+id/productNameText"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="23dp"/>
 
         <TextView
             android:layout_marginTop="5dp"
-            android:text="Name"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:id="@+id/productName"
             android:background="@drawable/tip_shape"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:fontFamily="sans-serif-medium"
             android:textSize="20dp"/>
     </LinearLayout>
@@ -55,9 +83,8 @@
         >
 
         <TextView
-            android:text="Product Price "
             android:layout_gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:layout_width="190dp"
             android:layout_height="match_parent"
             android:id="@+id/productPriceText"
@@ -67,8 +94,7 @@
         <TextView
             android:layout_marginTop="5dp"
             android:textSize="20dp"
-            android:text="Price"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:layout_gravity="center"
             android:fontFamily="sans-serif-medium"
             android:layout_width="wrap_content"
@@ -91,13 +117,12 @@
 
 
         <TextView
-            android:text="Product Manufacter"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/productManufacterText"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:gravity="center"
             android:textSize="23dp"/>
 
@@ -105,12 +130,11 @@
             android:layout_marginTop="5dp"
             android:textSize="20dp"
             android:layout_gravity="center"
-            android:text="Manufacter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/productManufacter"
             android:gravity="center"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:background="@drawable/tip_shape"
             />
     </LinearLayout>
@@ -120,12 +144,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Distributer List"
         android:textAlignment="center"
         android:padding="10dp"
         android:textSize="27dp"
-        android:id="@+id/textView6"
-        android:textColor="@android:color/white"
+        android:id="@+id/DistributerTextViewDes"
+        android:textColor="@android:color/black"
         android:layout_marginTop="38dp"
         android:layout_alignParentStart="true"
         android:clickable="false"
@@ -140,14 +163,12 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:background="?android:attr/textColorHighlight"
         android:nestedScrollingEnabled="true"
-
         android:scrollbarAlwaysDrawVerticalTrack="false"
         android:verticalScrollbarPosition="defaultPosition"
         android:fadeScrollbars="false"
-
          android:scrollbarSize="10dp"
         android:scrollbarStyle="outsideOverlay"
         android:divider="@drawable/divider_shape"
@@ -158,33 +179,6 @@
 
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Drug For"
-        android:textAlignment="center"
-        android:padding="10dp"
-        android:textSize="27dp"
-        android:id="@+id/textView7"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="38dp"
-        android:layout_alignParentStart="true"
-        android:clickable="false"
-        />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/DrugFor"
-        android:layout_marginTop="12dp"
-        android:layout_below="@+id/textView6"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:textAlignment="center"
-        android:background="?android:attr/textColorHighlight"
-        android:nestedScrollingEnabled="true">
-
-    </ListView>
 
 
 
@@ -193,12 +187,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Active Substance"
         android:textAlignment="center"
         android:padding="10dp"
         android:textSize="27dp"
-        android:id="@+id/textView8"
-        android:textColor="@android:color/white"
+        android:id="@+id/ActiveSubstanceTextViewDes"
+        android:textColor="@android:color/black"
         android:layout_marginTop="38dp"
         android:layout_alignParentStart="true"
         android:clickable="false"
@@ -206,7 +199,7 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:id="@+id/ActiveSubstance"
         android:layout_marginTop="12dp"
         android:layout_below="@+id/textView6"

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <Button
+        android:layout_gravity="right"
+        android:layout_width="54dp"
+        android:clickable="true"
+        android:layout_height="50dp"
+        android:background="@drawable/previous_12"
+        android:id="@+id/back_buttonOnReadMe" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ReadMeTextView"
+        android:textColor="@android:color/black"
+
+
+        />
+
+</LinearLayout>
+
+    </ScrollView>
