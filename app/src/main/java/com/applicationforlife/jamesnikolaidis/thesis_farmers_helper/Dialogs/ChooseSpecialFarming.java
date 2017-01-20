@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Second_Screen;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Timers.GoToMainPageTimer;
 
 /**
  * Created by James Nikolaidis on 1/19/2017.
@@ -24,6 +25,7 @@ public class ChooseSpecialFarming {
         private TextView mChooseOptiomTextView;
         private ListView mChooseOptionListView;
         private Button mGoBack;
+        private GoToMainPageTimer mTimerObject;
 
 
 
@@ -33,7 +35,7 @@ public class ChooseSpecialFarming {
         public void ActivateSpecialFarming(final Activity activity , final Context context , int Language, final SharedPreferences.Editor mEditor){
             AlertDialog.Builder mChooseSpecialFarmingChooser  = new AlertDialog.Builder(activity);
             final AlertDialog mChooseSpecialFarmingChooserDialog =  mChooseSpecialFarmingChooser.create();
-
+            mTimerObject= GoToMainPageTimer.getInstance(activity,context);;
             mChooseSpecialFarmingChooserDialog.show();
             mChooseSpecialFarmingChooserDialog.setContentView(R.layout.choose_special_farming);
             mChooseOptiomTextView = (TextView)mChooseSpecialFarmingChooserDialog.findViewById(R.id.SelectOptionTextView);
@@ -60,6 +62,9 @@ public class ChooseSpecialFarming {
                 @Override
                 public void onClick(View view) {
                     mChooseSpecialFarmingChooserDialog.cancel();
+                    TextView text = (TextView) activity.findViewById(R.id.timer);
+                    mTimerObject.ActivateTimer(activity,context,(TextView)activity.findViewById(R.id.timer));
+
                 }
             });
 

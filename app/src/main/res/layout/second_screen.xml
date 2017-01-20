@@ -3,22 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6E6FA"
+    android:background="@drawable/product_background_test1"
     android:fitsSystemWindows="true">
 
     <android.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:id="@+id/toolbar1"
+        android:background="@drawable/toolbar_shape"
         >
 
 
     </android.widget.Toolbar>
-    <View
-        android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="10dp"
-        android:background="@drawable/divider_shape"/>
+
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"

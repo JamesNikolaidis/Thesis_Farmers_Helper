@@ -1,10 +1,8 @@
 package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -22,7 +20,7 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Clos
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.PaymentDialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Dialog_On_Long_Click_Listener;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Network_Wifi.Network_Wifi_Class;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar_Class.SimplyProgressBar;
 
 import java.io.IOException;
@@ -47,7 +45,7 @@ public class Second_Screen extends FragmentActivity {
     private SharedPreferences.Editor editor;
     private String User_Problem_Choice;
     private ViewPager viewPager;
-    ArrayList<Products> list;
+    ArrayList<WeedsProduct> list;
     private int counter;
     private static Database_Class_Functions database_class_functions;
     private Handler handler = new Handler();
@@ -113,10 +111,7 @@ public class Second_Screen extends FragmentActivity {
         else if (item.getItemId() == R.id.BiologicalTips) {
             PaymentDialog paymentDialog = new PaymentDialog();
             paymentDialog.DisplayPaymentDialog(getApplicationContext(), Second_Screen.this);
-        } else if (item.getItemId() == R.id.ProductLabel) {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/farmers-helper-44f7a.appspot.com/o/79999925c_Belt_24WG_50g_Box_Greek_Bonus_Label.pdf?alt=media&token=feecd676-5143-4548-9657-368029312866"));
-            startActivity(browserIntent);
-        } else if (item.getItemId() == R.id.chat) {
+        }else if (item.getItemId() == R.id.chat) {
             Chat_Dialog.DisplayChat(getApplicationContext(), Second_Screen.this);
         }
 
@@ -138,7 +133,7 @@ public class Second_Screen extends FragmentActivity {
 
     }
 
-    //Timer code below
+    //GoToMainPageTimer code below
     public void SetTimer(final int time) {
 
         timer = new Timer();
@@ -181,7 +176,7 @@ public class Second_Screen extends FragmentActivity {
                                 mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this,R.string.WaitToLoadDatabaseDataDialogEng);//activate the Dialog using the method ActivateProgressDialog() from the Bottom
                                  }
 
-                            SetTimer(10); //Set the Timer that Progress Bar will be on the Screen
+                            SetTimer(10); //Set the GoToMainPageTimer that Progress Bar will be on the Screen
 
                         }
                     },0);
@@ -202,7 +197,6 @@ public class Second_Screen extends FragmentActivity {
 
                                 @Override
                                 public void onPageSelected(int position) {
-
 
                                     if(Preference.getInt("Language",4)==0){
                                         mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this,R.string.WaitToLoadDatabaseDataDialogGr);//activate the Dialog using the method ActivateProgressDialog() from the Bottom
@@ -237,6 +231,7 @@ public class Second_Screen extends FragmentActivity {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
             close_program_dialog.GoToMainPanelDialog(Second_Screen.this,getApplicationContext());
+            database_class_functions.glag=false;
         }
         return false;
     }

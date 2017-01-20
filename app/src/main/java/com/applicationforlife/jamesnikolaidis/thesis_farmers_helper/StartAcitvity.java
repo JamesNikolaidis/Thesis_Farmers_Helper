@@ -14,7 +14,7 @@ import android.widget.Spinner;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Close_Program_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Dialogs_Class;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Spinners.Spinners;
 
 import java.util.ArrayList;
@@ -34,8 +34,8 @@ public class StartAcitvity  extends AppCompatActivity {
         private SharedPreferences share ;
         private SharedPreferences.Editor editor;
         private  static ArrayList<Integer> intarray ;
-         private Products products;
-        private  static ArrayList<Products> list;
+        private WeedsProduct weedsProduct;
+        private  static ArrayList<WeedsProduct> list;
         private Database_Class_Functions database_class_functions;
 
 
@@ -72,11 +72,6 @@ public class StartAcitvity  extends AppCompatActivity {
         editor.putBoolean("Clicked",true);
         editor.commit();
         dialogs_class_object.CreateDialogForProblem(getApplicationContext(),"Select Problem Category",intarray,(ListView)findViewById(R.id.ListView),Problem_Select_Button,activity.getResources().getStringArray(R.array.ProblemCategories),activity);
-
-
-
-
-
 
     }
 

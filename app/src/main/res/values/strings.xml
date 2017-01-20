@@ -1848,16 +1848,14 @@ Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the 
     <string name="title">Problem Categories</string>
 
 
-    <string name="Welcome_MassageEng">Welcome to our Application if you want to search directly the bugs for the Farming you want
-    ,please click "Yes" else you will go to our main page.
-        Thank you for using our App.
+    <string name="Welcome_MassageEng">If you want to search directly the bugs for the Farming you want
+    ,please click "Yes" otherwise you will redirect to main page in 10 seconds.
     </string>
-    <string name="Welcome_MassageGreek">Καλώς ήλθατε στην εφαρμογή μας, αν θέλετε να ψάξετε αμέσως τα προβλήματα μιας συγκεκριμένης
-    καλλιέργειας παρακαλώ πατήστε το κουμπί "Ναι" αλλιώς θα εμφανιστείτε στο κύριο menu.
-        Σας ευχαριστούμε που χρησιμοποιήσατε την εφαρμογή μας.
+    <string name="Welcome_MassageGreek">Aν θέλετε να ψάξετε αμέσως τα προβλήματα μιας συγκεκριμένης
+    καλλιέργειας παρακαλώ πατήστε το κουμπί "Ναι"  αλλιώς θα εμφανιστεί το κύριο menu σε 10 δευτερόπλεπτα.
     </string>
-    <string name="Yes_ButtonEng">Yes</string><string name="NoButtonEng">No</string>
-    <string name="Yes_ButtonGr">Ναι</string><string name="No_ButtonGr">Όχι</string>
+    <string name="Yes_ButtonEng">Yes</string>
+    <string name="Yes_ButtonGr">Ναι</string>
     <string name="ReadmeEng">First Steps</string><string name="ReadmeGr">Οδηγίες Χρήσης</string>
     <string-array name="ChooseSpecialFarmingOptionsEng">
         <item>Cucumber</item>
@@ -1879,7 +1877,7 @@ Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the 
         <item>Ελιά</item>
         <item>Burr</item>
     </string-array>
-    <string name="PleaseSelectEng">Please Select you Farming choice for List Below.</string>
+    <string name="PleaseSelectEng">Please Select your Farming choice for List Below.</string>
     <string name="PleaseSelectGr">Παρακαλω επιλέξτε ένα στοιχείο από την λίστα</string>
     <string name="DrugForTextViewEng">Drug For</string><string name="DrugForTextViewGr">Λύση για το Πρόβλημα</string>
     <string name="ProductNameTextViewEng">Product Name</string><string name="ProductNameTextViewGr">Όνομα Προιόντος</string>
@@ -1927,6 +1925,9 @@ Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the 
     <string name="ExitYesMessageEng">Yes</string><string name="ExitYesMessageGr">Ναι</string>
     <string name="ExitNoMessageEng">No</string><string name="ExitNoMessageGr">Όχι</string>
     <string name="ExitMessageEng">Sure do you want to leave?</string><string name="ExitMessageGr">Σίγουρα θέλετε να αποχωρήσετε?</string>
+    <string name="WelcomeEng">Welcome to Farmers Helper Application.</string><string name="WelcomeGr">Καλώς ήρθατε στην εφαρμογή Farmers Helper</string>
+    <string name="TimerTagTextViewEng">Time :</string><string name="TimerTagTextViewGr">Χρόνος :</string>
+
 
 </resources>
 

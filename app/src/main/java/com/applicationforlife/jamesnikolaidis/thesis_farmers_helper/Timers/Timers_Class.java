@@ -22,7 +22,7 @@ public class Timers_Class {
             mTipTimer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    if(Disable_Tip_Dialog_Counter==2){
+                    if(Disable_Tip_Dialog_Counter==3){
                         mTipDialog.cancel();
                         mTipTimer.cancel();
                     }
