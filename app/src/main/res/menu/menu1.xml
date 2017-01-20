@@ -23,11 +23,4 @@
         android:onClick="MenuClick"
         >
     </item>
-    <item
-        android:showAsAction="always"
-        android:id="@+id/ProductLabel"
-        android:title="Product Label"
-        android:icon="@drawable/pdf"
-        android:onClick="MenuClick">
-    </item>
 </menu>

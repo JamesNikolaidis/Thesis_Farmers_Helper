@@ -108,8 +108,8 @@ public class Spinners {
                     spinners.get(1).setAdapter(adapter1);
                     layout[0].setVisibility(View.VISIBLE);
                     break;
-                case "Products":
-                    Toast.makeText(APPLICATION_CONTEXT,"Products",Toast.LENGTH_SHORT).show();
+                case "WeedsProduct":
+                    Toast.makeText(APPLICATION_CONTEXT,"WeedsProduct",Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     Toast.makeText(APPLICATION_CONTEXT,"Vehicle",Toast.LENGTH_SHORT).show();
@@ -133,8 +133,8 @@ public class Spinners {
                     spinners.get(1).setAdapter(adapter1);
                     layout[0].setVisibility(View.VISIBLE);
                     break;
-                case "Products":
-                    Toast.makeText(APPLICATION_CONTEXT,"Products",Toast.LENGTH_SHORT).show();
+                case "WeedsProduct":
+                    Toast.makeText(APPLICATION_CONTEXT,"WeedsProduct",Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     Toast.makeText(APPLICATION_CONTEXT,"Vehicle",Toast.LENGTH_SHORT).show();

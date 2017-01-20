@@ -24,12 +24,12 @@
         android:textColor="@android:color/black"
         android:text="@string/PleaseSelectEng"/>
    <ListView
-       android:background="#ffcccc"
+       android:background="#778899"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:id="@+id/SelectOptionListView"
        android:textColor="@android:color/black"
-       android:divider="@drawable/divider_shape"
+       android:divider="@drawable/introduction_divider_shape"
        />
 
 

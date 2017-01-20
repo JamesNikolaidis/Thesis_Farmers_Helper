@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.CustomAdapter;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Dialog_On_Long_Click_Listener;
@@ -373,9 +372,8 @@ public class Dialogs_Class extends Dialog {
 
 
                     } else {
-                        Toast.makeText(context,BeforeOption1,Toast.LENGTH_SHORT).show();
+
                         if (BeforeOption1.matches("Weeds List")) {
-                            Toast.makeText(context,"Someone",Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                             list_of_image_id.clear();
                             BugsListOptionActivate(context, User_Choose[i], activity);

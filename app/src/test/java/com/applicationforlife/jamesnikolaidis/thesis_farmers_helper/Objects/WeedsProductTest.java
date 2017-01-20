@@ -6,14 +6,14 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by James Nikolaidis on 1/13/2017.
  */
-public class ProductsTest {
+public class WeedsProductTest {
 
-    private static Products mTestingProductObject;
+    private static WeedsProduct mTestingProductObject;
     private static String[] mTestingInformation;
 
     @Test
         public void InitializeProducts(){
-        mTestingProductObject = new Products();
+        mTestingProductObject = new WeedsProduct();
     }
 
     @Test
@@ -23,7 +23,7 @@ public class ProductsTest {
         mTestingInformation[0] = "TestingActive";
         mTestingInformation[1] = "TestingManufacter";
         mTestingInformation[2] = "TestingName";
-        mTestingProductObject = new Products(mTestingInformation);
+        mTestingProductObject = new WeedsProduct(mTestingInformation);
 
     }
 
@@ -38,7 +38,7 @@ public class ProductsTest {
         mTestingInformation[4] = "TestingDrug";
         mTestingInformation[5] = "TestingProblemSolving";
         mTestingInformation[6] = "OneMoreVar";
-        mTestingProductObject = new Products(mTestingInformation);
+        mTestingProductObject = new WeedsProduct(mTestingInformation);
 
     }
 
@@ -84,21 +84,21 @@ public class ProductsTest {
 
     @Test
     public void setActiveSubstance() throws Exception {
-            mTestingProductObject = new Products();
+            mTestingProductObject = new WeedsProduct();
             mTestingProductObject.setActiveSubstance("TestingActiveSubstance");
             assertEquals("The information is not equal","TestingActiveSubstance",mTestingProductObject.getActiveSubstance());
     }
 
     @Test
     public void setManufacter() throws Exception {
-        mTestingProductObject = new Products();
+        mTestingProductObject = new WeedsProduct();
         mTestingProductObject.setManufacter("TestingManufacter");
         assertEquals("The information is not equal","TestingManufacter",mTestingProductObject.getManufacter());
     }
 
     @Test
     public void setName() throws Exception {
-        mTestingProductObject = new Products();
+        mTestingProductObject = new WeedsProduct();
         mTestingProductObject.setName("TestingName");
         assertEquals("The information is not equal","TestingName",mTestingProductObject.getName());
     }
@@ -111,7 +111,7 @@ public class ProductsTest {
 
     @Test
     public void setDrugFor() throws Exception {
-        mTestingProductObject = new Products();
+        mTestingProductObject = new WeedsProduct();
         mTestingProductObject.setDrugFor("TestingDrugFor");
         assertEquals("The information is not equal","TestingDrugFor",mTestingProductObject.getDrugFor());
     }
@@ -119,7 +119,7 @@ public class ProductsTest {
 
     @Test
     public void setProblem_Solving() throws Exception {
-        mTestingProductObject = new Products();
+        mTestingProductObject = new WeedsProduct();
         mTestingProductObject.setProblem_Solving("TestingProblemSolving");
         assertEquals("The information is not equal","TestingProblemSolving",mTestingProductObject.getProblem_Solving());
     }

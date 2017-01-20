@@ -4,18 +4,18 @@ package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects;
  * Created by James Nikolaidis on 12/17/2016.
  */
 
-public class Products  {
+public class WeedsProduct {
        public  String ActiveSubstance;
        public  String Manufacter , Name , Price ;
-       public  String DrugFor , Problem_Solving;
+       public  String DrugFor , Problem_Solving,Description;
 //
 
-        public Products(){
+        public WeedsProduct(){
 
         }
 
 
-        public Products(String ...args){
+        public WeedsProduct(String ...args){
 
 
            try {
@@ -26,6 +26,7 @@ public class Products  {
                             this.Price = args[3];
                             this.DrugFor = args[4];
                             this.Problem_Solving = args[5];
+                            this.Description = args[6];
                                 if(args.length>6){ System.out.printf("Farmers Helper Warning :You gave more information from wanted : %d ,  Wanted 6 you may loose data..", args.length);}
 
 
@@ -101,5 +102,13 @@ public class Products  {
 
     public void setProblem_Solving(String problem_Solving) {
         Problem_Solving = problem_Solving;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 }

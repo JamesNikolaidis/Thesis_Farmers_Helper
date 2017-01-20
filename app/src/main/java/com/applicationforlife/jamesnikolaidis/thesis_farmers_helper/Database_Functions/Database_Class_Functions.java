@@ -1,20 +1,25 @@
 package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions;
 
 import android.content.Context;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Chat_Class.Chat_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Company;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Distributer;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Stocks;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -31,18 +36,20 @@ public class Database_Class_Functions  {
     private static Database_Class_Functions Class_instance;
     private Firebase mRootVar;
     private FirebaseDatabase mDatabase ;
-    private FirebaseStorage mStorage;
-    private Firebase mProducts , mStocks , mCompany , mDistributer,mChat;
-    private static ArrayList<Products> mProductsMap;
+    private static FirebaseStorage mStorage;
+    private Firebase mProducts , mStocks , mCompany , mDistributer,mChat,mWeedsProducts;
+    private static ArrayList<WeedsProduct> mWeedsProductMap;
     private static Company mCompanyObject;
     private Distributer mDistributerObject;
-    private static boolean glag = false,FirstTime=true;
+    public static boolean glag = false;
+    private static boolean FirstTime=true;
     private static ArrayList<ArrayList<String>> mDistributerList;
     private static int mycounter = 0;
     private static ArrayList<String> mWeedsMessageList ,mFarmingMessageList,mWeedMessageKeyList,mFarmingMessageKeyList,Messages,MessageKey;
     private static int MessageMaxCounter1=0;
     private static ArrayList<String> mNewMessages , mNewMesagesKey;
     public static boolean comeanother = false;
+    private static String mPdfUrl="";
 
 
 
@@ -57,11 +64,10 @@ public class Database_Class_Functions  {
             mRootVar = new Firebase("https://farmers-helper-44f7a.firebaseio.com/");
             mStorage = FirebaseStorage.getInstance();
             mStocks = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Stocks");
-            mProducts=new Firebase("https://farmers-helper-44f7a.firebaseio.com/Products");
+            mProducts=new Firebase("https://farmers-helper-44f7a.firebaseio.com/Products/Weeds");
             mCompany= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Company");
             mChat= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat");
             mDistributer= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Distributers");
-            mProductsMap =  new ArrayList<>();
             mCompanyObject = new Company();
             mDistributerObject = new Distributer();
             mDistributerList = new ArrayList<>();
@@ -98,14 +104,14 @@ public class Database_Class_Functions  {
 
 
         public  void GetProduct(String Reason ){
-
+            mWeedsProductMap = new ArrayList<>();
       if(glag==false){
           Query getProductByReason = mProducts.orderByChild("Problem_Solving").equalTo(Reason).limitToFirst(100);
             getProductByReason.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                        Products robotProdutct = dataSnapshot.getValue(Products.class);
-                    mProductsMap.add(robotProdutct);
+                        WeedsProduct robotProdutct = dataSnapshot.getValue(WeedsProduct.class);
+                    mWeedsProductMap.add(robotProdutct);
 
                     mycounter++;
 
@@ -135,8 +141,18 @@ public class Database_Class_Functions  {
 
         }
 
-public ArrayList<Products> getProductsData(){
-    return mProductsMap;
+
+
+
+
+
+
+
+
+
+
+public ArrayList<WeedsProduct> getProductsData(){
+    return mWeedsProductMap;
 }
 
 
@@ -181,8 +197,6 @@ public ArrayList<Products> getProductsData(){
                     findDistributerDetails.addChildEventListener(new ChildEventListener() {
                         @Override
                         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
-
                                     mDistributerList.add(dataSnapshot.getValue(Stocks.class).getmDistributerEmail());
                         }
 
@@ -303,7 +317,7 @@ public ArrayList<Products> getProductsData(){
     {
 
         if(comeanother==true){
-            Log.e("INFORMATION","IS Another TRUE");
+
         Messages = new ArrayList<>();
         MessageKey = new ArrayList<>();
         Firebase Root = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat/Weeds_Messages");
@@ -547,6 +561,36 @@ public ArrayList<Products> getProductsData(){
     public Distributer ReturnDistributerProfil(){
         return mDistributerObject;
     }
+
+
+
+
+    public void FindandCollectProductPdfFileLink(String ProductName, String Manufacter){
+         FirebaseStorage mStor = FirebaseStorage.getInstance();
+         StorageReference mFindPdfStorageReference =  mStor.getReferenceFromUrl("gs://farmers-helper-44f7a.appspot.com/"+Manufacter+"/"+ProductName+"/"+ProductName+".pdf");
+            mFindPdfStorageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+             @Override
+             public void onSuccess(Uri uri) {
+                 mPdfUrl = String.valueOf(uri);}
+         }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    mPdfUrl="";
+                }
+            });
+
+
+
+
+
+    }
+
+
+    public  String GetProductUrl(){
+        return mPdfUrl;
+
+    }
+
 
 
 }

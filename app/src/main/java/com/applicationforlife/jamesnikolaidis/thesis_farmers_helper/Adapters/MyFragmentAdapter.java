@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Fragment.ProductFragment;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 
 import java.util.ArrayList;
 
@@ -21,7 +21,7 @@ public class MyFragmentAdapter extends FragmentPagerAdapter {
     Activity myActivity;
     private SharedPreferences share ;
     private SharedPreferences.Editor editor;
-    ArrayList<Products> list;
+    ArrayList<WeedsProduct> list;
     private static Database_Class_Functions database_class_functions ;
 
     public MyFragmentAdapter(FragmentManager fm, Context con, Activity activity) {

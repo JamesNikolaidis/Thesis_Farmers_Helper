@@ -2,7 +2,9 @@ package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Fragment;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -11,13 +13,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.General_Functions.General_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Dialog_On_Long_Click_Listener;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Products;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
 
 import java.util.ArrayList;
@@ -29,7 +33,7 @@ import static android.os.Build.ID;
  */
 //
 public class ProductFragment extends Fragment {
-    private static Products mProduct;
+    private static WeedsProduct mProduct;
     private  int position;
     private TextView mProductName , mProductPrice , mProductManufacter, mDrugForListView ;
     private TextView mProductNameTextViewDescription , mProductPriceTextViewDescription,mProductManufterTextViewDescription,mDrugForTextViewDescription,
@@ -41,13 +45,15 @@ public class ProductFragment extends Fragment {
     private static General_Class general_class;
     private static Dialog_On_Long_Click_Listener listener;
     private SharedPreferences sharedPreferences;
+    private static ImageView mPdfImage,mBackButton;
+
 
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mProduct = new Products();
+        mProduct = new WeedsProduct();
 
 
     }
@@ -72,9 +78,13 @@ public class ProductFragment extends Fragment {
         mDrugForTextViewDescription= (TextView) view.findViewById(R.id.DrugForTextViewDes);
         DistributerForTextViewDescription= (TextView) view.findViewById(R.id.DistributerTextViewDes);
         ActiveSubstanceForTextViewDescription= (TextView) view.findViewById(R.id.ActiveSubstanceTextViewDes);
-
         mActiveSubanseListView = (ListView)view.findViewById(R.id.ActiveSubstance);
         mDistributerListView= (ListView)view.findViewById(R.id.Distributer);
+        mPdfImage=(ImageView)view.findViewById(R.id.PdfProduct);
+        mBackButton = (ImageView) view.findViewById(R.id.BackButtonOnProducts);
+
+
+        if((int)getArguments().getSerializable(ID)==0){mBackButton.setVisibility(View.INVISIBLE);}
 
 
         listener = new Dialog_On_Long_Click_Listener();
@@ -82,7 +92,7 @@ public class ProductFragment extends Fragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                ArrayList<Products> product = database_class_functions.getProductsData();
+                ArrayList<WeedsProduct> product = database_class_functions.getProductsData();
                 mProduct = product.get((int)getArguments().getSerializable(ID));
                 if(sharedPreferences.getInt("Language",0)==0){
                     mProductNameTextViewDescription.setText(activity.getResources().getString(R.string.ProductNameTextViewGr));
@@ -108,26 +118,48 @@ public class ProductFragment extends Fragment {
 
 
 
-
+                database_class_functions.FindandCollectProductPdfFileLink(mProduct.getName(),mProduct.getManufacter());
                 mProductName.setText(mProduct.getName());
                 mProductPrice.setText(mProduct.getPrice());
                 mProductManufacter.setText(mProduct.getManufacter());
                 ArrayList<String> list = new ArrayList<String>();
-               list = database_class_functions.PassDistributersData().get((int)getArguments().getSerializable(ID));
+                list = database_class_functions.PassDistributersData().get((int)getArguments().getSerializable(ID));
 
-                 ArrayAdapter adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1,list);
-                mDistributerListView.setAdapter(adapter);
-                mDistributerListView.setScrollBarSize(20);
+                 ArrayAdapter adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_gallery_item,list);
+                 mDistributerListView.setAdapter(adapter);
+                 mDistributerListView.setScrollBarSize(20);
 
 
-                  mDrugForListView.setText(mProduct.DrugFor);
-                 ArrayAdapter adapter2 = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1,new String[]{mProduct.getActiveSubstance()});
-                 mActiveSubanseListView.setAdapter(adapter2);
+                  mDrugForListView.setText(mProduct.Problem_Solving);
+                  ArrayAdapter adapter2 = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_list_item_1,new String[]{mProduct.getActiveSubstance()});
+                  mActiveSubanseListView.setAdapter(adapter2);
+
+
+
+
+
+
+
 
                // database_class_functions.ClearDistArrayList();
             }
         }, 3000);
             listener.SetListViewOnClickListener(getActivity(),con,mDistributerListView);
+
+
+        mPdfImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              if(!database_class_functions.GetProductUrl().equals("")){
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(database_class_functions.GetProductUrl()));
+                  startActivity(browserIntent);
+              }else{
+                  Toast.makeText(getContext(),"Sorry we dont have pdf file for this product yes.",Toast.LENGTH_SHORT).show();}
+
+            }
+        });
+
+
 
         return view;
     }
