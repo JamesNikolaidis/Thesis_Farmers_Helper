@@ -16,10 +16,11 @@ public class SimplyProgressBar {
 
             }
 
-    public ProgressDialog ActivateProgressDialog(ProgressDialog mGUIProgressDialog,Activity activity){
+    public ProgressDialog ActivateProgressDialog(ProgressDialog mGUIProgressDialog,Activity activity,int StringMessageId){
 
         mGUIProgressDialog = new ProgressDialog(activity.getLayoutInflater().getContext());
-        mGUIProgressDialog.setMessage("Please wait while we fetching the Products from Database...");
+
+        mGUIProgressDialog.setMessage(activity.getResources().getString(StringMessageId));
         mGUIProgressDialog.setMax(100);
         mGUIProgressDialog.setCancelable(false);
         mGUIProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);

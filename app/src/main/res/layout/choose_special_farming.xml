@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <Button
+        android:layout_gravity="right"
+        android:layout_width="54dp"
+        android:clickable="true"
+        android:layout_height="50dp"
+        android:onClick="BackButton"
+        android:background="@drawable/previous_12"
+        android:id="@+id/back_buttonOnChooseSpecialFarming" />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SelectOptionTextView"
+        android:textColor="@android:color/black"
+        android:text="@string/PleaseSelectEng"/>
+   <ListView
+       android:background="#ffcccc"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/SelectOptionListView"
+       android:textColor="@android:color/black"
+       android:divider="@drawable/divider_shape"
+       />
+
+
+
+
+</LinearLayout>

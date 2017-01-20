@@ -81,8 +81,6 @@ public class Chat_Dialog {
         mSimplyProgressBar = new SimplyProgressBar();
         database_class_functions = Database_Class_Functions.GetDatabaseInstance(context);
         mMessagesKey=mMessages = new ArrayList<>();
-
-
         if(mNetwork_and_Wifi_Class.CheckInternetConnectivity(context)==true){
             mWaitProgressDialog = mSimplyProgressBar.ActivateProgressDialog1(mWaitProgressDialog,activity);
             database_class_functions.MessagesCount();
@@ -90,11 +88,16 @@ public class Chat_Dialog {
             mHandler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-
                     database_class_functions.ActivateChat();
                     database_class_functions.comeanother = false;
-                    RefreshChat();
-                    RefreshTime();
+                    mHandler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            RefreshChat();
+                            RefreshTime();
+                        }
+
+                    },2000);
                 }
             },1000);
 
@@ -189,7 +192,7 @@ public class Chat_Dialog {
                         public void run() {
                             mMessages = database_class_functions.ReturnMessageArray(mSearchEditText.getText().toString());
                             mMessagesKey = database_class_functions.ReturnMessageKeyArray("mSearchEditText.getText().toString()");
-                            ArrayAdapter adapter = new Chat_Adapter(dialog.getContext(),mMessages,mMessagesKey);
+                            ArrayAdapter adapter = new Chat_Adapter(dialog.getContext(),mMessages,mMessagesKey,0);
                             mMessageListView.setAdapter(adapter);
                             mSearchEditText.setText("");
                         }
@@ -287,7 +290,7 @@ public class Chat_Dialog {
                 public void run() {
                     mMessages = database_class_functions.getMessages();
                     mMessagesKey = database_class_functions.getMessageKey();
-                    ArrayAdapter adapter = new Chat_Adapter(dialog.getContext(), mMessages, mMessagesKey);
+                    ArrayAdapter adapter = new Chat_Adapter(dialog.getContext(), mMessages, mMessagesKey,0);
                     mMessageListView.setAdapter(adapter);
                 }
             }, 2000);
@@ -299,7 +302,7 @@ public class Chat_Dialog {
                 public void run() {
                     mMessages = database_class_functions.getMessages();
                     mMessagesKey = database_class_functions.getMessageKey();
-                    ArrayAdapter adapter = new Chat_Adapter(dialog.getContext(), mMessages, mMessagesKey);
+                    ArrayAdapter adapter = new Chat_Adapter(dialog.getContext(), mMessages, mMessagesKey,1);
                     mMessageListView.setAdapter(adapter);
 
                 }

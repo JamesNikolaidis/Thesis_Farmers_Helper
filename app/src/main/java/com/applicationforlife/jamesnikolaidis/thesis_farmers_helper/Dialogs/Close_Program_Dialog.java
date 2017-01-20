@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.StartAcitvity;
 
 /**
@@ -16,27 +17,51 @@ public class Close_Program_Dialog {
 
         public Close_Program_Dialog(){}
 
-        public void CloseProgramDialog(final Activity activity , Context context){
+        public void CloseProgramDialog(final Activity activity , Context context,int Language){
+
             final AlertDialog.Builder mCloseAppDialogBuilder = new AlertDialog.Builder(activity);
-            mCloseAppDialogBuilder.setMessage("Sure do you want to leave?")
-                    .setNegativeButton("No,I want to stay.", new DialogInterface.OnClickListener() {
+
+
+        if(Language==0){
+            mCloseAppDialogBuilder.setMessage(activity.getResources().getString(R.string.ExitMessageGr))
+                    .setNegativeButton(activity.getResources().getString(R.string.ExitNoMessageGr), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                                 mCloseAppDialogBuilder.setCancelable(true);
                         }
                     })
-                    .setPositiveButton("Yes,Exit.", new DialogInterface.OnClickListener() {
+                    .setPositiveButton(activity.getResources().getString(R.string.ExitYesMessageGr), new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                            activity.finishAffinity();
                         }
+                    });
+
+        }else{
+            mCloseAppDialogBuilder.setMessage(activity.getResources().getString(R.string.ExitMessageEng))
+                    .setNegativeButton(activity.getResources().getString(R.string.ExitNoMessageEng), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            mCloseAppDialogBuilder.setCancelable(true);
+                        }
                     })
+                    .setPositiveButton(activity.getResources().getString(R.string.ExitYesMessageEng), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            activity.finishAffinity();
+                        }
+                    });
+        }
+
+
+            mCloseAppDialogBuilder
                     .setIcon(activity.getResources().getIdentifier("exclamation","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"))
                     .create();
+
+
+
             AlertDialog dialog = mCloseAppDialogBuilder.create();
             dialog.show();
-
-
 
         }
 

@@ -3,6 +3,7 @@ package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -83,7 +84,12 @@ public class Second_Screen extends FragmentActivity {
         }else{Reconnect_and_Load_Data(); }
         //******************Initialize the Activity's Toolbar ****************************//
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
-        toolbar.setTitle("Products");
+        toolbar.setTitleTextColor(Color.BLACK);
+
+        if(Preference.getInt("Language",4)==0){
+            toolbar.setTitle("Προιόντα");
+        }else{ toolbar.setTitle("Products");}
+
         setActionBar(toolbar);
 
 
@@ -102,7 +108,7 @@ public class Second_Screen extends FragmentActivity {
         //***********Set menu's clicks methods********************/
         if (item.getItemId() == R.id.miCompose) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
-            close_program_dialog.CloseProgramDialog(Second_Screen.this,getApplicationContext());
+            close_program_dialog.CloseProgramDialog(Second_Screen.this,getApplicationContext(),Preference.getInt("Language",5));
         } //if users click the "Log Out" option
         else if (item.getItemId() == R.id.BiologicalTips) {
             PaymentDialog paymentDialog = new PaymentDialog();
@@ -169,7 +175,12 @@ public class Second_Screen extends FragmentActivity {
                         @Override
                         public void run() {
 
-                            mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this);//activate the Dialog using the method ActivateProgressDialog() from the Bottom
+                            if(Preference.getInt("Language",4)==0){
+                                mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this,R.string.WaitToLoadDatabaseDataDialogGr);//activate the Dialog using the method ActivateProgressDialog() from the Bottom
+                            }else{
+                                mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this,R.string.WaitToLoadDatabaseDataDialogEng);//activate the Dialog using the method ActivateProgressDialog() from the Bottom
+                                 }
+
                             SetTimer(10); //Set the Timer that Progress Bar will be on the Screen
 
                         }
@@ -191,7 +202,13 @@ public class Second_Screen extends FragmentActivity {
 
                                 @Override
                                 public void onPageSelected(int position) {
-                                    mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this);
+
+
+                                    if(Preference.getInt("Language",4)==0){
+                                        mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this,R.string.WaitToLoadDatabaseDataDialogGr);//activate the Dialog using the method ActivateProgressDialog() from the Bottom
+                                    }else{
+                                        mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen.this,R.string.WaitToLoadDatabaseDataDialogEng);//activate the Dialog using the method ActivateProgressDialog() from the Bottom
+                                    }
                                     SetTimer(3);
                                 }
 
