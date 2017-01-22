@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.view.ContextThemeWrapper;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.CustomAdapter;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Dialog_On_Long_Click_Listener;
@@ -95,6 +98,182 @@ public class Dialogs_Class extends Dialog {
         title.setText(texttitle);
         Button BackButton = (Button) dialog.findViewById(R.id.back_button);
         ListView il = (ListView) dialog.findViewById(R.id.ListView);
+
+        dialog.setOnKeyListener(new OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
+
+
+                if (i == KeyEvent.KEYCODE_BACK) {
+                    anotherflag = 0;
+
+                    if (share.getBoolean("Clicked", false) == true) {
+                        dialog.dismiss();
+
+
+                    }
+
+                     if (share.getBoolean("Clicked", false) == false && share.getBoolean("Clicked1", false) == true) {
+
+                        dialog.dismiss();
+                        list_of_image_id.clear();
+                        list_of_image_id.add(activity.getResources().getIdentifier("weeds", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        list_of_image_id.add(activity.getResources().getIdentifier("farming1", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
+                        CreateDialogForProblem(context, " Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.ProblemCategories), activity);
+                        editor.putBoolean("Clicked1", false);
+                        editor.putBoolean("Clicked", true);
+                        editor.commit();
+
+
+                    }
+                    if (share.getBoolean("Clicked", false) == false && share.getBoolean("Clicked1", false) == false) {
+                        list_of_image_id.clear();
+                        if (flag == 0) {
+                            switch (BeforeOption2) {
+                                case "Enemies":
+                                    dialog.dismiss();
+                                    list_of_image_id.clear();
+                                    list_of_image_id = photos_functions.getMainDialogPhotos(activity);
+                                    CreateDialogForProblem(context, "Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.Bugs_List), activity);
+                                    editor.putBoolean("Clicked1", true);
+                                    editor.commit();
+                                    break;
+                                case "Disease":
+                                    dialog.dismiss();
+                                    list_of_image_id.clear();
+                                    list_of_image_id = photos_functions.getMainDialogPhotos(activity);
+                                    CreateDialogForProblem(context, "Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.Bugs_List), activity);
+                                    editor.putBoolean("Clicked1", true);
+
+                                    editor.commit();
+
+                                    break;
+                                case "Bugs":
+                                    dialog.dismiss();
+                                    list_of_image_id.clear();
+                                    list_of_image_id = photos_functions.getMainDialogPhotos(activity);
+                                    CreateDialogForProblem(context, "Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.Bugs_List), activity);
+                                    editor.putBoolean("Clicked1", true);
+                                    editor.commit();
+
+                                    break;
+
+                                case "Vegetables":
+                                    dialog.dismiss();
+                                    list_of_image_id.clear();
+                                    list_of_image_id = photos_functions.getFarmingPhotos(activity);
+                                    CreateDialogForProblem(context, "Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.Farming_Culture), activity);
+                                    editor.putBoolean("Clicked1", true);
+                                    editor.commit();
+
+                                    break;
+                                case "Legumes":
+                                    dialog.dismiss();
+                                    list_of_image_id.clear();
+                                    list_of_image_id = photos_functions.getFarmingPhotos(activity);
+                                    CreateDialogForProblem(context, "Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.Farming_Culture), activity);
+                                    editor.putBoolean("Clicked1", true);
+                                    editor.commit();
+
+                                    break;
+                                case "Fruits":
+                                    dialog.dismiss();
+                                    list_of_image_id.clear();
+                                    list_of_image_id = photos_functions.getFarmingPhotos(activity);
+                                    CreateDialogForProblem(context, "Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.Farming_Culture), activity);
+                                    editor.putBoolean("Clicked1", true);
+                                    editor.commit();
+
+                                    break;
+                                case "Cereal":
+                                    dialog.dismiss();
+                                    list_of_image_id.clear();
+                                    list_of_image_id = photos_functions.getFarmingPhotos(activity);
+                                    CreateDialogForProblem(context, "Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.Farming_Culture), activity);
+                                    editor.putBoolean("Clicked1", true);
+                                    editor.commit();
+
+                                    break;
+                                case "Olives":
+                                    dialog.dismiss();
+                                    list_of_image_id.clear();
+                                    list_of_image_id = photos_functions.getFarmingPhotos(activity);
+                                    CreateDialogForProblem(context, "Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.Farming_Culture), activity);
+                                    editor.putBoolean("Clicked1", true);
+                                    editor.commit();
+
+                                    break;
+                                case "Tree Nuts":
+                                    dialog.dismiss();
+                                    list_of_image_id.clear();
+                                    list_of_image_id = photos_functions.getFarmingPhotos(activity);
+                                    CreateDialogForProblem(context, "Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.Farming_Culture), activity);
+                                    editor.putBoolean("Clicked1", true);
+                                    editor.commit();
+
+                                    break;
+
+
+                            }
+
+                        } else {
+                            if (Before3.matches("Orange") || Before3.matches("Apple") || Before3.matches("Strawberry") || Before3.matches("Pear") || Before3.matches("Apricot") || Before3.matches("Watermelon") || Before3.matches("Cherry") || Before3.matches("Mandarin") || Before3.matches("Fig") || Before3.matches("Peach")) {
+                                dialog.dismiss();
+                                list_of_image_id.clear();
+                                list_of_image_id = photos_functions.getFruitsPhotos(activity);
+                                CreateDialogForProblem(context, "Solutuion For.", list_of_image_id, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Fruits), activity);
+                                flag = 0;
+
+
+                            } else if (Before3.matches("Rice") || Before3.matches("Wheat") || Before3.matches("Oats") || Before3.matches("Corn") || Before3.matches("Barley")) {
+
+                                dialog.dismiss();
+                                list_of_image_id.clear();
+                                list_of_image_id = photos_functions.getCerealPhotos(activity);
+                                CreateDialogForProblem(context, "Solutuion For.", list_of_image_id, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Cereals), activity);
+                                flag = 0;
+
+                            } else if (Before3.matches("Beans") || Before3.matches("Lentil") || Before3.matches("Chickpeas") || Before3.matches("Peas")) {
+
+                                dialog.dismiss();
+                                list_of_image_id.clear();
+                                list_of_image_id = photos_functions.getLentilPhotos(activity);
+                                CreateDialogForProblem(context, "Solutuion For.", list_of_image_id, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Legumes), activity);
+                                flag = 0;
+
+                            } else if (Before3.matches("Cucumber") || Before3.matches("Artichoke") || Before3.matches("Cauliflower") || Before3.matches("Spinach") || Before3.matches("Onion") || Before3.matches("Cabbage") || Before3.matches("Broccoli") || Before3.matches("Tomato")) {
+
+                                dialog.dismiss();
+                                list_of_image_id.clear();
+                                list_of_image_id = photos_functions.getVegetablesPhotos(activity);
+                                CreateDialogForProblem(context, "Solutuion For.", list_of_image_id, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Vegetables), activity);
+                                flag = 0;
+                            } else if (Before3.matches("Almond Tree") || Before3.matches("Peanut tree") || Before3.matches("Hazel Nuts") || Before3.matches("Chestnut Tree") || Before3.matches("Walnuts")) {
+
+                                dialog.dismiss();
+                                list_of_image_id.clear();
+                                list_of_image_id = photos_functions.getNutsPhotos(activity);
+                                CreateDialogForProblem(context, "Solutuion For.", list_of_image_id, listView, ButtonArray.get(2), activity.getResources().getStringArray(R.array.Tree_Nuts), activity);
+                                flag = 0;
+
+                            }
+
+
+                        }
+
+
+                    }
+
+
+                }
+                    return false;
+            }
+        });
+
+
+
+
+
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,6 +289,7 @@ public class Dialogs_Class extends Dialog {
                     list_of_image_id.add(activity.getResources().getIdentifier("weeds", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                     list_of_image_id.add(activity.getResources().getIdentifier("farming1", "drawable", "com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
                     CreateDialogForProblem(context, " Select Problem Category", list_of_image_id, (ListView) findViewById(R.id.ListView), ButtonArray.get(2), activity.getResources().getStringArray(R.array.ProblemCategories), activity);
+                    editor.putBoolean("Clicked1", false);
                     editor.putBoolean("Clicked", true);
                     editor.commit();
 
@@ -250,11 +430,7 @@ public class Dialogs_Class extends Dialog {
                     }
 
 
-                } else if (share.getBoolean("Clicked", false) == true && share.getBoolean("Clicked1", false) == true) {
-                    dialog.dismiss();
-                    editor.putBoolean("Clicked", true);
                 }
-
 
             }
         });
@@ -374,6 +550,7 @@ public class Dialogs_Class extends Dialog {
                     } else {
 
                         if (BeforeOption1.matches("Weeds List")) {
+                            Toast.makeText(context,"OnWeeds",Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                             list_of_image_id.clear();
                             BugsListOptionActivate(context, User_Choose[i], activity);

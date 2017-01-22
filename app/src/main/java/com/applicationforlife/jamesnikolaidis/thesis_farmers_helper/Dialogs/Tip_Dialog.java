@@ -3,7 +3,10 @@ package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
 
@@ -20,11 +23,19 @@ public class Tip_Dialog {
         mTipDialog= builder2.create();
         mTipDialog.getWindow().getAttributes().windowAnimations = R.style.Tip_Animation;
         WindowManager.LayoutParams params = mTipDialog.getWindow().getAttributes();
-        params.x = -230;
-        params.y = -550;
         mTipDialog.getWindow().setAttributes(params);
         mTipDialog.show();
         mTipDialog.setContentView(R.layout.tip_layout);
+        TextView text = (TextView)mTipDialog.findViewById(R.id.textView3);
+        SharedPreferences sharedPreferences = activity.getSharedPreferences("Data",Context.MODE_PRIVATE);
+        if(sharedPreferences.getInt("Language",5)==0){
+        Typeface   type = Typeface.createFromAsset(activity.getAssets(),"fonts/Catenary_Stamp.ttf");
+            text.setText("Πιέστε την επιλογή που θέλετε για λίγη ώρα.");
+            text.setTypeface(type);
+        }else{
+            Typeface   type = Typeface.createFromAsset(activity.getAssets(),"fonts/governor.ttf");
+            text.setTypeface(type);
+        }
         return mTipDialog;
     }
 

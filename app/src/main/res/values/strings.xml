@@ -1847,12 +1847,10 @@ Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the 
 </string>
     <string name="title">Problem Categories</string>
 
-
-    <string name="Welcome_MassageEng">If you want to search directly the bugs for the Farming you want
-    ,please click "Yes" otherwise you will redirect to main page in 10 seconds.
+    <string name="GoToHomePageEng">Skip to Home Page ? </string><string name="GoToHomePageGr">Παράλειψη ? </string>
+    <string name="Welcome_MassageEng">View Farming List ?
     </string>
-    <string name="Welcome_MassageGreek">Aν θέλετε να ψάξετε αμέσως τα προβλήματα μιας συγκεκριμένης
-    καλλιέργειας παρακαλώ πατήστε το κουμπί "Ναι"  αλλιώς θα εμφανιστεί το κύριο menu σε 10 δευτερόπλεπτα.
+    <string name="Welcome_MassageGreek">Προβολή Λίστα Καλλιεργειών ?
     </string>
     <string name="Yes_ButtonEng">Yes</string>
     <string name="Yes_ButtonGr">Ναι</string>

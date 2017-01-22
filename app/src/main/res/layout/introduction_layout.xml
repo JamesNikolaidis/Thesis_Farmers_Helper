@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/first_panel_down_opacity">
@@ -7,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
 
         <ImageView
         android:layout_width="40dp"
@@ -15,7 +17,6 @@
         android:src="@drawable/eng_flag"
             android:id="@+id/EnglishFlag"
             android:onClick="onEnglandFlagClick"
-
             />
         <ImageView
             android:layout_width="60dp"
@@ -25,76 +26,91 @@
             android:onClick="onEnglandFlagClick"
             />
 
-            </LinearLayout>
 
-<TextView
-    android:layout_marginTop="30dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/WelcomeGr"
-    android:layout_gravity="center"
-    android:textSize="18dp"
-    android:textColor="@android:color/white"
-    android:fontFamily="sans-serif-medium"
-    android:id="@+id/FirstWelcomeMessage"/>
-
-    <TextView
-        android:layout_marginTop="80dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="@string/Welcome_MassageGreek"
-        android:textColor="@android:color/white"
-        android:id="@+id/IntroductionText"
-        android:fontFamily="sans-serif-medium"/>
-
-
-    <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-        <Button
-            android:layout_marginLeft="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/YesButton"
-            android:onClick="UserDialogChoice"
-            android:text="@string/Yes_ButtonGr"/>
-        <TextView
-            android:layout_marginLeft="100dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/TimerTextView"
-            android:textSize="20dp"
-            android:onClick="UserDialogChoice"
-            android:textColor="@android:color/white"
-            android:text="@string/TimerTagTextViewGr"/>
-        <TextView
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/timer"
-            android:textColor="@android:color/white"
-            android:onClick="UserDialogChoice"
-            android:text="0"/>
     </LinearLayout>
-
 
 
     <Button
         android:layout_gravity="center"
-        android:layout_marginTop="200dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:id="@+id/ReadME"
         android:onClick="ReadMeButton"
-        android:text="@string/ReadmeGr"/>
+        android:text="@string/ReadmeGr"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
+    <TextView
+        android:layout_marginTop="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/WelcomeGr"
+        android:layout_gravity="center"
+        android:textSize="18dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif-medium"
+        android:id="@+id/FirstWelcomeMessage"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true" />
 
 
+    <TextView
+        android:layout_marginTop="105dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:text="@string/Welcome_MassageGreek"
+        android:textColor="@android:color/white"
+        android:id="@+id/IntroductionText"
+        android:background="@drawable/first_text_box_shape"
+        android:padding="10dp"
+        android:textSize="18dp"
+        android:layout_below="@+id/FirstWelcomeMessage"
+        android:layout_alignParentStart="true" />
 
+    <CheckBox
 
-</LinearLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/GoToHomePageCheckBox"
+        android:onClick="UserDialogChoice"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:theme="@style/MyCheckBox"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="80dp"
+        android:layout_below="@+id/IntroductionText"
+        android:layout_alignEnd="@+id/FirstWelcomeMessage" />
+
+    <CheckBox
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ListViewCheckBox"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:onClick="UserDialogChoice"
+        android:theme="@style/MyCheckBox"
+        android:layout_alignBottom="@+id/IntroductionText"
+        android:layout_alignStart="@+id/GoToHomePageCheckBox" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/GoToHomePageGr"
+        android:textColor="@android:color/white"
+        android:id="@+id/GoToHomePageTextView"
+        android:padding="10dp"
+        android:layout_marginLeft="100dp"
+        android:textSize="16dp"
+        android:background="@drawable/first_text_box_shape"
+
+        android:layout_alignBottom="@+id/GoToHomePageCheckBox"
+        android:layout_alignEnd="@+id/ReadME"
+        android:layout_marginEnd="38dp" />
+
+</RelativeLayout>

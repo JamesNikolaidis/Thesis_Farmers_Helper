@@ -1,12 +1,16 @@
 package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.ChooseSpecialFarming;
@@ -21,11 +25,15 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Timers.GoToM
 public class IntroductionPage extends AppCompatActivity {
     private SharedPreferences mSharePreferrence ;
     private static SharedPreferences.Editor mEditor;
-    private TextView mIntroductionTextView,mFirstWelcomeMEssage,mTimer,mTimerTagTextView;
-    private Button mYesButton,mReadMeButton;
+    private TextView mIntroductionTextView,mFirstWelcomeMEssage,GoToHomePageTextView;
+    private Button mReadMeButton;
+    private CheckBox mSeeListViewCheckBox;
     private ChooseSpecialFarming mChooseSpecialFarmingDialogObject;
     private Read_Me_Dialog mReadMeDialog;
     private GoToMainPageTimer t;
+    private static AlertDialog mAlertDialog;
+    private static int DialogEnabledFlag = 0;
+    private Typeface type;
 
 
 
@@ -39,16 +47,17 @@ public class IntroductionPage extends AppCompatActivity {
         mEditor = mSharePreferrence.edit();
         mIntroductionTextView = (TextView)findViewById(R.id.IntroductionText);
         mFirstWelcomeMEssage = (TextView)findViewById(R.id.FirstWelcomeMessage);
-        mTimerTagTextView = (TextView)findViewById(R.id.TimerTextView);
-        mYesButton = (Button)findViewById(R.id.YesButton);
-        mTimer = (TextView) findViewById(R.id.timer);
+        GoToHomePageTextView = (TextView)findViewById(R.id.GoToHomePageTextView);
+        mSeeListViewCheckBox = (CheckBox)findViewById(R.id.ListViewCheckBox) ;
+        type = Typeface.createFromAsset(getAssets(),"fonts/Catenary_Stamp.ttf");
+        mIntroductionTextView.setTypeface(type);
+        GoToHomePageTextView.setTypeface(type);
         mReadMeButton=(Button)findViewById(R.id.ReadME);
         mChooseSpecialFarmingDialogObject = new ChooseSpecialFarming();
         mReadMeDialog = new Read_Me_Dialog();
         mEditor.putInt("Language",0);
         mEditor.commit();
-        t = GoToMainPageTimer.getInstance(this,getApplicationContext());
-        t.ActivateTimer(IntroductionPage.this,getApplicationContext(),mTimer);
+
 
 
     }
@@ -63,10 +72,10 @@ public class IntroductionPage extends AppCompatActivity {
                     mEditor.commit();
                     mIntroductionTextView.setText(this.getResources().getString(R.string.Welcome_MassageEng));
                     mFirstWelcomeMEssage.setText(this.getResources().getString(R.string.WelcomeEng));
-                    mYesButton.setText(this.getResources().getString(R.string.Yes_ButtonEng));
-                     mTimerTagTextView.setText(this.getResources().getString(R.string.TimerTagTextViewEng));
-                     t.mTImer.cancel();
-                    t.ActivateTimer(IntroductionPage.this,getApplicationContext(),mTimer);
+
+                    type = Typeface.createFromAsset(getAssets(),"fonts/governor.ttf");
+                    GoToHomePageTextView.setTypeface(type);
+                    mIntroductionTextView.setTypeface(type);
                     mReadMeButton.setText(this.getResources().getString(R.string.ReadmeEng));
 
             }else{
@@ -74,10 +83,11 @@ public class IntroductionPage extends AppCompatActivity {
                 mEditor.commit();
                 mIntroductionTextView.setText(this.getResources().getString(R.string.Welcome_MassageGreek));
                 mFirstWelcomeMEssage.setText(this.getResources().getString(R.string.WelcomeGr));
-                mYesButton.setText(this.getResources().getString(R.string.Yes_ButtonGr));
-                mTimerTagTextView.setText(this.getResources().getString(R.string.TimerTagTextViewGr));
-                t.mTImer.cancel();
-                t.ActivateTimer(IntroductionPage.this,getApplicationContext(),mTimer);
+
+                type = Typeface.createFromAsset(getAssets(),"fonts/Catenary_Stamp.ttf");
+                GoToHomePageTextView.setTypeface(type);
+                mIntroductionTextView.setTypeface(type);
+                mIntroductionTextView.setTypeface(type);
                 mReadMeButton.setText(this.getResources().getString(R.string.ReadmeGr));
             }
 
@@ -97,19 +107,23 @@ public class IntroductionPage extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
+
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
             close_program_dialog.CloseProgramDialog(IntroductionPage.this,getApplicationContext(),mSharePreferrence.getInt("Language",5));
-            t.mTImer.cancel();
         }
         return false;
     }
 
 
     public void UserDialogChoice(View view) {
-            if(view.getId()==R.id.YesButton){
-                mChooseSpecialFarmingDialogObject.ActivateSpecialFarming(IntroductionPage.this,getApplicationContext(),mSharePreferrence.getInt("Language",0),mEditor);
-                t.mTImer.cancel();
+            if(view.getId()==R.id.ListViewCheckBox){
+                  mChooseSpecialFarmingDialogObject.ActivateSpecialFarming(IntroductionPage.this,getApplicationContext(),mSharePreferrence.getInt("Language",0),mEditor,mSeeListViewCheckBox );
+
+            }else if(view.getId()==R.id.GoToHomePageCheckBox){
+                Intent goToHomePage = new Intent(IntroductionPage.this,StartAcitvity.class);
+                startActivity(goToHomePage);
             }
 
 
