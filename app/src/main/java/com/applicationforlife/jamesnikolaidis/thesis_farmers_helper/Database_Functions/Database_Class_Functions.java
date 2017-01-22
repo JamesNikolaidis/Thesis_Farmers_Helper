@@ -8,8 +8,9 @@ import android.util.Log;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Chat_Class.Chat_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Company;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Distributer;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.FarmingObjects;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Stocks;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -37,7 +38,7 @@ public class Database_Class_Functions  {
     private Firebase mRootVar;
     private FirebaseDatabase mDatabase ;
     private static FirebaseStorage mStorage;
-    private Firebase mProducts , mStocks , mCompany , mDistributer,mChat,mWeedsProducts;
+    private Firebase mProducts , mStocks , mCompany , mDistributer,mChat,mProductsForFarmingShortList;
     private static ArrayList<WeedsProduct> mWeedsProductMap;
     private static Company mCompanyObject;
     private Distributer mDistributerObject;
@@ -46,6 +47,7 @@ public class Database_Class_Functions  {
     private static ArrayList<ArrayList<String>> mDistributerList;
     private static int mycounter = 0;
     private static ArrayList<String> mWeedsMessageList ,mFarmingMessageList,mWeedMessageKeyList,mFarmingMessageKeyList,Messages,MessageKey;
+    private static ArrayList<FarmingObjects> mFarmingProductMap;
     private static int MessageMaxCounter1=0;
     private static ArrayList<String> mNewMessages , mNewMesagesKey;
     public static boolean comeanother = false;
@@ -65,6 +67,7 @@ public class Database_Class_Functions  {
             mStorage = FirebaseStorage.getInstance();
             mStocks = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Stocks");
             mProducts=new Firebase("https://farmers-helper-44f7a.firebaseio.com/Products/Weeds");
+            mProductsForFarmingShortList=new Firebase("https://farmers-helper-44f7a.firebaseio.com/Products/Farming/");
             mCompany= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Company");
             mChat= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Chat");
             mDistributer= new Firebase("https://farmers-helper-44f7a.firebaseio.com/Distributers");
@@ -103,9 +106,10 @@ public class Database_Class_Functions  {
     //***********************************************************************/
 
 
-        public  void GetProduct(String Reason ){
+        public  void GetProduct(String Reason,String isFarming ){
             mWeedsProductMap = new ArrayList<>();
-      if(glag==false){
+        if(isFarming==null){
+            if(glag==false){
           Query getProductByReason = mProducts.orderByChild("Problem_Solving").equalTo(Reason).limitToFirst(100);
             getProductByReason.addChildEventListener(new ChildEventListener() {
                 @Override
@@ -136,7 +140,44 @@ public class Database_Class_Functions  {
                 }
             });
 
-      }
+           }
+        }else {
+            if(glag==false){
+                Query getProductByReason = mProductsForFarmingShortList.child(isFarming).orderByChild("Problem_Solving").equalTo(Reason).limitToFirst(100);
+                getProductByReason.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                        WeedsProduct robotProdutct = dataSnapshot.getValue(WeedsProduct.class);
+                        mWeedsProductMap.add(robotProdutct);
+                        Log.e("HELLO","HEY");
+                        mycounter++;
+
+                    }
+                    @Override
+                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                    }
+
+                    @Override
+                    public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(FirebaseError firebaseError) {
+
+                    }
+                });
+
+            }
+
+
+
+        }
             glag = true;
 
         }
@@ -145,7 +186,43 @@ public class Database_Class_Functions  {
 
 
 
+    public  void GetProductForFarmingShortList(String FarmingOption){
+        mFarmingProductMap = new ArrayList<>();
+        if(glag==false){
+            Query getProductByReason = mProductsForFarmingShortList.child(FarmingOption).limitToFirst(100);
+            getProductByReason.addChildEventListener(new ChildEventListener() {
+                @Override
+                public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                    FarmingObjects robotProdutct = dataSnapshot.getValue(FarmingObjects.class);
+                    mFarmingProductMap.add(robotProdutct);
 
+                    mycounter++;
+
+                }
+                @Override
+                public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                }
+
+                @Override
+                public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+                }
+
+                @Override
+                public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+                }
+
+                @Override
+                public void onCancelled(FirebaseError firebaseError) {
+
+                }
+            });
+
+        }
+        glag = true;
+
+    }
 
 
 
@@ -154,7 +231,13 @@ public class Database_Class_Functions  {
 public ArrayList<WeedsProduct> getProductsData(){
     return mWeedsProductMap;
 }
+    public ArrayList<FarmingObjects> getProductsDataForFarmingShortgCut(){
+        return mFarmingProductMap;
+    }
 
+    public ArrayList<FarmingObjects> getProductsDataForFarming(){
+        return mFarmingProductMap;
+    }
 
     public Company getCompanyDetails(String CompanyName){
                 Query findCompanyDetails  =  mCompany.orderByChild("Name").limitToFirst(1).equalTo(CompanyName);

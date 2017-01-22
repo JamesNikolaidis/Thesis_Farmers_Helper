@@ -48,6 +48,7 @@ package="com.applicationforlife.jamesnikolaidis.thesis_farmers_helper">
 
     </activity>
     <activity android:name=".IntroductionPage"/>
+    <activity android:name=".Second_Screen_For_ShortAction"/>
 </application>
 
 </manifest>

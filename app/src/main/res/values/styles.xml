@@ -32,6 +32,10 @@
 
     </style>
 
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#00FFFF</item>
+        <item name="colorControlActivated">#00FFFF</item>
 
+    </style>
 
 </resources>

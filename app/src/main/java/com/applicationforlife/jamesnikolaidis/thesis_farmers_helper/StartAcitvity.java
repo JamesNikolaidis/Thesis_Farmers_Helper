@@ -1,6 +1,7 @@
 package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,6 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Close_Program_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Dialogs_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Spinners.Spinners;
@@ -80,8 +80,8 @@ public class StartAcitvity  extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-            Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
-            close_program_dialog.CloseProgramDialog(StartAcitvity.this,getApplicationContext(),share.getInt("Language",5));
+            Intent goToFistPage = new Intent(StartAcitvity.this,IntroductionPage.class);
+            this.startActivity(goToFistPage);
         }
         return false;
     }

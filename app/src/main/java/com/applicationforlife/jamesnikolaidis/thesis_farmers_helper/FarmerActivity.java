@@ -28,7 +28,7 @@ public class FarmerActivity extends AppCompatActivity {
 
 
             }
-        }, 5000);
+        }, 2500);
 
     }
 
