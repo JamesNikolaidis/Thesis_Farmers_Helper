@@ -3,7 +3,6 @@ package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Fu
 import android.content.Context;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Chat_Class.Chat_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Company;
@@ -149,7 +148,6 @@ public class Database_Class_Functions  {
                     public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                         WeedsProduct robotProdutct = dataSnapshot.getValue(WeedsProduct.class);
                         mWeedsProductMap.add(robotProdutct);
-                        Log.e("HELLO","HEY");
                         mycounter++;
 
                     }
