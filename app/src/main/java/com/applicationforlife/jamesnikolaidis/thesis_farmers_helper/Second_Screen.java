@@ -70,7 +70,8 @@ public class Second_Screen extends FragmentActivity {
         counter = 0;
         //***********Execute basic method to fetch the data from database**************************//
         database_class_functions = Database_Class_Functions.GetDatabaseInstance(getApplicationContext()); //init
-        database_class_functions.GetProduct(Preference.getString("SpecifyProblem", "wrong"),"Cucumber"); //get's the product's list for the specific problem
+
+        database_class_functions.GetProduct(Preference.getString("SpecifyProblem", "wrong"),Preference.getString("FarmingChoice",null)); //get's the product's list for the specific problem
         database_class_functions.FindAndCollectDistributerDetails(Preference.getString("SpecifyProblem", "wrong")); //get's Distributer's list for specific problem
         mSimplyProgressBar = new SimplyProgressBar();
         listener = new Dialog_On_Long_Click_Listener();
@@ -230,6 +231,7 @@ public class Second_Screen extends FragmentActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
+            Preference.edit().remove("FarmingChoice").commit();
             close_program_dialog.GoToMainPanelDialog(Second_Screen.this,getApplicationContext());
             database_class_functions.glag=false;
         }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/scrollView6"
-    android:background="@drawable/ca1"
+    android:background="@drawable/dark_green_background"
     android:fillViewport="false"
     android:isScrollContainer="false">
 <LinearLayout
@@ -83,7 +83,7 @@
             android:text="Name"
             android:textSize="24dp"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:layout_gravity="center"/>
         <EditText
             android:background="@drawable/toolbar_shape2"
@@ -98,7 +98,7 @@
             android:textAlignment="center"
             android:inputType="text" />
         <TextView
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:layout_marginTop="7dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

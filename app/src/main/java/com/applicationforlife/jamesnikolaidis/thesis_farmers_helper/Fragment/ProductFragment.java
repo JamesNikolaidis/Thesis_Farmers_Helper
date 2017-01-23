@@ -45,7 +45,7 @@ public class ProductFragment extends Fragment {
     private static General_Class general_class;
     private static Dialog_On_Long_Click_Listener listener;
     private SharedPreferences sharedPreferences;
-    private static ImageView mPdfImage,mBackButton;
+    private static ImageView mPdfImage,mBackButton,NextProductButton;
 
 
 
@@ -82,11 +82,10 @@ public class ProductFragment extends Fragment {
         mDistributerListView= (ListView)view.findViewById(R.id.Distributer);
         mPdfImage=(ImageView)view.findViewById(R.id.PdfProduct);
         mBackButton = (ImageView) view.findViewById(R.id.BackButtonOnProducts);
+        NextProductButton = (ImageView) view.findViewById(R.id.NextProductButton);
 
-
-        if((int)getArguments().getSerializable(ID)==0){mBackButton.setVisibility(View.INVISIBLE);}
-
-
+        if((int)getArguments().getSerializable(ID)==0){mBackButton.setVisibility(View.INVISIBLE);
+        }
         listener = new Dialog_On_Long_Click_Listener();
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -124,10 +123,9 @@ public class ProductFragment extends Fragment {
                 mProductManufacter.setText(mProduct.getManufacter());
                 ArrayList<String> list = new ArrayList<String>();
                 list = database_class_functions.PassDistributersData().get((int)getArguments().getSerializable(ID));
-
-                 ArrayAdapter adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_gallery_item,list);
-                 mDistributerListView.setAdapter(adapter);
-                 mDistributerListView.setScrollBarSize(20);
+                ArrayAdapter adapter = new ArrayAdapter<String>(view.getContext(), android.R.layout.simple_gallery_item,list);
+                mDistributerListView.setAdapter(adapter);
+                mDistributerListView.setScrollBarSize(20);
 
 
                   mDrugForListView.setText(mProduct.Problem_Solving);

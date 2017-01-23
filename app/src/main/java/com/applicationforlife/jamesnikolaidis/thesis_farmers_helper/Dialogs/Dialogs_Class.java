@@ -16,13 +16,13 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.CustomAdapter;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Dialog_On_Long_Click_Listener;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Network_Wifi.Network_Wifi_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Photos_Fuctions.Photos_Functions;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Timers.AndroidBackBackSensitivityContol;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Timers.Timers_Class;
 
 import java.util.ArrayList;
@@ -48,7 +48,10 @@ public class Dialogs_Class extends Dialog {
     private Tip_Dialog mTipDialogClass;
     private AlertDialog mTipAlertDialog ;
     private Dialog_On_Long_Click_Listener mDialog_On_Long_Click_Listener;
+    public static int LockAndroidBackButtonSensitivity=0;
     private static Button btn;
+    private  static int i=0;
+    private AndroidBackBackSensitivityContol mBackButonController;
 
 
     public Dialogs_Class(Context context) {
@@ -82,6 +85,7 @@ public class Dialogs_Class extends Dialog {
         listView = list;
         mNetwork_and_Wifi_Object = new Network_Wifi_Class(context, activity);
         mDialog_On_Long_Click_Listener = new Dialog_On_Long_Click_Listener();
+        mBackButonController = new AndroidBackBackSensitivityContol();
         photos_functions = new Photos_Functions();
         mTimerClass = new Timers_Class();
         mTipDialogClass = new Tip_Dialog();
@@ -106,6 +110,8 @@ public class Dialogs_Class extends Dialog {
 
                 if (i == KeyEvent.KEYCODE_BACK) {
                     anotherflag = 0;
+                if(LockAndroidBackButtonSensitivity==0){
+                    i++;
 
                     if (share.getBoolean("Clicked", false) == true) {
                         dialog.dismiss();
@@ -265,9 +271,19 @@ public class Dialogs_Class extends Dialog {
                     }
 
 
+                        LockAndroidBackButtonSensitivity++;
+                        mBackButonController.ActivateLockMethodAndGetValueWhenReady();
+
+
+                  }
+
+
                 }
                     return false;
             }
+
+
+
         });
 
 
@@ -480,6 +496,8 @@ public class Dialogs_Class extends Dialog {
                                     mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
                                 } else {
                                     dialog.dismiss();
+                                    editor.putString("FarmingChoice",  User_Choose[i]);
+                                    editor.commit();
                                     FarmingListVegetablesBugsOptionActivate(context, User_Choose[i], activity);
                                     anotherflag++;
                                 }
@@ -494,6 +512,8 @@ public class Dialogs_Class extends Dialog {
 
                                 } else {
                                     dialog.dismiss();
+                                    editor.putString("FarmingChoice",  User_Choose[i]);
+                                    editor.commit();
                                     FarmingListLegumesBugsOptionActivate(context, User_Choose[i], activity);
                                     anotherflag++;
                                 }
@@ -507,6 +527,8 @@ public class Dialogs_Class extends Dialog {
                                     mNetwork_and_Wifi_Object.CheckWifiConnectionAndEnable();
                                 } else {
                                     dialog.dismiss();
+                                    editor.putString("FarmingChoice",  User_Choose[i]);
+                                    editor.commit();
                                     FarmingListFruitsBugsOptionActivate(context, User_Choose[i], activity);
                                     anotherflag++;
                                 }
@@ -523,6 +545,8 @@ public class Dialogs_Class extends Dialog {
 
                                 } else {
                                     dialog.dismiss();
+                                    editor.putString("FarmingChoice",  User_Choose[i]);
+                                    editor.commit();
                                     FarmingListNutsBugsOptionActivate(context, User_Choose[i], activity);
                                     anotherflag++;
                                 }
@@ -539,6 +563,8 @@ public class Dialogs_Class extends Dialog {
 
                                 } else {
                                     dialog.dismiss();
+                                    editor.putString("FarmingChoice",  User_Choose[i]);
+                                    editor.commit();
                                     FarmingListCerealBugsOptionActivate(context, User_Choose[i], activity);
                                     anotherflag++;
                                 }
@@ -550,7 +576,7 @@ public class Dialogs_Class extends Dialog {
                     } else {
 
                         if (BeforeOption1.matches("Weeds List")) {
-                            Toast.makeText(context,"OnWeeds",Toast.LENGTH_SHORT).show();
+
                             dialog.dismiss();
                             list_of_image_id.clear();
                             BugsListOptionActivate(context, User_Choose[i], activity);
