@@ -29,3 +29,6 @@ First of all , to find your problem you must browse the application dialogs to f
 Futhermore , when you find you problem(disease,weeds,enemies) which suits to your situation if you dont know information about it you can longClick the problem and then a information panel about the problem will be reveal .
 Finally to see all the products in the final page just swing the screens right or left 
 </p>
+<br/>
+<br/>
+<p>Copyright &copy; <a href="https://github.com/JamesNikolaidis">James Nikolaidis&reg;</a> ,<a href="http://informatics.teicm.gr/">University Of Applied Sciences of Central Macedonia&reg;</a>,
