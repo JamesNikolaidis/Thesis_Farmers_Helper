@@ -1,4 +1,4 @@
-<h1>Farmers Helper</h1>
+ <h1>Farmers Helper</h1>
 <img src="http://i.imgur.com/AYUDeEG.png" alt="commercial photography locations">
 <br/>
 <br/>
@@ -31,4 +31,7 @@ Finally to see all the products in the final page just swing the screens right o
 </p>
 <br/>
 <br/>
-<p>Copyright &copy; <a href="https://github.com/JamesNikolaidis">James Nikolaidis&reg;</a> ,<a href="http://informatics.teicm.gr/">University Of Applied Sciences of Central Macedonia&reg;</a>,
+<p>Copyright &copy; all rights reserved <br/> <a href="https://github.com/JamesNikolaidis">James Nikolaidis&reg;</a> ,<a href="http://informatics.teicm.gr/">University Of Applied Sciences of Central Macedonia&reg;</a>,
+
+
+<p>Note : any steal of code , modification on code without author permission is criminal prosecution </p>
