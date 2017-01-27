@@ -6,7 +6,7 @@
 
     <TextView
         android:layout_marginTop="10dp"
-        android:text="To See Informations , long click on the option"
+        android:text="For more informations , please press the option and hold it for few seconds."
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:fontFamily="sans-serif-medium"
@@ -15,6 +15,7 @@
         android:id="@+id/textView3"
         android:gravity="center"
         android:padding="6dp"
+        android:textAllCaps="false"
         android:layout_gravity="center|left"
         android:layout_marginBottom="3dp"/>
 </LinearLayout>

@@ -22,6 +22,7 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Di
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Network_Wifi.Network_Wifi_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.FarmingObjects;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar_Class.SimplyProgressBar;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Translater.Translater;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,7 +59,7 @@ public class Second_Screen_For_ShortAction extends FragmentActivity {
     private Timer timer;
     private Network_Wifi_Class mNetwork_and_Wifi_Class;
     private static Dialog_On_Long_Click_Listener listener;
-
+    private Translater mTranslater ;
     private int flag = 0;
 
     @Override
@@ -71,10 +72,10 @@ public class Second_Screen_For_ShortAction extends FragmentActivity {
         viewPager = (ViewPager) findViewById(R.id.viewpager); //init
         list = new ArrayList<>(); //init
         counter = 0;
+        mTranslater = new Translater();
         //***********Execute basic method to fetch the data from database**************************//
         database_class_functions = Database_Class_Functions.GetDatabaseInstance(getApplicationContext()); //init
-        database_class_functions.GetProductForFarmingShortList("Cucumber"); //get's the product's list for the specific problem
-        database_class_functions.FindAndCollectDistributerDetails("Burr"); //get's Distributer's list for specific problem
+        database_class_functions.GetProductForFarmingShortList(mTranslater.translate(Preference.getString("SpecifyProblem",null))); //get's the product's list for the specific problem
         mSimplyProgressBar = new SimplyProgressBar();
         listener = new Dialog_On_Long_Click_Listener();
         mNetwork_and_Wifi_Class = new Network_Wifi_Class(getApplicationContext(),Second_Screen_For_ShortAction.this);
@@ -233,7 +234,9 @@ public class Second_Screen_For_ShortAction extends FragmentActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
-            close_program_dialog.GoToMainPanelDialog(Second_Screen_For_ShortAction.this,getApplicationContext());
+            if(Preference.getInt("Language",5)==0){close_program_dialog.GoToMainPanelDialog(Second_Screen_For_ShortAction.this,getApplicationContext(),"Σίγουρα θέλετε να πάτε στην προηγούμενη σελίδα?","'Οχι","Ναι");}
+            else{close_program_dialog.GoToMainPanelDialog(Second_Screen_For_ShortAction.this,getApplicationContext(),"Sure you want to go to previous page?","No","Yes");}
+
             database_class_functions.glag=false;
         }
         return false;

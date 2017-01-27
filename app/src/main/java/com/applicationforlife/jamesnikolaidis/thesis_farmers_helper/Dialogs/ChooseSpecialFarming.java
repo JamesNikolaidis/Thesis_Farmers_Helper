@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,7 +31,7 @@ public class ChooseSpecialFarming extends IntroductionPage {
         private Button mGoBack;
         private  AlertDialog mChooseSpecialFarmingChooserDialog;
         private CheckBox mListCheckBox;
-
+        private Typeface type;
 
 
 
@@ -42,6 +43,8 @@ public class ChooseSpecialFarming extends IntroductionPage {
             AlertDialog.Builder mChooseSpecialFarmingChooser = new AlertDialog.Builder(activity);
             mChooseSpecialFarmingChooserDialog = mChooseSpecialFarmingChooser.create();
             mListCheckBox = mCheckBox;
+
+            type = Typeface.createFromAsset(activity.getAssets(),"fonts/Catenary_Stamp.ttf");
             mChooseSpecialFarmingChooserDialog.show();
             mChooseSpecialFarmingChooserDialog.setCancelable(false);
             mChooseSpecialFarmingChooserDialog.setContentView(R.layout.choose_special_farming);
@@ -52,6 +55,7 @@ public class ChooseSpecialFarming extends IntroductionPage {
                 String[] getListViewOptions = activity.getResources().getStringArray(R.array.ChooseSpecialFarmingOptionsGr);
                 ListAdapter mChooseOptionAdapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, getListViewOptions);
                 mChooseOptionListView.setAdapter(mChooseOptionAdapter);
+                mChooseOptiomTextView.setTypeface(type);
                 mChooseOptiomTextView.setText(activity.getResources().getString(R.string.PleaseSelectGr));
 
 

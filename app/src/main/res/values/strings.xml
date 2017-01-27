@@ -3,7 +3,7 @@
 
     <string-array name="ProblemCategories">
         <item>Weeds List</item>
-        <item>Farming-Culture_List</item>
+        <item>Farming Culture List</item>
     </string-array>
 
     <string-array name="Bugs_List">
@@ -72,8 +72,8 @@
         <item>Orange</item>
     </string-array>
     <string-array name="Tree_Nuts">
-        <item>Almond Tree</item><item>Peanut tree</item><item>Hazel nuts</item>
-        <item>Chestnut Tree</item><item>Walnuts</item>
+        <item>Almond</item><item>Peanut</item><item>Hazel</item>
+        <item>Chestnut</item><item>Walnuts</item>
     </string-array>
 
 <string-array name="olives">
@@ -1847,10 +1847,9 @@ Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the 
 </string>
     <string name="title">Problem Categories</string>
 
-    <string name="GoToHomePageEng">Skip to Home Page ? </string><string name="GoToHomePageGr">Παράλειψη ? </string>
-    <string name="Welcome_MassageEng">View Farming List ?
-    </string>
-    <string name="Welcome_MassageGreek">Προβολή Λίστα Καλλιεργειών ?
+    <string name="GoToHomePageEng">Skip to home page ?</string><string name="GoToHomePageGr">Παράλειψη ?</string>
+    <string name="Welcome_MassageEng">View farming list ?</string>
+    <string name="Welcome_MassageGreek">Προβολή της λίστας των  Καλλιεργειών ?
     </string>
     <string name="Yes_ButtonEng">Yes</string>
     <string name="Yes_ButtonGr">Ναι</string>
@@ -1866,12 +1865,12 @@ Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the 
         <item>Burr</item>
     </string-array>
     <string-array name="ChooseSpecialFarmingOptionsGr">
-        <item>Αγγουρι</item>
+        <item>Αγγούρι</item>
         <item>Καλαμπόκι</item>
         <item>Ρύζι</item>
         <item>Σιτάρι</item>
         <item>Φασόλια</item>
-        <item>Φακή</item>
+        <item>Φακές</item>
         <item>Ελιά</item>
         <item>Burr</item>
     </string-array>
@@ -1883,8 +1882,8 @@ Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the 
     <string name="ProductManufacterTextViewEng">Product Manufacter</string><string name="ProductManufacterTextViewGr">Κατασκευαστής</string>
     <string name="DistributerListViewEng">Distributer List</string><string name="DistributerListViewGr">Λίστα Διανομέων</string>
     <string name="ActiveSubstanceListViewEng">Active Substance</string><string name="ActiveSubstanceListViewGr">Δραστικές Ουσίες</string>
-    <string name="WaitToLoadDatabaseDataDialogEng">Please wait while we fetching the Products from Database...</string>
-    <string name="WaitToLoadDatabaseDataDialogGr">Παρακάλουμε περιμέντε μέχρι να φέρουμε τα προιόντα από την βάση δεδομένων</string>
+    <string name="WaitToLoadDatabaseDataDialogEng">Please wait.</string>
+    <string name="WaitToLoadDatabaseDataDialogGr">Παρακάλουμε περιμένετε.</string>
 
     <string name="ReadMeEngDialog">
        First of all thank you very much for choose our application to advice you  for your problems.\n
@@ -1924,7 +1923,75 @@ Sitona specialize on legumes, plants of the family Fabaceae. The larvae eat the 
     <string name="ExitNoMessageEng">No</string><string name="ExitNoMessageGr">Όχι</string>
     <string name="ExitMessageEng">Sure do you want to leave?</string><string name="ExitMessageGr">Σίγουρα θέλετε να αποχωρήσετε?</string>
     <string name="WelcomeEng">Welcome to Farmers Helper Application.</string><string name="WelcomeGr">Καλώς ήρθατε στην εφαρμογή Farmers Helper</string>
-    <string name="TimerTagTextViewEng">Time :</string><string name="TimerTagTextViewGr">Χρόνος :</string>
+    <string name="FirstButtonTextEng">Select Problem Category</string><string name="FirstButtonTextGr">Επιλέξτε Κατηγορία Προβλήματος</string>
+    <string name="SecondButtonTextGr">Συγκεκριμενοποιήστε την κατηγορία</string>
+    <string name="ThirdButtonTextGr">Λύση για το πρόβλημα</string>
+
+
+    <string-array name="FirstPanelNamesGr">
+        <item>Κατηγορία Ζιζανίων</item>
+        <item>Κατηγορία Καλλιεργειών</item>
+    </string-array>
+
+
+
+
+    <string-array name="Bugs_ListGr">
+        <item>Εχθροί</item>
+        <item>Ασθένειες</item>
+        <item>Ζιζάνια</item>
+    </string-array>
+
+
+
+    <string-array name="Farming_CultureGr">
+        <item>Λαχανικά</item><item>Όσπρια</item><item>Φρούτα</item><item>Δημητριακά</item>
+        <item>Ελιά</item><item>Ξηροί Καρποί</item>
+    </string-array>
+
+
+
+
+
+
+
+
+    <string-array name="VegetablesGr">
+        <item>Αγγούρι</item><item>Αγγινάρα</item><item>Κουνουπίδι</item><item>Σπανάκι</item>
+        <item>Κρεμμύδι</item><item>Λάχανο</item><item>Μπρόκολο</item><item>Ντομάτα</item>
+    </string-array>
+
+
+    <string-array name="LegumesGr">
+        <item>Φασόλια</item><item>Φακές</item><item>Ρεβύθια</item><item>Μπιζέλια</item>
+    </string-array>
+
+
+
+
+
+
+    <string-array name="FruitsGr">
+    <item>Μήλο</item><item>Φράουλα</item><item>Αχλάδι</item>
+    <item>Βερύκοκο</item><item>Καρπούζι</item><item>Κεράσι</item>
+    <item>Λεμόνι</item><item>Μανταρίνη</item><item>Ροδάκινο</item><item>Σύκο</item>
+    <item>Πορτοκάλι</item>
+    </string-array>
+
+    <string-array name="CerealsGr">
+        <item>Ρύζι</item><item>Σιτάρι</item><item>Βρώμη</item><item>Καλαμπόκι</item><item>Κριθάρι</item>
+    </string-array>
+
+
+
+
+
+
+    <string-array name="Tree_NutsGr">
+        <item>Αμυγδαλιά</item><item>Φυστικιά</item><item>Φουντουκιά</item>
+        <item>Καστανιά</item><item>Καρυδιά</item>
+    </string-array>
+
 
 
 </resources>

@@ -35,6 +35,7 @@ dependencies {
     compile 'com.google.firebase:firebase-database:9.8.0'
     compile 'com.google.firebase:firebase-storage:9.8.0'
     compile 'com.google.firebase:firebase-auth:9.8.0'
+    compile files('libs/google-api-translate-java-0.95.jar')
     androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
 }
 apply plugin : 'com.google.gms.google-services'

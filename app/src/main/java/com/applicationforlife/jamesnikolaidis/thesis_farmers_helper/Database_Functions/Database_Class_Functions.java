@@ -63,7 +63,7 @@ public class Database_Class_Functions  {
 
             Firebase.setAndroidContext(context);
             mRootVar = new Firebase("https://farmers-helper-44f7a.firebaseio.com/");
-            mStorage = FirebaseStorage.getInstance();
+           // mStorage = FirebaseStorage.getInstance();
             mStocks = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Stocks");
             mProducts=new Firebase("https://farmers-helper-44f7a.firebaseio.com/Products/Weeds");
             mProductsForFarmingShortList=new Firebase("https://farmers-helper-44f7a.firebaseio.com/Products/Farming/");
@@ -193,7 +193,7 @@ public class Database_Class_Functions  {
                 public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                     FarmingObjects robotProdutct = dataSnapshot.getValue(FarmingObjects.class);
                     mFarmingProductMap.add(robotProdutct);
-
+                    FindAndCollectDistributerDetails(robotProdutct.Problem_Solving);
                     mycounter++;
 
                 }
@@ -279,6 +279,7 @@ public ArrayList<WeedsProduct> getProductsData(){
                         @Override
                         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                                     mDistributerList.add(dataSnapshot.getValue(Stocks.class).getmDistributerEmail());
+
                         }
 
                         @Override
