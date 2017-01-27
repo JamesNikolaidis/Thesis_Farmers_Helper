@@ -22,6 +22,7 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Di
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Network_Wifi.Network_Wifi_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar_Class.SimplyProgressBar;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Translater.Translater;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,6 +55,8 @@ public class Second_Screen extends FragmentActivity {
     private Timer timer;
     private Network_Wifi_Class mNetwork_and_Wifi_Class;
     private static Dialog_On_Long_Click_Listener listener;
+    private Translater mTranslater ;
+
 
     private int flag = 0;
 
@@ -62,14 +65,19 @@ public class Second_Screen extends FragmentActivity {
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_screen);
-
         Preference = getSharedPreferences("Data", MODE_PRIVATE);
         editor = Preference.edit();
+
         viewPager = (ViewPager) findViewById(R.id.viewpager); //init
         list = new ArrayList<>(); //init
         counter = 0;
         //***********Execute basic method to fetch the data from database**************************//
         database_class_functions = Database_Class_Functions.GetDatabaseInstance(getApplicationContext()); //init
+        mTranslater = new Translater();
+        if(Preference.getInt("Language",5)==0 ){
+        database_class_functions.GetProduct(Preference.getString("SpecifyProblem", "wrong"),mTranslater.translate(Preference.getString("FarmingChoice",null))); //get's the product's list for the specific problem
+        }
+
 
         database_class_functions.GetProduct(Preference.getString("SpecifyProblem", "wrong"),Preference.getString("FarmingChoice",null)); //get's the product's list for the specific problem
         database_class_functions.FindAndCollectDistributerDetails(Preference.getString("SpecifyProblem", "wrong")); //get's Distributer's list for specific problem
@@ -232,7 +240,9 @@ public class Second_Screen extends FragmentActivity {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
             Preference.edit().remove("FarmingChoice").commit();
-            close_program_dialog.GoToMainPanelDialog(Second_Screen.this,getApplicationContext());
+            if(Preference.getInt("Language",5)==0){close_program_dialog.GoToMainPanelDialog(Second_Screen.this,getApplicationContext(),"Σίγουρα θέλετε να πάτε στην προηγούμενη σελίδα?","'Οχι","Ναι");}
+            else{close_program_dialog.GoToMainPanelDialog(Second_Screen.this,getApplicationContext(),"Sure you want to go to previous page?","No","Yes");}
+
             database_class_functions.glag=false;
         }
         return false;

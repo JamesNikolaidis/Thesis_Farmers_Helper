@@ -17,6 +17,7 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Choo
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Close_Program_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Read_Me_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Timers.GoToMainPageTimer;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Translater.Translater;
 
 /**
  * Created by James Nikolaidis on 1/19/2017.
@@ -34,6 +35,7 @@ public class IntroductionPage extends AppCompatActivity {
     private static AlertDialog mAlertDialog;
     private static int DialogEnabledFlag = 0;
     private Typeface type;
+    private Translater translater;
 
 
 
@@ -57,6 +59,9 @@ public class IntroductionPage extends AppCompatActivity {
         mReadMeDialog = new Read_Me_Dialog();
         mEditor.putInt("Language",0);
         mEditor.commit();
+        translater = new Translater();
+
+
 
 
 
@@ -72,10 +77,11 @@ public class IntroductionPage extends AppCompatActivity {
                     mEditor.commit();
                     mIntroductionTextView.setText(this.getResources().getString(R.string.Welcome_MassageEng));
                     mFirstWelcomeMEssage.setText(this.getResources().getString(R.string.WelcomeEng));
-
-                    type = Typeface.createFromAsset(getAssets(),"fonts/governor.ttf");
-                    GoToHomePageTextView.setTypeface(type);
-                    mIntroductionTextView.setTypeface(type);
+                    GoToHomePageTextView.setText(this.getResources().getString(R.string.GoToHomePageEng));
+                    mIntroductionTextView.setX(110);
+                    mIntroductionTextView.setTypeface(null);GoToHomePageTextView.setTypeface(null);
+                    mIntroductionTextView.setTextSize(17);
+                    GoToHomePageTextView.setTextSize(17);
                     mReadMeButton.setText(this.getResources().getString(R.string.ReadmeEng));
 
             }else{
@@ -83,21 +89,20 @@ public class IntroductionPage extends AppCompatActivity {
                 mEditor.commit();
                 mIntroductionTextView.setText(this.getResources().getString(R.string.Welcome_MassageGreek));
                 mFirstWelcomeMEssage.setText(this.getResources().getString(R.string.WelcomeGr));
-
                 type = Typeface.createFromAsset(getAssets(),"fonts/Catenary_Stamp.ttf");
                 GoToHomePageTextView.setTypeface(type);
                 mIntroductionTextView.setTypeface(type);
-                mIntroductionTextView.setTypeface(type);
+                mReadMeButton.setTypeface(type);
+                mIntroductionTextView.setTextSize(15);
+                GoToHomePageTextView.setTextSize(15);
+                mIntroductionTextView.setX(10);
+                GoToHomePageTextView.setText(this.getResources().getString(R.string.GoToHomePageGr));
                 mReadMeButton.setText(this.getResources().getString(R.string.ReadmeGr));
             }
 
 
 
      }
-
-
-
-
 
 
 

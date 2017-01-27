@@ -67,16 +67,16 @@ public class Close_Program_Dialog {
 
 
 
-    public void GoToMainPanelDialog(final Activity activity , Context context){
+    public void GoToMainPanelDialog(final Activity activity , Context context ,String Message,String Negative,String Positive){
         final AlertDialog.Builder mCloseAppDialogBuilder = new AlertDialog.Builder(activity);
-        mCloseAppDialogBuilder.setMessage("Sure do you want to leave?")
-                .setNegativeButton("No,I want to stay.", new DialogInterface.OnClickListener() {
+        mCloseAppDialogBuilder.setMessage(Message)
+                .setNegativeButton(Negative, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         mCloseAppDialogBuilder.setCancelable(true);
                     }
                 })
-                .setPositiveButton("Yes.", new DialogInterface.OnClickListener() {
+                .setPositiveButton(Positive, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                        activity.startActivity(new Intent(activity, StartAcitvity.class));

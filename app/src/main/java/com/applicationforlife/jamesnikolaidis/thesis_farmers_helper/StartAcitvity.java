@@ -11,8 +11,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.DialogClassGr;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Dialogs_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Spinners.Spinners;
@@ -30,6 +32,7 @@ public class StartAcitvity  extends AppCompatActivity {
         private Spinners spinners_object;
         private Button Problem_Select_Button;
         private Dialogs_Class dialogs_class_object;
+       private DialogClassGr dialogs_class_objectGr;
         private Activity activity;
         private SharedPreferences share ;
         private SharedPreferences.Editor editor;
@@ -37,6 +40,8 @@ public class StartAcitvity  extends AppCompatActivity {
         private WeedsProduct weedsProduct;
         private  static ArrayList<WeedsProduct> list;
         private Database_Class_Functions database_class_functions;
+        private TextView mSelectProblem;
+    private DialogClassGr dialogClassGr;
 
 
     @Override
@@ -48,19 +53,30 @@ public class StartAcitvity  extends AppCompatActivity {
         share = activity.getSharedPreferences("Data",Activity.MODE_PRIVATE);
         editor = share.edit();
         Problem_Select_Button = (Button)findViewById(R.id.Problem_Select_Button);
-        dialogs_class_object = new Dialogs_Class(getApplicationContext());
-        dialogs_class_object.DeclareButtons(Problem_Select_Button,(Button)findViewById(R.id.Specify_Problem_Select_Button),(Button)findViewById(R.id.Last_Select_Button),(Button)findViewById(R.id.LastPick_Select_Button));
-        dialogs_class_object.DeclareLayouts((LinearLayout)findViewById(R.id.Specify_Linear),(LinearLayout)findViewById(R.id.BeforeFinal_Linear),(LinearLayout)findViewById(R.id.Final_Linear));
+        dialogClassGr=new DialogClassGr(getApplicationContext());
         editor.putBoolean("Clicked",true);
         editor.putBoolean("Clicked1",false);
         editor.commit();
-
+        mSelectProblem = (TextView)findViewById(R.id.SelectProblemTextView);
 
         intarray.add(activity.getResources().getIdentifier("weeds","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
         intarray.add(activity.getResources().getIdentifier("farming1","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
 
-        dialogs_class_object.CreateDialogForProblem(getApplicationContext(),"Select Problem Category",intarray,(ListView)findViewById(R.id.ListView),Problem_Select_Button,activity.getResources().getStringArray(R.array.ProblemCategories),activity);
+        if (share.getInt("Language",5)==1) {
+            dialogs_class_object = new Dialogs_Class(getApplicationContext());
+            dialogs_class_object.DeclareButtons(Problem_Select_Button,(Button)findViewById(R.id.Specify_Problem_Select_Button),(Button)findViewById(R.id.Last_Select_Button),(Button)findViewById(R.id.LastPick_Select_Button));
+            dialogs_class_object.DeclareLayouts((LinearLayout)findViewById(R.id.Specify_Linear),(LinearLayout)findViewById(R.id.BeforeFinal_Linear),(LinearLayout)findViewById(R.id.Final_Linear));
+            dialogs_class_object.CreateDialogForProblem(getApplicationContext(),getResources().getString(R.string.FirstButtonTextEng),intarray,(ListView)findViewById(R.id.ListView),Problem_Select_Button,activity.getResources().getStringArray(R.array.ProblemCategories),activity);
+            mSelectProblem.setText(getResources().getString(R.string.FirstButtonTextEng));
+        }else{
 
+
+            dialogs_class_objectGr = new DialogClassGr(getApplicationContext());
+            dialogs_class_objectGr.DeclareButtons(Problem_Select_Button,(Button)findViewById(R.id.Specify_Problem_Select_Button),(Button)findViewById(R.id.Last_Select_Button),(Button)findViewById(R.id.LastPick_Select_Button));
+            dialogs_class_objectGr.DeclareLayouts((LinearLayout)findViewById(R.id.Specify_Linear),(LinearLayout)findViewById(R.id.BeforeFinal_Linear),(LinearLayout)findViewById(R.id.Final_Linear));
+            dialogs_class_objectGr.CreateDialogForProblem(getApplicationContext(),getResources().getString(R.string.FirstButtonTextGr),intarray,(ListView)findViewById(R.id.ListView),Problem_Select_Button,activity.getResources().getStringArray(R.array.FirstPanelNamesGr),activity);
+            mSelectProblem.setText(getResources().getString(R.string.FirstButtonTextGr));
+        }
 
 
     }
@@ -71,7 +87,12 @@ public class StartAcitvity  extends AppCompatActivity {
         intarray.add(activity.getResources().getIdentifier("farming1","drawable","com.applicationforlife.jamesnikolaidis.thesis_farmers_helper"));
         editor.putBoolean("Clicked",true);
         editor.commit();
-        dialogs_class_object.CreateDialogForProblem(getApplicationContext(),"Select Problem Category",intarray,(ListView)findViewById(R.id.ListView),Problem_Select_Button,activity.getResources().getStringArray(R.array.ProblemCategories),activity);
+        if (share.getInt("Language",5)==1) {
+            dialogs_class_object.CreateDialogForProblem(getApplicationContext(),getResources().getString(R.string.FirstButtonTextEng),intarray,(ListView)findViewById(R.id.ListView),Problem_Select_Button,activity.getResources().getStringArray(R.array.ProblemCategories),activity);
+        }else{
+            dialogClassGr.CreateDialogForProblem(getApplicationContext(),getResources().getString(R.string.FirstButtonTextGr),intarray,(ListView)findViewById(R.id.ListView),Problem_Select_Button,activity.getResources().getStringArray(R.array.FirstPanelNamesGr),activity);
+        }
+
 
     }
 
