@@ -213,12 +213,12 @@ public class Chat_Dialog {
             public void onClick(View view) {
 
                 if(PhotoChanger==0) {
-                    mChangeThemeIcon.setImageDrawable(activity.getDrawable(R.drawable.ca1));
+                    mChangeThemeIcon.setImageDrawable(activity.getDrawable(R.drawable.dark_green_background));
                     mScrollView.setBackground(activity.getDrawable(R.drawable.chat_back));
                     PhotoChanger++;
                 }else{
                     mChangeThemeIcon.setImageDrawable(activity.getDrawable(R.drawable.chat_back));
-                    mScrollView.setBackground(activity.getDrawable(R.drawable.ca1));
+                    mScrollView.setBackground(activity.getDrawable(R.drawable.dark_green_background));
                     PhotoChanger=0;
                 }
             }

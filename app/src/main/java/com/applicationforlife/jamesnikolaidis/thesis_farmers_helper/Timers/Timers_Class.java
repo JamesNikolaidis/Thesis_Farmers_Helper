@@ -22,7 +22,7 @@ public class Timers_Class {
             mTipTimer.schedule(new TimerTask() {
                 @Override
                 public void run() {
-                    if(Disable_Tip_Dialog_Counter==3){
+                    if(Disable_Tip_Dialog_Counter==4){
                         mTipDialog.cancel();
                         mTipTimer.cancel();
                     }
@@ -35,6 +35,22 @@ public class Timers_Class {
 
 
 
+    public void Count_And_Disable_Tip_Dialog1(final AlertDialog mTipDialog){
+
+        mTipTimer = new Timer();
+        mTipTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if(Disable_Tip_Dialog_Counter==2){
+                    mTipDialog.cancel();
+                    mTipTimer.cancel();
+                }
+
+                Disable_Tip_Dialog_Counter++;
+
+            }
+        },0,1500);
+    }
 
 
 

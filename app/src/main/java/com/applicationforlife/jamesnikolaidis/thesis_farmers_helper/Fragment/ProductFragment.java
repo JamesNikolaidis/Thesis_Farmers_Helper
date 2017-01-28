@@ -151,8 +151,13 @@ public class ProductFragment extends Fragment {
               if(!database_class_functions.GetProductUrl().equals("")){
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(database_class_functions.GetProductUrl()));
                   startActivity(browserIntent);
-              }else{
-                  Toast.makeText(getContext(),"Sorry we dont have pdf file for this product yes.",Toast.LENGTH_SHORT).show();}
+              }else {
+                  if (sharedPreferences.getInt("Language", 5) == 0) {
+                      Toast.makeText(getContext(), "Συγνώμη δεν έχουμε το pdf αρχείο αυτού του προιόντος.", Toast.LENGTH_SHORT).show();
+                  } else {
+                      Toast.makeText(getContext(), "Sorry we dont have pdf file for this product yes.", Toast.LENGTH_SHORT).show();
+                  }
+              }
 
             }
         });

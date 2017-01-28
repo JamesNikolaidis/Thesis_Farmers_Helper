@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +65,6 @@ public class ProductFragment2
         final View view = inflater.inflate(R.layout.products_layout, container, false);
         final Activity activity = getActivity();
         sharedPreferences = activity.getSharedPreferences("Data", Context.MODE_PRIVATE);
-
         mProductName = (TextView) view.findViewById(R.id.productName);
         mProductPrice = (TextView) view.findViewById(R.id.productPrice);
         mProductManufacter = (TextView) view.findViewById(R.id.productManufacter);
@@ -92,6 +92,7 @@ public class ProductFragment2
             @Override
             public void run() {
                 ArrayList<FarmingObjects> product = database_class_functions.getProductsDataForFarmingShortgCut();
+                Log.e("Something Wrong",String.valueOf(database_class_functions.getProductsDataForFarmingShortgCut().size()));
                 mProduct = product.get((int) getArguments().getSerializable(ID));
                 if (sharedPreferences.getInt("Language", 0) == 0) {
                     mProductNameTextViewDescription.setText(activity.getResources().getString(R.string.ProductNameTextViewGr));
@@ -144,7 +145,9 @@ public class ProductFragment2
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(database_class_functions.GetProductUrl()));
                     startActivity(browserIntent);
                 } else {
-                    Toast.makeText(getContext(), "Sorry we dont have pdf file for this product yes.", Toast.LENGTH_SHORT).show();
+                    if(sharedPreferences.getInt("Language",5)==0){
+                        Toast.makeText(getContext(), "Συγνώμη δεν έχουμε το pdf αρχείο αυτού του προιόντος.", Toast.LENGTH_SHORT).show();
+                    }else{ Toast.makeText(getContext(), "Sorry we dont have pdf file for this product yes.", Toast.LENGTH_SHORT).show();}
                 }
 
             }
