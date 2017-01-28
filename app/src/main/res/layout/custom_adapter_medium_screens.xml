@@ -8,10 +8,11 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:weightSum="1"
+        android:padding="5dp"
         android:background="@drawable/layout_shape">
 
 
@@ -29,15 +30,13 @@
             android:layout_alignParentTop="true"
             />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="110dp"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
             android:id="@+id/TextView"
             android:layout_marginLeft="5dp"
             android:textSize="16dp"
             android:gravity="left|center"
-            android:text="HFssjdfs"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
+            android:text="gfdfgfgdfgfgdfgfdgdfgfdgdfgdgdfgdf"
             android:layout_toEndOf="@+id/ImageView" />
     </LinearLayout>
 

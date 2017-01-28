@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:gravity="center"
+        android:padding="5dp"
         android:layout_gravity="center"
         android:textAlignment="center"
         android:background="@drawable/tip_shape"
@@ -67,6 +68,7 @@
         android:fontFamily="sans-serif-medium"
         android:textColor="@android:color/white"
         android:text="Nothing Found..."
+        android:padding="5dp"
         android:id="@+id/DistributerEmailTextView"
         />
 

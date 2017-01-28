@@ -10,6 +10,8 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Dist
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.FarmingObjects;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.Stocks;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Second_Screen;
+import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Second_Screen_For_ShortAction;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -51,6 +53,7 @@ public class Database_Class_Functions  {
     private static ArrayList<String> mNewMessages , mNewMesagesKey;
     public static boolean comeanother = false;
     private static String mPdfUrl="";
+
 
 
 
@@ -117,6 +120,9 @@ public class Database_Class_Functions  {
                     mWeedsProductMap.add(robotProdutct);
 
                     mycounter++;
+                    if(Second_Screen.FirstTimeLoadFlag==1){
+                        Second_Screen.MakeRefreshIfSomethingChanges();
+                    }
 
                 }
                 @Override
@@ -125,7 +131,15 @@ public class Database_Class_Functions  {
 
                 @Override
                 public void onChildRemoved(DataSnapshot dataSnapshot) {
+                    if(Second_Screen.FirstTimeLoadFlag==1){
+                        for(int i=0;  i<=getProductsDataForFarmingShortgCut().size(); i++){
 
+                            if(dataSnapshot.getValue(WeedsProduct.class).getName().equals(getProductsData().get(i).getName())) {
+                                getProductsData().remove(i);
+                                Second_Screen.MakeRefreshIfSomethingChanges();
+                            }
+                        }
+                    }
                 }
 
                 @Override
@@ -184,8 +198,10 @@ public class Database_Class_Functions  {
 
 
 
-    public  void GetProductForFarmingShortList(String FarmingOption){
+    public  void GetProductForFarmingShortList(final String FarmingOption){
         mFarmingProductMap = new ArrayList<>();
+
+
         if(glag==false){
             Query getProductByReason = mProductsForFarmingShortList.child(FarmingOption).limitToFirst(100);
             getProductByReason.addChildEventListener(new ChildEventListener() {
@@ -195,6 +211,10 @@ public class Database_Class_Functions  {
                     mFarmingProductMap.add(robotProdutct);
                     FindAndCollectDistributerDetails(robotProdutct.Problem_Solving);
                     mycounter++;
+                    if(Second_Screen_For_ShortAction.FirstTimeLoadFlag==1){
+                        Second_Screen_For_ShortAction.MakeRefreshIfSomethingChanges();
+                    }
+
 
                 }
                 @Override
@@ -203,6 +223,15 @@ public class Database_Class_Functions  {
 
                 @Override
                 public void onChildRemoved(DataSnapshot dataSnapshot) {
+                    if(Second_Screen_For_ShortAction.FirstTimeLoadFlag==1){
+                        for(int i=0;  i<=getProductsDataForFarmingShortgCut().size(); i++){
+
+                            if(dataSnapshot.getValue(FarmingObjects.class).getName().equals(getProductsDataForFarmingShortgCut().get(i).getName())) {
+                                getProductsDataForFarmingShortgCut().remove(i);
+                                Second_Screen_For_ShortAction.MakeRefreshIfSomethingChanges();
+                                 }
+                            }
+                        }
 
                 }
 
@@ -219,6 +248,12 @@ public class Database_Class_Functions  {
 
         }
         glag = true;
+
+
+
+
+
+
 
     }
 

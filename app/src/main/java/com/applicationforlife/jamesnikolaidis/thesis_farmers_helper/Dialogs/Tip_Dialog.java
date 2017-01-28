@@ -30,7 +30,7 @@ public class Tip_Dialog {
         SharedPreferences sharedPreferences = activity.getSharedPreferences("Data",Context.MODE_PRIVATE);
         if(sharedPreferences.getInt("Language",5)==0){
         Typeface   type = Typeface.createFromAsset(activity.getAssets(),"fonts/Catenary_Stamp.ttf");
-            text.setText("Πιέστε την επιλογή που θέλετε για μερικά δευτερόλεπτα για να εμφανιστούν περισσότερες πληροφορίες.");
+            text.setText("Πιέστε την επιλογή που θέλετε για μερικά δευτερόλεπτα για να εμφανιστούν περισσότερες πληροφορίες.Αλλιώς απλώς πιέστε για να πάτε στα προιόντα.");
             text.setTypeface(type);
         }
         return mTipDialog;
