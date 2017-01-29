@@ -1,23 +1,18 @@
 package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-import android.widget.Toolbar;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.MyFragmentAdapter2;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
@@ -31,7 +26,6 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Translater.Translater;
 
 import java.io.IOException;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -104,13 +98,16 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
         }else{Reconnect_and_Load_Data(); }
         //******************Initialize the Activity's Toolbar ****************************//
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
-        toolbar.setTitleTextColor(Color.BLACK);
 
-        if(Preference.getInt("Language",4)==0){
-            toolbar.setTitle("Προιόντα");
-        }else{ toolbar.setTitle("Products");}
+            toolbar.setTitleTextColor(Color.BLACK);
+            if(Preference.getInt("Language",4)==0){
+                toolbar.setTitle("Προιόντα");
+            }else{ toolbar.setTitle("Products");}
 
-        setActionBar(toolbar);
+            setSupportActionBar(toolbar);
+
+
+
 
 
     }
