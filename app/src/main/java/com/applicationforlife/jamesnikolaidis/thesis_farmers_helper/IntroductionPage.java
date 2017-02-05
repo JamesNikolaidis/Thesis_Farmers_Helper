@@ -1,6 +1,5 @@
 package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper;
 
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -16,8 +15,6 @@ import android.widget.TextView;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.ChooseSpecialFarming;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Close_Program_Dialog;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Read_Me_Dialog;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Timers.GoToMainPageTimer;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Translater.Translater;
 
 /**
  * Created by James Nikolaidis on 1/19/2017.
@@ -31,11 +28,7 @@ public class IntroductionPage extends AppCompatActivity {
     private CheckBox mSeeListViewCheckBox;
     private ChooseSpecialFarming mChooseSpecialFarmingDialogObject;
     private Read_Me_Dialog mReadMeDialog;
-    private GoToMainPageTimer t;
-    private static AlertDialog mAlertDialog;
-    private static int DialogEnabledFlag = 0;
     private Typeface type;
-    private Translater translater;
 
 
 
@@ -47,24 +40,25 @@ public class IntroductionPage extends AppCompatActivity {
         setContentView(R.layout.introduction_layout);
         mSharePreferrence =  getSharedPreferences("Data",MODE_PRIVATE);
         mEditor = mSharePreferrence.edit();
+        //Initialize Layouts Views
         mIntroductionTextView = (TextView)findViewById(R.id.IntroductionText);
         mFirstWelcomeMEssage = (TextView)findViewById(R.id.FirstWelcomeMessage);
         GoToHomePageTextView = (TextView)findViewById(R.id.GoToHomePageTextView);
         mSeeListViewCheckBox = (CheckBox)findViewById(R.id.ListViewCheckBox) ;
+        mReadMeButton=(Button)findViewById(R.id.ReadME);
+
+        //Declare Type of Texts with Type Font
         type = Typeface.createFromAsset(getAssets(),"fonts/Catenary_Stamp.ttf");
+        //Set Type on TextViews
         mIntroductionTextView.setTypeface(type);
         GoToHomePageTextView.setTypeface(type);
-        mReadMeButton=(Button)findViewById(R.id.ReadME);
+
+
+
         mChooseSpecialFarmingDialogObject = new ChooseSpecialFarming();
         mReadMeDialog = new Read_Me_Dialog();
         mEditor.putInt("Language",0);
         mEditor.commit();
-        translater = new Translater();
-
-
-
-
-
     }
 
 
@@ -116,7 +110,7 @@ public class IntroductionPage extends AppCompatActivity {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
 
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
-            close_program_dialog.CloseProgramDialog(IntroductionPage.this,getApplicationContext(),mSharePreferrence.getInt("Language",5));
+            close_program_dialog.CloseProgramDialog(IntroductionPage.this,mSharePreferrence.getInt("Language",5));
         }
         return false;
     }

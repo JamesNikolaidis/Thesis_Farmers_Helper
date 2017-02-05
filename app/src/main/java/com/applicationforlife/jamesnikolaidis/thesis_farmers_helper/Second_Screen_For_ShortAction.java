@@ -1,23 +1,18 @@
 package com.applicationforlife.jamesnikolaidis.thesis_farmers_helper;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-import android.widget.Toolbar;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.MyFragmentAdapter2;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
@@ -31,7 +26,6 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Translater.Translater;
 
 import java.io.IOException;
-import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -55,7 +49,6 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
 
     private SharedPreferences Preference;
     private SharedPreferences.Editor editor;
-    private String User_Problem_Choice;
     private ViewPager viewPager;
     ArrayList<FarmingObjects> list;
     private int counter,counter1=0;
@@ -68,26 +61,32 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
     private Network_Wifi_Class mNetwork_and_Wifi_Class;
     private static Dialog_On_Long_Click_Listener listener;
     private Translater mTranslater ;
-    private int flag = 0;
     public static int FirstTimeLoadFlag =0,FlagNew=0 , lock=0;
     private static Activity activity;
+    MyFragmentAdapter2 myFragmentAdapter2;
+
+
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second_screen);
 
+
+        //***********************    Propriete Object Declaration
         Preference = getSharedPreferences("Data", MODE_PRIVATE);
         editor = Preference.edit();
         viewPager = (ViewPager) findViewById(R.id.viewpager); //init
         list = new ArrayList<>(); //init
         counter = 0;
-
+        listener = new Dialog_On_Long_Click_Listener();
         activity = Second_Screen_For_ShortAction.this;
+        mNetwork_and_Wifi_Class = new Network_Wifi_Class(getApplicationContext(),Second_Screen_For_ShortAction.this);
         mTranslater = new Translater();
+         myFragmentAdapter2 = new MyFragmentAdapter2(getSupportFragmentManager(), getApplicationContext(), Second_Screen_For_ShortAction.this);
+
         //***********Execute basic method to fetch the data from database**************************//
         database_class_functions = Database_Class_Functions.GetDatabaseInstance(getApplicationContext()); //init
-
 
         if(Preference.getInt("Language",5)==0){
         database_class_functions.GetProductForFarmingShortList(mTranslater.translate(Preference.getString("SpecifyProblem",null))); //get's the product's list for the specific problem
@@ -95,22 +94,26 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
             database_class_functions.GetProductForFarmingShortList(Preference.getString("SpecifyProblem",null));
         }
         mSimplyProgressBar = new SimplyProgressBar();
-        listener = new Dialog_On_Long_Click_Listener();
-        mNetwork_and_Wifi_Class = new Network_Wifi_Class(getApplicationContext(),Second_Screen_For_ShortAction.this);
+
+
         //Start Thread to  Load the Data From Firebase Database , we need at least 2sec until the list get filled.
         if(mNetwork_and_Wifi_Class.CheckInternetConnectivity(getApplicationContext())==true){
 
             ActivateProductThread();
         }else{Reconnect_and_Load_Data(); }
+
+
         //******************Initialize the Activity's Toolbar ****************************//
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
-        toolbar.setTitleTextColor(Color.BLACK);
 
-        if(Preference.getInt("Language",4)==0){
-            toolbar.setTitle("Προιόντα");
-        }else{ toolbar.setTitle("Products");}
+            toolbar.setTitleTextColor(Color.BLACK);
+            if(Preference.getInt("Language",4)==0){
+                toolbar.setTitle("Προιόντα");
+            }else{ toolbar.setTitle("Products");}
+            setSupportActionBar(toolbar);
 
-        setActionBar(toolbar);
+
+
 
 
     }
@@ -128,7 +131,11 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
         //***********Set menu's clicks methods********************/
         if (item.getItemId() == R.id.miCompose) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
-            close_program_dialog.CloseProgramDialog(Second_Screen_For_ShortAction.this,getApplicationContext(),Preference.getInt("Language",5));
+            close_program_dialog.CloseProgramDialog(Second_Screen_For_ShortAction.this,Preference.getInt("Language",5));
+
+
+
+
         } //if users click the "Log Out" option
         else if (item.getItemId() == R.id.BiologicalTips) {
             PaymentDialog paymentDialog = new PaymentDialog();
@@ -211,7 +218,7 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
                             list = database_class_functions.getProductsDataForFarmingShortgCut();
                             editor.putInt("Counter", list.size());
                             editor.commit();
-                            viewPager.setAdapter(new MyFragmentAdapter2(getSupportFragmentManager(), getApplicationContext(), Second_Screen_For_ShortAction.this));
+                            viewPager.setAdapter(myFragmentAdapter2);
                             viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                                 @Override
                                 public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -253,19 +260,24 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
-            if(Preference.getInt("Language",5)==0){close_program_dialog.GoToMainPanelDialog(Second_Screen_For_ShortAction.this,getApplicationContext(),"Σίγουρα θέλετε να πάτε στην προηγούμενη σελίδα?","'Οχι","Ναι");
+            if(Preference.getInt("Language",5)==0){close_program_dialog.GoToMainPanelDialog(Second_Screen_For_ShortAction.this,"Σίγουρα θέλετε να πάτε στην προηγούμενη σελίδα?","'Οχι","Ναι");
                 FlagNew=0;
                 FirstTimeLoadFlag=0;
                 lock=0;
                 counter1=0;
+                //Destroy the SharedPreference object
+                editor.remove("Data").commit();
             }
-            else{close_program_dialog.GoToMainPanelDialog(Second_Screen_For_ShortAction.this,getApplicationContext(),"Sure you want to go to previous page?","No","Yes");
+            else{close_program_dialog.GoToMainPanelDialog(Second_Screen_For_ShortAction.this,"Sure you want to go to previous page?","No","Yes");
                 FlagNew=0;
                 FirstTimeLoadFlag=0;
                 counter=0;
                 lock=0;
+                //Destroy the SharedPreference object
+                editor.remove("Data").commit();
             }
 
+            database_class_functions.ClearDistArrayList();
             database_class_functions.glag=false;
         }
         return false;
@@ -298,15 +310,11 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
 
 
     public static void MakeRefreshIfSomethingChanges(){
-       // Intent RefreshIntent = new Intent(activity,Second_Screen_For_ShortAction.class);
-
-       // activity.startActivity(RefreshIntent);
         FlagNew=1;
-
     }
 
 
-
+//If a new Products has been imported in the database , then show it on android application
 
     public void YourTimer(){
         Timer timer = new Timer();
@@ -325,7 +333,8 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
 
                             editor.putInt("Counter", database_class_functions.getProductsDataForFarmingShortgCut().size());
                             editor.commit();
-                            viewPager.setAdapter(new MyFragmentAdapter2(getSupportFragmentManager(), getApplicationContext(), Second_Screen_For_ShortAction.this));
+
+                            viewPager.setAdapter(myFragmentAdapter2);
                             viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                                 @Override
                                 public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -355,6 +364,11 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
 
                                 }
                             });
+
+
+
+
+
                         }
                     });
 

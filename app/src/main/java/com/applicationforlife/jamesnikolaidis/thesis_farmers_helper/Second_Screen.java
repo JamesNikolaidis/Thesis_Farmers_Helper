@@ -12,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toolbar;
+import android.support.v7.widget.Toolbar;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.MyFragmentAdapter;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Adapters.MyFragmentAdapter2;
@@ -46,7 +46,6 @@ public class Second_Screen extends AppCompatActivity {
 
     private SharedPreferences Preference;
     private SharedPreferences.Editor editor;
-    private String User_Problem_Choice;
     private ViewPager viewPager;
     ArrayList<WeedsProduct> list;
     private int counter,counter1;
@@ -63,8 +62,6 @@ public class Second_Screen extends AppCompatActivity {
     private static Activity activity;
 
 
-    private int flag = 0;
-
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -73,6 +70,7 @@ public class Second_Screen extends AppCompatActivity {
         Preference = getSharedPreferences("Data", MODE_PRIVATE);
         editor = Preference.edit();
         activity= Second_Screen.this;
+        mSimplyProgressBar = new SimplyProgressBar(); // Create SimpleProgressBar object reference
         viewPager = (ViewPager) findViewById(R.id.viewpager); //init
         list = new ArrayList<>(); //init
         counter = 0;
@@ -83,10 +81,14 @@ public class Second_Screen extends AppCompatActivity {
         database_class_functions.GetProduct(Preference.getString("SpecifyProblem", "wrong"),mTranslater.translate(Preference.getString("FarmingChoice",null))); //get's the product's list for the specific problem
         }
 
+        //get's the product's list for the specific problem
 
-        database_class_functions.GetProduct(Preference.getString("SpecifyProblem", "wrong"),Preference.getString("FarmingChoice",null)); //get's the product's list for the specific problem
-        database_class_functions.FindAndCollectDistributerDetails(Preference.getString("SpecifyProblem", "wrong")); //get's Distributer's list for specific problem
-        mSimplyProgressBar = new SimplyProgressBar();
+        database_class_functions.GetProduct(Preference.getString("SpecifyProblem", "wrong"),Preference.getString("FarmingChoice",null));
+        //get's Distributer's list for specific problem
+
+        database_class_functions.FindAndCollectDistributerDetails(Preference.getString("SpecifyProblem", "wrong"));
+
+
         listener = new Dialog_On_Long_Click_Listener();
         mNetwork_and_Wifi_Class = new Network_Wifi_Class(getApplicationContext(),Second_Screen.this);
         //Start Thread to  Load the Data From Firebase Database , we need at least 2sec until the list get filled.
@@ -102,7 +104,7 @@ public class Second_Screen extends AppCompatActivity {
             toolbar.setTitle("Προιόντα");
         }else{ toolbar.setTitle("Products");}
 
-        setActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
 
     }
@@ -120,7 +122,7 @@ public class Second_Screen extends AppCompatActivity {
         //***********Set menu's clicks methods********************/
         if (item.getItemId() == R.id.miCompose) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
-            close_program_dialog.CloseProgramDialog(Second_Screen.this,getApplicationContext(),Preference.getInt("Language",5));
+            close_program_dialog.CloseProgramDialog(Second_Screen.this,Preference.getInt("Language",5));
         } //if users click the "Log Out" option
         else if (item.getItemId() == R.id.BiologicalTips) {
             PaymentDialog paymentDialog = new PaymentDialog();
@@ -131,13 +133,14 @@ public class Second_Screen extends AppCompatActivity {
 
     }
 
+
+
     //Hide the progress bar after finish below
     public void HideDialogAndZeroTheTimer() {
 
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-
                 mProgressDialog.hide();
                 counter = 0;
                 timer.cancel();
@@ -169,7 +172,6 @@ public class Second_Screen extends AppCompatActivity {
 
 
         public void ActivateProductThread() {
-         //   mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog, Second_Screen.this);
             //Start Thread to  Load the Data From Firebase Database , we need at least 2sec until the list get filled.
 
 
@@ -245,18 +247,22 @@ public class Second_Screen extends AppCompatActivity {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
             Close_Program_Dialog close_program_dialog = new Close_Program_Dialog();
             Preference.edit().remove("FarmingChoice").commit();
-            if(Preference.getInt("Language",5)==0){close_program_dialog.GoToMainPanelDialog(Second_Screen.this,getApplicationContext(),"Σίγουρα θέλετε να πάτε στην προηγούμενη σελίδα?","'Οχι","Ναι");
+            if(Preference.getInt("Language",5)==0){close_program_dialog.GoToMainPanelDialog(Second_Screen.this,"Σίγουρα θέλετε να πάτε στην προηγούμενη σελίδα?","'Οχι","Ναι");
             FlagNew=0;
             FirstTimeLoadFlag=0;
             lock=0;
-                counter1=0;
+            counter1=0;
+                //Destroy the SharedPreference object
+            editor.remove("Data").commit();
 
             }
-            else{close_program_dialog.GoToMainPanelDialog(Second_Screen.this,getApplicationContext(),"Sure you want to go to previous page?","No","Yes");
+            else{close_program_dialog.GoToMainPanelDialog(Second_Screen.this,"Sure you want to go to previous page?","No","Yes");
                 FlagNew=0;
                 FirstTimeLoadFlag=0;
                 lock=0;
                 counter1=0;
+                //Destroy the SharedPreference object
+                editor.remove("Data").commit();
             }
 
             database_class_functions.glag=false;
@@ -283,7 +289,7 @@ public class Second_Screen extends AppCompatActivity {
 
 
 
-
+//If a new Products has been imported in the database , then show it on android application
     public void YourTimer(){
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -298,7 +304,6 @@ public class Second_Screen extends AppCompatActivity {
                             if(Preference.getInt("Language",5)==0){
                                 mSimplyProgressBar.NewProductProgress(mProgressDialog3,activity,"Αλλαγή στην βάση δεδομένων.Πιθανών μια εισαγωγή ή εξαγωγή προιόντος");
                             }else{  mSimplyProgressBar.NewProductProgress(mProgressDialog3,activity,"Database changes.Maybe a new product was inserted or deleted.");   }
-
                             editor.putInt("Counter", database_class_functions.getProductsDataForFarmingShortgCut().size());
                             editor.commit();
                             viewPager.setAdapter(new MyFragmentAdapter2(getSupportFragmentManager(), getApplicationContext(), Second_Screen.this));
@@ -344,13 +349,8 @@ public class Second_Screen extends AppCompatActivity {
 
 
     public static void MakeRefreshIfSomethingChanges(){
-        // Intent RefreshIntent = new Intent(activity,Second_Screen_For_ShortAction.class);
-
-        // activity.startActivity(RefreshIntent);
-        FlagNew=1;
-
+                  FlagNew=1;
     }
-
 
 
     public void SetTimer1(final int time) {
@@ -385,6 +385,10 @@ public class Second_Screen extends AppCompatActivity {
         }, 0);
 
     }
+
+
+
+
 
 
 

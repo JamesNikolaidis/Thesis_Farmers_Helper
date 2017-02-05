@@ -6,15 +6,15 @@
     android:background="@drawable/product_background_test1"
     android:fitsSystemWindows="true">
 
-    <android.widget.Toolbar
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:id="@+id/toolbar1"
         android:background="@drawable/toolbar_shape"
-        >
+        android:keepScreenOn="true">
 
 
-    </android.widget.Toolbar>
+    </android.support.v7.widget.Toolbar>
 
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"

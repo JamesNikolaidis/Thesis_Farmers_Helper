@@ -19,7 +19,6 @@ import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -36,9 +35,7 @@ public class Database_Class_Functions  {
               Class varaible decleration
     //******************************************************/
     private static Database_Class_Functions Class_instance;
-    private Firebase mRootVar;
-    private FirebaseDatabase mDatabase ;
-    private static FirebaseStorage mStorage;
+
     private Firebase mProducts , mStocks , mCompany , mDistributer,mChat,mProductsForFarmingShortList;
     private static ArrayList<WeedsProduct> mWeedsProductMap;
     private static Company mCompanyObject;
@@ -65,8 +62,6 @@ public class Database_Class_Functions  {
         private  Database_Class_Functions(Context context) {
 
             Firebase.setAndroidContext(context);
-            mRootVar = new Firebase("https://farmers-helper-44f7a.firebaseio.com/");
-           // mStorage = FirebaseStorage.getInstance();
             mStocks = new Firebase("https://farmers-helper-44f7a.firebaseio.com/Stocks");
             mProducts=new Firebase("https://farmers-helper-44f7a.firebaseio.com/Products/Weeds");
             mProductsForFarmingShortList=new Firebase("https://farmers-helper-44f7a.firebaseio.com/Products/Farming/");
@@ -200,8 +195,6 @@ public class Database_Class_Functions  {
 
     public  void GetProductForFarmingShortList(final String FarmingOption){
         mFarmingProductMap = new ArrayList<>();
-
-
         if(glag==false){
             Query getProductByReason = mProductsForFarmingShortList.child(FarmingOption).limitToFirst(100);
             getProductByReason.addChildEventListener(new ChildEventListener() {
@@ -352,9 +345,6 @@ public ArrayList<WeedsProduct> getProductsData(){
                  mDistributerList=new ArrayList<>();
             }
 
-    public  int getMessageMaxCounter1() {
-        return MessageMaxCounter1;
-    }
 
     public int MessagesCount(){
 
@@ -418,13 +408,6 @@ public ArrayList<WeedsProduct> getProductsData(){
     }
 
 
-    public static boolean isFirstTime() {
-        return FirstTime;
-    }
-
-    public static void setFirstTime(boolean firstTime) {
-        FirstTime = firstTime;
-    }
 
 
 

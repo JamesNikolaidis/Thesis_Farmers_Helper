@@ -21,12 +21,6 @@ public class FarmerActivity extends AppCompatActivity {
             public void run() {
                 Intent passenger = new Intent(FarmerActivity.this,IntroductionPage.class);
                 startActivity(passenger);
-
-
-
-
-
-
             }
         }, 2500);
 
