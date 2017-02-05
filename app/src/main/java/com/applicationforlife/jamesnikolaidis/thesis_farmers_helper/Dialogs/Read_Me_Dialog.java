@@ -28,8 +28,6 @@ public class Read_Me_Dialog {
             TextView mReadMeTextView = (TextView)mReadMeDialog.findViewById(R.id.ReadMeTextView);
             if(Language==0){mReadMeTextView.setText(activity.getResources().getString(R.string.ReadMeGrDialog));}
             else{mReadMeTextView.setText(activity.getResources().getString(R.string.ReadMeEngDialog));}
-
-
             mBackButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -19,7 +19,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.General_Functions.General_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Dialog_On_Long_Click_Listener;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.WeedsProduct;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
@@ -34,15 +33,12 @@ import static android.os.Build.ID;
 //
 public class ProductFragment extends Fragment {
     private static WeedsProduct mProduct;
-    private  int position;
     private TextView mProductName , mProductPrice , mProductManufacter, mDrugForListView ;
     private TextView mProductNameTextViewDescription , mProductPriceTextViewDescription,mProductManufterTextViewDescription,mDrugForTextViewDescription,
     DistributerForTextViewDescription,ActiveSubstanceForTextViewDescription;
     private ListView mActiveSubanseListView,mDistributerListView;
-    private static String DrugFor1 ;
     private static Database_Class_Functions database_class_functions;
     private static Context con;
-    private static General_Class general_class;
     private static Dialog_On_Long_Click_Listener listener;
     private SharedPreferences sharedPreferences;
     private static ImageView mPdfImage,mBackButton,NextProductButton;
@@ -66,7 +62,11 @@ public class ProductFragment extends Fragment {
 
         final View view = inflater.inflate(R.layout.products_layout,container,false);
         final Activity activity  = getActivity();
+
+        //Initialize the Share Preference Object
         sharedPreferences = activity.getSharedPreferences("Data",Context.MODE_PRIVATE);
+
+            //Initialize the Layouts components
 
         mProductName = (TextView)view.findViewById(R.id.productName);
         mProductPrice=  (TextView)view.findViewById(R.id.productPrice);
@@ -84,15 +84,20 @@ public class ProductFragment extends Fragment {
         mBackButton = (ImageView) view.findViewById(R.id.BackButtonOnProducts);
         NextProductButton = (ImageView) view.findViewById(R.id.NextProductButton);
 
-        if((int)getArguments().getSerializable(ID)==0){mBackButton.setVisibility(View.INVISIBLE);
-        }
+        // Check the input number to hide the back button on Layout
+        if((int)getArguments().getSerializable(ID)==0){mBackButton.setVisibility(View.INVISIBLE); }
+
         listener = new Dialog_On_Long_Click_Listener();
         final Handler handler = new Handler();
+
+        //Display Products Data on Layout Components
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 ArrayList<WeedsProduct> product = database_class_functions.getProductsData();
                 mProduct = product.get((int)getArguments().getSerializable(ID));
+
+         /*-----------Language   changes  on Layout , Start Here --------------*/
                 if(sharedPreferences.getInt("Language",0)==0){
                     mProductNameTextViewDescription.setText(activity.getResources().getString(R.string.ProductNameTextViewGr));
                     mProductPriceTextViewDescription.setText(activity.getResources().getString(R.string.ProductPriceTextViewGr));
@@ -115,9 +120,14 @@ public class ProductFragment extends Fragment {
                 }
 
 
+        /*-----------Language   changes  on Layout , End Here --------------*/
 
 
+                //Gets the pdf file url from the Firebase Storage Platform
                 database_class_functions.FindandCollectProductPdfFileLink(mProduct.getName(),mProduct.getManufacter());
+
+
+        /*------------------- Set products data on Layouts Components , Starts Here ----------------*/
                 mProductName.setText(mProduct.getName());
                 mProductPrice.setText(mProduct.getPrice());
                 mProductManufacter.setText(mProduct.getManufacter());
@@ -134,12 +144,11 @@ public class ProductFragment extends Fragment {
 
 
 
+    /*------------------- Set products data on Layouts Components , Starts Here ----------------*/
 
 
 
 
-
-               // database_class_functions.ClearDistArrayList();
             }
         }, 3000);
             listener.SetListViewOnClickListener(getActivity(),con,mDistributerListView);

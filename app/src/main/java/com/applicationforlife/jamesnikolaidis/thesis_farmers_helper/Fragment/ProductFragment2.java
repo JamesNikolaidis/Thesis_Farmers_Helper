@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +19,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Database_Functions.Database_Class_Functions;
-import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.General_Functions.General_Class;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Listeners.Dialog_On_Long_Click_Listener;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Objects.FarmingObjects;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
@@ -33,18 +31,14 @@ import static android.os.Build.ID;
  * Created by James Nikolaidis on 1/22/2017.
  */
 
-public class ProductFragment2
-        extends Fragment {
+public class ProductFragment2 extends Fragment {
     private static FarmingObjects mProduct;
-    private int position;
-    private TextView mProductName, mProductPrice, mProductManufacter, mDrugForListView;
+
     private TextView mProductNameTextViewDescription, mProductPriceTextViewDescription, mProductManufterTextViewDescription, mDrugForTextViewDescription,
-            DistributerForTextViewDescription, ActiveSubstanceForTextViewDescription;
+            DistributerForTextViewDescription, ActiveSubstanceForTextViewDescription,mProductName, mProductPrice, mProductManufacter, mDrugForListView;
     private ListView mActiveSubanseListView, mDistributerListView;
-    private static String DrugFor1;
     private static Database_Class_Functions database_class_functions;
     private static Context con;
-    private static General_Class general_class;
     private static Dialog_On_Long_Click_Listener listener;
     private SharedPreferences sharedPreferences;
     private static ImageView mPdfImage, mBackButton;
@@ -64,7 +58,11 @@ public class ProductFragment2
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.products_layout, container, false);
         final Activity activity = getActivity();
+
+        //Initialize the Share Preference Object
         sharedPreferences = activity.getSharedPreferences("Data", Context.MODE_PRIVATE);
+
+        //Initialize the Layouts components
         mProductName = (TextView) view.findViewById(R.id.productName);
         mProductPrice = (TextView) view.findViewById(R.id.productPrice);
         mProductManufacter = (TextView) view.findViewById(R.id.productManufacter);
@@ -81,19 +79,28 @@ public class ProductFragment2
         mBackButton = (ImageView) view.findViewById(R.id.BackButtonOnProducts);
 
 
+        // Check the input number to hide the back button on Layout
         if ((int) getArguments().getSerializable(ID) == 0) {
             mBackButton.setVisibility(View.INVISIBLE);
         }
 
 
+
         listener = new Dialog_On_Long_Click_Listener();
         final Handler handler = new Handler();
+        //Display Products Data on Layout Components
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                //Get's the product object from database
                 ArrayList<FarmingObjects> product = database_class_functions.getProductsDataForFarmingShortgCut();
-                Log.e("Something Wrong",String.valueOf(database_class_functions.getProductsDataForFarmingShortgCut().size()));
+
+                //Check the number of the product
                 mProduct = product.get((int) getArguments().getSerializable(ID));
+
+
+                //If Language is on Greek , make some language changes on Layout
                 if (sharedPreferences.getInt("Language", 0) == 0) {
                     mProductNameTextViewDescription.setText(activity.getResources().getString(R.string.ProductNameTextViewGr));
                     mProductPriceTextViewDescription.setText(activity.getResources().getString(R.string.ProductPriceTextViewGr));
@@ -104,6 +111,7 @@ public class ProductFragment2
 
 
                 } else {
+                    //If Language is on English , make some language changes on Layout
                     mProductNameTextViewDescription.setText(activity.getResources().getString(R.string.ProductNameTextViewEng));
                     mProductPriceTextViewDescription.setText(activity.getResources().getString(R.string.ProductPriceTextViewEng));
                     mProductManufterTextViewDescription.setText(activity.getResources().getString(R.string.ProductManufacterTextViewEng));
@@ -115,7 +123,11 @@ public class ProductFragment2
                 }
 
 
+                //Gets the pdf file url from the Firebase Storage Platform
                 database_class_functions.FindandCollectProductPdfFileLink(mProduct.getName(), mProduct.getManufacter());
+
+
+                 /*------------------- Set products data on Layouts Components , Starts Here ----------------*/
                 mProductName.setText(mProduct.getName());
                 mProductPrice.setText(mProduct.getPrice());
                 mProductManufacter.setText(mProduct.getManufacter());
@@ -132,7 +144,8 @@ public class ProductFragment2
                 mActiveSubanseListView.setAdapter(adapter2);
 
 
-                // database_class_functions.ClearDistArrayList();
+                 /*------------------- Set products data on Layouts Components , Ends Here ----------------*/
+
             }
         }, 3000);
         listener.SetListViewOnClickListener(getActivity(), con, mDistributerListView);

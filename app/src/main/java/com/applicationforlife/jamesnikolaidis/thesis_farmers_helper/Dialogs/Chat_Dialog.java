@@ -52,11 +52,12 @@ public class Chat_Dialog {
             private static ImageView mChangeThemeIcon;
             private static ScrollView mScrollView;
             private static int PhotoChanger = 0;
-
-            private static int flag =0,flag1=0;
+            private static int flag ,flag1=0;
 
     public static void  DisplayChat(final Context context , final Activity activity){
 
+
+        /*-------------------------   Create Alert Dialog Process , Starts Here  -------------------------*/
         final AlertDialog.Builder builder = new AlertDialog.Builder(new ContextThemeWrapper(activity, R.style.AlertDialogCustom));
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         dialog = builder.create();
@@ -64,6 +65,15 @@ public class Chat_Dialog {
         dialog.show();
         dialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE|WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
         dialog.setContentView(inflater.inflate(R.layout.chat_layout,null));
+
+        /*-------------------------   Create Alert Dialog Process , End Here  -------------------------*/
+
+
+
+
+        /*-------------------------   Initialize Layout Views , Starts Here  -------------------------*/
+
+
         mSendMessageButton=(Button) dialog.findViewById(R.id.Chat_Send_Message_Button);
         mMessageListView = (ListView) dialog.findViewById(R.id.Chat_List_View);
         mCancelButton = (Button) dialog.findViewById(R.id.Chat_Close_Button);
@@ -73,6 +83,17 @@ public class Chat_Dialog {
         mMessageNameEditText = (EditText)dialog.findViewById(R.id.Chat_Name_Edit_Text);
         mChangeThemeIcon = (ImageView)dialog.findViewById(R.id.ChangeThemeicon);
         mScrollView = (ScrollView)dialog.findViewById(R.id.scrollView6);
+
+
+
+         /*-------------------------   Initialize Layout Views , Ends Here  -------------------------*/
+
+
+
+
+
+         /*-------------------------   Initialize Some Useful Objects  , Starts Here  -------------------------*/
+
         mChat_Class=new Chat_Class();
         mApplicationActivity=activity;
         mHandler = new Handler();
@@ -81,6 +102,9 @@ public class Chat_Dialog {
         mSimplyProgressBar = new SimplyProgressBar();
         database_class_functions = Database_Class_Functions.GetDatabaseInstance(context);
         mMessagesKey=mMessages = new ArrayList<>();
+
+         /*-------------------------   Initialize Some Useful Objects  , Ends Here  -------------------------*/
+
         if(mNetwork_and_Wifi_Class.CheckInternetConnectivity(context)==true){
             mWaitProgressDialog = mSimplyProgressBar.ActivateProgressDialog1(mWaitProgressDialog,activity);
             database_class_functions.MessagesCount();

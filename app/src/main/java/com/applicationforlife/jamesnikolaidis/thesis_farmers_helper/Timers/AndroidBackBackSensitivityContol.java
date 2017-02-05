@@ -13,7 +13,7 @@ import java.util.TimerTask;
 public class AndroidBackBackSensitivityContol {
        private Timer mTimer ;
        private int mTimerCounter;
-         public AndroidBackBackSensitivityContol(){}
+       public AndroidBackBackSensitivityContol(){}
 
         public void ActivateLockMethodAndGetValueWhenReady(){
 
@@ -49,5 +49,10 @@ public class AndroidBackBackSensitivityContol {
         },0,1000);
 
     }
+
+
+
+
+
 
 }

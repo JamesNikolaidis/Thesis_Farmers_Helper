@@ -20,7 +20,6 @@ public class SimplyProgressBar {
     public ProgressDialog ActivateProgressDialog(ProgressDialog mGUIProgressDialog,Activity activity,int StringMessageId){
 
         mGUIProgressDialog = new ProgressDialog(activity.getLayoutInflater().getContext());
-
         mGUIProgressDialog.setMessage(activity.getResources().getString(StringMessageId));
         mGUIProgressDialog.setMax(100);
         mGUIProgressDialog.setCancelable(true);
@@ -68,6 +67,9 @@ public class SimplyProgressBar {
         timers_class.Count_And_Disable_Tip_Dialog1(mGUIProgressDialog);
         return mGUIProgressDialog;
     }
+
+
+
 
 
 

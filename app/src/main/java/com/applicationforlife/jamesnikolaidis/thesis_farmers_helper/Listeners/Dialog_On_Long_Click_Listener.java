@@ -20,8 +20,6 @@ import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.View
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Progress_Bar_Class.SimplyProgressBar;
 import com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.R;
 
-import static com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialogs.Dialogs_Class.LongClickFlag;
-
 /**
  * Created by James Nikolaidis on 1/16/2017.
  */
@@ -29,9 +27,10 @@ import static com.applicationforlife.jamesnikolaidis.thesis_farmers_helper.Dialo
 public class Dialog_On_Long_Click_Listener {
             private SharedPreferences mSharedPreference ;
             private SharedPreferences.Editor mEditor;
-            private static int SelectFlag = 0;
+            private static int SelectFlag = 0,LongClickFlag=0;
             private SimplyProgressBar simplyProgressBar;
             private static ProgressDialog mWaitForData;
+
 
         public Dialog_On_Long_Click_Listener(){
 
