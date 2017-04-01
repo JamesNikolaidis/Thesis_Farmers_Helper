@@ -27,7 +27,7 @@
          />
     <TextView
         android:text="Sorry there is no information for now . Please try another day.
-        Thank you for your understand."
+        Thank you for your understanding."
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/information_text_view"

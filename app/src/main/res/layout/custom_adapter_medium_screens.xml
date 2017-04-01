@@ -36,7 +36,7 @@
             android:layout_marginLeft="5dp"
             android:textSize="16dp"
             android:gravity="left|center"
-            android:text="gfdfgfgdfgfgdfgfdgdfgfdgdfgdgdfgdf"
+            android:text="Message"
             android:layout_toEndOf="@+id/ImageView" />
     </LinearLayout>
 

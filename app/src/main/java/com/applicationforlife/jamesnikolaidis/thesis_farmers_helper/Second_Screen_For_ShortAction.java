@@ -162,7 +162,7 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
 
     }
 
-    //GoToMainPageTimer code below
+
     public void SetTimer(final int time) {
 
         timer = new Timer();
@@ -205,7 +205,7 @@ public class Second_Screen_For_ShortAction extends AppCompatActivity {
                                 mProgressDialog = mSimplyProgressBar.ActivateProgressDialog(mProgressDialog,Second_Screen_For_ShortAction.this,R.string.WaitToLoadDatabaseDataDialogEng);//activate the Dialog using the method ActivateProgressDialog() from the Bottom
                             }
 
-                            SetTimer(10); //Set the GoToMainPageTimer that Progress Bar will be on the Screen
+                            SetTimer(10);
 
                         }
                     },0);
